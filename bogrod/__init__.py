@@ -81,7 +81,8 @@ class Bogrod:
         elif format == 'yaml':
             print(yaml.safe_dump(data), file=stream)
         else:
-            print(data, file=stream)
+            for rec in data:
+                print("{id:20} {severity:8} {note}".format(**rec))
 
     @classmethod
     def from_sbom(cls, sbom_path, notes_path=None):
@@ -100,9 +101,15 @@ class Bogrod:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('sbom')
-    parser.add_argument('-n', '--notes')
-    parser.add_argument('-w', '--write-notes', action='store_true')
+    parser.add_argument('sbom',
+                        help='/path/to/cyclonedx-sbom.json')
+    parser.add_argument('-n', '--notes',
+                        help='/path/to/notes.yaml')
+    parser.add_argument('-o', '--output', default='table',
+                        help='output format [table,json,yaml,raw]')
+    parser.add_argument('-w', '--write-notes',
+                        action='store_true',
+                        help='update notes according to sbom (add new, mark fixed)')
     args = parser.parse_args()
     bogrod = Bogrod.from_sbom(args.sbom)
     if args.notes:
@@ -110,7 +117,7 @@ def main():
         bogrod.update_notes()
     if args.write_notes:
         bogrod.write_notes(args.notes)
-    bogrod.report()
+    bogrod.report(format=args.output)
 
 if __name__ == '__main__':
     main()

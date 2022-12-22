@@ -8,11 +8,35 @@ Format
 ------
 
 The release notes format is simply a YAML file with a
-security section::
+security section:
 
+    # notes
     security:
     - CVE-2022-999999 high open 
     - CVE-2022-999989 fixed
+
+This follows the release notes format used by reno, the
+release notes tools.
+
+Syntax
+------
+
+Run as a command line utility:
+
+    $ bogrod -h
+    usage: bogrod [-h] [-n NOTES] [-o OUTPUT] [-w] sbom
+    
+    positional arguments:
+      sbom                  /path/to/cyclonedx-sbom.json
+    
+    optional arguments:
+      -h, --help            show this help message and exit
+      -n NOTES, --notes NOTES
+                            /path/to/notes.yaml
+      -o OUTPUT, --output OUTPUT
+                            output format [table,json,yaml,raw]
+      -w, --write-notes     update notes according to sbom (add new, mark fixed)
+   
 
 Pipeline with grype and reno
 ----------------------------

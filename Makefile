@@ -3,6 +3,7 @@ sbom:
 
 notes:
 	reno new rc1 .
+	reno report . --title FOO | pandoc -f rst > release-notes.html
 
 report:
 	bogrod releasenotes/sbom/jupyter-base-notebook.json  --notes releasenotes/notes/rc1-a86b72ab67c7c21e.yaml -w
