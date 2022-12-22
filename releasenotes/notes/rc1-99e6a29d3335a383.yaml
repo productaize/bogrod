@@ -49,7 +49,6 @@ security:
     needs to be worded so that it does not depend on any information only
     available in another section, such as the prelude. This may mean repeating
     some details.
-  - CVE-2022-23491 will fix in next release
 fixes:
   - |
     Add normal bug fixes here, or remove this section.  All of the list items
