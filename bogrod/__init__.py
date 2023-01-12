@@ -11,7 +11,8 @@ class Bogrod:
         self.data = data
         self.notes = notes
         self.notes_path = None
-        self.severities = ['critical', 'high']
+        self.severities = 'critical,high'.split(',')
+        self.report_columns = 'id,name,severity,note,short,url'.split(',')
 
     def vulnerabilities(self):
         return self.data.get('vulnerabilities', [])
@@ -41,8 +42,8 @@ class Bogrod:
             if '-' not in vuln_id:
                 # ignore entries other than valid vuln ids
                 continue
-            if vuln_id not in sbom_vuln_ids:
-                security[i] = f'{vuln_id} {severity} fixed ({comment})'
+            if vuln_id not in sbom_vuln_ids and not comment.startswith('fixed'):
+                security[i] = f'{vuln_id} {severity} fixed (was: {comment})'
 
     def write_notes(self, path=None):
         assert self.notes, "no notes founds. use reno new to add"
@@ -59,21 +60,28 @@ class Bogrod:
                 notes[vuln_id] = ' '.join(comment)
         return notes
 
-    def report(self, format='table', stream=None, severities=None):
+    def report(self, format='table', stream=None, severities=None, columns=None):
         notes = self.security_notes()
         data = []
         severities = severities or self.severities
+        columns = columns or self.report_columns
         # build list of dict of each vulnerability
         for vuln in self.vulnerabilities():
             severity = vuln['ratings'][0]['severity']
             if severity not in severities:
                 continue
+            description = vuln.get('description', ' ')
+            short = description[0:min(len(description), 40)]
             record = {
                 'id': vuln['id'],
                 'name': vuln['source']['name'],
                 'severity': severity,
                 'note': notes.get(vuln['id']),
+                'description': description,
+                'short': short,
+                'url': vuln['source'].get('url'),
             }
+            record = { k: v for k, v in record.items() if k in columns}
             data.append(record)
         severity_rank = lambda v: self.severities.index(v['severity'])
         data = sorted(data, key=severity_rank)
