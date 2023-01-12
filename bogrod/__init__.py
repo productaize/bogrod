@@ -36,12 +36,13 @@ class Bogrod:
             sbom_vuln_ids[vuln_id] = severity
         # set fixed status for security items in release notes but not in sbom
         for i, vuln in enumerate(list(security)):
-            vuln_id, severity, *_ = vuln.split(' ')
-            if not '-' in vuln_id:
+            vuln_id, severity, *comment = vuln.split(' ')
+            comment = ' '.join(comment)
+            if '-' not in vuln_id:
                 # ignore entries other than valid vuln ids
                 continue
             if vuln_id not in sbom_vuln_ids:
-                security[i] = f'{vuln_id} {severity} fixed'
+                security[i] = f'{vuln_id} {severity} fixed ({comment})'
 
     def write_notes(self, path=None):
         assert self.notes, "no notes founds. use reno new to add"
@@ -74,6 +75,8 @@ class Bogrod:
                 'note': notes.get(vuln['id']),
             }
             data.append(record)
+        severity_rank = lambda v: self.severities.index(v['severity'])
+        data = sorted(data, key=severity_rank)
         if format == 'table':
             print(tabulate(data, headers="keys"), file=stream)
         elif format == 'json':
@@ -107,11 +110,15 @@ def main():
                         help='/path/to/notes.yaml')
     parser.add_argument('-o', '--output', default='table',
                         help='output format [table,json,yaml,raw]')
+    parser.add_argument('-s', '--severities', default='critical,high',
+                        help='list of serverities in critical,high,medium,low')
     parser.add_argument('-w', '--write-notes',
                         action='store_true',
                         help='update notes according to sbom (add new, mark fixed)')
     args = parser.parse_args()
     bogrod = Bogrod.from_sbom(args.sbom)
+    if args.severities:
+        bogrod.severities = args.severities.split(',')
     if args.notes:
         bogrod.read_notes(args.notes)
         bogrod.update_notes()

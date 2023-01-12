@@ -10,12 +10,13 @@ Format
 The release notes format is simply a YAML file with a
 security section:
 
-    # notes
+    # security:
+    #  - <CVE#> severity status + comment
     security:
     - CVE-2022-999999 high open 
-    - CVE-2022-999989 fixed
+    - CVE-2022-999989 high fixed
 
-This follows the release notes format used by reno, the
+This is a subset of the release notes format used by reno, the
 release notes tools.
 
 Syntax
@@ -53,3 +54,4 @@ Tools
 * Grype https://github.com/anchore/grype
 * Trivy https://aquasecurity.github.io/trivy/
 * SBOM diff https://github.com/CycloneDX/cyclonedx-cli 
+* Reno https://docs.openstack.org/reno/latest/

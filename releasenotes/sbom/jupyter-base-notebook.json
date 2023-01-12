@@ -8222,7 +8222,7 @@
   ],
   "vulnerabilities": [
     {
-      "id": "CVE-2022-23491",
+      "id": "CVE-2023-23491",
       "source": {
         "name": "ubuntu:distro:ubuntu:20.04",
         "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23491"
