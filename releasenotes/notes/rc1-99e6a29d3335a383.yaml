@@ -49,50 +49,19 @@
   needs to be worded so that it does not depend on any information only
   available in another section, such as the prelude. This may mean repeating
   some details.
+- "CVE-2022-39286 high open "
+- "GHSA-m678-f26j-3hrp high open "
+- "CVE-2022-29244 high open "
+- "GHSA-hj9c-8jmm-8c52 high open "
+- "CVE-2021-27478 high open "
+- "CVE-2021-27482 high open "
+- "CVE-2021-27498 high open "
+- "CVE-2021-27500 high open "
 - |-
-  CVE-2022-39286 high open
-- |-
-  GHSA-m678-f26j-3hrp high open
-- |-
-  CVE-2022-29244 high open
-- |-
-  GHSA-hj9c-8jmm-8c52 high open
-- |-
-  CVE-2021-27478 high open
-- |-
-  CVE-2021-27482 high open
-- |-
-  CVE-2021-27498 high open
-- |-
-  CVE-2021-27500 high open
-- |-
-  CVE-2015-20107 high open
-- |-
-  CVE-2022-37454 critical open
-- |-
-  CVE-2022-42919 high open
-- |-
-  CVE-2022-45061 high open
-- |-
-  CVE-2022-23491 medium fixed (was: open)
-- |-
-  GHSA-43fp-rhv2-5gv8 medium open
-- |-
-  GHSA-39hc-v87j-747x medium open
-- |-
-  CVE-2007-2379 medium open
-- |-
-  CVE-2022-3821 medium open
-- |-
-  CVE-2022-3821 medium open
-- |-
-  CVE-2020-16156 medium open
-- |-
-  CVE-2021-31879 medium open
-- |-
-  CVE-2022-37434 medium open
-- |-
-  CVE-2023-23491 medium open
+  CVE-2015-20107 high maybefix we dont know
+- "CVE-2022-37454 critical open "
+- "CVE-2022-42919 high open "
+- "CVE-2022-45061 high open "
 "upgrade":
 - |
   List upgrade notes here, or remove this section.  All of the list items in

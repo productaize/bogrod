@@ -6,5 +6,5 @@ notes:
 	reno report . --title FOO | pandoc -f rst > release-notes.html
 
 report:
-	bogrod releasenotes/sbom/jupyter-base-notebook.json  --notes releasenotes/notes/rc1-a86b72ab67c7c21e.yaml -w
+	bogrod releasenotes/sbom/jupyter-base-notebook.json  --notes releasenotes/notes/rc1-99e6a29d3335a383.yaml -w
 	reno report . --title FOO | pandoc -f rst > release-notes.html

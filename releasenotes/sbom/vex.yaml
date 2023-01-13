@@ -1,0 +1,61 @@
+CVE-2015-20107:
+  detail: no further information
+  justification: ''
+  response: we dont know
+  state: maybefix
+CVE-2021-27478:
+  detail: no further information
+  justification: ''
+  response: ''
+  state: open
+CVE-2021-27482:
+  detail: no further information
+  justification: ''
+  response: ''
+  state: open
+CVE-2021-27498:
+  detail: no further information
+  justification: ''
+  response: ''
+  state: open
+CVE-2021-27500:
+  detail: no further information
+  justification: ''
+  response: ''
+  state: open
+CVE-2022-29244:
+  detail: no further information
+  justification: ''
+  response: ''
+  state: open
+CVE-2022-37454:
+  detail: no further information
+  justification: ''
+  response: ''
+  state: open
+CVE-2022-39286:
+  detail: no further information
+  justification: ''
+  response: ''
+  state: open
+  status: wontfix
+CVE-2022-42919:
+  detail: no further information
+  justification: ''
+  response: ''
+  state: open
+CVE-2022-45061:
+  detail: no further information
+  justification: ''
+  response: ''
+  state: open
+GHSA-hj9c-8jmm-8c52:
+  detail: no further information
+  justification: ''
+  response: ''
+  state: open
+GHSA-m678-f26j-3hrp:
+  detail: no further information
+  justification: ''
+  response: ''
+  state: open

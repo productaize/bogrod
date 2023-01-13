@@ -531,7 +531,7 @@
       "purl": "pkg:npm/abbrev@1.1.1"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/adduser@3.118ubuntu2?arch=all\u0026distro=ubuntu-20.04\u0026package-id=69d1980477020fa3",
+      "bom-ref": "pkg:deb/ubuntu/adduser@3.118ubuntu2?arch=all&distro=ubuntu-20.04&package-id=69d1980477020fa3",
       "type": "library",
       "name": "adduser",
       "version": "3.118ubuntu2",
@@ -542,7 +542,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/adduser@3.118ubuntu2?arch=all\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/adduser@3.118ubuntu2?arch=all&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/agent-base@6.0.2?package-id=3ed7115f3ed52491",
@@ -685,7 +685,7 @@
       "purl": "pkg:npm/aproba@2.0.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/apt@2.0.9?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=5b714bc2204330d1",
+      "bom-ref": "pkg:deb/ubuntu/apt@2.0.9?arch=amd64&distro=ubuntu-20.04&package-id=5b714bc2204330d1",
       "type": "library",
       "name": "apt",
       "version": "2.0.9",
@@ -701,7 +701,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/apt@2.0.9?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/apt@2.0.9?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/archy@1.0.0?package-id=2bc09b7211981f40",
@@ -865,7 +865,7 @@
       "purl": "pkg:npm/balanced-match@1.0.2"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/base-files@11ubuntu5.6?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=905e0223beeb9ea5",
+      "bom-ref": "pkg:deb/ubuntu/base-files@11ubuntu5.6?arch=amd64&distro=ubuntu-20.04&package-id=905e0223beeb9ea5",
       "type": "library",
       "name": "base-files",
       "version": "11ubuntu5.6",
@@ -876,10 +876,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/base-files@11ubuntu5.6?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/base-files@11ubuntu5.6?arch=amd64&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/base-passwd@3.5.47?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=8b6e494dac6dab09",
+      "bom-ref": "pkg:deb/ubuntu/base-passwd@3.5.47?arch=amd64&distro=ubuntu-20.04&package-id=8b6e494dac6dab09",
       "type": "library",
       "name": "base-passwd",
       "version": "3.5.47",
@@ -895,10 +895,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/base-passwd@3.5.47?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/base-passwd@3.5.47?arch=amd64&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/bash@5.0-6ubuntu1.2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=9b2a88643de9f471",
+      "bom-ref": "pkg:deb/ubuntu/bash@5.0-6ubuntu1.2?arch=amd64&distro=ubuntu-20.04&package-id=9b2a88643de9f471",
       "type": "library",
       "name": "bash",
       "version": "5.0-6ubuntu1.2",
@@ -909,7 +909,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/bash@5.0-6ubuntu1.2?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/bash@5.0-6ubuntu1.2?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:pypi/beautifulsoup4@4.11.1?package-id=cb04d5a311477808",
@@ -1052,7 +1052,7 @@
       "purl": "pkg:pypi/brotlipy@0.7.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/bsdutils@1:2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux%402.34-0.1ubuntu9.3\u0026distro=ubuntu-20.04\u0026package-id=f059f1effc2759b2",
+      "bom-ref": "pkg:deb/ubuntu/bsdutils@1:2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux%402.34-0.1ubuntu9.3&distro=ubuntu-20.04&package-id=f059f1effc2759b2",
       "type": "library",
       "name": "bsdutils",
       "version": "1:2.34-0.1ubuntu9.3",
@@ -1138,7 +1138,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/bsdutils@1:2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux%402.34-0.1ubuntu9.3\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/bsdutils@1:2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux%402.34-0.1ubuntu9.3&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/builtins@1.0.3?package-id=1ef738e5794901eb",
@@ -1169,7 +1169,7 @@
       "purl": "pkg:pypi/bytecode@0.13.0.dev0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/bzip2@1.0.8-2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=97dab883cac4c956",
+      "bom-ref": "pkg:deb/ubuntu/bzip2@1.0.8-2?arch=amd64&distro=ubuntu-20.04&package-id=97dab883cac4c956",
       "type": "library",
       "name": "bzip2",
       "version": "1.0.8-2",
@@ -1185,10 +1185,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/bzip2@1.0.8-2?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/bzip2@1.0.8-2?arch=amd64&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/ca-certificates@20211016~20.04.1?arch=all\u0026distro=ubuntu-20.04\u0026package-id=64cb765b879544ec",
+      "bom-ref": "pkg:deb/ubuntu/ca-certificates@20211016~20.04.1?arch=all&distro=ubuntu-20.04&package-id=64cb765b879544ec",
       "type": "library",
       "name": "ca-certificates",
       "version": "20211016~20.04.1",
@@ -1209,7 +1209,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/ca-certificates@20211016~20.04.1?arch=all\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/ca-certificates@20211016~20.04.1?arch=all&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/cacache@16.0.2?package-id=d9c3650f9f6ca621",
@@ -1653,7 +1653,7 @@
       "purl": "pkg:npm/corepack@0.10.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/coreutils@8.30-3ubuntu2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=f77283ee51e117fa",
+      "bom-ref": "pkg:deb/ubuntu/coreutils@8.30-3ubuntu2?arch=amd64&distro=ubuntu-20.04&package-id=f77283ee51e117fa",
       "type": "library",
       "name": "coreutils",
       "version": "8.30-3ubuntu2",
@@ -1664,7 +1664,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/coreutils@8.30-3ubuntu2?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/coreutils@8.30-3ubuntu2?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:pypi/cryptography@38.0.1?package-id=f929ff5639bcac1",
@@ -1681,7 +1681,7 @@
       "purl": "pkg:pypi/cryptography@38.0.1"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/dash@0.5.10.2-6?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=fa0f613df8411b7",
+      "bom-ref": "pkg:deb/ubuntu/dash@0.5.10.2-6?arch=amd64&distro=ubuntu-20.04&package-id=fa0f613df8411b7",
       "type": "library",
       "name": "dash",
       "version": "0.5.10.2-6",
@@ -1692,10 +1692,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/dash@0.5.10.2-6?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/dash@0.5.10.2-6?arch=amd64&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/debconf@1.5.73?arch=all\u0026distro=ubuntu-20.04\u0026package-id=128eb6066f5ec19c",
+      "bom-ref": "pkg:deb/ubuntu/debconf@1.5.73?arch=all&distro=ubuntu-20.04&package-id=128eb6066f5ec19c",
       "type": "library",
       "name": "debconf",
       "version": "1.5.73",
@@ -1706,10 +1706,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/debconf@1.5.73?arch=all\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/debconf@1.5.73?arch=all&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/debianutils@4.9.1?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=328b1094024bda26",
+      "bom-ref": "pkg:deb/ubuntu/debianutils@4.9.1?arch=amd64&distro=ubuntu-20.04&package-id=328b1094024bda26",
       "type": "library",
       "name": "debianutils",
       "version": "4.9.1",
@@ -1720,7 +1720,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/debianutils@4.9.1?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/debianutils@4.9.1?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/debug@4.3.3?package-id=18d0e3429e875b1b",
@@ -1863,7 +1863,7 @@
       "purl": "pkg:npm/diff@5.0.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/diffutils@1:3.7-3?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=d21aefcaf9c9c9b6",
+      "bom-ref": "pkg:deb/ubuntu/diffutils@1:3.7-3?arch=amd64&distro=ubuntu-20.04&package-id=d21aefcaf9c9c9b6",
       "type": "library",
       "name": "diffutils",
       "version": "1:3.7-3",
@@ -1879,10 +1879,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/diffutils@1:3.7-3?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/diffutils@1:3.7-3?arch=amd64&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/dpkg@1.19.7ubuntu3.2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=c04e8d0994357312",
+      "bom-ref": "pkg:deb/ubuntu/dpkg@1.19.7ubuntu3.2?arch=amd64&distro=ubuntu-20.04&package-id=c04e8d0994357312",
       "type": "library",
       "name": "dpkg",
       "version": "1.19.7ubuntu3.2",
@@ -1913,10 +1913,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/dpkg@1.19.7ubuntu3.2?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/dpkg@1.19.7ubuntu3.2?arch=amd64&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/e2fsprogs@1.45.5-2ubuntu1.1?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=fe6a928cbe96836",
+      "bom-ref": "pkg:deb/ubuntu/e2fsprogs@1.45.5-2ubuntu1.1?arch=amd64&distro=ubuntu-20.04&package-id=fe6a928cbe96836",
       "type": "library",
       "name": "e2fsprogs",
       "version": "1.45.5-2ubuntu1.1",
@@ -1932,7 +1932,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/e2fsprogs@1.45.5-2ubuntu1.1?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/e2fsprogs@1.45.5-2ubuntu1.1?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/emoji-regex@8.0.0?package-id=c63662b8c896f9a",
@@ -2068,7 +2068,7 @@
       "purl": "pkg:pypi/fastjsonschema@2.16.2"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/fdisk@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04\u0026package-id=c1731913519805c2",
+      "bom-ref": "pkg:deb/ubuntu/fdisk@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04&package-id=c1731913519805c2",
       "type": "library",
       "name": "fdisk",
       "version": "2.34-0.1ubuntu9.3",
@@ -2154,7 +2154,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/fdisk@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/fdisk@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/fecha@4.2.3?package-id=31cb389f1cdc702f",
@@ -2171,7 +2171,7 @@
       "purl": "pkg:npm/fecha@4.2.3"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/findutils@4.7.0-1ubuntu1?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=103a5999463b7e08",
+      "bom-ref": "pkg:deb/ubuntu/findutils@4.7.0-1ubuntu1?arch=amd64&distro=ubuntu-20.04&package-id=103a5999463b7e08",
       "type": "library",
       "name": "findutils",
       "version": "4.7.0-1ubuntu1",
@@ -2187,7 +2187,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/findutils@4.7.0-1ubuntu1?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/findutils@4.7.0-1ubuntu1?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:pypi/flit-core@3.7.1?package-id=237ef0eb13c23781",
@@ -2239,7 +2239,7 @@
       "purl": "pkg:npm/font-awesome@4.7.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/fonts-liberation@1:1.07.4-11?arch=all\u0026distro=ubuntu-20.04\u0026package-id=762d27ad3cd19778",
+      "bom-ref": "pkg:deb/ubuntu/fonts-liberation@1:1.07.4-11?arch=all&distro=ubuntu-20.04&package-id=762d27ad3cd19778",
       "type": "library",
       "name": "fonts-liberation",
       "version": "1:1.07.4-11",
@@ -2250,7 +2250,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/fonts-liberation@1:1.07.4-11?arch=all\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/fonts-liberation@1:1.07.4-11?arch=all&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/fs-minipass@2.1.0?package-id=1344a425e2f6976d",
@@ -2309,7 +2309,7 @@
       "purl": "pkg:npm/gauge@4.0.3"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/gcc-10-base@10.3.0-1ubuntu1~20.04?arch=amd64\u0026upstream=gcc-10\u0026distro=ubuntu-20.04\u0026package-id=a268d6ad2986f239",
+      "bom-ref": "pkg:deb/ubuntu/gcc-10-base@10.3.0-1ubuntu1~20.04?arch=amd64&upstream=gcc-10&distro=ubuntu-20.04&package-id=a268d6ad2986f239",
       "type": "library",
       "name": "gcc-10-base",
       "version": "10.3.0-1ubuntu1~20.04",
@@ -2345,7 +2345,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/gcc-10-base@10.3.0-1ubuntu1~20.04?arch=amd64\u0026upstream=gcc-10\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/gcc-10-base@10.3.0-1ubuntu1~20.04?arch=amd64&upstream=gcc-10&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/glob@7.2.0?package-id=17f4dfc35ddfe649",
@@ -2362,7 +2362,7 @@
       "purl": "pkg:npm/glob@7.2.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/gpgv@2.2.19-3ubuntu2.2?arch=amd64\u0026upstream=gnupg2\u0026distro=ubuntu-20.04\u0026package-id=59b00c6588050b82",
+      "bom-ref": "pkg:deb/ubuntu/gpgv@2.2.19-3ubuntu2.2?arch=amd64&upstream=gnupg2&distro=ubuntu-20.04&package-id=59b00c6588050b82",
       "type": "library",
       "name": "gpgv",
       "version": "2.2.19-3ubuntu2.2",
@@ -2428,7 +2428,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/gpgv@2.2.19-3ubuntu2.2?arch=amd64\u0026upstream=gnupg2\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/gpgv@2.2.19-3ubuntu2.2?arch=amd64&upstream=gnupg2&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/graceful-fs@4.2.9?package-id=f79f711fac181306",
@@ -2459,7 +2459,7 @@
       "purl": "pkg:pypi/greenlet@1.1.3"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/grep@3.4-1?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=e7af9af4b90473f",
+      "bom-ref": "pkg:deb/ubuntu/grep@3.4-1?arch=amd64&distro=ubuntu-20.04&package-id=e7af9af4b90473f",
       "type": "library",
       "name": "grep",
       "version": "3.4-1",
@@ -2475,10 +2475,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/grep@3.4-1?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/grep@3.4-1?arch=amd64&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/gzip@1.10-0ubuntu4.1?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=733a6389eeaa99c9",
+      "bom-ref": "pkg:deb/ubuntu/gzip@1.10-0ubuntu4.1?arch=amd64&distro=ubuntu-20.04&package-id=733a6389eeaa99c9",
       "type": "library",
       "name": "gzip",
       "version": "1.10-0ubuntu4.1",
@@ -2489,7 +2489,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/gzip@1.10-0ubuntu4.1?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/gzip@1.10-0ubuntu4.1?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/has@1.0.3?package-id=bdb012d1993dd3",
@@ -2548,7 +2548,7 @@
       "purl": "pkg:npm/hosted-git-info@5.0.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/hostname@3.23?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=263dae70cc8e6a4f",
+      "bom-ref": "pkg:deb/ubuntu/hostname@3.23?arch=amd64&distro=ubuntu-20.04&package-id=263dae70cc8e6a4f",
       "type": "library",
       "name": "hostname",
       "version": "3.23",
@@ -2559,7 +2559,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/hostname@3.23?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/hostname@3.23?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:pypi/html5lib@1.1?package-id=2899ec2a7c3d3c4f",
@@ -2807,7 +2807,7 @@
       "purl": "pkg:npm/init-package-json@3.0.1"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/init-system-helpers@1.57?arch=all\u0026distro=ubuntu-20.04\u0026package-id=b0e335d96f12154d",
+      "bom-ref": "pkg:deb/ubuntu/init-system-helpers@1.57?arch=all&distro=ubuntu-20.04&package-id=b0e335d96f12154d",
       "type": "library",
       "name": "init-system-helpers",
       "version": "1.57",
@@ -2828,7 +2828,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/init-system-helpers@1.57?arch=all\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/init-system-helpers@1.57?arch=all&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/ip@1.1.5?package-id=be3f9e64d79ae693",
@@ -3265,7 +3265,7 @@
       "purl": "pkg:npm/kuler@2.0.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libacl1@2.2.53-6?arch=amd64\u0026upstream=acl\u0026distro=ubuntu-20.04\u0026package-id=5cec2c2009596050",
+      "bom-ref": "pkg:deb/ubuntu/libacl1@2.2.53-6?arch=amd64&upstream=acl&distro=ubuntu-20.04&package-id=5cec2c2009596050",
       "type": "library",
       "name": "libacl1",
       "version": "2.2.53-6",
@@ -3291,10 +3291,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libacl1@2.2.53-6?arch=amd64\u0026upstream=acl\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libacl1@2.2.53-6?arch=amd64&upstream=acl&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libapt-pkg6.0@2.0.9?arch=amd64\u0026upstream=apt\u0026distro=ubuntu-20.04\u0026package-id=5373bb162000c7e0",
+      "bom-ref": "pkg:deb/ubuntu/libapt-pkg6.0@2.0.9?arch=amd64&upstream=apt&distro=ubuntu-20.04&package-id=5373bb162000c7e0",
       "type": "library",
       "name": "libapt-pkg6.0",
       "version": "2.0.9",
@@ -3310,10 +3310,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libapt-pkg6.0@2.0.9?arch=amd64\u0026upstream=apt\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libapt-pkg6.0@2.0.9?arch=amd64&upstream=apt&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libatomic1@10.3.0-1ubuntu1~20.04?arch=amd64\u0026upstream=gcc-10\u0026distro=ubuntu-20.04\u0026package-id=a45e50bcc21dc904",
+      "bom-ref": "pkg:deb/ubuntu/libatomic1@10.3.0-1ubuntu1~20.04?arch=amd64&upstream=gcc-10&distro=ubuntu-20.04&package-id=a45e50bcc21dc904",
       "type": "library",
       "name": "libatomic1",
       "version": "10.3.0-1ubuntu1~20.04",
@@ -3349,10 +3349,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libatomic1@10.3.0-1ubuntu1~20.04?arch=amd64\u0026upstream=gcc-10\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libatomic1@10.3.0-1ubuntu1~20.04?arch=amd64&upstream=gcc-10&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libattr1@1:2.4.48-5?arch=amd64\u0026upstream=attr\u0026distro=ubuntu-20.04\u0026package-id=edf8dd62bd537bd5",
+      "bom-ref": "pkg:deb/ubuntu/libattr1@1:2.4.48-5?arch=amd64&upstream=attr&distro=ubuntu-20.04&package-id=edf8dd62bd537bd5",
       "type": "library",
       "name": "libattr1",
       "version": "1:2.4.48-5",
@@ -3378,10 +3378,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libattr1@1:2.4.48-5?arch=amd64\u0026upstream=attr\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libattr1@1:2.4.48-5?arch=amd64&upstream=attr&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libaudit-common@1:2.8.5-2ubuntu6?arch=all\u0026upstream=audit\u0026distro=ubuntu-20.04\u0026package-id=4a463ab850d7c68c",
+      "bom-ref": "pkg:deb/ubuntu/libaudit-common@1:2.8.5-2ubuntu6?arch=all&upstream=audit&distro=ubuntu-20.04&package-id=4a463ab850d7c68c",
       "type": "library",
       "name": "libaudit-common",
       "version": "1:2.8.5-2ubuntu6",
@@ -3402,10 +3402,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libaudit-common@1:2.8.5-2ubuntu6?arch=all\u0026upstream=audit\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libaudit-common@1:2.8.5-2ubuntu6?arch=all&upstream=audit&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libaudit1@1:2.8.5-2ubuntu6?arch=amd64\u0026upstream=audit\u0026distro=ubuntu-20.04\u0026package-id=be9537deb8db616e",
+      "bom-ref": "pkg:deb/ubuntu/libaudit1@1:2.8.5-2ubuntu6?arch=amd64&upstream=audit&distro=ubuntu-20.04&package-id=be9537deb8db616e",
       "type": "library",
       "name": "libaudit1",
       "version": "1:2.8.5-2ubuntu6",
@@ -3426,10 +3426,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libaudit1@1:2.8.5-2ubuntu6?arch=amd64\u0026upstream=audit\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libaudit1@1:2.8.5-2ubuntu6?arch=amd64&upstream=audit&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libblkid1@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04\u0026package-id=8668ed2232ebc357",
+      "bom-ref": "pkg:deb/ubuntu/libblkid1@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04&package-id=8668ed2232ebc357",
       "type": "library",
       "name": "libblkid1",
       "version": "2.34-0.1ubuntu9.3",
@@ -3515,10 +3515,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libblkid1@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libblkid1@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libbz2-1.0@1.0.8-2?arch=amd64\u0026upstream=bzip2\u0026distro=ubuntu-20.04\u0026package-id=fd8b0edf257b69b7",
+      "bom-ref": "pkg:deb/ubuntu/libbz2-1.0@1.0.8-2?arch=amd64&upstream=bzip2&distro=ubuntu-20.04&package-id=fd8b0edf257b69b7",
       "type": "library",
       "name": "libbz2-1.0",
       "version": "1.0.8-2",
@@ -3534,10 +3534,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libbz2-1.0@1.0.8-2?arch=amd64\u0026upstream=bzip2\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libbz2-1.0@1.0.8-2?arch=amd64&upstream=bzip2&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libc-bin@2.31-0ubuntu9.9?arch=amd64\u0026upstream=glibc\u0026distro=ubuntu-20.04\u0026package-id=57986ecc4347eed4",
+      "bom-ref": "pkg:deb/ubuntu/libc-bin@2.31-0ubuntu9.9?arch=amd64&upstream=glibc&distro=ubuntu-20.04&package-id=57986ecc4347eed4",
       "type": "library",
       "name": "libc-bin",
       "version": "2.31-0ubuntu9.9",
@@ -3553,10 +3553,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libc-bin@2.31-0ubuntu9.9?arch=amd64\u0026upstream=glibc\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libc-bin@2.31-0ubuntu9.9?arch=amd64&upstream=glibc&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libc6@2.31-0ubuntu9.9?arch=amd64\u0026upstream=glibc\u0026distro=ubuntu-20.04\u0026package-id=8e27f98d9024ca2a",
+      "bom-ref": "pkg:deb/ubuntu/libc6@2.31-0ubuntu9.9?arch=amd64&upstream=glibc&distro=ubuntu-20.04&package-id=8e27f98d9024ca2a",
       "type": "library",
       "name": "libc6",
       "version": "2.31-0ubuntu9.9",
@@ -3572,10 +3572,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libc6@2.31-0ubuntu9.9?arch=amd64\u0026upstream=glibc\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libc6@2.31-0ubuntu9.9?arch=amd64&upstream=glibc&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libcap-ng0@0.7.9-2.1build1?arch=amd64\u0026upstream=libcap-ng\u0026distro=ubuntu-20.04\u0026package-id=57ceb68462a99cb4",
+      "bom-ref": "pkg:deb/ubuntu/libcap-ng0@0.7.9-2.1build1?arch=amd64&upstream=libcap-ng&distro=ubuntu-20.04&package-id=57ceb68462a99cb4",
       "type": "library",
       "name": "libcap-ng0",
       "version": "0.7.9-2.1build1",
@@ -3596,38 +3596,38 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libcap-ng0@0.7.9-2.1build1?arch=amd64\u0026upstream=libcap-ng\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libcap-ng0@0.7.9-2.1build1?arch=amd64&upstream=libcap-ng&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libcom-err2@1.45.5-2ubuntu1.1?arch=amd64\u0026upstream=e2fsprogs\u0026distro=ubuntu-20.04\u0026package-id=d8029cf1db8613e5",
+      "bom-ref": "pkg:deb/ubuntu/libcom-err2@1.45.5-2ubuntu1.1?arch=amd64&upstream=e2fsprogs&distro=ubuntu-20.04&package-id=d8029cf1db8613e5",
       "type": "library",
       "name": "libcom-err2",
       "version": "1.45.5-2ubuntu1.1",
-      "purl": "pkg:deb/ubuntu/libcom-err2@1.45.5-2ubuntu1.1?arch=amd64\u0026upstream=e2fsprogs\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libcom-err2@1.45.5-2ubuntu1.1?arch=amd64&upstream=e2fsprogs&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libcrypt1@1:4.4.10-10ubuntu4?arch=amd64\u0026upstream=libxcrypt\u0026distro=ubuntu-20.04\u0026package-id=8a4302e2e7027353",
+      "bom-ref": "pkg:deb/ubuntu/libcrypt1@1:4.4.10-10ubuntu4?arch=amd64&upstream=libxcrypt&distro=ubuntu-20.04&package-id=8a4302e2e7027353",
       "type": "library",
       "name": "libcrypt1",
       "version": "1:4.4.10-10ubuntu4",
-      "purl": "pkg:deb/ubuntu/libcrypt1@1:4.4.10-10ubuntu4?arch=amd64\u0026upstream=libxcrypt\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libcrypt1@1:4.4.10-10ubuntu4?arch=amd64&upstream=libxcrypt&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libdb5.3@5.3.28+dfsg1-0.6ubuntu2?arch=amd64\u0026upstream=db5.3\u0026distro=ubuntu-20.04\u0026package-id=bc84b4da0031640d",
+      "bom-ref": "pkg:deb/ubuntu/libdb5.3@5.3.28+dfsg1-0.6ubuntu2?arch=amd64&upstream=db5.3&distro=ubuntu-20.04&package-id=bc84b4da0031640d",
       "type": "library",
       "name": "libdb5.3",
       "version": "5.3.28+dfsg1-0.6ubuntu2",
-      "purl": "pkg:deb/ubuntu/libdb5.3@5.3.28+dfsg1-0.6ubuntu2?arch=amd64\u0026upstream=db5.3\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libdb5.3@5.3.28+dfsg1-0.6ubuntu2?arch=amd64&upstream=db5.3&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libdebconfclient0@0.251ubuntu1?arch=amd64\u0026upstream=cdebconf\u0026distro=ubuntu-20.04\u0026package-id=78bbe40d9c2ef9b5",
+      "bom-ref": "pkg:deb/ubuntu/libdebconfclient0@0.251ubuntu1?arch=amd64&upstream=cdebconf&distro=ubuntu-20.04&package-id=78bbe40d9c2ef9b5",
       "type": "library",
       "name": "libdebconfclient0",
       "version": "0.251ubuntu1",
-      "purl": "pkg:deb/ubuntu/libdebconfclient0@0.251ubuntu1?arch=amd64\u0026upstream=cdebconf\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libdebconfclient0@0.251ubuntu1?arch=amd64&upstream=cdebconf&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libext2fs2@1.45.5-2ubuntu1.1?arch=amd64\u0026upstream=e2fsprogs\u0026distro=ubuntu-20.04\u0026package-id=182074100303911b",
+      "bom-ref": "pkg:deb/ubuntu/libext2fs2@1.45.5-2ubuntu1.1?arch=amd64&upstream=e2fsprogs&distro=ubuntu-20.04&package-id=182074100303911b",
       "type": "library",
       "name": "libext2fs2",
       "version": "1.45.5-2ubuntu1.1",
@@ -3643,10 +3643,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libext2fs2@1.45.5-2ubuntu1.1?arch=amd64\u0026upstream=e2fsprogs\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libext2fs2@1.45.5-2ubuntu1.1?arch=amd64&upstream=e2fsprogs&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libfdisk1@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04\u0026package-id=95ad31e81a712549",
+      "bom-ref": "pkg:deb/ubuntu/libfdisk1@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04&package-id=95ad31e81a712549",
       "type": "library",
       "name": "libfdisk1",
       "version": "2.34-0.1ubuntu9.3",
@@ -3732,10 +3732,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libfdisk1@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libfdisk1@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libffi7@3.3-4?arch=amd64\u0026upstream=libffi\u0026distro=ubuntu-20.04\u0026package-id=b43b799d45da9d97",
+      "bom-ref": "pkg:deb/ubuntu/libffi7@3.3-4?arch=amd64&upstream=libffi&distro=ubuntu-20.04&package-id=b43b799d45da9d97",
       "type": "library",
       "name": "libffi7",
       "version": "3.3-4",
@@ -3746,10 +3746,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libffi7@3.3-4?arch=amd64\u0026upstream=libffi\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libffi7@3.3-4?arch=amd64&upstream=libffi&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libgcc-s1@10.3.0-1ubuntu1~20.04?arch=amd64\u0026upstream=gcc-10\u0026distro=ubuntu-20.04\u0026package-id=f98ce69fd9e55bb8",
+      "bom-ref": "pkg:deb/ubuntu/libgcc-s1@10.3.0-1ubuntu1~20.04?arch=amd64&upstream=gcc-10&distro=ubuntu-20.04&package-id=f98ce69fd9e55bb8",
       "type": "library",
       "name": "libgcc-s1",
       "version": "10.3.0-1ubuntu1~20.04",
@@ -3785,10 +3785,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libgcc-s1@10.3.0-1ubuntu1~20.04?arch=amd64\u0026upstream=gcc-10\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libgcc-s1@10.3.0-1ubuntu1~20.04?arch=amd64&upstream=gcc-10&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libgcrypt20@1.8.5-5ubuntu1.1?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=779dc4322dee5841",
+      "bom-ref": "pkg:deb/ubuntu/libgcrypt20@1.8.5-5ubuntu1.1?arch=amd64&distro=ubuntu-20.04&package-id=779dc4322dee5841",
       "type": "library",
       "name": "libgcrypt20",
       "version": "1.8.5-5ubuntu1.1",
@@ -3804,10 +3804,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libgcrypt20@1.8.5-5ubuntu1.1?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libgcrypt20@1.8.5-5ubuntu1.1?arch=amd64&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libgmp10@2:6.2.0+dfsg-4?arch=amd64\u0026upstream=gmp\u0026distro=ubuntu-20.04\u0026package-id=40fc269dcb8b3369",
+      "bom-ref": "pkg:deb/ubuntu/libgmp10@2:6.2.0+dfsg-4?arch=amd64&upstream=gmp&distro=ubuntu-20.04&package-id=40fc269dcb8b3369",
       "type": "library",
       "name": "libgmp10",
       "version": "2:6.2.0+dfsg-4",
@@ -3833,10 +3833,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libgmp10@2:6.2.0+dfsg-4?arch=amd64\u0026upstream=gmp\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libgmp10@2:6.2.0+dfsg-4?arch=amd64&upstream=gmp&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libgnutls30@3.6.13-2ubuntu1.7?arch=amd64\u0026upstream=gnutls28\u0026distro=ubuntu-20.04\u0026package-id=14e671d540876b85",
+      "bom-ref": "pkg:deb/ubuntu/libgnutls30@3.6.13-2ubuntu1.7?arch=amd64&upstream=gnutls28&distro=ubuntu-20.04&package-id=14e671d540876b85",
       "type": "library",
       "name": "libgnutls30",
       "version": "3.6.13-2ubuntu1.7",
@@ -3907,10 +3907,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libgnutls30@3.6.13-2ubuntu1.7?arch=amd64\u0026upstream=gnutls28\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libgnutls30@3.6.13-2ubuntu1.7?arch=amd64&upstream=gnutls28&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libgpg-error0@1.37-1?arch=amd64\u0026upstream=libgpg-error\u0026distro=ubuntu-20.04\u0026package-id=37ef62d87edfe03",
+      "bom-ref": "pkg:deb/ubuntu/libgpg-error0@1.37-1?arch=amd64&upstream=libgpg-error&distro=ubuntu-20.04&package-id=37ef62d87edfe03",
       "type": "library",
       "name": "libgpg-error0",
       "version": "1.37-1",
@@ -3946,10 +3946,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libgpg-error0@1.37-1?arch=amd64\u0026upstream=libgpg-error\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libgpg-error0@1.37-1?arch=amd64&upstream=libgpg-error&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libhogweed5@3.5.1+really3.5.1-2ubuntu0.2?arch=amd64\u0026upstream=nettle\u0026distro=ubuntu-20.04\u0026package-id=3caecccf070e6760",
+      "bom-ref": "pkg:deb/ubuntu/libhogweed5@3.5.1+really3.5.1-2ubuntu0.2?arch=amd64&upstream=nettle&distro=ubuntu-20.04&package-id=3caecccf070e6760",
       "type": "library",
       "name": "libhogweed5",
       "version": "3.5.1+really3.5.1-2ubuntu0.2",
@@ -4005,10 +4005,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libhogweed5@3.5.1+really3.5.1-2ubuntu0.2?arch=amd64\u0026upstream=nettle\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libhogweed5@3.5.1+really3.5.1-2ubuntu0.2?arch=amd64&upstream=nettle&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libidn2-0@2.2.0-2?arch=amd64\u0026upstream=libidn2\u0026distro=ubuntu-20.04\u0026package-id=d2a82c3e28413bc1",
+      "bom-ref": "pkg:deb/ubuntu/libidn2-0@2.2.0-2?arch=amd64&upstream=libidn2&distro=ubuntu-20.04&package-id=d2a82c3e28413bc1",
       "type": "library",
       "name": "libidn2-0",
       "version": "2.2.0-2",
@@ -4049,10 +4049,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libidn2-0@2.2.0-2?arch=amd64\u0026upstream=libidn2\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libidn2-0@2.2.0-2?arch=amd64&upstream=libidn2&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/liblz4-1@1.9.2-2ubuntu0.20.04.1?arch=amd64\u0026upstream=lz4\u0026distro=ubuntu-20.04\u0026package-id=6f2c431caeb4980a",
+      "bom-ref": "pkg:deb/ubuntu/liblz4-1@1.9.2-2ubuntu0.20.04.1?arch=amd64&upstream=lz4&distro=ubuntu-20.04&package-id=6f2c431caeb4980a",
       "type": "library",
       "name": "liblz4-1",
       "version": "1.9.2-2ubuntu0.20.04.1",
@@ -4073,10 +4073,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/liblz4-1@1.9.2-2ubuntu0.20.04.1?arch=amd64\u0026upstream=lz4\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/liblz4-1@1.9.2-2ubuntu0.20.04.1?arch=amd64&upstream=lz4&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/liblzma5@5.2.4-1ubuntu1.1?arch=amd64\u0026upstream=xz-utils\u0026distro=ubuntu-20.04\u0026package-id=a8f6e2f0d5df075c",
+      "bom-ref": "pkg:deb/ubuntu/liblzma5@5.2.4-1ubuntu1.1?arch=amd64&upstream=xz-utils&distro=ubuntu-20.04&package-id=a8f6e2f0d5df075c",
       "type": "library",
       "name": "liblzma5",
       "version": "5.2.4-1ubuntu1.1",
@@ -4152,7 +4152,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/liblzma5@5.2.4-1ubuntu1.1?arch=amd64\u0026upstream=xz-utils\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/liblzma5@5.2.4-1ubuntu1.1?arch=amd64&upstream=xz-utils&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:pypi/libmambapy@0.27.0?package-id=b5c62fc7e865a5c6",
@@ -4162,7 +4162,7 @@
       "purl": "pkg:pypi/libmambapy@0.27.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libmount1@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04\u0026package-id=73e2bbfe6d27dd86",
+      "bom-ref": "pkg:deb/ubuntu/libmount1@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04&package-id=73e2bbfe6d27dd86",
       "type": "library",
       "name": "libmount1",
       "version": "2.34-0.1ubuntu9.3",
@@ -4248,24 +4248,24 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libmount1@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libmount1@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libncurses6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=ed8fb166163a75b8",
+      "bom-ref": "pkg:deb/ubuntu/libncurses6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=ed8fb166163a75b8",
       "type": "library",
       "name": "libncurses6",
       "version": "6.2-0ubuntu2",
-      "purl": "pkg:deb/ubuntu/libncurses6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libncurses6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libncursesw6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=58525ddc073a008a",
+      "bom-ref": "pkg:deb/ubuntu/libncursesw6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=58525ddc073a008a",
       "type": "library",
       "name": "libncursesw6",
       "version": "6.2-0ubuntu2",
-      "purl": "pkg:deb/ubuntu/libncursesw6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libncursesw6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libnettle7@3.5.1+really3.5.1-2ubuntu0.2?arch=amd64\u0026upstream=nettle\u0026distro=ubuntu-20.04\u0026package-id=3d185fbd6a7e56f",
+      "bom-ref": "pkg:deb/ubuntu/libnettle7@3.5.1+really3.5.1-2ubuntu0.2?arch=amd64&upstream=nettle&distro=ubuntu-20.04&package-id=3d185fbd6a7e56f",
       "type": "library",
       "name": "libnettle7",
       "version": "3.5.1+really3.5.1-2ubuntu0.2",
@@ -4321,7 +4321,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libnettle7@3.5.1+really3.5.1-2ubuntu0.2?arch=amd64\u0026upstream=nettle\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libnettle7@3.5.1+really3.5.1-2ubuntu0.2?arch=amd64&upstream=nettle&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/libnpmaccess@6.0.2?package-id=f40b55298600a797",
@@ -4478,7 +4478,7 @@
       "purl": "pkg:npm/libnpmversion@3.0.1"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libp11-kit0@0.23.20-1ubuntu0.1?arch=amd64\u0026upstream=p11-kit\u0026distro=ubuntu-20.04\u0026package-id=9fc0ca46e6d21557",
+      "bom-ref": "pkg:deb/ubuntu/libp11-kit0@0.23.20-1ubuntu0.1?arch=amd64&upstream=p11-kit&distro=ubuntu-20.04&package-id=9fc0ca46e6d21557",
       "type": "library",
       "name": "libp11-kit0",
       "version": "0.23.20-1ubuntu0.1",
@@ -4509,10 +4509,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libp11-kit0@0.23.20-1ubuntu0.1?arch=amd64\u0026upstream=p11-kit\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libp11-kit0@0.23.20-1ubuntu0.1?arch=amd64&upstream=p11-kit&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libpam-modules@1.3.1-5ubuntu4.3?arch=amd64\u0026upstream=pam\u0026distro=ubuntu-20.04\u0026package-id=563cd7ffd9ad09e2",
+      "bom-ref": "pkg:deb/ubuntu/libpam-modules@1.3.1-5ubuntu4.3?arch=amd64&upstream=pam&distro=ubuntu-20.04&package-id=563cd7ffd9ad09e2",
       "type": "library",
       "name": "libpam-modules",
       "version": "1.3.1-5ubuntu4.3",
@@ -4523,10 +4523,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libpam-modules@1.3.1-5ubuntu4.3?arch=amd64\u0026upstream=pam\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libpam-modules@1.3.1-5ubuntu4.3?arch=amd64&upstream=pam&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libpam-modules-bin@1.3.1-5ubuntu4.3?arch=amd64\u0026upstream=pam\u0026distro=ubuntu-20.04\u0026package-id=2fef7b748bc46246",
+      "bom-ref": "pkg:deb/ubuntu/libpam-modules-bin@1.3.1-5ubuntu4.3?arch=amd64&upstream=pam&distro=ubuntu-20.04&package-id=2fef7b748bc46246",
       "type": "library",
       "name": "libpam-modules-bin",
       "version": "1.3.1-5ubuntu4.3",
@@ -4537,10 +4537,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libpam-modules-bin@1.3.1-5ubuntu4.3?arch=amd64\u0026upstream=pam\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libpam-modules-bin@1.3.1-5ubuntu4.3?arch=amd64&upstream=pam&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libpam-runtime@1.3.1-5ubuntu4.3?arch=all\u0026upstream=pam\u0026distro=ubuntu-20.04\u0026package-id=ee86ac677ddf58c5",
+      "bom-ref": "pkg:deb/ubuntu/libpam-runtime@1.3.1-5ubuntu4.3?arch=all&upstream=pam&distro=ubuntu-20.04&package-id=ee86ac677ddf58c5",
       "type": "library",
       "name": "libpam-runtime",
       "version": "1.3.1-5ubuntu4.3",
@@ -4551,10 +4551,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libpam-runtime@1.3.1-5ubuntu4.3?arch=all\u0026upstream=pam\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libpam-runtime@1.3.1-5ubuntu4.3?arch=all&upstream=pam&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libpam0g@1.3.1-5ubuntu4.3?arch=amd64\u0026upstream=pam\u0026distro=ubuntu-20.04\u0026package-id=473c40bcd3d2ef2d",
+      "bom-ref": "pkg:deb/ubuntu/libpam0g@1.3.1-5ubuntu4.3?arch=amd64&upstream=pam&distro=ubuntu-20.04&package-id=473c40bcd3d2ef2d",
       "type": "library",
       "name": "libpam0g",
       "version": "1.3.1-5ubuntu4.3",
@@ -4565,24 +4565,24 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libpam0g@1.3.1-5ubuntu4.3?arch=amd64\u0026upstream=pam\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libpam0g@1.3.1-5ubuntu4.3?arch=amd64&upstream=pam&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libpcre2-8-0@10.34-7ubuntu0.1?arch=amd64\u0026upstream=pcre2\u0026distro=ubuntu-20.04\u0026package-id=cbb0adfb8ce79ae4",
+      "bom-ref": "pkg:deb/ubuntu/libpcre2-8-0@10.34-7ubuntu0.1?arch=amd64&upstream=pcre2&distro=ubuntu-20.04&package-id=cbb0adfb8ce79ae4",
       "type": "library",
       "name": "libpcre2-8-0",
       "version": "10.34-7ubuntu0.1",
-      "purl": "pkg:deb/ubuntu/libpcre2-8-0@10.34-7ubuntu0.1?arch=amd64\u0026upstream=pcre2\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libpcre2-8-0@10.34-7ubuntu0.1?arch=amd64&upstream=pcre2&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libpcre3@2:8.39-12ubuntu0.1?arch=amd64\u0026upstream=pcre3\u0026distro=ubuntu-20.04\u0026package-id=28df348f627128bf",
+      "bom-ref": "pkg:deb/ubuntu/libpcre3@2:8.39-12ubuntu0.1?arch=amd64&upstream=pcre3&distro=ubuntu-20.04&package-id=28df348f627128bf",
       "type": "library",
       "name": "libpcre3",
       "version": "2:8.39-12ubuntu0.1",
-      "purl": "pkg:deb/ubuntu/libpcre3@2:8.39-12ubuntu0.1?arch=amd64\u0026upstream=pcre3\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libpcre3@2:8.39-12ubuntu0.1?arch=amd64&upstream=pcre3&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libprocps8@2:3.3.16-1ubuntu2.3?arch=amd64\u0026upstream=procps\u0026distro=ubuntu-20.04\u0026package-id=393a438be5ba5065",
+      "bom-ref": "pkg:deb/ubuntu/libprocps8@2:3.3.16-1ubuntu2.3?arch=amd64&upstream=procps&distro=ubuntu-20.04&package-id=393a438be5ba5065",
       "type": "library",
       "name": "libprocps8",
       "version": "2:3.3.16-1ubuntu2.3",
@@ -4618,10 +4618,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libprocps8@2:3.3.16-1ubuntu2.3?arch=amd64\u0026upstream=procps\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libprocps8@2:3.3.16-1ubuntu2.3?arch=amd64&upstream=procps&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libpsl5@0.21.0-1ubuntu1?arch=amd64\u0026upstream=libpsl\u0026distro=ubuntu-20.04\u0026package-id=e77e76f35a3ad192",
+      "bom-ref": "pkg:deb/ubuntu/libpsl5@0.21.0-1ubuntu1?arch=amd64&upstream=libpsl&distro=ubuntu-20.04&package-id=e77e76f35a3ad192",
       "type": "library",
       "name": "libpsl5",
       "version": "0.21.0-1ubuntu1",
@@ -4637,10 +4637,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libpsl5@0.21.0-1ubuntu1?arch=amd64\u0026upstream=libpsl\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libpsl5@0.21.0-1ubuntu1?arch=amd64&upstream=libpsl&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libseccomp2@2.5.1-1ubuntu1~20.04.2?arch=amd64\u0026upstream=libseccomp\u0026distro=ubuntu-20.04\u0026package-id=355e0292bcd139c5",
+      "bom-ref": "pkg:deb/ubuntu/libseccomp2@2.5.1-1ubuntu1~20.04.2?arch=amd64&upstream=libseccomp&distro=ubuntu-20.04&package-id=355e0292bcd139c5",
       "type": "library",
       "name": "libseccomp2",
       "version": "2.5.1-1ubuntu1~20.04.2",
@@ -4651,10 +4651,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libseccomp2@2.5.1-1ubuntu1~20.04.2?arch=amd64\u0026upstream=libseccomp\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libseccomp2@2.5.1-1ubuntu1~20.04.2?arch=amd64&upstream=libseccomp&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libselinux1@3.0-1build2?arch=amd64\u0026upstream=libselinux\u0026distro=ubuntu-20.04\u0026package-id=e5d4ae16ac79b901",
+      "bom-ref": "pkg:deb/ubuntu/libselinux1@3.0-1build2?arch=amd64&upstream=libselinux&distro=ubuntu-20.04&package-id=e5d4ae16ac79b901",
       "type": "library",
       "name": "libselinux1",
       "version": "3.0-1build2",
@@ -4670,10 +4670,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libselinux1@3.0-1build2?arch=amd64\u0026upstream=libselinux\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libselinux1@3.0-1build2?arch=amd64&upstream=libselinux&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libsemanage-common@3.0-1build2?arch=all\u0026upstream=libsemanage\u0026distro=ubuntu-20.04\u0026package-id=4c6cd9f68ce53262",
+      "bom-ref": "pkg:deb/ubuntu/libsemanage-common@3.0-1build2?arch=all&upstream=libsemanage&distro=ubuntu-20.04&package-id=4c6cd9f68ce53262",
       "type": "library",
       "name": "libsemanage-common",
       "version": "3.0-1build2",
@@ -4689,10 +4689,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libsemanage-common@3.0-1build2?arch=all\u0026upstream=libsemanage\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libsemanage-common@3.0-1build2?arch=all&upstream=libsemanage&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libsemanage1@3.0-1build2?arch=amd64\u0026upstream=libsemanage\u0026distro=ubuntu-20.04\u0026package-id=963297f19b339026",
+      "bom-ref": "pkg:deb/ubuntu/libsemanage1@3.0-1build2?arch=amd64&upstream=libsemanage&distro=ubuntu-20.04&package-id=963297f19b339026",
       "type": "library",
       "name": "libsemanage1",
       "version": "3.0-1build2",
@@ -4708,10 +4708,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libsemanage1@3.0-1build2?arch=amd64\u0026upstream=libsemanage\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libsemanage1@3.0-1build2?arch=amd64&upstream=libsemanage&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libsepol1@3.0-1ubuntu0.1?arch=amd64\u0026upstream=libsepol\u0026distro=ubuntu-20.04\u0026package-id=7c862941a3db7eb2",
+      "bom-ref": "pkg:deb/ubuntu/libsepol1@3.0-1ubuntu0.1?arch=amd64&upstream=libsepol&distro=ubuntu-20.04&package-id=7c862941a3db7eb2",
       "type": "library",
       "name": "libsepol1",
       "version": "3.0-1ubuntu0.1",
@@ -4727,10 +4727,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libsepol1@3.0-1ubuntu0.1?arch=amd64\u0026upstream=libsepol\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libsepol1@3.0-1ubuntu0.1?arch=amd64&upstream=libsepol&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libsmartcols1@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04\u0026package-id=4c497aae80a33ecf",
+      "bom-ref": "pkg:deb/ubuntu/libsmartcols1@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04&package-id=4c497aae80a33ecf",
       "type": "library",
       "name": "libsmartcols1",
       "version": "2.34-0.1ubuntu9.3",
@@ -4816,24 +4816,24 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libsmartcols1@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libsmartcols1@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libss2@1.45.5-2ubuntu1.1?arch=amd64\u0026upstream=e2fsprogs\u0026distro=ubuntu-20.04\u0026package-id=42dfc2c9bd9328c6",
+      "bom-ref": "pkg:deb/ubuntu/libss2@1.45.5-2ubuntu1.1?arch=amd64&upstream=e2fsprogs&distro=ubuntu-20.04&package-id=42dfc2c9bd9328c6",
       "type": "library",
       "name": "libss2",
       "version": "1.45.5-2ubuntu1.1",
-      "purl": "pkg:deb/ubuntu/libss2@1.45.5-2ubuntu1.1?arch=amd64\u0026upstream=e2fsprogs\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libss2@1.45.5-2ubuntu1.1?arch=amd64&upstream=e2fsprogs&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libssl1.1@1.1.1f-1ubuntu2.16?arch=amd64\u0026upstream=openssl\u0026distro=ubuntu-20.04\u0026package-id=3573725972cb9e90",
+      "bom-ref": "pkg:deb/ubuntu/libssl1.1@1.1.1f-1ubuntu2.16?arch=amd64&upstream=openssl&distro=ubuntu-20.04&package-id=3573725972cb9e90",
       "type": "library",
       "name": "libssl1.1",
       "version": "1.1.1f-1ubuntu2.16",
-      "purl": "pkg:deb/ubuntu/libssl1.1@1.1.1f-1ubuntu2.16?arch=amd64\u0026upstream=openssl\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libssl1.1@1.1.1f-1ubuntu2.16?arch=amd64&upstream=openssl&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libstdc++6@10.3.0-1ubuntu1~20.04?arch=amd64\u0026upstream=gcc-10\u0026distro=ubuntu-20.04\u0026package-id=241fcb3d9b65153a",
+      "bom-ref": "pkg:deb/ubuntu/libstdc++6@10.3.0-1ubuntu1~20.04?arch=amd64&upstream=gcc-10&distro=ubuntu-20.04&package-id=241fcb3d9b65153a",
       "type": "library",
       "name": "libstdc++6",
       "version": "10.3.0-1ubuntu1~20.04",
@@ -4869,10 +4869,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libstdc++6@10.3.0-1ubuntu1~20.04?arch=amd64\u0026upstream=gcc-10\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libstdc++6@10.3.0-1ubuntu1~20.04?arch=amd64&upstream=gcc-10&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64\u0026upstream=systemd\u0026distro=ubuntu-20.04\u0026package-id=f6d3970bcfa61b40",
+      "bom-ref": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04&package-id=f6d3970bcfa61b40",
       "type": "library",
       "name": "libsystemd0",
       "version": "245.4-4ubuntu3.18",
@@ -4913,10 +4913,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64\u0026upstream=systemd\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libtasn1-6@4.16.0-2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=a290c35fc0220ba0",
+      "bom-ref": "pkg:deb/ubuntu/libtasn1-6@4.16.0-2?arch=amd64&distro=ubuntu-20.04&package-id=a290c35fc0220ba0",
       "type": "library",
       "name": "libtasn1-6",
       "version": "4.16.0-2",
@@ -4942,17 +4942,17 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libtasn1-6@4.16.0-2?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libtasn1-6@4.16.0-2?arch=amd64&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libtinfo6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=72ad56d118fefea3",
+      "bom-ref": "pkg:deb/ubuntu/libtinfo6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=72ad56d118fefea3",
       "type": "library",
       "name": "libtinfo6",
       "version": "6.2-0ubuntu2",
-      "purl": "pkg:deb/ubuntu/libtinfo6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libtinfo6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libudev1@245.4-4ubuntu3.18?arch=amd64\u0026upstream=systemd\u0026distro=ubuntu-20.04\u0026package-id=e77cb06cd9859c2b",
+      "bom-ref": "pkg:deb/ubuntu/libudev1@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04&package-id=e77cb06cd9859c2b",
       "type": "library",
       "name": "libudev1",
       "version": "245.4-4ubuntu3.18",
@@ -4993,10 +4993,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libudev1@245.4-4ubuntu3.18?arch=amd64\u0026upstream=systemd\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libudev1@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libunistring2@0.9.10-2?arch=amd64\u0026upstream=libunistring\u0026distro=ubuntu-20.04\u0026package-id=3140ffa70dcd9831",
+      "bom-ref": "pkg:deb/ubuntu/libunistring2@0.9.10-2?arch=amd64&upstream=libunistring&distro=ubuntu-20.04&package-id=3140ffa70dcd9831",
       "type": "library",
       "name": "libunistring2",
       "version": "0.9.10-2",
@@ -5052,10 +5052,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libunistring2@0.9.10-2?arch=amd64\u0026upstream=libunistring\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libunistring2@0.9.10-2?arch=amd64&upstream=libunistring&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libuuid1@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04\u0026package-id=309202d9f4bbb363",
+      "bom-ref": "pkg:deb/ubuntu/libuuid1@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04&package-id=309202d9f4bbb363",
       "type": "library",
       "name": "libuuid1",
       "version": "2.34-0.1ubuntu9.3",
@@ -5141,10 +5141,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libuuid1@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libuuid1@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libzstd1@1.4.4+dfsg-3ubuntu0.1?arch=amd64\u0026upstream=libzstd\u0026distro=ubuntu-20.04\u0026package-id=47cff0564e160066",
+      "bom-ref": "pkg:deb/ubuntu/libzstd1@1.4.4+dfsg-3ubuntu0.1?arch=amd64&upstream=libzstd&distro=ubuntu-20.04&package-id=47cff0564e160066",
       "type": "library",
       "name": "libzstd1",
       "version": "1.4.4+dfsg-3ubuntu0.1",
@@ -5175,10 +5175,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/libzstd1@1.4.4+dfsg-3ubuntu0.1?arch=amd64\u0026upstream=libzstd\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/libzstd1@1.4.4+dfsg-3ubuntu0.1?arch=amd64&upstream=libzstd&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/locales@2.31-0ubuntu9.9?arch=all\u0026upstream=glibc\u0026distro=ubuntu-20.04\u0026package-id=c49b05bf8961537a",
+      "bom-ref": "pkg:deb/ubuntu/locales@2.31-0ubuntu9.9?arch=all&upstream=glibc&distro=ubuntu-20.04&package-id=c49b05bf8961537a",
       "type": "library",
       "name": "locales",
       "version": "2.31-0ubuntu9.9",
@@ -5194,7 +5194,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/locales@2.31-0ubuntu9.9?arch=all\u0026upstream=glibc\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/locales@2.31-0ubuntu9.9?arch=all&upstream=glibc&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/logform@2.4.2?package-id=c406974de3b3967e",
@@ -5211,7 +5211,7 @@
       "purl": "pkg:npm/logform@2.4.2"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/login@1:4.8.1-1ubuntu5.20.04.2?arch=amd64\u0026upstream=shadow\u0026distro=ubuntu-20.04\u0026package-id=6e31c2fd9fc25f2e",
+      "bom-ref": "pkg:deb/ubuntu/login@1:4.8.1-1ubuntu5.20.04.2?arch=amd64&upstream=shadow&distro=ubuntu-20.04&package-id=6e31c2fd9fc25f2e",
       "type": "library",
       "name": "login",
       "version": "1:4.8.1-1ubuntu5.20.04.2",
@@ -5222,10 +5222,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/login@1:4.8.1-1ubuntu5.20.04.2?arch=amd64\u0026upstream=shadow\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/login@1:4.8.1-1ubuntu5.20.04.2?arch=amd64&upstream=shadow&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/logsave@1.45.5-2ubuntu1.1?arch=amd64\u0026upstream=e2fsprogs\u0026distro=ubuntu-20.04\u0026package-id=f2810ec37a256176",
+      "bom-ref": "pkg:deb/ubuntu/logsave@1.45.5-2ubuntu1.1?arch=amd64&upstream=e2fsprogs&distro=ubuntu-20.04&package-id=f2810ec37a256176",
       "type": "library",
       "name": "logsave",
       "version": "1.45.5-2ubuntu1.1",
@@ -5241,7 +5241,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/logsave@1.45.5-2ubuntu1.1?arch=amd64\u0026upstream=e2fsprogs\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/logsave@1.45.5-2ubuntu1.1?arch=amd64&upstream=e2fsprogs&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/lru-cache@6.0.0?package-id=a47dcad19bfd4558",
@@ -5272,7 +5272,7 @@
       "purl": "pkg:npm/lru-cache@7.5.1"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/lsb-base@11.1.0ubuntu2?arch=all\u0026upstream=lsb\u0026distro=ubuntu-20.04\u0026package-id=b76348b7f1282c61",
+      "bom-ref": "pkg:deb/ubuntu/lsb-base@11.1.0ubuntu2?arch=all&upstream=lsb&distro=ubuntu-20.04&package-id=b76348b7f1282c61",
       "type": "library",
       "name": "lsb-base",
       "version": "11.1.0ubuntu2",
@@ -5288,7 +5288,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/lsb-base@11.1.0ubuntu2?arch=all\u0026upstream=lsb\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/lsb-base@11.1.0ubuntu2?arch=all&upstream=lsb&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/make-fetch-happen@10.0.6?package-id=86ca2c5db9ccef21",
@@ -5326,7 +5326,7 @@
       "purl": "pkg:pypi/matplotlib-inline@0.1.6"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/mawk@1.3.4.20200120-2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=435885c82afbf721",
+      "bom-ref": "pkg:deb/ubuntu/mawk@1.3.4.20200120-2?arch=amd64&distro=ubuntu-20.04&package-id=435885c82afbf721",
       "type": "library",
       "name": "mawk",
       "version": "1.3.4.20200120-2",
@@ -5337,7 +5337,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/mawk@1.3.4.20200120-2?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/mawk@1.3.4.20200120-2?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/minimatch@3.1.2?package-id=14a164a996c65c0b",
@@ -5536,7 +5536,7 @@
       "purl": "pkg:npm/moment@2.29.4"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/mount@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04\u0026package-id=20e03a37af64e56c",
+      "bom-ref": "pkg:deb/ubuntu/mount@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04&package-id=20e03a37af64e56c",
       "type": "library",
       "name": "mount",
       "version": "2.34-0.1ubuntu9.3",
@@ -5622,7 +5622,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/mount@2.34-0.1ubuntu9.3?arch=amd64\u0026upstream=util-linux\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/mount@2.34-0.1ubuntu9.3?arch=amd64&upstream=util-linux&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/ms@2.1.2?package-id=927fa255475e4ceb",
@@ -5737,18 +5737,18 @@
       "purl": "pkg:pypi/nbformat@5.6.1"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/ncurses-base@6.2-0ubuntu2?arch=all\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=d7393defd95e4554",
+      "bom-ref": "pkg:deb/ubuntu/ncurses-base@6.2-0ubuntu2?arch=all&upstream=ncurses&distro=ubuntu-20.04&package-id=d7393defd95e4554",
       "type": "library",
       "name": "ncurses-base",
       "version": "6.2-0ubuntu2",
-      "purl": "pkg:deb/ubuntu/ncurses-base@6.2-0ubuntu2?arch=all\u0026upstream=ncurses\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/ncurses-base@6.2-0ubuntu2?arch=all&upstream=ncurses&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/ncurses-bin@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=d6bdd43961b680f6",
+      "bom-ref": "pkg:deb/ubuntu/ncurses-bin@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=d6bdd43961b680f6",
       "type": "library",
       "name": "ncurses-bin",
       "version": "6.2-0ubuntu2",
-      "purl": "pkg:deb/ubuntu/ncurses-bin@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/ncurses-bin@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/negotiator@0.6.3?package-id=3e169690d826f228",
@@ -6087,11 +6087,11 @@
       "purl": "pkg:npm/opener@1.5.2"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/openssl@1.1.1f-1ubuntu2.16?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=d86c49fce21dcd5e",
+      "bom-ref": "pkg:deb/ubuntu/openssl@1.1.1f-1ubuntu2.16?arch=amd64&distro=ubuntu-20.04&package-id=d86c49fce21dcd5e",
       "type": "library",
       "name": "openssl",
       "version": "1.1.1f-1ubuntu2.16",
-      "purl": "pkg:deb/ubuntu/openssl@1.1.1f-1ubuntu2.16?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/openssl@1.1.1f-1ubuntu2.16?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/p-map@4.0.0?package-id=38091708c26ef37a",
@@ -6150,7 +6150,7 @@
       "purl": "pkg:pypi/pamela@1.0.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/pandoc@2.5-3build2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=283ed959bdb8ab5c",
+      "bom-ref": "pkg:deb/ubuntu/pandoc@2.5-3build2?arch=amd64&distro=ubuntu-20.04&package-id=283ed959bdb8ab5c",
       "type": "library",
       "name": "pandoc",
       "version": "2.5-3build2",
@@ -6201,10 +6201,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/pandoc@2.5-3build2?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/pandoc@2.5-3build2?arch=amd64&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/pandoc-data@2.5-3build2?arch=all\u0026upstream=pandoc\u0026distro=ubuntu-20.04\u0026package-id=69a16108c1c7bdf8",
+      "bom-ref": "pkg:deb/ubuntu/pandoc-data@2.5-3build2?arch=all&upstream=pandoc&distro=ubuntu-20.04&package-id=69a16108c1c7bdf8",
       "type": "library",
       "name": "pandoc-data",
       "version": "2.5-3build2",
@@ -6255,7 +6255,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/pandoc-data@2.5-3build2?arch=all\u0026upstream=pandoc\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/pandoc-data@2.5-3build2?arch=all&upstream=pandoc&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:pypi/pandocfilters@1.5.0?package-id=968ef8045314455c",
@@ -6300,7 +6300,7 @@
       "purl": "pkg:pypi/parso@0.8.3"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/passwd@1:4.8.1-1ubuntu5.20.04.2?arch=amd64\u0026upstream=shadow\u0026distro=ubuntu-20.04\u0026package-id=858f573489f83f86",
+      "bom-ref": "pkg:deb/ubuntu/passwd@1:4.8.1-1ubuntu5.20.04.2?arch=amd64&upstream=shadow&distro=ubuntu-20.04&package-id=858f573489f83f86",
       "type": "library",
       "name": "passwd",
       "version": "1:4.8.1-1ubuntu5.20.04.2",
@@ -6311,7 +6311,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/passwd@1:4.8.1-1ubuntu5.20.04.2?arch=amd64\u0026upstream=shadow\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/passwd@1:4.8.1-1ubuntu5.20.04.2?arch=amd64&upstream=shadow&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/path-is-absolute@1.0.1?package-id=47e728fdb3bab5c",
@@ -6328,7 +6328,7 @@
       "purl": "pkg:npm/path-is-absolute@1.0.1"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/perl-base@5.30.0-9ubuntu0.2?arch=amd64\u0026upstream=perl\u0026distro=ubuntu-20.04\u0026package-id=eab1752e76cf29f",
+      "bom-ref": "pkg:deb/ubuntu/perl-base@5.30.0-9ubuntu0.2?arch=amd64&upstream=perl&distro=ubuntu-20.04&package-id=eab1752e76cf29f",
       "type": "library",
       "name": "perl-base",
       "version": "5.30.0-9ubuntu0.2",
@@ -6459,7 +6459,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/perl-base@5.30.0-9ubuntu0.2?arch=amd64\u0026upstream=perl\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/perl-base@5.30.0-9ubuntu0.2?arch=amd64&upstream=perl&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:pypi/pexpect@4.8.0?package-id=522b9cb3be0b3e23",
@@ -6525,7 +6525,7 @@
       "purl": "pkg:npm/proc-log@2.0.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/procps@2:3.3.16-1ubuntu2.3?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=1b952d75ffac7280",
+      "bom-ref": "pkg:deb/ubuntu/procps@2:3.3.16-1ubuntu2.3?arch=amd64&distro=ubuntu-20.04&package-id=1b952d75ffac7280",
       "type": "library",
       "name": "procps",
       "version": "2:3.3.16-1ubuntu2.3",
@@ -6561,7 +6561,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/procps@2:3.3.16-1ubuntu2.3?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/procps@2:3.3.16-1ubuntu2.3?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/prom-client@14.1.0?package-id=f4c56995575df854",
@@ -7067,7 +7067,7 @@
       "purl": "pkg:pypi/ruamel.yaml.clib@0.2.6"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/run-one@1.17-0ubuntu1?arch=all\u0026distro=ubuntu-20.04\u0026package-id=855b33833fc4f458",
+      "bom-ref": "pkg:deb/ubuntu/run-one@1.17-0ubuntu1?arch=all&distro=ubuntu-20.04&package-id=855b33833fc4f458",
       "type": "library",
       "name": "run-one",
       "version": "1.17-0ubuntu1",
@@ -7078,7 +7078,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/run-one@1.17-0ubuntu1?arch=all\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/run-one@1.17-0ubuntu1?arch=all&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/safe-buffer@5.2.1?package-id=e4d01735928d2c48",
@@ -7137,7 +7137,7 @@
       "purl": "pkg:npm/safer-buffer@2.1.2"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/sed@4.7-1?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=24bbb8989a1870c7",
+      "bom-ref": "pkg:deb/ubuntu/sed@4.7-1?arch=amd64&distro=ubuntu-20.04&package-id=24bbb8989a1870c7",
       "type": "library",
       "name": "sed",
       "version": "4.7-1",
@@ -7148,7 +7148,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/sed@4.7-1?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/sed@4.7-1?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/semver@7.3.5?package-id=82d9b88230ac0c97",
@@ -7165,7 +7165,7 @@
       "purl": "pkg:npm/semver@7.3.5"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/sensible-utils@0.0.12+nmu1?arch=all\u0026distro=ubuntu-20.04\u0026package-id=7e50cf6ac335106e",
+      "bom-ref": "pkg:deb/ubuntu/sensible-utils@0.0.12+nmu1?arch=all&distro=ubuntu-20.04&package-id=7e50cf6ac335106e",
       "type": "library",
       "name": "sensible-utils",
       "version": "0.0.12+nmu1",
@@ -7196,7 +7196,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/sensible-utils@0.0.12+nmu1?arch=all\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/sensible-utils@0.0.12+nmu1?arch=all&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/set-blocking@2.0.0?package-id=a3b295bca59068ea",
@@ -7507,11 +7507,11 @@
       "purl": "pkg:npm/strip-ansi@6.0.1"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/sudo@1.8.31-1ubuntu1.2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=7eea7210a1f90856",
+      "bom-ref": "pkg:deb/ubuntu/sudo@1.8.31-1ubuntu1.2?arch=amd64&distro=ubuntu-20.04&package-id=7eea7210a1f90856",
       "type": "library",
       "name": "sudo",
       "version": "1.8.31-1ubuntu1.2",
-      "purl": "pkg:deb/ubuntu/sudo@1.8.31-1ubuntu1.2?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/sudo@1.8.31-1ubuntu1.2?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/supports-color@7.2.0?package-id=ed8fdf3cbab39e96",
@@ -7528,7 +7528,7 @@
       "purl": "pkg:npm/supports-color@7.2.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/sysvinit-utils@2.96-2.1ubuntu1?arch=amd64\u0026upstream=sysvinit\u0026distro=ubuntu-20.04\u0026package-id=abc451774789c392",
+      "bom-ref": "pkg:deb/ubuntu/sysvinit-utils@2.96-2.1ubuntu1?arch=amd64&upstream=sysvinit&distro=ubuntu-20.04&package-id=abc451774789c392",
       "type": "library",
       "name": "sysvinit-utils",
       "version": "2.96-2.1ubuntu1",
@@ -7544,10 +7544,10 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/sysvinit-utils@2.96-2.1ubuntu1?arch=amd64\u0026upstream=sysvinit\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/sysvinit-utils@2.96-2.1ubuntu1?arch=amd64&upstream=sysvinit&distro=ubuntu-20.04"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/tar@1.30+dfsg-7ubuntu0.20.04.2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=a57014f4a463478d",
+      "bom-ref": "pkg:deb/ubuntu/tar@1.30+dfsg-7ubuntu0.20.04.2?arch=amd64&distro=ubuntu-20.04&package-id=a57014f4a463478d",
       "type": "library",
       "name": "tar",
       "version": "1.30+dfsg-7ubuntu0.20.04.2",
@@ -7563,7 +7563,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/tar@1.30+dfsg-7ubuntu0.20.04.2?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/tar@1.30+dfsg-7ubuntu0.20.04.2?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/tar@6.1.11?package-id=48015628787aef88",
@@ -7601,7 +7601,7 @@
       "licenses": [
         {
           "license": {
-            "name": "# terminado: A python websocket server backend for xterm.js\n #\n #  BSD License\n #\n #  Copyright (c) 2014-, Jupyter development team\n #  Copyright (c) 2014, Ramalingam Saravanan \u003csarava@sarava.net\u003e\n #  All rights reserved.\n #\n #  Redistribution and use in source and binary forms, with or without\n #  modification, are permitted provided that the following conditions are met:\n #\n #  1. Redistributions of source code must retain the above copyright notice, this\n #     list of conditions and the following disclaimer.\n #  2. Redistributions in binary form must reproduce the above copyright notice,\n #     this list of conditions and the following disclaimer in the documentation\n #     and/or other materials provided with the distribution.\n #\n #  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\n #  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n #  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\n #  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\n #  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n #  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n #  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n #  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n #  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n #  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+            "name": "# terminado: A python websocket server backend for xterm.js\n #\n #  BSD License\n #\n #  Copyright (c) 2014-, Jupyter development team\n #  Copyright (c) 2014, Ramalingam Saravanan <sarava@sarava.net>\n #  All rights reserved.\n #\n #  Redistribution and use in source and binary forms, with or without\n #  modification, are permitted provided that the following conditions are met:\n #\n #  1. Redistributions of source code must retain the above copyright notice, this\n #     list of conditions and the following disclaimer.\n #  2. Redistributions in binary form must reproduce the above copyright notice,\n #     this list of conditions and the following disclaimer in the documentation\n #     and/or other materials provided with the distribution.\n #\n #  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\n #  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n #  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\n #  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\n #  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n #  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n #  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n #  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n #  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n #  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
           }
         }
       ],
@@ -7657,7 +7657,7 @@
       "purl": "pkg:npm/text-table@0.2.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/tini@0.18.0-1?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=ea9be0bdac096c84",
+      "bom-ref": "pkg:deb/ubuntu/tini@0.18.0-1?arch=amd64&distro=ubuntu-20.04&package-id=ea9be0bdac096c84",
       "type": "library",
       "name": "tini",
       "version": "0.18.0-1",
@@ -7668,7 +7668,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/tini@0.18.0-1?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/tini@0.18.0-1?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/tiny-relative-date@1.3.0?package-id=2168db1a898018b0",
@@ -7797,7 +7797,7 @@
       "purl": "pkg:pypi/typing_extensions@4.4.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/ubuntu-keyring@2020.02.11.4?arch=all\u0026distro=ubuntu-20.04\u0026package-id=6d2b18ebcbe1dab7",
+      "bom-ref": "pkg:deb/ubuntu/ubuntu-keyring@2020.02.11.4?arch=all&distro=ubuntu-20.04&package-id=6d2b18ebcbe1dab7",
       "type": "library",
       "name": "ubuntu-keyring",
       "version": "2020.02.11.4",
@@ -7808,7 +7808,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/ubuntu-keyring@2020.02.11.4?arch=all\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/ubuntu-keyring@2020.02.11.4?arch=all&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/unique-filename@1.1.1?package-id=e5dfdb33e27cda8b",
@@ -7881,7 +7881,7 @@
       "purl": "pkg:npm/util-deprecate@1.0.2"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/util-linux@2.34-0.1ubuntu9.3?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=980ca6ad8f0b50ad",
+      "bom-ref": "pkg:deb/ubuntu/util-linux@2.34-0.1ubuntu9.3?arch=amd64&distro=ubuntu-20.04&package-id=980ca6ad8f0b50ad",
       "type": "library",
       "name": "util-linux",
       "version": "2.34-0.1ubuntu9.3",
@@ -7967,7 +7967,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/util-linux@2.34-0.1ubuntu9.3?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/util-linux@2.34-0.1ubuntu9.3?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:npm/validate-npm-package-license@3.0.4?package-id=2919ebdf69e989ee",
@@ -8068,7 +8068,7 @@
       "purl": "pkg:pypi/websocket-client@1.4.1"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/wget@1.20.3-1ubuntu2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=49aca49f7313affb",
+      "bom-ref": "pkg:deb/ubuntu/wget@1.20.3-1ubuntu2?arch=amd64&distro=ubuntu-20.04&package-id=49aca49f7313affb",
       "type": "library",
       "name": "wget",
       "version": "1.20.3-1ubuntu2",
@@ -8084,7 +8084,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/wget@1.20.3-1ubuntu2?arch=amd64\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/wget@1.20.3-1ubuntu2?arch=amd64&distro=ubuntu-20.04"
     },
     {
       "bom-ref": "pkg:pypi/wheel@0.37.1?package-id=9384876dedc7c12d",
@@ -8206,7 +8206,7 @@
       "purl": "pkg:pypi/zipp@3.9.0"
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/zlib1g@1:1.2.11.dfsg-2ubuntu1.4?arch=amd64\u0026upstream=zlib\u0026distro=ubuntu-20.04\u0026package-id=4ba1ec4a5e4a5848",
+      "bom-ref": "pkg:deb/ubuntu/zlib1g@1:1.2.11.dfsg-2ubuntu1.4?arch=amd64&upstream=zlib&distro=ubuntu-20.04&package-id=4ba1ec4a5e4a5848",
       "type": "library",
       "name": "zlib1g",
       "version": "1:1.2.11.dfsg-2ubuntu1.4",
@@ -8217,7 +8217,7 @@
           }
         }
       ],
-      "purl": "pkg:deb/ubuntu/zlib1g@1:1.2.11.dfsg-2ubuntu1.4?arch=amd64\u0026upstream=zlib\u0026distro=ubuntu-20.04"
+      "purl": "pkg:deb/ubuntu/zlib1g@1:1.2.11.dfsg-2ubuntu1.4?arch=amd64&upstream=zlib&distro=ubuntu-20.04"
     }
   ],
   "vulnerabilities": [
@@ -8238,11 +8238,14 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/ca-certificates@20211016~20.04.1?arch=all\u0026distro=ubuntu-20.04\u0026package-id=64cb765b879544ec"
+          "ref": "pkg:deb/ubuntu/ca-certificates@20211016~20.04.1?arch=all&distro=ubuntu-20.04&package-id=64cb765b879544ec"
         }
       ],
       "properties": [
@@ -8270,7 +8273,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -8305,7 +8311,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/coreutils@8.30-3ubuntu2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=f77283ee51e117fa"
+          "ref": "pkg:deb/ubuntu/coreutils@8.30-3ubuntu2?arch=amd64&distro=ubuntu-20.04&package-id=f77283ee51e117fa"
         }
       ],
       "properties": []
@@ -8328,7 +8334,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -8363,7 +8372,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/gpgv@2.2.19-3ubuntu2.2?arch=amd64\u0026upstream=gnupg2\u0026distro=ubuntu-20.04\u0026package-id=59b00c6588050b82"
+          "ref": "pkg:deb/ubuntu/gpgv@2.2.19-3ubuntu2.2?arch=amd64&upstream=gnupg2&distro=ubuntu-20.04&package-id=59b00c6588050b82"
         }
       ],
       "properties": []
@@ -8397,7 +8406,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -8435,7 +8447,11 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "detail": "no further information",
+        "justification": "",
+        "response": "",
+        "status": "wontfix"
       },
       "affects": [
         {
@@ -8462,7 +8478,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -8497,7 +8516,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libc-bin@2.31-0ubuntu9.9?arch=amd64\u0026upstream=glibc\u0026distro=ubuntu-20.04\u0026package-id=57986ecc4347eed4"
+          "ref": "pkg:deb/ubuntu/libc-bin@2.31-0ubuntu9.9?arch=amd64&upstream=glibc&distro=ubuntu-20.04&package-id=57986ecc4347eed4"
         }
       ],
       "properties": []
@@ -8523,7 +8542,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libc6@2.31-0ubuntu9.9?arch=amd64\u0026upstream=glibc\u0026distro=ubuntu-20.04\u0026package-id=8e27f98d9024ca2a"
+          "ref": "pkg:deb/ubuntu/libc6@2.31-0ubuntu9.9?arch=amd64&upstream=glibc&distro=ubuntu-20.04&package-id=8e27f98d9024ca2a"
         }
       ],
       "properties": []
@@ -8549,7 +8568,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libgmp10@2:6.2.0+dfsg-4?arch=amd64\u0026upstream=gmp\u0026distro=ubuntu-20.04\u0026package-id=40fc269dcb8b3369"
+          "ref": "pkg:deb/ubuntu/libgmp10@2:6.2.0+dfsg-4?arch=amd64&upstream=gmp&distro=ubuntu-20.04&package-id=40fc269dcb8b3369"
         }
       ],
       "properties": [
@@ -8580,7 +8599,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libncurses6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=ed8fb166163a75b8"
+          "ref": "pkg:deb/ubuntu/libncurses6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=ed8fb166163a75b8"
         }
       ],
       "properties": []
@@ -8606,7 +8625,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libncurses6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=ed8fb166163a75b8"
+          "ref": "pkg:deb/ubuntu/libncurses6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=ed8fb166163a75b8"
         }
       ],
       "properties": []
@@ -8632,7 +8651,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libncursesw6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=58525ddc073a008a"
+          "ref": "pkg:deb/ubuntu/libncursesw6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=58525ddc073a008a"
         }
       ],
       "properties": []
@@ -8658,7 +8677,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libncursesw6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=58525ddc073a008a"
+          "ref": "pkg:deb/ubuntu/libncursesw6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=58525ddc073a008a"
         }
       ],
       "properties": []
@@ -8684,7 +8703,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libpcre3@2:8.39-12ubuntu0.1?arch=amd64\u0026upstream=pcre3\u0026distro=ubuntu-20.04\u0026package-id=28df348f627128bf"
+          "ref": "pkg:deb/ubuntu/libpcre3@2:8.39-12ubuntu0.1?arch=amd64&upstream=pcre3&distro=ubuntu-20.04&package-id=28df348f627128bf"
         }
       ],
       "properties": []
@@ -8710,7 +8729,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64\u0026upstream=systemd\u0026distro=ubuntu-20.04\u0026package-id=f6d3970bcfa61b40"
+          "ref": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04&package-id=f6d3970bcfa61b40"
         }
       ],
       "properties": []
@@ -8736,7 +8755,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libtinfo6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=72ad56d118fefea3"
+          "ref": "pkg:deb/ubuntu/libtinfo6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=72ad56d118fefea3"
         }
       ],
       "properties": []
@@ -8762,7 +8781,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libtinfo6@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=72ad56d118fefea3"
+          "ref": "pkg:deb/ubuntu/libtinfo6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=72ad56d118fefea3"
         }
       ],
       "properties": []
@@ -8784,11 +8803,14 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libudev1@245.4-4ubuntu3.18?arch=amd64\u0026upstream=systemd\u0026distro=ubuntu-20.04\u0026package-id=e77cb06cd9859c2b"
+          "ref": "pkg:deb/ubuntu/libudev1@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04&package-id=e77cb06cd9859c2b"
         }
       ],
       "properties": []
@@ -8814,7 +8836,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/locales@2.31-0ubuntu9.9?arch=all\u0026upstream=glibc\u0026distro=ubuntu-20.04\u0026package-id=c49b05bf8961537a"
+          "ref": "pkg:deb/ubuntu/locales@2.31-0ubuntu9.9?arch=all&upstream=glibc&distro=ubuntu-20.04&package-id=c49b05bf8961537a"
         }
       ],
       "properties": []
@@ -8840,7 +8862,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/login@1:4.8.1-1ubuntu5.20.04.2?arch=amd64\u0026upstream=shadow\u0026distro=ubuntu-20.04\u0026package-id=6e31c2fd9fc25f2e"
+          "ref": "pkg:deb/ubuntu/login@1:4.8.1-1ubuntu5.20.04.2?arch=amd64&upstream=shadow&distro=ubuntu-20.04&package-id=6e31c2fd9fc25f2e"
         }
       ],
       "properties": []
@@ -8866,7 +8888,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/ncurses-base@6.2-0ubuntu2?arch=all\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=d7393defd95e4554"
+          "ref": "pkg:deb/ubuntu/ncurses-base@6.2-0ubuntu2?arch=all&upstream=ncurses&distro=ubuntu-20.04&package-id=d7393defd95e4554"
         }
       ],
       "properties": []
@@ -8892,7 +8914,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/ncurses-base@6.2-0ubuntu2?arch=all\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=d7393defd95e4554"
+          "ref": "pkg:deb/ubuntu/ncurses-base@6.2-0ubuntu2?arch=all&upstream=ncurses&distro=ubuntu-20.04&package-id=d7393defd95e4554"
         }
       ],
       "properties": []
@@ -8918,7 +8940,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/ncurses-bin@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=d6bdd43961b680f6"
+          "ref": "pkg:deb/ubuntu/ncurses-bin@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=d6bdd43961b680f6"
         }
       ],
       "properties": []
@@ -8944,7 +8966,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/ncurses-bin@6.2-0ubuntu2?arch=amd64\u0026upstream=ncurses\u0026distro=ubuntu-20.04\u0026package-id=d6bdd43961b680f6"
+          "ref": "pkg:deb/ubuntu/ncurses-bin@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=d6bdd43961b680f6"
         }
       ],
       "properties": []
@@ -8970,7 +8992,7 @@
           "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
         }
       ],
-      "description": "npm pack ignores root-level .gitignore and .npmignore file exclusion directives when run in a workspace or with a workspace flag (ie. `--workspaces`, `--workspace=\u003cname\u003e`). Anyone who has run `npm pack` or `npm publish` inside a workspace, as of v7.9.0 and v7.13.0 respectively, may be affected and have published files into the npm registry they did not intend to include. Users should upgrade to the latest, patched version of npm v8.11.0, run: npm i -g npm@latest . Node.js versions v16.15.1, v17.19.1, and v18.3.0 include the patched v8.11.0 version of npm.",
+      "description": "npm pack ignores root-level .gitignore and .npmignore file exclusion directives when run in a workspace or with a workspace flag (ie. `--workspaces`, `--workspace=<name>`). Anyone who has run `npm pack` or `npm publish` inside a workspace, as of v7.9.0 and v7.13.0 respectively, may be affected and have published files into the npm registry they did not intend to include. Users should upgrade to the latest, patched version of npm v8.11.0, run: npm i -g npm@latest . Node.js versions v16.15.1, v17.19.1, and v18.3.0 include the patched v8.11.0 version of npm.",
       "advisories": [
         {
           "url": "https://github.com/nodejs/node/pull/43210"
@@ -9004,7 +9026,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -9031,7 +9056,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -9076,7 +9104,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -9116,7 +9147,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -9156,7 +9190,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -9196,7 +9233,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -9226,7 +9266,7 @@
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/passwd@1:4.8.1-1ubuntu5.20.04.2?arch=amd64\u0026upstream=shadow\u0026distro=ubuntu-20.04\u0026package-id=858f573489f83f86"
+          "ref": "pkg:deb/ubuntu/passwd@1:4.8.1-1ubuntu5.20.04.2?arch=amd64&upstream=shadow&distro=ubuntu-20.04&package-id=858f573489f83f86"
         }
       ],
       "properties": []
@@ -9248,11 +9288,14 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/perl-base@5.30.0-9ubuntu0.2?arch=amd64\u0026upstream=perl\u0026distro=ubuntu-20.04\u0026package-id=eab1752e76cf29f"
+          "ref": "pkg:deb/ubuntu/perl-base@5.30.0-9ubuntu0.2?arch=amd64&upstream=perl&distro=ubuntu-20.04&package-id=eab1752e76cf29f"
         }
       ],
       "properties": [
@@ -9365,7 +9408,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "maybefix",
+        "response": "we dont know",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -9424,7 +9470,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -9480,7 +9529,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -9563,7 +9615,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
@@ -9589,11 +9644,14 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/wget@1.20.3-1ubuntu2?arch=amd64\u0026distro=ubuntu-20.04\u0026package-id=49aca49f7313affb"
+          "ref": "pkg:deb/ubuntu/wget@1.20.3-1ubuntu2?arch=amd64&distro=ubuntu-20.04&package-id=49aca49f7313affb"
         }
       ],
       "properties": []
@@ -9615,11 +9673,14 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "open",
+        "response": "",
+        "justification": "",
+        "detail": "no further information"
       },
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/zlib1g@1:1.2.11.dfsg-2ubuntu1.4?arch=amd64\u0026upstream=zlib\u0026distro=ubuntu-20.04\u0026package-id=4ba1ec4a5e4a5848"
+          "ref": "pkg:deb/ubuntu/zlib1g@1:1.2.11.dfsg-2ubuntu1.4?arch=amd64&upstream=zlib&distro=ubuntu-20.04&package-id=4ba1ec4a5e4a5848"
         }
       ],
       "properties": [

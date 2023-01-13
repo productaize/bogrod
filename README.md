@@ -10,14 +10,33 @@ Format
 The release notes format is simply a YAML file with a
 security section:
 
+    # notes.yaml
     # security:
-    #  - <CVE#> severity status + comment
+    #  - <CVE#> severity status [comment]
     security:
-    - CVE-2022-999999 high open 
-    - CVE-2022-999989 high fixed
+    - CVE-2022-999999 high open will fix in next release 
+    - CVE-2022-999989 high fixed will fix in next release
 
-This is a subset of the release notes format used by reno, the
+This is a superset of the release notes format used by reno, the
 release notes tools.
+
+Adding Vulnerability Exploit information (VEX)
+-----------------------------------------------
+
+Bogrod can extract vulnerability exploit information from 
+the release notes or from a vex.yaml file (--vex-file):
+
+    # vex.yaml
+    CVE-2022-999999:
+        state: open
+        response: will fix in next release     
+        detail: affects only if debug flag is set
+        justification: in normal operation this is not an issue
+
+The vex.yaml file is used to update the "analysis" part of the 
+CycloneDX sbom when the -x flag is specified. If --vex-file is
+not specified the information from the security section in the
+notes is used to set the analysis 'state' and 'response' fields.
 
 Syntax
 ------
@@ -25,8 +44,8 @@ Syntax
 Run as a command line utility:
 
     $ bogrod -h
-    usage: bogrod [-h] [-n NOTES] [-o OUTPUT] [-w] sbom
-    
+    usage: bogrod [-h] [-n NOTES] [-o OUTPUT] [-s SEVERITIES] [-x] [--vex-file VEX_FILE] [-m] [-w] sbom
+
     positional arguments:
       sbom                  /path/to/cyclonedx-sbom.json
     
@@ -36,6 +55,11 @@ Run as a command line utility:
                             /path/to/notes.yaml
       -o OUTPUT, --output OUTPUT
                             output format [table,json,yaml,raw]
+      -s SEVERITIES, --severities SEVERITIES
+                            list of serverities in critical,high,medium,low
+      -x, --vex             update vex information in sbom
+      --vex-file VEX_FILE   /path/to/vex.yaml
+      -m, --merge-vex       Merge vex data back to sbom
       -w, --write-notes     update notes according to sbom (add new, mark fixed)
    
 
