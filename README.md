@@ -1,8 +1,8 @@
 Bogrod
 ======
 
-Automatically update release notes with vulnerabilities 
-from an SBOM in cyclonedx format.
+Automatically update release notes with vulnerabilities information (VEX)
+from, and merge with, SBOM in cyclonedx format.
 
 Format
 ------
