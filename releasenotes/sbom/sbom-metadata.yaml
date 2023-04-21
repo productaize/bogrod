@@ -1,0 +1,11 @@
+# properties to merge with sbom
+metadata:
+  supplier:
+    name: productaize
+    url:
+    - https://productaize.io
+    contact:
+      - name: F Ounder
+        email: founder@productaize.io
+
+

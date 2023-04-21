@@ -16,6 +16,18 @@
       "type": "container",
       "name": "jupyter/base-notebook:ubuntu-20.04",
       "version": "sha256:21fd9f9e7e6698ca147bcc87dbeecc485379dddeaa6704f78cc6b4e7f97ec9af"
+    },
+    "supplier": {
+      "name": "productaize",
+      "url": [
+        "https://productaize.io"
+      ],
+      "contact": [
+        {
+          "name": "F Ounder",
+          "email": "founder@productaize.io"
+        }
+      ]
     }
   },
   "components": [
@@ -9489,10 +9501,10 @@
         }
       ],
       "analysis": {
-        "state": "in_triage",
+        "state": "not_affected",
         "response": [],
         "justification": "",
-        "detail": "no further information"
+        "detail": "we are not affected by this"
       },
       "affects": [
         {
