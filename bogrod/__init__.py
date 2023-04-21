@@ -130,7 +130,11 @@ class Bogrod:
                     yaml.safe_dump(data, fout)
         else:
             with open(path, 'w') as fout:
-                json.dump(self.vex, fout, indent=2)
+                if path.suffix == '.json':
+                    json.dump(self.vex, fout, indent=2)
+                elif path.suffix == '.yaml':
+                    yaml.safe_dump(self.vex, fout)
+
 
     def security_notes(self):
         notes = {}
@@ -147,13 +151,18 @@ class Bogrod:
         return notes
 
     def read_vex(self, path):
-        with open(path, 'r') as fin:
-            self.vex = yaml.safe_load(fin)
+        try:
+            with open(path, 'r') as fin:
+                self.vex = yaml.safe_load(fin)
+        except:
+            print(f"WARNING: could not read --vex-file {path}. Specify -x to create from sbom")
+            self.vex = {}
 
     def update_vex(self):
         # https://github.com/CycloneDX/bom-examples/blob/master/VEX/vex.json
         notes = self.security_notes()
-        self.vex = all_vex = self.vex or self.notes.get('security-vex', {})
+        self.vex = all_vex = self.vex
+        self.vex = self.notes.get('security-vex', {}) if self.vex is None and self.notes else self.vex
         ensure_list = lambda v: v if isinstance(v, list) else v.split(',')
         ensure_no_empty = lambda l: [e for e in l if e]
         for vuln in self.vulnerabilities():
@@ -185,12 +194,13 @@ class Bogrod:
                 continue
             description = vuln.get('description', ' ')
             short = description[0:min(len(description), 40)]
+            vex = notes.get(vuln['id']) or self.vex.get(vuln['id']) or {}
             record = {
                 'id': vuln['id'],
                 'name': vuln['source']['name'],
                 'severity': severity,
-                'state': notes.get(vuln['id'], {}).get('state'),
-                'comment': notes.get(vuln['id'], {}).get('comment'),
+                'state': vex.get('state'),
+                'comment': vex.get('detail') or notes.get(vuln['id'], {}).get('comment'),
                 'affects': vuln['affects'][0]['ref'].split('?')[0],
                 'description': description,
                 'short': short,
