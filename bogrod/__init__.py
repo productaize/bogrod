@@ -6,6 +6,8 @@ from jsonschema.exceptions import ValidationError
 from pathlib import Path
 from tabulate import tabulate
 
+from bogrod.util import dict_merge
+
 
 class Bogrod:
     """ Bogrod - utility to SBOM and VEX information
@@ -40,6 +42,7 @@ class Bogrod:
         security:
         - "<vulnerability id> <severity> <status>"
     """
+
     def __init__(self, data, notes=None, vex=None):
         self.data = data
         self.notes = notes
@@ -51,7 +54,7 @@ class Bogrod:
     def vulnerabilities(self, as_dict=False):
         vuln = self.data.get('vulnerabilities', [])
         if as_dict:
-            vuln = { v['id']: v for v in vuln }
+            vuln = {v['id']: v for v in vuln}
         return vuln
 
     def read_notes(self, path):
@@ -97,7 +100,7 @@ class Bogrod:
         with open(path, 'w') as fout:
             yaml.safe_dump(self.notes, fout, default_style='|')
 
-    def write_vex(self, path):
+    def write_vex(self, path, properties=None):
         # https://blog.adolus.com/a-deeper-dive-into-vex-documents
         assert self.vex, "no vex information found, call bogrod.update_vex() first"
         path = Path(path)
@@ -106,7 +109,7 @@ class Bogrod:
             if path.suffix == '.json':
                 with open(path, 'r') as fin:
                     data = json.load(fin)
-                    if data.get('bomFormat').lower() == 'cyclonedx':
+                    if data.get('bomFormat', '').lower() == 'cyclonedx':
                         all_vulns = {v['id']: v for v in data['vulnerabilities']}
                         for k, v in self.vex.items():
                             if k not in all_vulns:
@@ -116,6 +119,9 @@ class Bogrod:
                             vuln['analysis'].update(v)
                     else:
                         data = self.vex
+                    if properties:
+                        # FIXME this duplicates self.merge_properties
+                        dict_merge(data, properties)
                 with open(path, 'w') as fout:
                     json.dump(data, fout, indent=2)
             elif path.suffix == '.yaml':
@@ -228,6 +234,13 @@ class Bogrod:
             bogrod.read_notes(notes_path)
         return bogrod
 
+    def merge_properties(self, prop_path, data=None):
+        with open(prop_path) as fin:
+            prop_data = yaml.safe_load(fin)
+        data = data or self.data
+        dict_merge(data, prop_data)
+        return prop_data
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -243,6 +256,8 @@ def main():
                         help='update vex information in sbom')
     parser.add_argument('--vex-file',
                         help='/path/to/vex.yaml')
+    parser.add_argument('--sbom-properties',
+                        help='Merge sbom with information in /path/to/properties.yaml')
     parser.add_argument('-m', '--merge-vex', action='store_true', default=True,
                         help='Merge vex data back to sbom')
     parser.add_argument('-w', '--write-notes',
@@ -264,7 +279,10 @@ def main():
         bogrod.update_vex()
         bogrod.write_vex(vex_file)
         if args.merge_vex:
-            bogrod.write_vex(args.sbom)
+            prop_data = None
+            if args.sbom_properties:
+                prop_data = bogrod.merge_properties(args.sbom_properties)
+            bogrod.write_vex(args.sbom, properties=prop_data)
     bogrod.report(format=args.output)
 
 

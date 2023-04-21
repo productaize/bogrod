@@ -8,7 +8,7 @@ notes:
 	reno report . --title FOO | pandoc -f rst > release-notes.html
 
 vex:
-	bogrod releasenotes/sbom/jupyter-base-notebook.json --vex-file releasenotes/sbom/vex.yaml --update-vex --merge-vex
+	bogrod releasenotes/sbom/jupyter-base-notebook.json --vex-file releasenotes/sbom/vex.yaml --update-vex --merge-vex --sbom-properties releasenotes/sbom/sbom-metadata.yaml
 
 report:
 	bogrod releasenotes/sbom/jupyter-base-notebook.json --vex-file releasenotes/sbom/vex.yaml --notes releasenotes/notes/rc1-99e6a29d3335a383.yaml -w
@@ -23,4 +23,4 @@ dist:
 	twine check dist/*.whl
 
 release: dist
-	twine upload --skip-existing --repository pypi-stackable dist/*gz dist/*whl
+	twine upload --skip-existing --repository pypi-productaize dist/*gz dist/*whl
