@@ -24,7 +24,7 @@ Adding Vulnerability Exploit information (VEX)
 -----------------------------------------------
 
 Bogrod can extract vulnerability exploit information from 
-the release notes or from a vex.yaml file (--vex-file):
+the release notes or from a vex.yaml file (--vex-file)::
 
     # vex.yaml
     CVE-2022-999999:
