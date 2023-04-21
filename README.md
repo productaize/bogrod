@@ -79,3 +79,10 @@ Tools
 * Trivy https://aquasecurity.github.io/trivy/
 * SBOM diff https://github.com/CycloneDX/cyclonedx-cli 
 * Reno https://docs.openstack.org/reno/latest/
+
+
+Specification
+-------------
+
+* browser https://cyclonedx.org/docs/1.4/json/
+* jsonschema https://github.com/CycloneDX/specification/releases

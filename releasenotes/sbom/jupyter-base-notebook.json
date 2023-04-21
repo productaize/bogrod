@@ -8238,10 +8238,10 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
-        "detail": "no further information"
+        "detail": ""
       },
       "affects": [
         {
@@ -8273,10 +8273,10 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
-        "detail": "no further information"
+        "detail": ""
       },
       "affects": [
         {
@@ -8307,7 +8307,9 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "in_triage",
+        "detail": "",
+        "response": []
       },
       "affects": [
         {
@@ -8334,10 +8336,10 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
-        "detail": "no further information"
+        "detail": ""
       },
       "affects": [
         {
@@ -8368,7 +8370,9 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "in_triage",
+        "detail": "",
+        "response": []
       },
       "affects": [
         {
@@ -8406,10 +8410,10 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
-        "detail": "no further information"
+        "detail": ""
       },
       "affects": [
         {
@@ -8447,11 +8451,12 @@
         }
       ],
       "analysis": {
-        "state": "open",
+        "state": "not_affected",
         "detail": "no further information",
         "justification": "",
-        "response": "",
-        "status": "wontfix"
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -8478,8 +8483,8 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
         "detail": "no further information"
       },
@@ -8564,7 +8569,9 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "in_triage",
+        "detail": "",
+        "response": []
       },
       "affects": [
         {
@@ -8699,7 +8706,9 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "in_triage",
+        "detail": "",
+        "response": []
       },
       "affects": [
         {
@@ -8803,10 +8812,10 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
-        "detail": "no further information"
+        "detail": ""
       },
       "affects": [
         {
@@ -8832,7 +8841,9 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "in_triage",
+        "detail": "",
+        "response": []
       },
       "affects": [
         {
@@ -8936,7 +8947,9 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "in_triage",
+        "detail": "",
+        "response": []
       },
       "affects": [
         {
@@ -8962,7 +8975,9 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "in_triage",
+        "detail": "",
+        "response": []
       },
       "affects": [
         {
@@ -9026,8 +9041,8 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
         "detail": "no further information"
       },
@@ -9056,8 +9071,8 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
         "detail": "no further information"
       },
@@ -9104,8 +9119,8 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
         "detail": "no further information"
       },
@@ -9147,8 +9162,8 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
         "detail": "no further information"
       },
@@ -9190,8 +9205,8 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
         "detail": "no further information"
       },
@@ -9233,8 +9248,8 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
         "detail": "no further information"
       },
@@ -9262,7 +9277,9 @@
         }
       ],
       "analysis": {
-        "state": "in_triage"
+        "state": "in_triage",
+        "detail": "",
+        "response": []
       },
       "affects": [
         {
@@ -9288,10 +9305,10 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
-        "detail": "no further information"
+        "detail": ""
       },
       "affects": [
         {
@@ -9408,9 +9425,11 @@
         }
       ],
       "analysis": {
-        "state": "maybefix",
-        "response": "we dont know",
-        "justification": "",
+        "state": "not_affected",
+        "response": [
+          "will_not_fix"
+        ],
+        "justification": "code_not_present",
         "detail": "no further information"
       },
       "affects": [
@@ -9470,8 +9489,8 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
         "detail": "no further information"
       },
@@ -9529,8 +9548,8 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
         "detail": "no further information"
       },
@@ -9615,8 +9634,8 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
         "detail": "no further information"
       },
@@ -9644,10 +9663,10 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
-        "detail": "no further information"
+        "detail": ""
       },
       "affects": [
         {
@@ -9673,10 +9692,10 @@
         }
       ],
       "analysis": {
-        "state": "open",
-        "response": "",
+        "state": "in_triage",
+        "response": [],
         "justification": "",
-        "detail": "no further information"
+        "detail": ""
       },
       "affects": [
         {

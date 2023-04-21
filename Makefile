@@ -5,6 +5,9 @@ notes:
 	reno new rc1 .
 	reno report . --title FOO | pandoc -f rst > release-notes.html
 
+vex:
+	bogrod releasenotes/sbom/jupyter-base-notebook.json --vex-file releasenotes/sbom/vex.yaml --update-vex --merge-vex
+
 report:
-	bogrod releasenotes/sbom/jupyter-base-notebook.json  --notes releasenotes/notes/rc1-99e6a29d3335a383.yaml -w
+	bogrod releasenotes/sbom/jupyter-base-notebook.json --vex-file releasenotes/sbom/vex.yaml --notes releasenotes/notes/rc1-99e6a29d3335a383.yaml -w
 	reno report . --title FOO | pandoc -f rst > release-notes.html
