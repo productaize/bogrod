@@ -9,6 +9,9 @@ setup(
     author='patrick',
     author_email='',
     description='',
+    install_requires=[
+        'jsonschema',
+    ],
     entry_points = {
         'console_scripts': [
             'bogrod=bogrod:main'

@@ -1,61 +1,126 @@
+CVE-2007-2379:
+  detail: ''
+  response: []
+  state: in_triage
+CVE-2013-4235:
+  detail: ''
+  response: []
+  state: in_triage
 CVE-2015-20107:
   detail: no further information
-  justification: ''
-  response: we dont know
-  state: maybefix
+  justification: code_not_present
+  response:
+  - will_not_fix
+  state: not_affected
+CVE-2016-20013:
+  detail: ''
+  response: []
+  state: in_triage
+CVE-2016-2781:
+  detail: ''
+  response: []
+  state: in_triage
+CVE-2017-11164:
+  detail: ''
+  response: []
+  state: in_triage
+CVE-2017-11165:
+  detail: asdfaf
+  response: []
+  state: not_affected
+CVE-2020-16156:
+  detail: ''
+  response: []
+  state: in_triage
 CVE-2021-27478:
   detail: no further information
-  justification: ''
-  response: ''
-  state: open
+  response: []
+  state: in_triage
 CVE-2021-27482:
   detail: no further information
-  justification: ''
-  response: ''
-  state: open
+  response: []
+  state: in_triage
 CVE-2021-27498:
   detail: no further information
-  justification: ''
-  response: ''
-  state: open
+  response: []
+  state: in_triage
 CVE-2021-27500:
   detail: no further information
-  justification: ''
-  response: ''
-  state: open
+  response: []
+  state: in_triage
+CVE-2021-31879:
+  detail: ''
+  response: []
+  state: in_triage
+CVE-2021-39537:
+  detail: ''
+  response: []
+  state: in_triage
+CVE-2021-43618:
+  detail: ''
+  response: []
+  state: in_triage
 CVE-2022-29244:
   detail: no further information
   justification: ''
-  response: ''
-  state: open
+  response: []
+  state: in_triage
+CVE-2022-29458:
+  detail: ''
+  response: []
+  state: in_triage
+CVE-2022-3219:
+  detail: ''
+  response: []
+  state: in_triage
+CVE-2022-37434:
+  detail: ''
+  response: []
+  state: in_triage
 CVE-2022-37454:
-  detail: no further information
+  detail: we are not affected by this
   justification: ''
-  response: ''
-  state: open
+  response: []
+  state: not_affected
+CVE-2022-3821:
+  detail: ''
+  response: []
+  state: in_triage
 CVE-2022-39286:
   detail: no further information
   justification: ''
-  response: ''
-  state: open
-  status: wontfix
+  response:
+  - will_not_fix
+  state: not_affected
 CVE-2022-42919:
   detail: no further information
   justification: ''
-  response: ''
-  state: open
+  response: []
+  state: in_triage
 CVE-2022-45061:
   detail: no further information
   justification: ''
-  response: ''
-  state: open
+  response: []
+  state: in_triage
+CVE-2023-23491:
+  detail: ''
+  response: []
+  state: in_triage
+GHSA-39hc-v87j-747x:
+  detail: ''
+  response: []
+  state: in_triage
+GHSA-43fp-rhv2-5gv8:
+  detail: ''
+  response: []
+  state: in_triage
 GHSA-hj9c-8jmm-8c52:
   detail: no further information
   justification: ''
-  response: ''
-  state: open
+  response: []
+  state: in_triage
 GHSA-m678-f26j-3hrp:
   detail: no further information
   justification: ''
-  response: ''
-  state: open
+  response: []
+  state: in_triage

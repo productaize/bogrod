@@ -1,12 +1,45 @@
 import argparse
 import json
-from pathlib import Path
-
+import jsonschema
 import yaml
+from jsonschema.exceptions import ValidationError
+from pathlib import Path
 from tabulate import tabulate
 
 
 class Bogrod:
+    """ Bogrod - utility to SBOM and VEX information
+
+    Bogrod combines SBOM, VEX and release notes processing into a single tool.
+
+    Usage:
+
+        # read SBOM, vex records, notes specification
+        bogrod = Bogrod.from_sbom('/path/to/sbom.json')
+        bogrod.read_vex('/path/to/vex.yaml')
+        bogrod.read_notes('/path/to/notes.yaml')
+
+        # update notes from vex records
+        bogrod.update_notes()
+        bogrod.notes()
+
+        # update 'analysis' section of sbom using vex records
+        bogrod.update_vex()
+        bogrod.write_vex()
+
+        # vex.yaml
+        <vulnerability-id>:
+            detail: <text>
+            response:
+                - <response code>
+            state: <state code>
+            justification: <justification code>
+
+        # notes.yaml
+        ...
+        security:
+        - "<vulnerability id> <severity> <status>"
+    """
     def __init__(self, data, notes=None, vex=None):
         self.data = data
         self.notes = notes
@@ -27,7 +60,7 @@ class Bogrod:
         self.notes_path = path
 
     def update_notes(self, severities=None):
-        assert self.notes, "no notes founds. use reno new to add"
+        assert self.notes, "no release notes found. to add notes, use reno new"
         severities = severities or self.severities
         notes = self.security_notes()
         security = self.notes['security']
@@ -37,7 +70,7 @@ class Bogrod:
             vuln_id = vuln['id']
             severity = vuln['ratings'][0]['severity']
             if vuln_id not in notes and severity in severities:
-                security.append(f'{vuln_id} {severity} open')
+                security.append(f'{vuln_id} {severity} unknown')
             sbom_vuln_ids[vuln_id] = severity
         # update state from vex or due to missing
         # -- for vuln in release notes but not in sbom: fixed
@@ -51,7 +84,7 @@ class Bogrod:
                 continue
             if vuln_id in self.vex:
                 state = self.vex[vuln_id].get('state', state) or 'unknown'
-                comment = self.vex[vuln_id].get('response', comment) or ''
+                comment = self.vex[vuln_id].get('detail') or ''
             if vuln_id not in sbom_vuln_ids and not comment.startswith('fixed'):
                 state = 'fixed'
                 self.vex.setdefault(vuln_id, {})
@@ -115,18 +148,23 @@ class Bogrod:
         # https://github.com/CycloneDX/bom-examples/blob/master/VEX/vex.json
         notes = self.security_notes()
         self.vex = all_vex = self.vex or self.notes.get('security-vex', {})
+        ensure_list = lambda v: v if isinstance(v, list) else v.split(',')
+        ensure_no_empty = lambda l: [e for e in l if e]
         for vuln in self.vulnerabilities():
             vuln_id = vuln['id']
-            if vuln_id in notes:
-                note = notes[vuln_id]
-                vex = all_vex.get(vuln_id, {})
-                analysis = vuln['analysis']
-                analysis['state'] = note['state']
-                analysis['detail'] = vex.get('detail', 'no further information')
-                analysis['response'] = vex.get('response', note['comment'])
-                analysis['justification'] = vex.get('justification', note['comment'])
-                all_vex.setdefault(vuln_id, {})
-                all_vex[vuln_id].update(analysis)
+            vex = all_vex.get(vuln_id, {})
+            note = notes[vuln_id] if vuln_id in notes else {}
+            analysis = vuln['analysis']
+            analysis['state'] = vex.get('state') or note.get('state') or analysis['state']
+            analysis['detail'] = vex.get('detail', note.get('comment', ''))
+            analysis['response'] = ensure_no_empty(ensure_list(vex.get('response') or []))
+            analysis['justification'] = vex.get('justification')
+            if not analysis['justification']:
+                # sbom-1.4 requires a valid value, or element not present
+                del analysis['justification']
+            all_vex.setdefault(vuln_id, {})
+            all_vex[vuln_id].update(analysis)
+        self.validate()
         return self.vex
 
     def report(self, format='table', stream=None, severities=None, columns=None):
@@ -145,8 +183,8 @@ class Bogrod:
                 'id': vuln['id'],
                 'name': vuln['source']['name'],
                 'severity': severity,
-                'state': notes.get(vuln['id']).get('state'),
-                'comment': notes.get(vuln['id']).get('comment'),
+                'state': notes.get(vuln['id'], {}).get('state'),
+                'comment': notes.get(vuln['id'], {}).get('comment'),
                 'affects': vuln['affects'][0]['ref'].split('?')[0],
                 'description': description,
                 'short': short,
@@ -165,6 +203,15 @@ class Bogrod:
         else:
             for rec in data:
                 print("{id:20} {severity:8} {note}".format(**rec))
+
+    def validate(self):
+        schema_path = Path(__file__).parent / 'resources/bom-1.4.schema.json'
+        with open(schema_path) as fin:
+            schema = json.load(fin)
+            try:
+                jsonschema.validate(self.data, schema)
+            except ValidationError as ex:
+                print(f"ValidationError: {ex.message} {ex.absolute_path}")
 
     @classmethod
     def from_sbom(cls, sbom_path, notes_path=None):
@@ -192,7 +239,7 @@ def main():
                         help='output format [table,json,yaml,raw]')
     parser.add_argument('-s', '--severities', default='critical,high',
                         help='list of serverities in critical,high,medium,low')
-    parser.add_argument('-x', '--vex', action='store_true',
+    parser.add_argument('-x', '--update-vex', action='store_true',
                         help='update vex information in sbom')
     parser.add_argument('--vex-file',
                         help='/path/to/vex.yaml')
@@ -212,7 +259,7 @@ def main():
         bogrod.update_notes()
     if args.write_notes:
         bogrod.write_notes(args.notes)
-    if args.vex:
+    if args.update_vex:
         vex_file = args.vex_file or args.sbom
         bogrod.update_vex()
         bogrod.write_vex(vex_file)
