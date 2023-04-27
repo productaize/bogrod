@@ -6,7 +6,7 @@ from jsonschema.exceptions import ValidationError
 from pathlib import Path
 from tabulate import tabulate
 
-from bogrod.util import dict_merge
+from bogrod.util import dict_merge, tabulate_data
 
 
 class Bogrod:
@@ -179,10 +179,15 @@ class Bogrod:
                 del analysis['justification']
             all_vex.setdefault(vuln_id, {})
             all_vex[vuln_id].update(analysis)
+            # remove vex information that is not supported by the standard
+            if 'related' in vuln['analysis']:
+                del vuln['analysis']['related']
+            if 'resources' in vuln['analysis']:
+                del vuln['analysis']['resources']
         self.validate()
         return self.vex
 
-    def report(self, format='table', stream=None, severities=None, columns=None):
+    def _generate_report_data(self, severities=None, columns=None):
         notes = self.security_notes()
         data = []
         severities = severities or self.severities
@@ -200,6 +205,7 @@ class Bogrod:
                 'name': vuln['source']['name'],
                 'severity': severity,
                 'state': vex.get('state'),
+                'justification': vex.get('justification'),
                 'comment': vex.get('detail') or notes.get(vuln['id'], {}).get('comment'),
                 'affects': vuln['affects'][0]['ref'].split('?')[0],
                 'description': description,
@@ -210,8 +216,16 @@ class Bogrod:
             data.append(record)
         severity_rank = lambda v: self.severities.index(v['severity'])
         data = sorted(data, key=severity_rank)
+        return data
+
+    def report(self, format='table', stream=None, severities=None, columns=None, summary=False):
+        data = self._generate_report_data(severities=severities, columns=columns)
+        if summary:
+            data, headers = tabulate_data(data, 'severity', ['state'])
+        else:
+            headers = "keys"
         if format == 'table':
-            print(tabulate(data, headers="keys"), file=stream)
+            print(tabulate(data, headers=headers), file=stream)
         elif format == 'json':
             print(json.dumps(data), file=stream)
         elif format == 'yaml':
@@ -260,6 +274,8 @@ def main():
                         help='/path/to/notes.yaml')
     parser.add_argument('-o', '--output', default='table',
                         help='output format [table,json,yaml,raw]')
+    parser.add_argument('-S', '--summary', action='store_true',
+                        help='summarize report')
     parser.add_argument('-s', '--severities', default='critical,high',
                         help='list of serverities in critical,high,medium,low')
     parser.add_argument('-x', '--update-vex', action='store_true',
@@ -293,7 +309,7 @@ def main():
             if args.sbom_properties:
                 prop_data = bogrod.merge_properties(args.sbom_properties)
             bogrod.write_vex(args.sbom, properties=prop_data)
-    bogrod.report(format=args.output)
+    bogrod.report(format=args.output, summary=args.summary)
 
 
 if __name__ == '__main__':

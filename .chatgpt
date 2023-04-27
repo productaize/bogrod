@@ -1,0 +1,32 @@
+bogrod.util.tabulate_data:
+    objective: |
+        Act as a senior python developer. I have a list of dict like this:
+
+        data = [{ 'severity': 'high', 'status': 'open', 'response': 'not_affected' }, ... ]
+
+        I want to have tabulate this data by severity and status, where severity is in rows,
+        status is in columns. Each cell of the table should be the count of the respective criteria.
+        Provide a pure-python leightweight function or recommend a pypi package that does this
+        (do not use pandas or numpy).
+
+        The function shall take as input kwargs "index=" (the key for the row values), and a "columns="
+        (the list of columns to tabulate against). It shall be able to handle any number of columns.
+
+        Use collections.Counter and the tabulate module. In the case of combined columns, output a table
+        that splits the header into the values of each combination (one value per line).
+
+        Count occurrences for each combination of index and columns
+    prompts:
+        - |
+            This does not work. I get this output:
+
+                            Severity State
+            --------  --  ----------------
+            critical   0                 3
+            high       1                28
+            Total      0                 0
+
+
+
+
+
