@@ -56,3 +56,11 @@ def tabulate_data(data, index, columns):
         rows.append(row)
     rows.append(['Total'] + [sum(row[i] for row in rows) for i in range(1, len(headers))])
     return rows, headers
+
+
+def tryOr(fn, else_fn):
+    # try fn(), if exception call else_fn() if callable, return its value otherwise
+    try:
+        return fn()
+    except:
+        return else_fn() if callable(else_fn) else else_fn
