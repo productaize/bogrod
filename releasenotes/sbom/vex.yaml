@@ -181,7 +181,7 @@ CVE-2022-4450:
   response: []
   state: in_triage
 CVE-2022-45061:
-  detail: no further information
+  detail: ''
   justification: ''
   related:
     component: jupyter/base-notebook:ubuntu-20.04

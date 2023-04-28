@@ -112,6 +112,7 @@ class Bogrod:
         assert self.notes, "no notes founds. use reno new to add"
         path = path or self.notes_path
         with open(path, 'w') as fout:
+            print("Writing release notes: ", path)
             yaml.safe_dump(self.notes, fout, default_style='|')
 
     def write_vex(self, path, properties=None):
@@ -137,13 +138,16 @@ class Bogrod:
                         # FIXME this duplicates self.merge_properties
                         dict_merge(data, properties)
                 with open(path, 'w') as fout:
+                    print("Writing vex: ", path)
                     json.dump(data, fout, indent=2)
             elif path.suffix == '.yaml':
                 data = self.vex
                 with open(path, 'w') as fout:
+                    print("Writing vex: ", path)
                     yaml.safe_dump(data, fout)
         else:
             with open(path, 'w') as fout:
+                print("Writing vex: ", path)
                 if path.suffix == '.json':
                     json.dump(self.vex, fout, indent=2)
                 elif path.suffix == '.yaml':
@@ -165,12 +169,14 @@ class Bogrod:
 
     def read_grype(self, path):
         with open(path, 'r') as fin:
+            print("Reading grype: ", path)
             self.grype = json.load(fin)
         return self.grype
 
     def read_vex(self, path):
         try:
             with open(path, 'r') as fin:
+                print("Reading vex: ", path)
                 self.vex = yaml.safe_load(fin)
         except:
             print(f"WARNING: could not read --vex-file {path}. Specify -x to create from sbom")
@@ -241,8 +247,10 @@ class Bogrod:
     def report(self, format='table', stream=None, severities=None, columns=None, summary=False):
         data = self._generate_report_data(severities=severities, columns=columns)
         if summary:
+            print("\nbogrod SBOM Summary Report\n")
             data, headers = tabulate_data(data, 'severity', ['state'])
         else:
+            print("\nbogrod SBOM Report\n")
             headers = "keys"
         if format == 'table':
             print(tabulate(data, headers=headers), file=stream)
@@ -275,6 +283,7 @@ class Bogrod:
 
     @classmethod
     def from_sbom(cls, sbom_path, notes_path=None):
+        print("Reading sbom: ", sbom_path)
         with open(sbom_path, 'r') as fin:
             data = json.load(fin)
         bogrod = Bogrod(data)
@@ -346,7 +355,9 @@ class Bogrod:
         text = dedent("""
         # id: {id} 
         # severity: {severity} 
-        # component: {source}
+        # component: {component} 
+        # artifact: {artifact}
+        # fix: {fix}      
         # urls:   {url}
         # description: 
         #      {description}
@@ -359,11 +370,15 @@ class Bogrod:
                             severity=self._vuln_severity(vuln),
                             description='\n# '.join(
                                 wrap(vuln.get('description', 'unknown'), subsequent_indent=' ' * 5)),
-                            source=tryOr(lambda: vex[vuln_id]['related']['component'], 'unknown'),
+                            component=tryOr(lambda: vex[vuln_id]['related']['component'], 'n/a'),
+                            artifact=tryOr(lambda: (matches[vuln_id]['artifact'].get('name', '?') + '-' +
+                                                    matches[vuln_id]['artifact'].get('version', '?')), 'n/a'),
                             url=tryOr(lambda: vuln['source']['url'], 'unknown'),
+                            fix=tryOr(lambda: ';'.join(matches[vuln_id]['vulnerability']['fix']['versions']) +
+                                              '(' + matches[vuln_id]['vulnerability']['fix']['state'] + ')', '?'),
                             location='\n#      '.join([v.get('path')
                                                        for v in tryOr(lambda: matches[vuln_id]['artifact']['locations'],
-                                                                      [{'path': '<missing grype json file>'}])]),
+                                                                      [{'path': '<no grype json file>'}])]),
                             vex_yml=yaml.dump(vex[vuln_id]),
                             vex_schema='\n# '.join(
                                 ''.join(wrap(l, initial_indent=' ' * 5,
@@ -372,10 +387,18 @@ class Bogrod:
         with NamedTemporaryFile(mode='w', delete=False) as fout:
             fout.write(text)
         editor = os.environ.get('EDITOR', 'nano')
-        subprocess.run([editor, fout.name])
-        with open(fout.name) as fin:
-            self.vex[vuln_id] = yaml.safe_load(fin)
-        os.unlink(fout.name)
+        while True:
+            subprocess.run([editor, fout.name])
+            try:
+                with open(fout.name) as fin:
+                    self.vex[vuln_id] = yaml.safe_load(fin)
+            except Exception as e:
+                print(f"invalid yaml, try again. {e}")
+                input("press enter to continue...")
+                continue
+            else:
+                os.unlink(fout.name)
+                break
 
 
 def main():
@@ -409,7 +432,7 @@ def main():
     args = parser.parse_args()
     bogrod = Bogrod.from_sbom(args.sbom)
 
-    def write_vex_merge():
+    def write_vex_merge(vex_file):
         bogrod.write_vex(vex_file)
         if args.merge_vex:
             prop_data = None
@@ -417,6 +440,11 @@ def main():
                 prop_data = bogrod.merge_properties(args.sbom_properties)
             bogrod.write_vex(args.sbom, properties=prop_data)
 
+    if not args.grype:
+        grype_file = Path(args.sbom).parent / (Path(args.sbom).stem + '-grype.json')
+        if grype_file.exists():
+            print("Found grype file: ", grype_file)
+            args.grype = grype_file
     if args.severities:
         bogrod.severities = args.severities.split(',')
     if args.vex_file:
@@ -426,15 +454,16 @@ def main():
         bogrod.update_notes()
     if args.write_notes:
         bogrod.write_notes(args.notes)
+    if args.grype:
+        bogrod.read_grype(args.grype)
     if args.update_vex:
         vex_file = args.vex_file or args.sbom
         bogrod.update_vex()
-        write_vex_merge()
-    if args.grype:
-        bogrod.read_grype(args.grype)
+        write_vex_merge(vex_file)
     if args.work:
+        vex_file = args.vex_file or args.sbom
         bogrod.work()
-        write_vex_merge()
+        write_vex_merge(vex_file)
     bogrod.report(format=args.output, summary=args.summary)
 
 
