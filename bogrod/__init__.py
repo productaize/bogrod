@@ -209,7 +209,6 @@ class Bogrod:
             if isinstance(related, dict):
                 related = vex['related'] = [{k:v} for k, v in related.items()]
             if component not in related:
-                print(related, id(related))
                 related.append(component)
         self.validate()
         return self.vex
@@ -430,7 +429,7 @@ def main():
                         action='store_true',
                         help='work each vulnerability')
     parser.add_argument('-g', '--grype',
-                        help='/path/to/grype.json')
+                        help='use grype SBOM to match vulnerabilities at /path/to/grype.json')
     args = parser.parse_args()
 
     def write_vex_merge(vex_file):
@@ -445,34 +444,40 @@ def main():
     if Path('.bogrod').exists():
         config = ConfigParser()
         config.read('.bogrod')
+
+        def update_args(section):
+            args.vex = config[section].get('vex', args.vex_file)
+            args.grype = config[section].get('grype', args.grype)
+            args.sbom_properties = config[section].get('sbom_properties')
+            args.update_vex = config[section].getboolean('update_vex', args.update_vex)
+            args.merge_vex = config[section].getboolean('merge_vex', args.merge_vex)
+            args.write_notes = config[section].getboolean('write_notes', args.write_notes)
+            args.work = config[section].getboolean('work', args.work)
+            args.output = config[section].get('output', args.output)
+            args.severities = config[section].get('severities', args.severities)
+            args.summary = config[section].getboolean('summary', args.summary)
+            args.notes = config[section].get('notes', args.notes)
+            args.vex_file = config[section].get('vex_file', args.vex_file)
+            if not Path(args.sbom).exists():
+                args.sbom = config[section].get('sbom', args.sbom)
+
+        update_args('global') if 'global' in config.sections() else None
         if args.sbom in config.sections():
-            args.vex = config[args.sbom].get('vex', args.vex_file)
-            args.grype = config[args.sbom].get('grype', args.grype)
-            args.sbom_properties = config[args.sbom].get('sbom_properties')
-            args.update_vex = config[args.sbom].getboolean('update_vex', args.update_vex)
-            args.merge_vex = config[args.sbom].getboolean('merge_vex', args.merge_vex)
-            args.write_notes = config[args.sbom].getboolean('write_notes', args.write_notes)
-            args.work = config[args.sbom].getboolean('work', args.work)
-            args.output = config[args.sbom].get('output', args.output)
-            args.severities = config[args.sbom].get('severities', args.severities)
-            args.summary = config[args.sbom].getboolean('summary', args.summary)
-            args.notes = config[args.sbom].get('notes', args.notes)
-            args.vex_file = config[args.sbom].get('vex_file', args.vex_file)
-            args.sbom = config[args.sbom].get('sbom', args.sbom)
-        else:
-            print(f"{args.sbom} not found in .bogrod file. Available: {','.join(config.sections())}")
+            update_args(args.sbom)
+        elif not Path(args.sbom).exists():
+            print(f"{args.sbom} does not exist and not found in .bogrod file. Available: {','.join(config.sections())}")
             exit(1)
 
     # find default files
     # -- grype
     if not args.grype:
-        grype_file = Path(args.sbom).parent / (Path(args.sbom).stem + '-grype.json')
+        grype_file = Path(args.sbom).parent / (Path(args.sbom).stem.replace('.cdx', '') + '.grype.json')
         if grype_file.exists():
             print("Found grype file: ", grype_file)
             args.grype = grype_file
     # -- vex
     if not args.vex_file:
-        vex_file1 = Path(args.sbom).parent / (Path(args.sbom).stem + '-vex.yaml')
+        vex_file1 = Path(args.sbom).parent / (Path(args.sbom).stem.replace('.cdx', '') + '.vex.yaml')
         vex_file2 = Path(args.sbom).parent / 'vex.yaml'
         if vex_file1.exists():
             print("Found vex file: ", vex_file1)
