@@ -50872,10 +50872,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -50908,7 +50905,12 @@
         {
           "ref": "pkg:deb/ubuntu/login@1:4.8.1-1ubuntu5.20.04.2?arch=amd64&upstream=shadow&distro=ubuntu-20.04&package-id=6e31c2fd9fc25f2e"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:d44df41d-7185-487d-80a7-d2531ac584b1",
@@ -50944,10 +50946,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -51072,10 +51071,7 @@
         "response": [
           "will_not_fix"
         ],
-        "state": "not_affected",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "not_affected"
       }
     },
     {
@@ -51108,7 +51104,12 @@
         {
           "ref": "pkg:deb/ubuntu/libc-bin@2.31-0ubuntu9.9?arch=amd64&upstream=glibc&distro=ubuntu-20.04&package-id=57986ecc4347eed4"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:2e758389-d53f-4b18-bc02-768934959da0",
@@ -51140,7 +51141,12 @@
         {
           "ref": "pkg:deb/ubuntu/libc6@2.31-0ubuntu9.9?arch=amd64&upstream=glibc&distro=ubuntu-20.04&package-id=8e27f98d9024ca2a"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:b55d32ce-daaa-4b20-89fc-60ee95b02d4a",
@@ -51176,10 +51182,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -51216,10 +51219,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -51256,10 +51256,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -51315,10 +51312,7 @@
       "analysis": {
         "state": "not_affected",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -51434,10 +51428,7 @@
       "analysis": {
         "state": "not_affected",
         "detail": "even if this is used it has minor impact",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -51474,10 +51465,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -51514,10 +51502,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -51550,7 +51535,12 @@
         {
           "ref": "pkg:deb/ubuntu/libncurses6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=ed8fb166163a75b8"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:9fa64839-c8d2-4ea8-8dc7-be8eab7a15ac",
@@ -51582,7 +51572,12 @@
         {
           "ref": "pkg:deb/ubuntu/libncursesw6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=58525ddc073a008a"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:5f199292-e7bf-4cda-b44f-1943829b4c5a",
@@ -51614,7 +51609,12 @@
         {
           "ref": "pkg:deb/ubuntu/libtinfo6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=72ad56d118fefea3"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:16d8ae87-feb4-4e49-87f2-4f792e09268c",
@@ -51646,7 +51646,12 @@
         {
           "ref": "pkg:deb/ubuntu/ncurses-base@6.2-0ubuntu2?arch=all&upstream=ncurses&distro=ubuntu-20.04&package-id=d7393defd95e4554"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:0fc15d1d-7f74-43b1-8505-17fc47e2749a",
@@ -51682,10 +51687,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -51722,10 +51724,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -51762,10 +51761,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -51798,7 +51794,12 @@
         {
           "ref": "pkg:deb/ubuntu/libpam-modules@1.3.1-5ubuntu4.3?arch=amd64&upstream=pam&distro=ubuntu-20.04&package-id=563cd7ffd9ad09e2"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:3543c1d7-f180-4774-8a55-28b93f3399bd",
@@ -51830,7 +51831,12 @@
         {
           "ref": "pkg:deb/ubuntu/libpam-modules-bin@1.3.1-5ubuntu4.3?arch=amd64&upstream=pam&distro=ubuntu-20.04&package-id=2fef7b748bc46246"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:3e2b7b3a-76bf-488d-b0da-b1d23a4eff09",
@@ -51862,7 +51868,12 @@
         {
           "ref": "pkg:deb/ubuntu/libpam-runtime@1.3.1-5ubuntu4.3?arch=all&upstream=pam&distro=ubuntu-20.04&package-id=ee86ac677ddf58c5"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:68d752e0-c76c-42dc-81b4-383ae9bfb638",
@@ -51898,10 +51909,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -51934,7 +51942,12 @@
         {
           "ref": "pkg:deb/ubuntu/libncurses6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=ed8fb166163a75b8"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:71b8cff4-03d3-4b1e-a45b-692f01ffdf73",
@@ -51966,7 +51979,12 @@
         {
           "ref": "pkg:deb/ubuntu/libncursesw6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=58525ddc073a008a"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:1673734b-db00-46cb-8736-fcb4fb5ce02a",
@@ -51998,7 +52016,12 @@
         {
           "ref": "pkg:deb/ubuntu/libtinfo6@6.2-0ubuntu2?arch=amd64&upstream=ncurses&distro=ubuntu-20.04&package-id=72ad56d118fefea3"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:7f0c3cc6-6a17-48be-89de-0bd0d165c1a4",
@@ -52030,7 +52053,12 @@
         {
           "ref": "pkg:deb/ubuntu/ncurses-base@6.2-0ubuntu2?arch=all&upstream=ncurses&distro=ubuntu-20.04&package-id=d7393defd95e4554"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:0d390967-537f-41ea-80d1-666d33c8bb12",
@@ -52066,10 +52094,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -52106,10 +52131,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -52146,10 +52168,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -52222,14 +52241,10 @@
       ],
       "analysis": {
         "detail": "we are not affected by this",
-        "justification": "",
         "response": [
           "can_not_fix"
         ],
-        "state": "resolved",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "resolved"
       }
     },
     {
@@ -52262,7 +52277,12 @@
         {
           "ref": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04&package-id=f6d3970bcfa61b40"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:f335a909-5a6c-47de-bb2d-47cb61b463c9",
@@ -52298,10 +52318,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -52362,14 +52379,10 @@
       ],
       "analysis": {
         "detail": "no further information",
-        "justification": "",
         "response": [
           "will_not_fix"
         ],
-        "state": "not_affected",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "not_affected"
       }
     },
     {
@@ -52425,10 +52438,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -52504,12 +52514,8 @@
       ],
       "analysis": {
         "detail": "no further information",
-        "justification": "",
         "response": [],
-        "state": "not_affected",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "not_affected"
       }
     },
     {
@@ -52542,7 +52548,12 @@
         {
           "ref": "pkg:deb/ubuntu/libssl1.1@1.1.1f-1ubuntu2.16?arch=amd64&upstream=openssl&distro=ubuntu-20.04&package-id=3573725972cb9e90"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:45e8ca8a-569e-4b81-9ca0-e967822ae9eb",
@@ -52578,10 +52589,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -52614,7 +52622,12 @@
         {
           "ref": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04&package-id=f6d3970bcfa61b40"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:d8b52394-37c5-4751-a8ec-ae331b5f9db4",
@@ -52650,10 +52663,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -52686,7 +52696,12 @@
         {
           "ref": "pkg:deb/ubuntu/libssl1.1@1.1.1f-1ubuntu2.16?arch=amd64&upstream=openssl&distro=ubuntu-20.04&package-id=3573725972cb9e90"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:ded2793c-7125-44d5-8687-e2886a0ce6c6",
@@ -52722,10 +52737,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -52846,12 +52858,8 @@
       ],
       "analysis": {
         "detail": "",
-        "justification": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -52888,10 +52896,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -52924,7 +52929,12 @@
         {
           "ref": "pkg:deb/ubuntu/libssl1.1@1.1.1f-1ubuntu2.16?arch=amd64&upstream=openssl&distro=ubuntu-20.04&package-id=3573725972cb9e90"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:2496cbda-450a-456a-bbf5-1b8a2d774cb7",
@@ -52960,10 +52970,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -52996,7 +53003,12 @@
         {
           "ref": "pkg:deb/ubuntu/libssl1.1@1.1.1f-1ubuntu2.16?arch=amd64&upstream=openssl&distro=ubuntu-20.04&package-id=3573725972cb9e90"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:69376b54-a284-45ad-8e11-73ad57612199",
@@ -53032,10 +53044,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53072,10 +53081,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53108,7 +53114,12 @@
         {
           "ref": "pkg:deb/ubuntu/libssl1.1@1.1.1f-1ubuntu2.16?arch=amd64&upstream=openssl&distro=ubuntu-20.04&package-id=3573725972cb9e90"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:ad3d9d88-0035-4664-8da0-72e3a38d6339",
@@ -53144,10 +53155,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53180,7 +53188,12 @@
         {
           "ref": "pkg:deb/ubuntu/libssl1.1@1.1.1f-1ubuntu2.16?arch=amd64&upstream=openssl&distro=ubuntu-20.04&package-id=3573725972cb9e90"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:2842234e-fb27-4ca3-9b57-6a157dcf50b6",
@@ -53216,10 +53229,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53252,7 +53262,12 @@
         {
           "ref": "pkg:deb/ubuntu/libssl1.1@1.1.1f-1ubuntu2.16?arch=amd64&upstream=openssl&distro=ubuntu-20.04&package-id=3573725972cb9e90"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:bc8ee191-a81c-4575-a4a2-be9e11890c89",
@@ -53288,10 +53303,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53328,10 +53340,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53384,10 +53393,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53443,10 +53449,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53479,7 +53482,12 @@
         {
           "ref": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04&package-id=f6d3970bcfa61b40"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:b7cffc58-83fa-411b-ae6f-3685c6afdf4e",
@@ -53515,10 +53523,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53555,10 +53560,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53595,10 +53597,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53631,7 +53630,12 @@
         {
           "ref": "pkg:deb/ubuntu/login@1:4.8.1-1ubuntu5.20.04.2?arch=amd64&upstream=shadow&distro=ubuntu-20.04&package-id=6e31c2fd9fc25f2e"
         }
-      ]
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
     },
     {
       "bom-ref": "urn:uuid:d876ae98-ad89-4479-86eb-106defc79afd",
@@ -53667,10 +53671,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53708,10 +53709,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53749,10 +53747,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -53790,10 +53785,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53831,10 +53823,7 @@
       "analysis": {
         "detail": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -53871,12 +53860,8 @@
       ],
       "analysis": {
         "detail": "no further information",
-        "justification": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -53913,12 +53898,8 @@
       ],
       "analysis": {
         "detail": "no further information",
-        "justification": "",
         "response": [],
-        "state": "in_triage",
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "state": "in_triage"
       }
     },
     {
@@ -53956,10 +53937,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -53997,10 +53975,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -54038,10 +54013,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -54079,10 +54051,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     },
     {
@@ -54120,10 +54089,7 @@
       "analysis": {
         "state": "in_triage",
         "detail": "",
-        "response": [],
-        "related": {
-          "component": "jupyter/base-notebook:ubuntu-20.04"
-        }
+        "response": []
       }
     }
   ]

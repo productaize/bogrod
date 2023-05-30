@@ -1,0 +1,4 @@
+[jupyter]
+sbom=releasenotes/sbom/jupyter-base-notebook.json
+update_vex=yes
+merge_vex=yes
