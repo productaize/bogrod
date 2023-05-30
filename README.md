@@ -80,9 +80,22 @@ Tools
 * SBOM diff https://github.com/CycloneDX/cyclonedx-cli 
 * Reno https://docs.openstack.org/reno/latest/
 
+Python
+
+* pip install mitrecve - MITRE vuln database queries (https://mitrecve.readthedocs.io/en/latest/)
+* pip install nvdlib - NIST vuln database queries (https://nvdlib.com/en/latest/)
+
+Usage of Syft and Grype:
+
+- Syft can output a detailed json report with all artificats found inside and image.
+  This json follows a Syft internal schema, and it can be used by Grype as input to
+  create a CycloneDX SBOM. 
+- Bogrod can accept a Syft json report as input to have more information when working
+  on resolving vulnerabilities.
 
 Specification
 -------------
 
 * browser https://cyclonedx.org/docs/1.4/json/
 * jsonschema https://github.com/CycloneDX/specification/releases
+

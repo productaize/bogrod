@@ -1,7 +1,10 @@
 .PHONY: dist image help
 
 sbom:
+	# cyclonedx format
 	grype jupyter/base-notebook:ubuntu-20.04 --file releasenotes/sbom/jupyter-base-notebook.json --output embedded-cyclonedx-vex-json
+	# grype/syft format, including match information
+	grype jupyter/base-notebook:ubuntu-20.04 -o json --file releasenotes/sbom/jupyter-base-notebook-grype.json
 
 notes:
 	reno new rc1 .

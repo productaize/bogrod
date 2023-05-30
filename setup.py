@@ -20,6 +20,7 @@ setup(
         'jsonschema',
         'pyyaml',
         'tabulate',
+        'attrdict',
     ],
     entry_points = {
         'console_scripts': [
