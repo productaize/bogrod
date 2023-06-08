@@ -1,4 +1,4 @@
-from configparser import ConfigParser
+from copy import deepcopy
 
 import argparse
 import json
@@ -6,6 +6,7 @@ import jsonschema
 import os
 import subprocess
 import yaml
+from configparser import ConfigParser
 from jsonschema.exceptions import ValidationError
 from pathlib import Path
 from tabulate import tabulate
@@ -127,6 +128,7 @@ class Bogrod:
                 if self.data.get('bomFormat', '').lower() == 'cyclonedx':
                     data = self.data
                     self.validate(data)
+                    self.fix_metadata()
                 else:
                     data = self.vex
                 if properties:
@@ -177,6 +179,41 @@ class Bogrod:
             print(f"WARNING: could not read --vex-file {path}. Specify -x to create from sbom")
             self.vex = {}
 
+    def fix_metadata(self):
+        # fix metadata.component from container image tag
+        # -- check if we have a name like repo.domain/image:tag
+        # -- if yes, parse into proper .name=image .version=tag
+        #    and add original component data to the metadata .components list
+        #    https://cyclonedx.org/docs/1.4/json/#metadata_component_components
+        #    this seems the most appropriate location in order to keep the original
+        meta = self.data['metadata']
+        comp = meta['component']
+        raw_comp = deepcopy(comp)
+        fixed = False
+        if comp['type'] == 'container':
+            # use image last-level/basename, not full repo path
+            # -- eg. repo.company.com/app/nginx:latest => .name=app/nginx:latest
+            #        nginx:latest => .name=nginx:latest
+            if '/' in comp['name']:
+                comp['name'] = '/'.join(comp['name'].split('/')[-2:])
+                fixed = True
+            # use image tag as the version
+            # -- e.g. app/nginx:latest => .name=app/nginx, .version=latest
+            # -- rationale: by default syft/grype use name=image tag, version=image id/sha
+            #               so we'd get .name=app/nginx:latest .version=sha256:...
+            if ':' in comp['name']:
+                comp['name'], comp['version'] = comp['name'].split(':')
+                fixed = True
+            if fixed:
+                # check if we have previously fixed this
+                compnts = comp.setdefault('components', [])
+                bom_refs = { v.get('bom-ref') for v in compnts}
+                top_level = raw_comp['bom-ref'].split('sbom:')[-1]
+                if top_level not in bom_refs:
+                    compnts.append(raw_comp)
+                comp['bom-ref'] = f'sbom:{top_level}'
+
+
     def update_vex(self):
         # https://github.com/CycloneDX/bom-examples/blob/master/VEX/vex.json
         notes = self.security_notes()
@@ -207,7 +244,7 @@ class Bogrod:
             component = {'component': self.data.get('metadata', {}).get('component', {}).get('name')}
             related = vex.setdefault('related') or []
             if isinstance(related, dict):
-                related = vex['related'] = [{k:v} for k, v in related.items()]
+                related = vex['related'] = [{k: v} for k, v in related.items()]
             if component not in related:
                 related.append(component)
         self.validate()

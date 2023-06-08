@@ -1,7 +1,22 @@
 Bogrod
 ======
 
-Create and manage vulnerabilities analysis (VEX/SBOM) in cyclonedx format.
+Manage vulnerabilities analysis (VEX/SBOM) in cyclonedx format like source code.
+
+Why?
+----
+
+SBOMs are typically managed in UI tools like Dependency Track. While providing
+a nice UI, these tools require additional infrastructure and are far removed
+from the development process. The last thing your DevOps team needs is another
+external tool that it needs to manage and integrate with its CICD practices.
+
+Enter bogrod. 
+
+* enable your DevOps team to manage SBOM where it originates: with the code
+* track SBOM and your VEX analysis using established git practices
+* analyze vulnerabilities and update VEX analysis from the console or in your favorite IDE 
+* easily reuse VEX analysis across multiple images
 
 Features
 --------
@@ -11,8 +26,17 @@ Features
 * Collect VEX information from multiple SBOMs in cyclonedx format
 * Create a git-managed database of vulnerabilities (yaml format)
 * Update release notes with vulnerabilities found in SBOMs
+* Update SBOM metadata from a common source 
 
 ![bogrod process](resources/process.png)
+
+Installation
+------------
+
+In your Python venv, run the following commands.
+
+        $ git clone https://github.com/productaize/bogrod.git 
+        $ pip install ./bogrod
 
 Syntax
 ------
@@ -155,6 +179,69 @@ providing more details:
     - component: jupyter/base-notebook:ubuntu-20.04
     - duplicates: CVE-2019-10773
 
+
+SBOM Metadata Update
+--------------------
+
+bogrod can update the SBOM metadata section from a metadata.yaml file.
+All fields will be merged with the final SBOM content just before writing
+the file.
+
+    # sbom.metadata.yaml
+    # spec: https://cyclonedx.org/docs/1.4/json/#metadata
+    metadata:
+      supplier:
+        name: productaize
+        url:
+        - https://productaize.io
+        contact:
+          - name: Jane John
+            email: founder@productaize.io
+    
+To update the SBOM metadata, specify the --sbom-properties option:
+
+    $ bogrod ... --sbom-properties sbom.metadata.yaml
+
+SBOM component metadata
+-----------------------
+
+The SBOM's metadata describes a component. For container images, syft and grype 
+use the image's name:tag combination as the component's name, and the 
+image's sha256 as the component's version. For example, we end up with a 
+component specification like this:
+
+        ...
+        "component": {
+          "bom-ref": "c001e40278e035d7",
+          "type": "container",
+          "name": "jupyter/base-notebook:ubuntu-20.04",
+          "version": "sha256:21fd9f9e7e6698ca147bcc87dbeecc485379dddeaa6704f78cc6b4e7f97ec9af"
+        },
+        ...
+
+While technically accurate, this is hardly useful, since the name of the image is
+really jupyter/base-notebook, it's version is ubuntu-20.04. Therefore, bogrod
+transforms this information into a contained component. This way the information
+is preserved and the component is described correctly. Note that bogrod also 
+strips any repository information contained in the original image name, if any
+(e.g. ghcr.io/jupyter/base-notebook:ubuntu-20.04 => jupyter/base-notebook).
+
+        ...
+        "component": {
+          "bom-ref": "sbom:c001e40278e035d7",
+          "type": "container",
+          "name": "jupyter/base-notebook",
+          "version": "ubuntu-20.04",
+          "components": [
+            {
+              "bom-ref": "c001e40278e035d7",
+              "type": "container",
+              "name": "jupyter/base-notebook:ubuntu-20.04",
+              "version": "sha256:21fd9f9e7e6698ca147bcc87dbeecc485379dddeaa6704f78cc6b4e7f97ec9af"
+            }
+          ]
+        },
+        ...
 
 Release Notes Format
 --------------------
