@@ -126,28 +126,30 @@ vulnerabillity came from.
 To simplify this process, create a .bogrod file that references each image's
 SBOM file:
 
-        [jupyter]
-        sbom=releasenotes/sbom/jupyter-base-notebook.json
-        update_vex=yes
-        merge_vex=yes
-        
-        [jupyter-hub]
-        sbom=releasenotes/sbom/jupyter-hub-notebook.json
-        update_vex=yes
-        merge_vex=yes
+    # .bogrod
+    [jupyter]
+    sbom=releasenotes/sbom/jupyter-base-notebook.json
+    update_vex=yes
+    merge_vex=yes
+    
+    [jupyter-hub]
+    sbom=releasenotes/sbom/jupyter-hub-notebook.json
+    update_vex=yes
+    merge_vex=yes
 
 In order to specify bogrod's command line options for all images, use a global
 section:
 
-        [global]
-        update_vex=yes
-        merge_vex=yes
+    # .bogrod
+    [global]
+    update_vex=yes
+    merge_vex=yes
 
-        [jupyter]
-        sbom=releasenotes/sbom/jupyter-base-notebook.json
-        
-        [jupyter-hub]
-        sbom=releasenotes/sbom/jupyter-hub-notebook.json
+    [jupyter]
+    sbom=releasenotes/sbom/jupyter-base-notebook.json
+    
+    [jupyter-hub]
+    sbom=releasenotes/sbom/jupyter-hub-notebook.json
         
 
 Vulnerability Exploit information (VEX)
@@ -172,12 +174,12 @@ In addition to VEX analysis information, bogrod will keep track
 of the source(s), and you may be keep additional information by
 providing more details:
 
-  # vex.yaml
-  CVE-2022-999999:
-    ...
-    related:
-    - component: jupyter/base-notebook:ubuntu-20.04
-    - duplicates: CVE-2019-10773
+      # vex.yaml
+      CVE-2022-999999:
+        ...
+        related:
+        - component: jupyter/base-notebook:ubuntu-20.04
+        - duplicates: CVE-2019-10773
 
 
 SBOM Metadata Update
