@@ -310,6 +310,7 @@
      "https://bugs.python.org/issue24778",
      "https://github.com/python/cpython/issues/68966",
      "https://lists.debian.org/debian-lts-announce/2023/05/msg00024.html",
+     "https://lists.debian.org/debian-lts-announce/2023/06/msg00039.html",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/46KWPTI72SSEOF53DOYQBQOCN4QQB2GE/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/53TQZFLS6O3FLIMVSXFEEPZSWLDZLBOX/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/57NECACX333A3BBZM2TR2VZ4ZE3UG3SN/",
@@ -1090,6 +1091,7 @@
      "https://bugzilla.redhat.com/show_bug.cgi?id=1834423",
      "https://docs.google.com/document/d/1KjuF_aXlzPUxTK4BMgezGJ2Pn7uevfX7g0_mvgHlL7Y",
      "https://github.com/python/cpython/issues/95778",
+     "https://lists.debian.org/debian-lts-announce/2023/06/msg00039.html",
      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/2VCU6EVQDIXNCEDJUCTFIER2WVNNDTYZ/",
      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/32AAQKABEKFCB5DDV5OONRZK6BS23HPW/",
      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/4EWKR2SPX3JORLWCXFY3KN2U5B5CIUQQ/",
@@ -3547,6 +3549,7 @@
       "https://github.com/systemd/systemd/commit/9102c625a673a3246d7e73d8737f3494446bad4e",
       "https://github.com/systemd/systemd/issues/23928",
       "https://github.com/systemd/systemd/pull/23933",
+      "https://lists.debian.org/debian-lts-announce/2023/06/msg00036.html",
       "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RVBQC2VLSDVQAPJTEMTREXDL4HYLXG2P/",
       "https://security.gentoo.org/glsa/202305-15"
      ],
@@ -3654,6 +3657,7 @@
       "https://github.com/systemd/systemd/commit/9102c625a673a3246d7e73d8737f3494446bad4e",
       "https://github.com/systemd/systemd/issues/23928",
       "https://github.com/systemd/systemd/pull/23933",
+      "https://lists.debian.org/debian-lts-announce/2023/06/msg00036.html",
       "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RVBQC2VLSDVQAPJTEMTREXDL4HYLXG2P/",
       "https://security.gentoo.org/glsa/202305-15"
      ],
@@ -3744,7 +3748,8 @@
      "https://lists.debian.org/debian-lts-announce/2022/11/msg00022.html",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KKMP5OXXIX2QAUNVNJZ5UEQFKDYYJVBA/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YIDN7JMLK6AOMBQI4QPSW4MBQGWQ5NIN/",
-     "https://security.gentoo.org/glsa/202301-04"
+     "https://security.gentoo.org/glsa/202301-04",
+     "https://www.debian.org/security/2023/dsa-5422"
     ],
     "description": "Jupyter Core is a package for the core common functionality of Jupyter projects. Jupyter Core prior to version 4.11.2 contains an arbitrary code execution vulnerability in `jupyter_core` that stems from `jupyter_core` executing untrusted files in CWD. This vulnerability allows one user to run code as another. Version 4.11.2 contains a patch for this issue. There are no known workarounds.",
     "cvss": [
@@ -3885,6 +3890,118 @@
      "cpe:2.3:a:python:jupyter_core:4.11.1:*:*:*:*:*:*:*"
     ],
     "purl": "pkg:pypi/jupyter_core@4.11.1",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2022-40896",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-40896",
+    "namespace": "nvd:cpe",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/pygments/pygments/blob/master/pygments/lexers/smithy.py#L61",
+     "https://pypi.org/project/Pygments/",
+     "https://pyup.io/posts/pyup-discovers-redos-vulnerabilities-in-top-python-packages-part-2/"
+    ],
+    "description": "A ReDoS issue was discovered in pygments/lexers/smithy.py in pygments through 2.15.0 via SmithyLexer.",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "metrics": {
+       "baseScore": 5.5,
+       "exploitabilityScore": 1.8,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:Pygments:Pygments:2.13.0:*:*:*:*:*:*:*"
+      ]
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2022-40896",
+      "versionConstraint": "<= 2.15.0 (unknown)",
+      "cpes": [
+       "cpe:2.3:a:pygments:pygments:*:*:*:*:*:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "name": "Pygments",
+    "version": "2.13.0",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/Pygments-2.13.0.dist-info/METADATA",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/Pygments-2.13.0.dist-info/RECORD",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/Pygments-2.13.0.dist-info/direct_url.json",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/Pygments-2.13.0.dist-info/top_level.txt",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "BSD License"
+    ],
+    "cpes": [
+     "cpe:2.3:a:georg_brandl_project:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandl_project:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandlproject:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandlproject:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-Pygments:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-Pygments:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_Pygments:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_Pygments:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandl_project:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_project:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_project:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandl:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandl:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandlproject:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georgproject:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georgproject:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:Pygments:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:Pygments:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-Pygments:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_Pygments:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_project:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandl:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georgproject:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:Pygments:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg:Pygments:2.13.0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/Pygments@2.13.0",
     "upstreams": []
    }
   },
@@ -4679,6 +4796,7 @@
     "urls": [
      "https://github.com/python/cpython/issues/98433",
      "https://lists.debian.org/debian-lts-announce/2023/05/msg00024.html",
+     "https://lists.debian.org/debian-lts-announce/2023/06/msg00039.html",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2AOUKI72ACV6CHY2QUFO6VK2DNMVJ2MB/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/35YDIWCUMWTMDBWFRAVENFH6BLB65D6S/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4WBZJNSALFGMPYTINIF57HAAK46U72WQ/",
@@ -5296,7 +5414,8 @@
       "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UFIA3X4IZ3CW7SRQ2UHNHNPMRIAWF2FI/",
       "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WS4KVDOG6QTALWHC2QE4Y7VPDRMLTRWQ/",
       "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z634YBXAJ5VLDI62IOPBVP5K6YFHAWCY/",
-      "https://security.netapp.com/advisory/ntap-20230324-0005/"
+      "https://security.netapp.com/advisory/ntap-20230324-0005/",
+      "https://security.netapp.com/advisory/ntap-20230725-0005/"
      ],
      "description": "A timing side-channel in the handling of RSA ClientKeyExchange messages was discovered in GnuTLS. This side-channel can be sufficient to recover the key encrypted in the RSA ciphertext across a network in a Bleichenbacher style attack. To achieve a successful decryption the attacker would need to send a large amount of specially crafted messages to the vulnerable server. By recovering the secret from the ClientKeyExchange message, the attacker would be able to decrypt the application data exchanged over that connection.",
      "cvss": [
@@ -5407,6 +5526,7 @@
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2017771e2db3e2b96f89bbe8766c3209f6a99545",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=879f7080d7e141f415c79eaa3a8ac4a3dad0348b",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=959c59c7a0164117e7f8366466a32bb1f8d77ff1",
+      "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html",
       "https://www.debian.org/security/2023/dsa-5417",
       "https://www.openssl.org/news/secadv/20230322.txt"
      ],
@@ -5505,6 +5625,7 @@
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2017771e2db3e2b96f89bbe8766c3209f6a99545",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=879f7080d7e141f415c79eaa3a8ac4a3dad0348b",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=959c59c7a0164117e7f8366466a32bb1f8d77ff1",
+      "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html",
       "https://www.debian.org/security/2023/dsa-5417",
       "https://www.openssl.org/news/secadv/20230322.txt"
      ],
@@ -5603,6 +5724,7 @@
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=1dd43e0709fece299b15208f36cc7c76209ba0bb",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=b013765abfa80036dc779dd0e50602c57bb3bf95",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=facfb1ab745646e97a1920977ae4a9965ea61d5c",
+      "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html",
       "https://security.netapp.com/advisory/ntap-20230414-0001/",
       "https://www.debian.org/security/2023/dsa-5417",
       "https://www.openssl.org/news/secadv/20230328.txt"
@@ -5702,6 +5824,7 @@
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=1dd43e0709fece299b15208f36cc7c76209ba0bb",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=b013765abfa80036dc779dd0e50602c57bb3bf95",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=facfb1ab745646e97a1920977ae4a9965ea61d5c",
+      "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html",
       "https://security.netapp.com/advisory/ntap-20230414-0001/",
       "https://www.debian.org/security/2023/dsa-5417",
       "https://www.openssl.org/news/secadv/20230328.txt"
@@ -5801,6 +5924,7 @@
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=0d16b7e99aafc0b4a6d729eec65a411a7e025f0a",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=51e8a84ce742db0f6c70510d0159dad8f7825908",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=fc814a30fc4f0bc54fcea7d9a7462f5457aab061",
+      "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html",
       "https://security.netapp.com/advisory/ntap-20230414-0001/",
       "https://www.debian.org/security/2023/dsa-5417",
       "https://www.openssl.org/news/secadv/20230328.txt"
@@ -5900,6 +6024,7 @@
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=0d16b7e99aafc0b4a6d729eec65a411a7e025f0a",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=51e8a84ce742db0f6c70510d0159dad8f7825908",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=fc814a30fc4f0bc54fcea7d9a7462f5457aab061",
+      "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html",
       "https://security.netapp.com/advisory/ntap-20230414-0001/",
       "https://www.debian.org/security/2023/dsa-5417",
       "https://www.openssl.org/news/secadv/20230328.txt"
@@ -6085,13 +6210,22 @@
      "https://github.com/python/cpython/issues/102153",
      "https://github.com/python/cpython/pull/99421",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6PEVICI7YNGGMSL3UCMWGE66QFLATH72/",
+     "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DSL6NSOAXWBJJ67XPLSSC74MNKZF3BBO/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EM2XLZSTXG44TMFXF4E6VTGKR2MQCW3G/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/F2NY75GFDZ5T6YPN44D3VMFT5SUVTOTG/",
+     "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GR5US3BYILYJ4SKBV6YBNPRUBAL5P2CN/",
+     "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/H23OSKC6UG6IWOQAUPW74YUHWRWVXJP7/",
+     "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JZTLGV2HYFF4AMYJL25VDIGAIHCU7UPA/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LWC4WGXER5P6Q75RFGL7QUTPP3N5JR7T/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MZEHSXSCMA4WWQKXT6QV7AAR6SWNZ2VP/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/O5SP4RT3RRS434ZS2HQKQJ3VZW7YPKYR/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OHHJHJRLEF3TDT2K3676CAUVRDD4CCMR/",
+     "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PEUN6T22UJFXR7J5F6UUHCXXPKJ2DVHI/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PURM5CFDABEWAIWZFD2MQ7ZJGCPYSQ44/",
+     "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Q3J5N24ECS4B6MJDRO6UAYU6GPLYBDCL/",
+     "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QRQHN7RWJQJHYP6E5EKESOYP5VDSHZG4/",
+     "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RA2MBEEES6L46OD64OBSVUUMGKNGMOWW/",
+     "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/T4IDB5OAR5Y4UK3HLMZBW4WEL2B7YFMJ/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TZH26JGNZ5XYPZ5SAU3NKSBSPRE5OHTG/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/U2MZOJYGFCB5PPT6AKMAU72N7QOYWLBP/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UONZWLB4QVLQIY5CPDLEUEKH6WX4VQMC/",
@@ -6131,7 +6265,7 @@
      },
      "found": {
       "vulnerabilityID": "CVE-2023-24329",
-      "versionConstraint": "< 3.11 (unknown)",
+      "versionConstraint": "< 3.7.17 || >= 3.8.0, < 3.8.17 || >= 3.9.0, < 3.9.17 || >= 3.10.0, < 3.10.12 || >= 3.11.0, < 3.11.14 (unknown)",
       "cpes": [
        "cpe:2.3:a:python:python:*:*:*:*:*:*:*:*"
       ]
@@ -6318,6 +6452,9 @@
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=423a2bc737a908ad0c77bda470b2b59dc879936b",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=9e209944b35cf82368071f160a744b6178f9b098",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=db779b0e10b047f2585615e0b8f2acdf21f8544a",
+      "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html",
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0009",
+      "https://security.netapp.com/advisory/ntap-20230703-0001/",
       "https://www.debian.org/security/2023/dsa-5417",
       "https://www.openssl.org/news/secadv/20230530.txt"
      ],
@@ -6417,6 +6554,9 @@
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=423a2bc737a908ad0c77bda470b2b59dc879936b",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=9e209944b35cf82368071f160a744b6178f9b098",
       "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=db779b0e10b047f2585615e0b8f2acdf21f8544a",
+      "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html",
+      "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0009",
+      "https://security.netapp.com/advisory/ntap-20230703-0001/",
       "https://www.debian.org/security/2023/dsa-5417",
       "https://www.openssl.org/news/secadv/20230530.txt"
      ],
@@ -7676,6 +7816,618 @@
   },
   {
    "vulnerability": {
+    "id": "CVE-2023-31437",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31437",
+    "namespace": "ubuntu:distro:ubuntu:20.04",
+    "severity": "Medium",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31437"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-31437",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-31437",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/kastel-security/Journald",
+      "https://github.com/kastel-security/Journald/blob/main/journald-publication.pdf",
+      "https://github.com/systemd/systemd/releases"
+     ],
+     "description": "** DISPUTED ** An issue was discovered in systemd 253. An attacker can modify a sealed log file such that, in some views, not all existing and sealed log messages are displayed. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
+     "cvss": [
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 3.9,
+        "impactScore": 1.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "20.04"
+      },
+      "namespace": "ubuntu:distro:ubuntu:20.04",
+      "package": {
+       "name": "systemd",
+       "version": "245.4-4ubuntu3.18"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)",
+      "vulnerabilityID": "CVE-2023-31437"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libsystemd0",
+    "version": "245.4-4ubuntu3.18",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libsystemd0/copyright",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libsystemd0:amd64.md5sums",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libsystemd0:libsystemd0:245.4-4ubuntu3.18:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2023-31437",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31437",
+    "namespace": "ubuntu:distro:ubuntu:20.04",
+    "severity": "Medium",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31437"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-31437",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-31437",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/kastel-security/Journald",
+      "https://github.com/kastel-security/Journald/blob/main/journald-publication.pdf",
+      "https://github.com/systemd/systemd/releases"
+     ],
+     "description": "** DISPUTED ** An issue was discovered in systemd 253. An attacker can modify a sealed log file such that, in some views, not all existing and sealed log messages are displayed. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
+     "cvss": [
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 3.9,
+        "impactScore": 1.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "20.04"
+      },
+      "namespace": "ubuntu:distro:ubuntu:20.04",
+      "package": {
+       "name": "systemd",
+       "version": "245.4-4ubuntu3.18"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)",
+      "vulnerabilityID": "CVE-2023-31437"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libudev1",
+    "version": "245.4-4ubuntu3.18",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libudev1/copyright",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libudev1:amd64.md5sums",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libudev1:libudev1:245.4-4ubuntu3.18:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libudev1@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2023-31438",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31438",
+    "namespace": "ubuntu:distro:ubuntu:20.04",
+    "severity": "Medium",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31438"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-31438",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-31438",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/kastel-security/Journald",
+      "https://github.com/kastel-security/Journald/blob/main/journald-publication.pdf",
+      "https://github.com/systemd/systemd/releases"
+     ],
+     "description": "** DISPUTED ** An issue was discovered in systemd 253. An attacker can truncate a sealed log file and then resume log sealing such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
+     "cvss": [
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 3.9,
+        "impactScore": 1.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "20.04"
+      },
+      "namespace": "ubuntu:distro:ubuntu:20.04",
+      "package": {
+       "name": "systemd",
+       "version": "245.4-4ubuntu3.18"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)",
+      "vulnerabilityID": "CVE-2023-31438"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libsystemd0",
+    "version": "245.4-4ubuntu3.18",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libsystemd0/copyright",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libsystemd0:amd64.md5sums",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libsystemd0:libsystemd0:245.4-4ubuntu3.18:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2023-31438",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31438",
+    "namespace": "ubuntu:distro:ubuntu:20.04",
+    "severity": "Medium",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31438"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-31438",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-31438",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/kastel-security/Journald",
+      "https://github.com/kastel-security/Journald/blob/main/journald-publication.pdf",
+      "https://github.com/systemd/systemd/releases"
+     ],
+     "description": "** DISPUTED ** An issue was discovered in systemd 253. An attacker can truncate a sealed log file and then resume log sealing such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
+     "cvss": [
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 3.9,
+        "impactScore": 1.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "20.04"
+      },
+      "namespace": "ubuntu:distro:ubuntu:20.04",
+      "package": {
+       "name": "systemd",
+       "version": "245.4-4ubuntu3.18"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)",
+      "vulnerabilityID": "CVE-2023-31438"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libudev1",
+    "version": "245.4-4ubuntu3.18",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libudev1/copyright",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libudev1:amd64.md5sums",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libudev1:libudev1:245.4-4ubuntu3.18:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libudev1@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2023-31439",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31439",
+    "namespace": "ubuntu:distro:ubuntu:20.04",
+    "severity": "Medium",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31439"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-31439",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-31439",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/kastel-security/Journald",
+      "https://github.com/kastel-security/Journald/blob/main/journald-publication.pdf",
+      "https://github.com/systemd/systemd/releases"
+     ],
+     "description": "** DISPUTED ** An issue was discovered in systemd 253. An attacker can modify the contents of past events in a sealed log file and then adjust the file such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
+     "cvss": [
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 3.9,
+        "impactScore": 1.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "20.04"
+      },
+      "namespace": "ubuntu:distro:ubuntu:20.04",
+      "package": {
+       "name": "systemd",
+       "version": "245.4-4ubuntu3.18"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)",
+      "vulnerabilityID": "CVE-2023-31439"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libsystemd0",
+    "version": "245.4-4ubuntu3.18",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libsystemd0/copyright",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libsystemd0:amd64.md5sums",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libsystemd0:libsystemd0:245.4-4ubuntu3.18:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libsystemd0@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2023-31439",
+    "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31439",
+    "namespace": "ubuntu:distro:ubuntu:20.04",
+    "severity": "Medium",
+    "urls": [
+     "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31439"
+    ],
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-31439",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-31439",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/kastel-security/Journald",
+      "https://github.com/kastel-security/Journald/blob/main/journald-publication.pdf",
+      "https://github.com/systemd/systemd/releases"
+     ],
+     "description": "** DISPUTED ** An issue was discovered in systemd 253. An attacker can modify the contents of past events in a sealed log file and then adjust the file such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
+     "cvss": [
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 3.9,
+        "impactScore": 1.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "ubuntu",
+       "version": "20.04"
+      },
+      "namespace": "ubuntu:distro:ubuntu:20.04",
+      "package": {
+       "name": "systemd",
+       "version": "245.4-4ubuntu3.18"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)",
+      "vulnerabilityID": "CVE-2023-31439"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "libudev1",
+    "version": "245.4-4ubuntu3.18",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/libudev1/copyright",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libudev1:amd64.md5sums",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:7444213f2ac4d642b0b8f3746052b34a426a2fc1b4c775e82a34848f59e0bc91"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "CC0-1.0",
+     "Expat",
+     "GPL-2",
+     "GPL-2+",
+     "LGPL-2.1",
+     "LGPL-2.1+",
+     "public-domain"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libudev1:libudev1:245.4-4ubuntu3.18:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/ubuntu/libudev1@245.4-4ubuntu3.18?arch=amd64&upstream=systemd&distro=ubuntu-20.04",
+    "upstreams": [
+     {
+      "name": "systemd"
+     }
+    ]
+   }
+  },
+  {
+   "vulnerability": {
     "id": "CVE-2023-31484",
     "dataSource": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2023-31484",
     "namespace": "ubuntu:distro:ubuntu:20.04",
@@ -7705,6 +8457,8 @@
       "http://www.openwall.com/lists/oss-security/2023/05/07/2",
       "https://blog.hackeriet.no/perl-http-tiny-insecure-tls-default-affects-cpan-modules/",
       "https://github.com/andk/cpanpm/pull/175",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BM6UW55CNFUTNGD5ZRKGUKKKFDJGMFHL/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LEGCEOKFJVBJ2QQ6S2H4NAEWTUERC7SB/",
       "https://metacpan.org/dist/CPAN/changes",
       "https://www.openwall.com/lists/oss-security/2023/04/18/14"
      ],
@@ -7816,6 +8570,7 @@
      "https://github.com/psf/requests/commit/74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5",
      "https://github.com/psf/requests/releases/tag/v2.31.0",
      "https://github.com/psf/requests/security/advisories/GHSA-j8r2-6x86-q33q",
+     "https://lists.debian.org/debian-lts-announce/2023/06/msg00018.html",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AW7HNFGYP44RT3DUDQXG2QT3OEV2PJ7Y/",
      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KOYASTZDGQG2BWLSNBPL3TQRL2G7QYNZ/"
     ],
@@ -7927,6 +8682,82 @@
      "cpe:2.3:a:me:requests:2.28.1:*:*:*:*:*:*:*"
     ],
     "purl": "pkg:pypi/requests@2.28.1",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "CVE-2023-36632",
+    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-36632",
+    "namespace": "nvd:cpe",
+    "severity": "High",
+    "urls": [
+     "https://docs.python.org/3/library/email.html",
+     "https://docs.python.org/3/library/email.utils.html",
+     "https://github.com/Daybreak2019/PoC_python3.9_Vul/blob/main/RecursionError-email.utils.parseaddr.py",
+     "https://github.com/python/cpython/issues/103800"
+    ],
+    "description": "** DISPUTED ** The legacy email.utils.parseaddr function in Python through 3.11.4 allows attackers to trigger \"RecursionError: maximum recursion depth exceeded while calling a Python object\" via a crafted argument. This argument is plausibly an untrusted value from an application's input data that was supposed to contain a name and an e-mail address. NOTE: email.utils.parseaddr is categorized as a Legacy API in the documentation of the Python email package. Applications should instead use the email.parser.BytesParser or email.parser.Parser class. NOTE: the vendor's perspective is that this is neither a vulnerability nor a bug. The email package is intended to have size limits and to throw an exception when limits are exceeded; they were exceeded by the example demonstration code.",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "metrics": {
+       "baseScore": 7.5,
+       "exploitabilityScore": 3.9,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {}
+     }
+    ],
+    "fix": {
+     "versions": [],
+     "state": "unknown"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [],
+   "matchDetails": [
+    {
+     "type": "cpe-match",
+     "matcher": "stock-matcher",
+     "searchedBy": {
+      "namespace": "nvd:cpe",
+      "cpes": [
+       "cpe:2.3:a:python:python:3.10.6:*:*:*:*:*:*:*"
+      ]
+     },
+     "found": {
+      "vulnerabilityID": "CVE-2023-36632",
+      "versionConstraint": "<= 3.11.4 (unknown)",
+      "cpes": [
+       "cpe:2.3:a:python:python:*:*:*:*:*:*:*:*"
+      ]
+     }
+    }
+   ],
+   "artifact": {
+    "name": "python",
+    "version": "3.10.6",
+    "type": "binary",
+    "locations": [
+     {
+      "path": "/opt/conda/bin/python3.10",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/libpython3.10.so.1.0",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     }
+    ],
+    "language": "",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:python_software_foundation:python:3.10.6:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python:3.10.6:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python:3.10.6:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:generic/python@3.10.6",
     "upstreams": []
    }
   },
@@ -8573,6 +9404,230 @@
   },
   {
    "vulnerability": {
+    "id": "GHSA-c2qf-rxjj-qqgw",
+    "dataSource": "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw",
+    "namespace": "github:language:javascript",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw"
+    ],
+    "description": "semver vulnerable to Regular Expression Denial of Service",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "metrics": {
+       "baseScore": 5.3,
+       "exploitabilityScore": 3.9,
+       "impactScore": 1.4
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "7.5.2"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-25883",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-25883",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://github.com/npm/node-semver/blob/main/classes/range.js%23L97-L104",
+      "https://github.com/npm/node-semver/blob/main/internal/re.js%23L138",
+      "https://github.com/npm/node-semver/blob/main/internal/re.js%23L160",
+      "https://github.com/npm/node-semver/commit/717534ee353682f3bcf33e60a8af4292626d4441",
+      "https://github.com/npm/node-semver/pull/564",
+      "https://security.snyk.io/vuln/SNYK-JS-SEMVER-3247795"
+     ],
+     "description": "Versions of the package semver before 7.5.2 are vulnerable to Regular Expression Denial of Service (ReDoS) via the function new Range, when untrusted user data is provided as a range.\r\r\r",
+     "cvss": [
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 3.9,
+        "impactScore": 1.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "javascript-matcher",
+     "searchedBy": {
+      "language": "javascript",
+      "namespace": "github:language:javascript"
+     },
+     "found": {
+      "versionConstraint": ">=7.0.0,<7.5.2 (unknown)",
+      "vulnerabilityID": "GHSA-c2qf-rxjj-qqgw"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "semver",
+    "version": "7.3.5",
+    "type": "npm",
+    "locations": [
+     {
+      "path": "/opt/conda/lib/node_modules/npm/node_modules/semver/package.json",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     }
+    ],
+    "language": "javascript",
+    "licenses": [
+     "ISC"
+    ],
+    "cpes": [
+     "cpe:2.3:a:semver:semver:7.3.5:*:*:*:*:*:*:*",
+     "cpe:2.3:a:npm:semver:7.3.5:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:npm/semver@7.3.5",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-cf7p-gm2m-833m",
+    "dataSource": "https://github.com/advisories/GHSA-cf7p-gm2m-833m",
+    "namespace": "github:language:python",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-cf7p-gm2m-833m"
+    ],
+    "description": "cryptography mishandles SSH certificates",
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "41.0.2"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-38325",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-38325",
+     "namespace": "nvd:cpe",
+     "urls": [
+      "https://github.com/pyca/cryptography/compare/41.0.1...41.0.2",
+      "https://github.com/pyca/cryptography/issues/9207",
+      "https://github.com/pyca/cryptography/pull/9208",
+      "https://pypi.org/project/cryptography/#history"
+     ],
+     "description": "The cryptography package before 41.0.2 for Python mishandles SSH certificates that have critical options.",
+     "cvss": []
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "language": "python",
+      "namespace": "github:language:python"
+     },
+     "found": {
+      "versionConstraint": "<41.0.2 (python)",
+      "vulnerabilityID": "GHSA-cf7p-gm2m-833m"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "cryptography",
+    "version": "38.0.1",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/cryptography-38.0.1.dist-info/METADATA",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/cryptography-38.0.1.dist-info/RECORD",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/cryptography-38.0.1.dist-info/direct_url.json",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/cryptography-38.0.1.dist-info/top_level.txt",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "BSD-3-Clause OR Apache-2.0"
+    ],
+    "cpes": [
+     "cpe:2.3:a:python_cryptographic_authority_and_individual_contributors_project:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_cryptographic_authority_and_individual_contributors_project:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_cryptographic_authority_and_individual_contributorsproject:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_cryptographic_authority_and_individual_contributorsproject:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_cryptographic_authority_and_individual_contributors_project:cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_cryptographic_authority_and_individual_contributors:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_cryptographic_authority_and_individual_contributors:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_cryptographic_authority_and_individual_contributorsproject:cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_cryptographic_authority_and_individual_contributors:cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-cryptography_project:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-cryptography_project:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography_dev_project:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography_dev_project:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography_devproject:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography_devproject:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-cryptography_project:cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-cryptography:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-cryptography:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_cryptography:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_cryptography:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography_dev_project:cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography-dev:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography-dev:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography_dev:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography_dev:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography_devproject:cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-cryptography:cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_cryptography:cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography-dev:cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography_dev:cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:cryptography:cryptography:38.0.1:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:cryptography:38.0.1:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/cryptography@38.0.1",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
     "id": "GHSA-hj3f-6gcp-jg8j",
     "dataSource": "https://github.com/advisories/GHSA-hj3f-6gcp-jg8j",
     "namespace": "github:language:python",
@@ -8856,6 +9911,7 @@
       "https://github.com/psf/requests/commit/74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5",
       "https://github.com/psf/requests/releases/tag/v2.31.0",
       "https://github.com/psf/requests/security/advisories/GHSA-j8r2-6x86-q33q",
+      "https://lists.debian.org/debian-lts-announce/2023/06/msg00018.html",
       "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AW7HNFGYP44RT3DUDQXG2QT3OEV2PJ7Y/",
       "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KOYASTZDGQG2BWLSNBPL3TQRL2G7QYNZ/"
      ],
@@ -9005,7 +10061,8 @@
       "https://lists.debian.org/debian-lts-announce/2022/11/msg00022.html",
       "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KKMP5OXXIX2QAUNVNJZ5UEQFKDYYJVBA/",
       "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YIDN7JMLK6AOMBQI4QPSW4MBQGWQ5NIN/",
-      "https://security.gentoo.org/glsa/202301-04"
+      "https://security.gentoo.org/glsa/202301-04",
+      "https://www.debian.org/security/2023/dsa-5422"
      ],
      "description": "Jupyter Core is a package for the core common functionality of Jupyter projects. Jupyter Core prior to version 4.11.2 contains an arbitrary code execution vulnerability in `jupyter_core` that stems from `jupyter_core` executing untrusted files in CWD. This vulnerability allows one user to run code as another. Version 4.11.2 contains a patch for this issue. There are no known workarounds.",
      "cvss": [
@@ -9136,6 +10193,141 @@
      "cpe:2.3:a:python:jupyter_core:4.11.1:*:*:*:*:*:*:*"
     ],
     "purl": "pkg:pypi/jupyter_core@4.11.1",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-mrwq-x4v8-fh7p",
+    "dataSource": "https://github.com/advisories/GHSA-mrwq-x4v8-fh7p",
+    "namespace": "github:language:python",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-mrwq-x4v8-fh7p"
+    ],
+    "description": "Pygments vulnerable to ReDoS",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "metrics": {
+       "baseScore": 5.5,
+       "exploitabilityScore": 1.8,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "2.15.0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2022-40896",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2022-40896",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/pygments/pygments/blob/master/pygments/lexers/smithy.py#L61",
+      "https://pypi.org/project/Pygments/",
+      "https://pyup.io/posts/pyup-discovers-redos-vulnerabilities-in-top-python-packages-part-2/"
+     ],
+     "description": "A ReDoS issue was discovered in pygments/lexers/smithy.py in pygments through 2.15.0 via SmithyLexer.",
+     "cvss": [
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 5.5,
+        "exploitabilityScore": 1.8,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "language": "python",
+      "namespace": "github:language:python"
+     },
+     "found": {
+      "versionConstraint": "<2.15.0 (python)",
+      "vulnerabilityID": "GHSA-mrwq-x4v8-fh7p"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "Pygments",
+    "version": "2.13.0",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/Pygments-2.13.0.dist-info/METADATA",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/Pygments-2.13.0.dist-info/RECORD",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/Pygments-2.13.0.dist-info/direct_url.json",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/Pygments-2.13.0.dist-info/top_level.txt",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "BSD License"
+    ],
+    "cpes": [
+     "cpe:2.3:a:georg_brandl_project:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandl_project:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandlproject:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandlproject:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-Pygments:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-Pygments:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_Pygments:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_Pygments:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandl_project:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_project:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_project:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandl:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandl:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandlproject:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georgproject:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georgproject:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:Pygments:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:Pygments:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-Pygments:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_Pygments:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_project:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg:python-Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg:python_Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg_brandl:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georgproject:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:Pygments:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:Pygments:2.13.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:georg:Pygments:2.13.0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/Pygments@2.13.0",
     "upstreams": []
    }
   },
@@ -9440,10 +10632,11 @@
      "severity": "High",
      "urls": [
       "https://github.com/kornelski/http-cache-semantics/blob/master/index.js%23L83",
+      "https://security.netapp.com/advisory/ntap-20230622-0008/",
       "https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-3253332",
       "https://security.snyk.io/vuln/SNYK-JS-HTTPCACHESEMANTICS-3248783"
      ],
-     "description": "This affects versions of the package http-cache-semantics before 4.1.1. The issue can be exploited via malicious request header values sent to a server, when that server reads the cache policy from the request using this library.",
+     "description": "This affects versions of the package http-cache-semantics before 4.1.1. The issue can be exploited via malicious request header values sent to a server, when that server reads the cache policy from the request using this library.\r\r",
      "cvss": [
       {
        "version": "3.1",
@@ -9807,6 +11000,123 @@
     "purl": "pkg:pypi/cryptography@38.0.1",
     "upstreams": []
    }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-xqr8-7jwr-rhp7",
+    "dataSource": "https://github.com/advisories/GHSA-xqr8-7jwr-rhp7",
+    "namespace": "github:language:python",
+    "severity": "Low",
+    "urls": [
+     "https://github.com/advisories/GHSA-xqr8-7jwr-rhp7"
+    ],
+    "description": "Removal of e-Tugra root certificate",
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "2023.07.22"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-37920",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-37920",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://github.com/certifi/python-certifi/commit/8fb96ed81f71e7097ed11bc4d9b19afd7ea5c909",
+      "https://github.com/certifi/python-certifi/security/advisories/GHSA-xqr8-7jwr-rhp7",
+      "https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/C-HrP1SEq1A"
+     ],
+     "description": "Certifi is a curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. Certifi prior to version 2023.07.22 recognizes \"e-Tugra\" root certificates. e-Tugra's root certificates were subject to an investigation prompted by reporting of security issues in their systems. Certifi 2023.07.22 removes root certificates from \"e-Tugra\" from the root store.",
+     "cvss": [
+      {
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "python-matcher",
+     "searchedBy": {
+      "language": "python",
+      "namespace": "github:language:python"
+     },
+     "found": {
+      "versionConstraint": ">=2015.04.28,<2023.07.22 (python)",
+      "vulnerabilityID": "GHSA-xqr8-7jwr-rhp7"
+     }
+    }
+   ],
+   "artifact": {
+    "name": "certifi",
+    "version": "2022.9.24",
+    "type": "python",
+    "locations": [
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/certifi-2022.9.24-py3.10.egg-info/PKG-INFO",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/certifi-2022.9.24-py3.10.egg-info/installed-files.txt",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     },
+     {
+      "path": "/opt/conda/lib/python3.10/site-packages/certifi-2022.9.24-py3.10.egg-info/top_level.txt",
+      "layerID": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+     }
+    ],
+    "language": "python",
+    "licenses": [
+     "MPL-2.0"
+    ],
+    "cpes": [
+     "cpe:2.3:a:kenneth_reitz_project:python-certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz_project:python_certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitzproject:python-certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitzproject:python_certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz_project:certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-certifi:python-certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-certifi:python_certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_certifi:python-certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_certifi:python_certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz:python-certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz:python_certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitzproject:certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me_project:python-certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me_project:python_certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:meproject:python-certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:meproject:python_certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:certifi:python-certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:certifi:python_certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python-certifi:certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python_certifi:certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:kenneth_reitz:certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python-certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:python_certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me_project:certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me:python-certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me:python_certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:meproject:certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:certifi:certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:python:certifi:2022.9.24:*:*:*:*:*:*:*",
+     "cpe:2.3:a:me:certifi:2022.9.24:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:pypi/certifi@2022.9.24",
+    "upstreams": []
+   }
   }
  ],
  "source": {
@@ -9991,12 +11301,12 @@
    "default-image-pull-source": ""
   },
   "db": {
-   "built": "2023-06-08T01:31:13Z",
+   "built": "2023-07-27T01:32:25Z",
    "schemaVersion": 5,
    "location": "/home/patrick/.cache/grype/db/5",
-   "checksum": "sha256:f09a6880cfca1b76ef9881c8abbc9f037b794090a77faa545a8f2f02e2364ac9",
+   "checksum": "sha256:9db826be151c8e12bad92e4a81f6ece30ebe6bf0b5e59d75ebf5f8c3ae680be7",
    "error": null
   },
-  "timestamp": "2023-06-08T13:44:57.389522769+02:00"
+  "timestamp": "2023-07-28T10:48:05.733553061+02:00"
  }
 }
