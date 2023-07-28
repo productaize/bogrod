@@ -1,3 +1,6 @@
+import yaml
+
+
 class BogrodVEXFile:
     def __init__(self, data):
         self.data = data

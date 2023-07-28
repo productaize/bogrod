@@ -69,16 +69,27 @@ class CycloneDXSBOM:
             dict: a dict of vulnerabilities that are unchanged, new or resolved
         """
         diff = {}
-        ours = set(self.vulnerabilities(as_dict=True))
-        theirs = set(other.vulnerabilities(as_dict=True))
+        ours_vuln = self.vulnerabilities(as_dict=True)
+        theirs_vuln = other.vulnerabilities(as_dict=True)
+        ours = set(ours_vuln)
+        theirs = set(theirs_vuln)
         diff.update({
-            vid: 'unchanged'
+            vid: {
+                'delta': 'unchanged',
+                'vuln': ours_vuln[vid]
+            }
          for vid in ours.intersection(theirs)})
         diff.update({
-            vid: 'new'
+            vid: {
+                'delta': 'new',
+                'vuln': ours_vuln[vid]
+            }
         for vid in ours.difference(theirs)})
         diff.update({
-            vid: 'resolved'
+            vid: {
+                'delta': 'resolved',
+                'vuln': theirs_vuln[vid]
+            }
         for vid in theirs.difference(ours)})
         return diff
 

@@ -17,7 +17,7 @@ setup(
     long_description=README,
     long_description_content_type='text/markdown',
     install_requires=[
-        'jsonschema',
+        'jsonschema<4', # 4.x causes endless loop when validating with bom-1.5.schema.json
         'pyyaml',
         'tabulate',
         'attrdict',
