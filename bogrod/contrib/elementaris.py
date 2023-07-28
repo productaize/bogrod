@@ -6,7 +6,32 @@ from bogrod.contrib.aggregator import SBOMAggregator
 
 
 class EssentxElementaris(SBOMAggregator):
-    def __init__(self, url, token):
+    """ An aggregator for the Essentx Elementaris SBOM service
+
+    Usage:
+        in the .bogrod config file:
+
+        [aggregator]
+        elementaris.url=https://<company>.elementaris.essentx.com/api/v1/
+        elementaris.token=<API>
+
+    Args:
+        url (str): the base URL for the Elementaris service
+        token (str): the API token for the Elementaris service
+
+    Notes:
+        The Elementaris service requires an API token for authentication.
+        The token is passed in the `authorization` header of the request.
+        The service expects the SBOM data to be in CycloneDX JSON format.
+        The url for the service is typically `https://<company>.elementaris.essentx.com/api/v1/`
+
+    See Also:
+        - https://github.com/essentxag/elementaris-docu
+        - https://github.com/essentxag/elementaris-docu/releases/tag/v1.2.0
+    """
+
+    def __init__(self, *args, url=None, token=None, **kwargs):
+        super().__init__(*args, **kwargs)
         self.url = url
         self.token = token
 
@@ -59,4 +84,3 @@ class EssentxElementaris(SBOMAggregator):
             text = f'{resp.status_code=} {message=} {extra=}'
             raise Exception(text)
         return data
-

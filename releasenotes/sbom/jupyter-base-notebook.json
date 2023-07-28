@@ -52240,11 +52240,12 @@
         }
       ],
       "analysis": {
-        "detail": "we are not affected by this",
+        "detail": "python 3.10 is not used \n\nasasdflasdf",
         "response": [
           "can_not_fix"
         ],
-        "state": "resolved"
+        "state": "resolved",
+        "justification": "code_not_reachable"
       }
     },
     {
@@ -52857,9 +52858,12 @@
         }
       ],
       "analysis": {
-        "detail": "",
-        "response": [],
-        "state": "in_triage"
+        "detail": "not used, ..asdfasdf",
+        "response": [
+          "will_not_fix"
+        ],
+        "state": "resolved",
+        "justification": "code_not_present"
       }
     },
     {

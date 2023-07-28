@@ -52317,10 +52317,11 @@
       ],
       "analysis": {
         "state": "resolved",
-        "detail": "we are not affected by this",
+        "detail": "python 3.10 is not used \n\nasasdflasdf",
         "response": [
           "can_not_fix"
-        ]
+        ],
+        "justification": "code_not_reachable"
       }
     },
     {

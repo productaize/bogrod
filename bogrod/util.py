@@ -1,5 +1,7 @@
 from collections import Counter
 
+import yaml
+
 
 def dict_merge(destination, source, delete_on='__delete__', subset=None):
     """
@@ -64,3 +66,27 @@ def tryOr(fn, else_fn):
         return fn()
     except:
         return else_fn() if callable(else_fn) else else_fn
+
+
+def wait(s, delay=1):
+    """
+    drop-in for time.sleep() with status updates and Ctrl-C support
+
+    Usage:
+        for delay in wait(seconds):
+            print(f'waiting for {delay} seconds')
+    """
+    import time
+
+    try:
+        while s:
+            yield str(s)
+            time.sleep(delay)
+            s -= 1
+    except KeyboardInterrupt:
+        pass
+
+# adapted from https://stackoverflow.com/a/66853182/890242
+class SafeNoAliasDumper(yaml.SafeDumper):
+    def ignore_aliases(self, data):
+        return True
