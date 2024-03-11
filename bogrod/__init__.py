@@ -1,17 +1,17 @@
-from copy import deepcopy
-
 import argparse
 import json
-import jsonschema
 import os
 import subprocess
-import yaml
 from configparser import ConfigParser
-from jsonschema.exceptions import ValidationError
+from copy import deepcopy
 from pathlib import Path
-from tabulate import tabulate
 from tempfile import NamedTemporaryFile
 from textwrap import dedent, wrap
+
+import jsonschema
+import yaml
+from jsonschema.exceptions import ValidationError
+from tabulate import tabulate
 
 from bogrod.sbom import CycloneDXSBOM
 from bogrod.util import dict_merge, tabulate_data, tryOr
@@ -320,7 +320,8 @@ class Bogrod:
                 print("{id:20} {severity:8} {note}".format(**rec))
 
     def _get_sbom_schema(self):
-        schema_path = Path(__file__).parent / 'resources/bom-1.4.schema.json'
+        # TODO get the actual schema
+        schema_path = Path(__file__).parent / 'resources/bom-1.5.schema.json'
         with open(schema_path) as fin:
             schema = json.load(fin)
         return schema
@@ -332,6 +333,7 @@ class Bogrod:
         return schema
 
     def validate(self, data=None):
+        print("Validating sbom...")
         schema = self._get_sbom_schema()
         data = data or self.data
         try:
@@ -465,10 +467,12 @@ class Bogrod:
 
     def report_diff(self, stream=None):
         data = []
-        for vuln_id, change in self.diff_data.items():
+        vuln = self.vulnerabilities(as_dict=True)
+        for vuln_id, diff_data in self.diff_data.items():
             data.append({
                 'vuln_id': vuln_id,
-                'change': change,
+                'change': diff_data['delta'],
+                'description': diff_data['vuln']['affects'][0]
             })
         headers = 'keys'
         print(tabulate(data, headers=headers), file=stream)
@@ -522,7 +526,7 @@ def main():
         def update_args(section):
             args.vex = config[section].get('vex', args.vex_file)
             args.grype = config[section].get('grype', args.grype)
-            args.sbom_properties = config[section].get('sbom_properties')
+            args.sbom_properties = config[section].get('sbom_properties', args.sbom_properties)
             args.update_vex = config[section].getboolean('update_vex', args.update_vex)
             args.merge_vex = config[section].getboolean('merge_vex', args.merge_vex)
             args.write_notes = config[section].getboolean('write_notes', args.write_notes)
