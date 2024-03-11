@@ -73,7 +73,6 @@ class CycloneDXSBOM:
         theirs_vuln = other.vulnerabilities(as_dict=True)
         ours = set(ours_vuln)
         theirs = set(theirs_vuln)
-        breakpoint()
         diff.update({
             vid: {
                 'delta': 'unchanged',
