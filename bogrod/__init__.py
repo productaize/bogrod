@@ -1,18 +1,21 @@
-from copy import deepcopy
-
 import argparse
 import json
-import jsonschema
 import os
 import subprocess
-import yaml
 from configparser import ConfigParser
-from jsonschema.exceptions import ValidationError
+from copy import deepcopy
 from pathlib import Path
-from tabulate import tabulate
 from tempfile import NamedTemporaryFile
 from textwrap import dedent, wrap
 
+import jsonschema
+import keyring
+import yaml
+from bogrod import contrib
+from jsonschema.exceptions import ValidationError
+from tabulate import tabulate
+
+from bogrod.sbom import CycloneDXSBOM
 from bogrod.util import dict_merge, tabulate_data, tryOr
 
 
@@ -43,6 +46,10 @@ class Bogrod:
                 - <response code>
             state: <state code>
             justification: <justification code>
+            related:
+                - component: component-name
+            history:
+                - <new|resolved|unchanged>: component-name
 
         # notes.yaml
         ...
@@ -60,6 +67,7 @@ class Bogrod:
         self.vex = vex or {}
         self.grype = grype or {}
         self.report_columns = 'id,name,severity,state,affects,url'.split(',')
+        self.diff_data = {}
 
     def vulnerabilities(self, as_dict=False, severities=None, ordered=False):
         vuln = self.data.get('vulnerabilities', [])
@@ -179,6 +187,28 @@ class Bogrod:
             print(f"WARNING: could not read --vex-file {path}. Specify -x to create from sbom")
             self.vex = {}
 
+    def read_vex_issues(self, path):
+        if not Path(path).exists():
+            return
+        with open(path, 'r') as fin:
+            print("Reading vex issues: ", path)
+            vex_issues = self.vex_issues = yaml.safe_load(fin)
+            if 'report' not in vex_issues:
+                status = vex_issues.get('status')
+                sbomId = vex_issues.get('id')
+                print(f"WARNING: vex issues report does not contain 'report' key. Id: {sbomId} Status: {status}")
+            else:
+                vulns = vex_issues['report']['vulnerabilities']
+                for vuln in vulns:
+                    vuln_id = vuln['id']
+                    new_issues = vuln['issues']
+                    reportedSeverity = vuln['highestSeverity']
+                    vex = self.vex.setdefault(vuln_id, {})
+                    report = vex.setdefault('report', {})
+                    report['issues'] = new_issues
+                    report['severity'] = reportedSeverity
+            return vex_issues
+
     def fix_metadata(self):
         # fix metadata.component from container image tag
         # -- check if we have a name like repo.domain/image:tag
@@ -207,12 +237,11 @@ class Bogrod:
             if fixed:
                 # check if we have previously fixed this
                 compnts = comp.setdefault('components', [])
-                bom_refs = { v.get('bom-ref') for v in compnts}
+                bom_refs = {v.get('bom-ref') for v in compnts}
                 top_level = raw_comp['bom-ref'].split('sbom:')[-1]
                 if top_level not in bom_refs:
                     compnts.append(raw_comp)
                 comp['bom-ref'] = f'sbom:{top_level}'
-
 
     def update_vex(self):
         # https://github.com/CycloneDX/bom-examples/blob/master/VEX/vex.json
@@ -221,6 +250,7 @@ class Bogrod:
         self.vex = self.vex if self.vex is not None and not self.notes else self.notes.get('security-vex', {})
         ensure_list = lambda v: v if isinstance(v, list) else v.split(',')
         ensure_no_empty = lambda l: [e for e in l if e]
+        component = {'component': self.data.get('metadata', {}).get('component', {}).get('name')}
         for vuln in self.vulnerabilities():
             vuln_id = vuln['id']
             vex = all_vex.setdefault(vuln_id, {})
@@ -241,12 +271,24 @@ class Bogrod:
                 del vuln['analysis']['resources']
             # track vex related info to vulnerability's sbom component
             vex.update(analysis)
-            component = {'component': self.data.get('metadata', {}).get('component', {}).get('name')}
-            related = vex.setdefault('related') or []
+            # -- component
+            related = vex.setdefault('related', [])
+            if related is None:
+                vex['related'] = related = []
             if isinstance(related, dict):
                 related = vex['related'] = [{k: v} for k, v in related.items()]
+                vex['related'] = related
             if component not in related:
                 related.append(component)
+        # -- record history of changes in vex
+        for vuln_id, vex in all_vex.items():
+            history = vex.setdefault('history', [])
+            diff = self.diff_data.get(vuln_id) or 'added'
+            diff_in = component['component']
+            change = {diff: diff_in}
+            if change not in history:
+                history.append(change)
+
         self.validate()
         return self.vex
 
@@ -255,6 +297,7 @@ class Bogrod:
         data = []
         severities = severities or self.severities
         columns = columns or self.report_columns
+        diff = self.diff_data
         # build list of dict of each vulnerability
         for vuln in self.vulnerabilities():
             severity = self._vuln_severity(vuln)
@@ -263,17 +306,19 @@ class Bogrod:
             description = vuln.get('description', ' ')
             short = description[0:min(len(description), 40)]
             vex = notes.get(vuln['id']) or self.vex.get(vuln['id']) or {}
+            issues_ind = '*' if vex.get('report', {}).get('issues') else ''
             record = {
                 'id': vuln['id'],
                 'name': vuln['source']['name'],
                 'severity': severity,
-                'state': vex.get('state'),
+                'state': vex.get('state', '') + issues_ind,
                 'justification': vex.get('justification'),
                 'comment': vex.get('detail') or notes.get(vuln['id'], {}).get('comment'),
                 'affects': vuln['affects'][0]['ref'].split('?')[0],
                 'description': description,
                 'short': short,
                 'url': vuln['source'].get('url'),
+                'change': diff.get(vuln['id']),
             }
             record = {k: v for k, v in record.items() if k in columns}
             data.append(record)
@@ -300,7 +345,8 @@ class Bogrod:
                 print("{id:20} {severity:8} {note}".format(**rec))
 
     def _get_sbom_schema(self):
-        schema_path = Path(__file__).parent / 'resources/bom-1.4.schema.json'
+        # TODO get the actual schema
+        schema_path = Path(__file__).parent / 'resources/bom-1.5.schema.json'
         with open(schema_path) as fin:
             schema = json.load(fin)
         return schema
@@ -312,6 +358,7 @@ class Bogrod:
         return schema
 
     def validate(self, data=None):
+        print("Validating sbom...")
         schema = self._get_sbom_schema()
         data = data or self.data
         try:
@@ -360,13 +407,13 @@ class Bogrod:
             if k.lower() in ['state', 'justification', 'response', 'detail']
         }).splitlines()
         clear = lambda: os.system("cls" if os.name == "nt" else "clear")
-        in_triage = lambda: [i for i, v in enumerate(data) if v['state'] == 'in_triage']
+        in_triage = lambda data: [i for i, v in enumerate(data) if v['state'].startswith('in_triage')]
         idx = None
         while True:
             data = self._generate_report_data(severities=severities)
             # get the first in_triage vulnerability
             if idx is None:
-                idx = tryOr(lambda: in_triage()[0], 0)
+                idx = tryOr(lambda: in_triage(data)[0], 0)
             # get user's choice
             clear()
             print(tabulate(data, headers='keys', showindex=True))
@@ -384,8 +431,8 @@ class Bogrod:
                 continue
             self._work_vulnerability(vuln_id, matches, all_vuln, vex_schema)
             # move to next in_triage vulnerability
-            idx = tryOr(lambda: [i for i in in_triage() if i > idx][0],
-                        tryOr(lambda: in_triage()[0], 0))
+            idx = tryOr(lambda: [i for i in in_triage(data) if i > idx][0],
+                        tryOr(lambda: in_triage(data)[0], 0))
 
     def _work_vulnerability(self, vuln_id, matches, all_vuln, vex_schema):
         vex = self.vex
@@ -438,6 +485,23 @@ class Bogrod:
                 os.unlink(fout.name)
                 break
 
+    def diff(self, other_sbomfile):
+        current = CycloneDXSBOM(self.data)
+        other = CycloneDXSBOM.from_file(other_sbomfile)
+        self.diff_data = current.diff(other)
+
+    def report_diff(self, stream=None):
+        data = []
+        vuln = self.vulnerabilities(as_dict=True)
+        for vuln_id, diff_data in self.diff_data.items():
+            data.append({
+                'vuln_id': vuln_id,
+                'change': diff_data['delta'],
+                'description': diff_data['vuln']['affects'][0]
+            })
+        headers = 'keys'
+        print(tabulate(data, headers=headers), file=stream)
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -467,6 +531,14 @@ def main():
                         help='work each vulnerability')
     parser.add_argument('-g', '--grype',
                         help='use grype SBOM to match vulnerabilities at /path/to/grype.json')
+    parser.add_argument('--diff',
+                        help='/path/to/cyclonedx-sbom.json')
+    parser.add_argument('--vex-issues',
+                        help='/path/to/vex-issues.yaml')
+    parser.add_argument('--upload',
+                        help='specify target aggregator to upload sbom and get issues report')
+    parser.add_argument('--upload-tentative', action='store_true',
+                        help='if specified upload sbom as tentative')
     args = parser.parse_args()
 
     def write_vex_merge(vex_file):
@@ -485,7 +557,7 @@ def main():
         def update_args(section):
             args.vex = config[section].get('vex', args.vex_file)
             args.grype = config[section].get('grype', args.grype)
-            args.sbom_properties = config[section].get('sbom_properties')
+            args.sbom_properties = config[section].get('sbom_properties', args.sbom_properties)
             args.update_vex = config[section].getboolean('update_vex', args.update_vex)
             args.merge_vex = config[section].getboolean('merge_vex', args.merge_vex)
             args.write_notes = config[section].getboolean('write_notes', args.write_notes)
@@ -495,10 +567,16 @@ def main():
             args.summary = config[section].getboolean('summary', args.summary)
             args.notes = config[section].get('notes', args.notes)
             args.vex_file = config[section].get('vex_file', args.vex_file)
+            args.vex_issues = config[section].get('vex_issues', args.vex_issues)
             if not Path(args.sbom).exists():
                 args.sbom = config[section].get('sbom', args.sbom)
+            args.upload = config[section].get('upload', args.upload)
+            if args.upload and ':' in args.upload:
+                args.upload, args.projectpath = args.upload.split(':')
+            args.projectpath = config[section].get('projectpath') or getattr(args, 'projectpath', None)
 
         update_args('global') if 'global' in config.sections() else None
+        args.aggregators = config['aggregators']
         if args.sbom in config.sections():
             update_args(args.sbom)
         elif not Path(args.sbom).exists():
@@ -531,7 +609,12 @@ def main():
             args.vex_file = vex_file2
             args.update_vex = True
             args.merge_vex = True
-
+    # -- vex issues report from aggregator (e.g. essentx)
+    if not args.vex_issues:
+        vex_issues_file = Path(args.sbom).parent / (Path(args.sbom).stem.replace('.cdx', '') + '.vexiss.yaml')
+        args.vex_issues = vex_issues_file
+        if vex_issues_file.exists():
+            print("Found vex issues: ", vex_issues_file)
     # -- properties
     if not args.sbom_properties:
         prop_file = Path(args.sbom).parent / 'sbom-metadata.yaml'
@@ -551,6 +634,8 @@ def main():
         bogrod.severities = args.severities.split(',')
     if args.vex_file:
         bogrod.read_vex(args.vex_file)
+    if args.vex_issues:
+        bogrod.read_vex_issues(args.vex_issues)
     if args.notes:
         bogrod.read_notes(args.notes)
         bogrod.update_notes()
@@ -558,14 +643,39 @@ def main():
         bogrod.write_notes(args.notes)
     if args.grype:
         bogrod.read_grype(args.grype)
+    if args.diff:
+        bogrod.diff(args.diff)
+        if not args.work:
+            bogrod.report_diff()
+            exit(0)
     if args.update_vex:
         vex_file = args.vex_file or args.sbom
         bogrod.update_vex()
         write_vex_merge(vex_file)
+    if args.upload:
+        AggregatorClass = contrib.aggregators[args.upload]
+        params = {}
+        params_key = args.upload + '.'
+        for k, v in args.aggregators.items():
+            pk = k.replace(params_key, '')
+            if not k.startswith(params_key):
+                continue
+            if v.startswith('keyring:'):
+                params[pk] = keyring.get_password(*v.replace('keyring:', '').split(':'))
+            else:
+                params[pk] = v
+        print(f'Uploading vex to {args.upload}')
+        aggregator = AggregatorClass(**params)
+        sbomID, report = aggregator.submit(args.projectpath, args.sbom, tentative=args.upload_tentative)
+        with open(args.vex_issues, 'w') as fout:
+            yaml.safe_dump(report, fout)
+        aggregator.summary(sbomID, report)
+        exit(0)
     if args.work:
         vex_file = args.vex_file or args.sbom
         bogrod.work()
         write_vex_merge(vex_file)
+
     bogrod.report(format=args.output, summary=args.summary)
 
 
