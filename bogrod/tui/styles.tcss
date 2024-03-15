@@ -1,0 +1,27 @@
+Screen {
+    layout: grid;
+    grid-size: 2 4;
+    grid-columns: 1fr 8fr;
+}
+
+.box {
+    height: 100%;
+    width: 1fr;
+    border: solid green;
+
+}
+
+OptionList {
+    layout: vertical;
+    width: 1fr;
+    height: 100%;
+    border: none;
+}
+
+HeaderTitle {
+   content-align: left top;
+}
+
+#vulnerability-view {
+   row-span: 4;
+}

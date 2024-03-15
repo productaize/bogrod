@@ -21,6 +21,9 @@ setup(
         'pyyaml',
         'tabulate',
         'attrdict',
+        'textual',
+        'textual-dev', # for testing
+        'requests',
     ],
     entry_points = {
         'console_scripts': [

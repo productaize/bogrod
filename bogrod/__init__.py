@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 import subprocess
+import sys
 from configparser import ConfigParser
 from copy import deepcopy
 from pathlib import Path
@@ -503,7 +504,7 @@ class Bogrod:
         print(tabulate(data, headers=headers), file=stream)
 
 
-def main():
+def main(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument('sbom',
                         help='/path/to/cyclonedx-sbom.json')
@@ -539,7 +540,7 @@ def main():
                         help='specify target aggregator to upload sbom and get issues report')
     parser.add_argument('--upload-tentative', action='store_true',
                         help='if specified upload sbom as tentative')
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     def write_vex_merge(vex_file):
         bogrod.write_vex(vex_file)
@@ -576,7 +577,8 @@ def main():
             args.projectpath = config[section].get('projectpath') or getattr(args, 'projectpath', None)
 
         update_args('global') if 'global' in config.sections() else None
-        args.aggregators = config['aggregators']
+        if 'aggregators' in config.sections():
+            args.aggregators = config['aggregators']
         if args.sbom in config.sections():
             update_args(args.sbom)
         elif not Path(args.sbom).exists():
@@ -631,6 +633,8 @@ def main():
     # process
     bogrod = Bogrod.from_sbom(args.sbom)
     if args.severities:
+        if args.severities == 'all':
+            args.severities = 'critical,high,medium,low,none,unknown'
         bogrod.severities = args.severities.split(',')
     if args.vex_file:
         bogrod.read_vex(args.vex_file)
@@ -673,11 +677,14 @@ def main():
         exit(0)
     if args.work:
         vex_file = args.vex_file or args.sbom
-        bogrod.work()
+        from bogrod.tui import BogrodApp
+        bogrod.app = BogrodApp(bogrod=bogrod)
+        #bogrod.work()
         write_vex_merge(vex_file)
-
-    bogrod.report(format=args.output, summary=args.summary)
+    else:
+        bogrod.report(format=args.output, summary=args.summary)
+    return bogrod
 
 
 if __name__ == '__main__':
-    main()
+    bogrod = main(sys.argv)
