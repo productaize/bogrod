@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 from configparser import ConfigParser
@@ -63,11 +64,11 @@ class Bogrod:
         self.notes = notes
         self.notes_path = None
         self.sbom_path = None
-        self.severities = 'critical,high'.split(',')
+        self.severities = 'critical,high,medium,low,none,unknown'.split(',')
         self.severities_order = 'critical,high,medium,low,none,unknown'.split(',')
         self.vex = vex or {}
         self.grype = grype or {}
-        self.report_columns = 'id,name,severity,state,affects,url'.split(',')
+        self.report_columns = 'id,name,severity,state,vector'.split(',')
         self.diff_data = {}
 
     def vulnerabilities(self, as_dict=False, severities=None, ordered=False):
@@ -76,12 +77,27 @@ class Bogrod:
         severity_rank_d = lambda d: severity_rank(d[1])
         severities = severities or self.severities
         if as_dict:
-            vuln = {v['id']: v for v in vuln if self._vuln_severity(v) in severities}
+            vuln = {v['id']: v for v in vuln if self._vuln_severity(v) in severities or severities in ('*', 'all')}
             return dict(sorted(vuln.items(), key=severity_rank_d))
         return vuln if not ordered else sorted(vuln, key=severity_rank)
 
+    def _vectors(self, severities=None):
+        severities = severities or self.severities
+        flatten = lambda l: [x for xs in l for x in xs if x]
+        return set(flatten([self._vuln_vector(v).split('/') for v in self.vulnerabilities(severities=severities)]))
+
+    def _states(self):
+        return set([v['state'] for k, v in self.vex.items()])
+
     def _vuln_severity(self, v):
         return ([s.get('severity') for s in v['ratings'] if s.get('severity')] + ['unknown'])[0]
+
+    def _vuln_vector(self, v):
+        matches = self.grype_matches()
+        vector = tryOr(lambda: v['ratings'][0]['vector'], '')
+        vector = vector or tryOr(lambda: matches[v['id']]['cvss'][0]['vector'], '')
+        vector = vector or tryOr(lambda: matches[v['id']]['relatedVulnerabilities'][0]['cvss'][0]['vector'], '')
+        return vector
 
     def read_notes(self, path):
         with open(path, 'r') as fin:
@@ -137,23 +153,23 @@ class Bogrod:
                 if self.data.get('bomFormat', '').lower() == 'cyclonedx':
                     data = self.data
                     self.validate(data)
-                    self.fix_metadata()
+                    # self.fix_metadata()
                 else:
                     data = self.vex
                 if properties:
                     # FIXME this duplicates self.merge_properties
                     dict_merge(data, properties)
                 with open(path, 'w') as fout:
-                    print("Writing vex: ", path)
+                    print("Writing vex to sbom: ", path)
                     json.dump(data, fout, indent=2)
             elif path.suffix == '.yaml':
                 data = self.vex
                 with open(path, 'w') as fout:
-                    print("Writing vex: ", path)
+                    print("Writing vex to yaml: ", path)
                     yaml.safe_dump(data, fout)
         else:
             with open(path, 'w') as fout:
-                print("Writing vex: ", path)
+                print("Writing vex to json: ", path)
                 if path.suffix == '.json':
                     json.dump(self.vex, fout, indent=2)
                 elif path.suffix == '.yaml':
@@ -293,7 +309,7 @@ class Bogrod:
         self.validate()
         return self.vex
 
-    def _generate_report_data(self, severities=None, columns=None):
+    def _generate_report_data(self, severities=None, columns=None, vectors=None, states=None):
         notes = self.security_notes()
         data = []
         severities = severities or self.severities
@@ -302,7 +318,14 @@ class Bogrod:
         # build list of dict of each vulnerability
         for vuln in self.vulnerabilities():
             severity = self._vuln_severity(vuln)
+            vector = self._vuln_vector(vuln)
             if severity not in severities:
+                continue
+            if vector and vectors:
+                pattern = '|'.join(v.strip() for v in vectors if v)
+                if re.search(pattern, vector) is None:
+                    continue
+            if states and vuln['analysis']['state'] not in states:
                 continue
             description = vuln.get('description', ' ')
             short = description[0:min(len(description), 40)]
@@ -320,10 +343,11 @@ class Bogrod:
                 'short': short,
                 'url': vuln['source'].get('url'),
                 'change': diff.get(vuln['id']),
+                'vector': self._vuln_vector(vuln),
             }
-            record = {k: v for k, v in record.items() if k in columns}
+            record = {k: record[k] for k in columns}
             data.append(record)
-        severity_rank = lambda v: self.severities.index(v['severity'])
+        severity_rank = lambda v: self.severities_order.index(v['severity'])
         data = sorted(data, key=severity_rank)
         return data
 
@@ -440,7 +464,8 @@ class Bogrod:
         vuln = all_vuln[vuln_id]
         text = dedent("""
         # id: {id} 
-        # severity: {severity} 
+        # severity: {severity}
+        # vector: {vector} 
         # component: {component} 
         # artifact: {artifact}
         # fix: {fix}      
@@ -454,6 +479,7 @@ class Bogrod:
         {vex_yml}
         """).strip().format(id=vuln_id,
                             severity=self._vuln_severity(vuln),
+                            vector=self._vuln_vector(vuln),
                             description='\n# '.join(
                                 wrap(vuln.get('description', 'unknown'), subsequent_indent=' ' * 5)),
                             component=tryOr(lambda: vex[vuln_id]['related']['component'], 'n/a'),
@@ -479,8 +505,8 @@ class Bogrod:
                 with open(fout.name) as fin:
                     self.vex[vuln_id] = yaml.safe_load(fin)
             except Exception as e:
-                print(f"invalid yaml, try again. {e}")
-                input("press enter to continue...")
+                with open(fout.name, 'a') as fin:
+                    fin.write(f"# ERROR: {e}".replace('\n', ' '))
                 continue
             else:
                 os.unlink(fout.name)
@@ -504,7 +530,7 @@ class Bogrod:
         print(tabulate(data, headers=headers), file=stream)
 
 
-def main(argv):
+def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('sbom',
                         help='/path/to/cyclonedx-sbom.json')
@@ -530,6 +556,9 @@ def main(argv):
     parser.add_argument('-W', '--work',
                         action='store_true',
                         help='work each vulnerability')
+    parser.add_argument('--tui',
+                        action='store_true',
+                        help='use tui')
     parser.add_argument('-g', '--grype',
                         help='use grype SBOM to match vulnerabilities at /path/to/grype.json')
     parser.add_argument('--diff',
@@ -677,9 +706,12 @@ def main(argv):
         exit(0)
     if args.work:
         vex_file = args.vex_file or args.sbom
-        from bogrod.tui import BogrodApp
-        bogrod.app = BogrodApp(bogrod=bogrod)
-        #bogrod.work()
+        if sys.argv[0] == '-c' or args.tui:
+            from bogrod.tui import BogrodApp
+            bogrod.app = BogrodApp(bogrod=bogrod)
+            bogrod.app.run() if args.tui else None
+        else:
+            bogrod.work()
         write_vex_merge(vex_file)
     else:
         bogrod.report(format=args.output, summary=args.summary)

@@ -1,6 +1,8 @@
 import logging
 import sys
+from contextlib import contextmanager
 
+import yaml
 from textual.app import App, ComposeResult, RenderResult
 from textual.logging import TextualHandler
 from textual.message import Message
@@ -66,25 +68,42 @@ class BogrodApp(App):
     def __init__(self, *args, bogrod=None, **kwargs):
         super().__init__(*args, **kwargs)
         self.bogrod = bogrod
-        self.data = self.bogrod._generate_report_data()
+        self.report_columns = 'id,name,severity,state,vector,url'.split(',')
+        self.data = self.bogrod._generate_report_data(columns=self.report_columns)
+        self.all_data = self.bogrod.vulnerabilities(as_dict=True)
+        self.filters = {
+            'severity': 'critical',
+            'vector': None,
+            'state': None,
+        }
 
     def compose(self) -> ComposeResult:
         yield Header(show_clock=False)
         # yield VulnerabilitiesList(classes="box", id='filter-severity')
-        for flt in self.make_filters():
-            yield flt
+        severity, vectors, states = self.make_filters()
+        yield severity
         # yield VulnerabilityView(classes="box", id="vulnerability-view")
         yield self.make_vuln_view()
-        yield Static("Three", classes="box")
+        yield vectors
+        yield states
         yield Footer()
 
     def make_filters(self):
         # severity
         severity = OptionList(*[
-            "critical", "high", "medium", "low"
+            "*", "critical", "high", "medium", "low"
         ], name='severity', classes="box", id='filter-severity')
         severity.border_title = 'severity'
-        return severity,
+        # vectors
+        vector_options = ['*'] + list(sorted(self.bogrod._vectors()))
+        vectors = OptionList(*vector_options,
+                             name='vectors', classes="box", id='filter-vectors')
+        vectors.border_title = 'vectors'
+        # state
+        state_options = ['*'] + list(sorted(self.bogrod._states()))
+        states = OptionList(*state_options,
+                            name='states', classes="box", id='filter-states')
+        return severity, vectors, states
 
     def make_vuln_view(self):
         table = self.vuln_table = DataTable(classes="box", id="vulnerability-view")
@@ -105,11 +124,34 @@ class BogrodApp(App):
         self._on_mount_cb.append(on_mount)
         return table
 
-    def filter_data(self, severity=None):
-        self.data = self.bogrod._generate_report_data(severities=[severity])
+    def filter_data(self, **kwargs):
+        kwargs = kwargs or self.filters
 
-    def show_details(self, vuln):
+        def setfilter(k):
+            fv = kwargs.get(k, self.filters.get(k))
+            return [fv] if (fv and fv != '*') else None
+
+        report_filters = {
+            'severities': setfilter('severity'),
+            'vectors': setfilter('vector'),
+            'columns': self.report_columns,
+            'states': setfilter('state'),
+        }
+        self.log(f'filter_data {report_filters}')
+        self.data = self.bogrod._generate_report_data(**report_filters)
+
+    def edit_vulnerability(self, vuln):
         self.log(f'details {vuln}')
+        matches = self.bogrod.grype_matches()
+        all_vuln = self.bogrod.vulnerabilities(as_dict=True, severities='*')
+        vex_schema = yaml.dump({
+            k.lower(): '|'.join(v if v else '[]' for v in v.get('enum', ['<text>']))
+            for k, v in self.bogrod._get_vex_schema()['definitions'].items()
+            if k.lower() in ['state', 'justification', 'response', 'detail']
+        }).splitlines()
+        # see https://github.com/Textualize/textual/discussions/165
+        with self.suspend():
+            self.bogrod._work_vulnerability(vuln['id'], matches, all_vuln, vex_schema)
 
     def on_mount(self) -> None:
         self.title = 'bogrod'
@@ -118,17 +160,34 @@ class BogrodApp(App):
 
     def on_key(self, key) -> None:
         if key.key == 'enter':
-            self.show_details(self.data[self.vuln_table.cursor_row])
+            self.edit_vulnerability(self.data[self.vuln_table.cursor_row])
 
     def on_option_list_option_highlighted(self, event):
         if event.option_list.id == 'filter-severity':
-            self.log(f"****Selected {event.option.prompt}")
-            self.filter_data(severity=event.option.prompt)
-            self.vuln_table.reload(event)
+            self.log(f"****severity {event.option.prompt}")
+            self.filters['severity'] = event.option.prompt
+        elif event.option_list.id == 'filter-vectors':
+            self.log(f"****vectors {event.option.prompt}")
+            self.filters['vector'] = event.option.prompt
+        elif event.option_list.id == 'filter-states':
+            self.log(f"****states {event.option.prompt}")
+            self.filters['state'] = event.option.prompt
+        self.filter_data()
+        self.vuln_table.reload(event)
+
+    @contextmanager
+    def suspend(self):
+        self._driver.stop_application_mode()
+        yield
+        self._driver.start_application_mode()
+        self.refresh()
+
 
 
 from bogrod import main
 
-args = '-s all -W releasenotes/sbom/jupyter-base-notebook.cdx.json'.split(' ')
-bogrod = main(args)
-app = bogrod.app
+if sys.argv[0] == '-c':
+    args = '-s all -W releasenotes/sbom/jupyter-base-notebook.cdx.json'.split(' ')
+    bogrod = main(args)
+    app = bogrod.app
+
