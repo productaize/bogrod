@@ -211,11 +211,11 @@ CVE-2022-37434:
   response: []
   state: in_triage
 CVE-2022-37454:
-  detail: we are not affected by this
+  detail: "python 3.10 is not used \n\nasasdflasdf"
   history:
   - added: jupyter/base-notebook
   - removed: jupyter/base-notebook
-  justification: ''
+  justification: code_not_reachable
   related:
   - component: xjupyter/base-notebook:ubuntu-20.04
   - component: jupyter/base-notebook:ubuntu-20.04
