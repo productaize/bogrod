@@ -1,0 +1,16 @@
+Screen.editor {
+  layout: grid;
+  grid-size: 2 2;
+  grid-columns: 1fr;
+}
+
+Screen.editor > Horizontal {
+  layout: grid;
+  grid-size: 4 2;
+  grid-columns: 1fr 8fr;
+
+}
+
+Markdown {
+  margin: 0;
+}
