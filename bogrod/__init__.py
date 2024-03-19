@@ -87,7 +87,10 @@ class Bogrod:
         return set(flatten([self._vuln_vector(v).split('/') for v in self.vulnerabilities(severities=severities)]))
 
     def _states(self):
-        return set([v['state'] for k, v in self.vex.items()])
+        return set([v['state'] for k, v in self.vex.items() if k != 'templates'])
+
+    def _components(self, severities=None):
+        return set(vv['ref'].split('/')[-1].split('@')[0] for v in self.vulnerabilities(severities=severities) for vv in v.get('affects', []))
 
     def _vuln_severity(self, v):
         return ([s.get('severity') for s in v['ratings'] if s.get('severity')] + ['unknown'])[0]
@@ -204,6 +207,9 @@ class Bogrod:
             print(f"WARNING: could not read --vex-file {path}. Specify -x to create from sbom")
             self.vex = {}
 
+    def templates(self):
+        return self.vex.get('templates', {})
+
     def read_vex_issues(self, path):
         if not Path(path).exists():
             return
@@ -299,6 +305,8 @@ class Bogrod:
                 related.append(component)
         # -- record history of changes in vex
         for vuln_id, vex in all_vex.items():
+            if vuln_id == 'templates':
+                continue
             history = vex.setdefault('history', [])
             diff = self.diff_data.get(vuln_id) or 'added'
             diff_in = component['component']
@@ -309,7 +317,7 @@ class Bogrod:
         self.validate()
         return self.vex
 
-    def _generate_report_data(self, severities=None, columns=None, vectors=None, states=None):
+    def _generate_report_data(self, severities=None, columns=None, vectors=None, states=None, components=None):
         notes = self.security_notes()
         data = []
         severities = severities or self.severities
@@ -327,6 +335,11 @@ class Bogrod:
                     continue
             if states and vuln['analysis']['state'] not in states:
                 continue
+            if components:
+                pattern = '|'.join(c.strip() for c in components if c)
+                affects = ';'.join(v['ref'] for v in vuln.get('affects', []))
+                if re.search(pattern, affects) is None:
+                    continue
             description = vuln.get('description', ' ')
             short = description[0:min(len(description), 40)]
             vex = notes.get(vuln['id']) or self.vex.get(vuln['id']) or {}

@@ -9,7 +9,8 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.logging import TextualHandler
 from textual.screen import Screen
-from textual.widgets import Header, Footer, OptionList, DataTable, Label, SelectionList, TextArea
+from textual.widgets import Header, Footer, OptionList, DataTable, Label, SelectionList, TextArea, TabbedContent, \
+    TabPane
 
 logging.basicConfig(
     level="NOTSET",
@@ -40,14 +41,17 @@ class RadioSelectionList(SelectionList):
 class VulnearabilityEditor(Screen):
     CSS_PATH = "editor.tcss"
 
-    def __init__(self, *args, vex_data=None, vuln_details=None, vex_schema=None, **kwargs):
+    def __init__(self, *args, vex_data=None, vuln_details=None, vex_schema=None,
+                 templates=None, **kwargs):
         super().__init__(*args, **kwargs)
         self.vex_schema = vex_schema
         self.vuln_details = vuln_details
         self.vex_data = vex_data
+        self.vex_templates = templates
 
     def compose(self) -> ComposeResult:
         # yield Static("one", classes="box")
+        yield Header()
         yield TextArea(self.vuln_details, id='view-details', classes="box", read_only=True)
         vex_raw = StringIO()
         yaml.dump(self.vex_data, vex_raw)
@@ -74,17 +78,25 @@ class VulnearabilityEditor(Screen):
             )
             yield Label("detail")
             yield TextArea(self.vex_data['detail'], id='text-detail')
+        templates = [k for k, v in self.vex_templates.items() if k in self.vuln_details]
+        self.log('****tempaltes', templates)
+        yield OptionList(*templates, classes="box templates", id='select-template')
+        yield Footer()
 
     def on_mount(self) -> None:
         self.log(f'vex data {self.vex_data} {self.vex_schema}')
 
         def select_single_option(id, key):
             option = tryOr(lambda: self.vex_schema[key].index(self.vex_data[key]), None)
+            control = self.query_one(id)
+            control.deselect_all()
             if isinstance(option, int):
                 self.query_one(id).select(option)
 
         def select_multiple_options(id, key):
             options = tryOr(lambda: self.vex_data[key], [])
+            control = self.query_one(id)
+            control.deselect_all()
             for option in options:
                 idx = tryOr(lambda: self.vex_schema[key].index(option), None)
                 if isinstance(idx, int):
@@ -93,14 +105,27 @@ class VulnearabilityEditor(Screen):
         select_single_option('#select-state', 'state')
         select_single_option('#select-justification', 'justification')
         select_multiple_options('#select-response', 'response')
+        self.query_one('#text-detail').text = self.vex_data['detail']
 
     def on_key(self, event) -> None:
         self.log(f"key {event.key}")
         if event.key == 'ctrl+s':
-            self.dismiss(self.data())
+            data = self.data()
+            self.dismiss(data)
+        if event.key == 'space' and self.app.focused.id == 'select-template':
+            option_list = self.app.focused
+            template = option_list.get_option_at_index(option_list.highlighted).prompt
+            self.vex_data = dict(self.vex_templates[template])
+            self.on_mount()
 
     def on_selection_list_select(self, event):
         self.log(f"selection {event}")
+
+    def on_option_list_option_selected(self, event):
+        if event.option_list.id == 'select-component':
+            self.log(f"component {event.option.prompt}")
+            self.vex_data = self.vex_templates[event.option.prompt]
+            self.on_mount()
 
     def data(self):
         state = self.query_one('#select-state').selected
@@ -139,12 +164,13 @@ class BogrodApp(App):
     def compose(self) -> ComposeResult:
         yield Header(show_clock=False)
         # yield VulnerabilitiesList(classes="box", id='filter-severity')
-        severity, vectors, states = self.make_filters()
+        severity, vectors, states, components = self.make_filters()
         yield severity
         # yield VulnerabilityView(classes="box", id="vulnerability-view")
         yield self.make_vuln_view()
         yield vectors
         yield states
+        yield components
         yield Footer()
 
     def make_filters(self):
@@ -162,7 +188,11 @@ class BogrodApp(App):
         state_options = ['*'] + list(sorted(self.bogrod._states()))
         states = OptionList(*state_options,
                             name='states', classes="box", id='filter-states')
-        return severity, vectors, states
+        # components/artifacts
+        components = ['*'] + list(sorted(self.bogrod._components()))
+        components = OptionList(*components,
+                                name='components', classes="box", id='filter-components')
+        return severity, vectors, states, components
 
     def make_vuln_view(self):
         table = self.vuln_table = DataTable(classes="box", id="vulnerability-view")
@@ -195,6 +225,7 @@ class BogrodApp(App):
             'vectors': setfilter('vector'),
             'columns': self.report_columns,
             'states': setfilter('state'),
+            'components': setfilter('component'),
         }
         self.log(f'filter_data {report_filters}')
         self.data = self.bogrod._generate_report_data(**report_filters)
@@ -209,6 +240,24 @@ class BogrodApp(App):
             if k.lower() in ['state', 'justification', 'response', 'detail']
         }
         matches = self.bogrod.grype_matches()
+        details_data = dict(
+            id=vuln_id,
+            severity=self.bogrod._vuln_severity(vuln),
+            vector=self.bogrod._vuln_vector(vuln),
+            description='\n# '.join(
+                wrap(vuln.get('description', 'unknown'), subsequent_indent=' ' * 5)),
+            component=tryOr(lambda: vuln['affects'][0]['ref'], 'n/a'),
+            artifact=tryOr(lambda: (matches[vuln_id]['artifact'].get('name', '?') + '-' +
+                                    matches[vuln_id]['artifact'].get('version', '?')), 'n/a'),
+            url=tryOr(lambda: vuln['source']['url'], 'unknown'),
+            fix=tryOr(lambda: ';'.join(matches[vuln_id]['vulnerability']['fix']['versions']) +
+                              '(' + matches[vuln_id]['vulnerability']['fix']['state'] + ')',
+                      '?'),
+            location='\n#      '.join([v.get('path')
+                                       for v in
+                                       tryOr(lambda: matches[vuln_id]['artifact']['locations'],
+                                             [{'path': '<no grype json file>'}])]),
+        )
         vuln_details = dedent("""
                 # id: {id} 
                 # severity: {severity}
@@ -221,30 +270,18 @@ class BogrodApp(App):
                 #      {description}
                 # locations: 
                 #      {location}
-                """).strip().format(id=vuln_id,
-                                    severity=self.bogrod._vuln_severity(vuln),
-                                    vector=self.bogrod._vuln_vector(vuln),
-                                    description='\n# '.join(
-                                        wrap(vuln.get('description', 'unknown'), subsequent_indent=' ' * 5)),
-                                    component=tryOr(lambda: vex[vuln_id]['related']['component'], 'n/a'),
-                                    artifact=tryOr(lambda: (matches[vuln_id]['artifact'].get('name', '?') + '-' +
-                                                            matches[vuln_id]['artifact'].get('version', '?')), 'n/a'),
-                                    url=tryOr(lambda: vuln['source']['url'], 'unknown'),
-                                    fix=tryOr(lambda: ';'.join(matches[vuln_id]['vulnerability']['fix']['versions']) +
-                                                      '(' + matches[vuln_id]['vulnerability']['fix']['state'] + ')',
-                                              '?'),
-                                    location='\n#      '.join([v.get('path')
-                                                               for v in
-                                                               tryOr(lambda: matches[vuln_id]['artifact']['locations'],
-                                                                     [{'path': '<no grype json file>'}])]),
-                                    )
+                """).strip().format(**details_data)
         editor = VulnearabilityEditor(vex_data=vex[vuln_id],
                                       vuln_details=vuln_details,
                                       vex_schema=vex_schema,
+                                      templates=self.bogrod.templates(),
                                       classes="editor")
 
         def on_dismiss(data):
             self.bogrod.vex[vuln['id']].update(data)
+            templates = self.bogrod.vex.setdefault('templates', {})
+            templates.setdefault(details_data['artifact'], {}).update(data)
+            templates.setdefault(details_data['component'], {}).update(data)
 
         self.push_screen(editor, on_dismiss)
 
@@ -280,7 +317,12 @@ class BogrodApp(App):
         elif event.option_list.id == 'filter-states':
             self.log(f"****states {event.option.prompt}")
             self.filters['state'] = event.option.prompt
-        self.filter_data()
+        elif event.option_list.id == 'filter-components':
+            self.log(f"****components {event.option.prompt}")
+            self.filters['component'] = event.option.prompt
+        else:
+            return
+        self.filter_data(**self.filters)
         self.vuln_table.reload(event)
 
     @contextmanager

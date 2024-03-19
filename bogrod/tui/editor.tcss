@@ -11,6 +11,16 @@ Screen.editor > Horizontal {
 
 }
 
+Screen.editor > TabbedContent > TabPane {
+    layout:vertical;
+    height: 1fr;
+}
+
+OptionList.templates {
+  layout: vertical;
+  width: 1fr;
+}
+
 Markdown {
   margin: 0;
 }

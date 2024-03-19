@@ -1,6 +1,6 @@
 Screen {
     layout: grid;
-    grid-size: 2 4;
+    grid-size: 2 8;
     grid-columns: 1fr 8fr;
 }
 
@@ -23,5 +23,5 @@ HeaderTitle {
 }
 
 #vulnerability-view {
-   row-span: 4;
+   row-span: 8;
 }
