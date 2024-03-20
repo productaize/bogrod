@@ -11,6 +11,10 @@ Screen {
 
 }
 
+.box:focus {
+    outline: heavy;
+}
+
 OptionList {
     layout: vertical;
     width: 1fr;

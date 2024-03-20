@@ -2,8 +2,10 @@ from io import StringIO
 
 import yaml
 from textual.app import ComposeResult
+from textual.binding import Binding
 from textual.containers import Horizontal
 from textual.screen import Screen
+from textual.widget import Widget
 from textual.widgets import Header, TextArea, Label, SelectionList, OptionList, Footer
 
 from bogrod import tryOr
@@ -13,6 +15,13 @@ from bogrod.tui.widgets.radioslist import RadioSelectionList
 
 class VulnearabilityEditor(Screen):
     CSS_PATH = "editor.tcss"
+
+    BINDINGS = [
+        Binding(key="ctrl+s", action='save', description="save"),
+        Binding(key="enter", action='ignore', show=False),
+        Binding(key='ctrl+t', action='save_template', description='save as template'),
+        Binding(key='t', action='select_template', description='get template'),
+    ]
 
     def __init__(self, *args, vex_data=None, vuln_details=None, vex_schema=None,
                  templates=None, **kwargs):
@@ -25,34 +34,63 @@ class VulnearabilityEditor(Screen):
     def compose(self) -> ComposeResult:
         # yield Static("one", classes="box")
         yield Header()
-        yield TextArea(self.vuln_details, id='view-details', classes="box", read_only=True)
+        details =  TextArea(self.vuln_details, id='view-details', classes="box", read_only=True)
+        details.border_title = 'details'
+        yield details
         vex_raw = StringIO()
         yaml.dump(self.vex_data, vex_raw)
         vex_raw.seek(0)
-        yield TextArea(vex_raw.read(), id='view-vexdata', classes="box", read_only=True)
+        vexdata = TextArea(vex_raw.read(), id='view-vexdata', classes="box")
+        vexdata.border_title = 'vexdata'
+        yield vexdata
+        with Horizontal():
+            states, responses, justifications, detail = self.make_vex_responses()
+            yield states
+            yield responses
+            yield justifications
+            yield detail
+        templates = OptionList(classes="box templates", id='select-template')
+        templates.border_title = 'templates'
+        yield templates
+        yield Footer()
+
+    def make_vex_responses(self):
         states = [(v, i, False) for i, v in enumerate(self.vex_schema['state'])]
         responses = [(v, i, False) for i, v in enumerate(self.vex_schema['response'])]
         justifications = [(v, i, False) for i, v in enumerate(self.vex_schema['justification'], )]
-        with Horizontal(classes="box"):
-            yield Label("state")
-            yield RadioSelectionList(
-                *states,
-                id='select-state',
-            )
-            yield Label("response")
-            yield SelectionList[int](
-                *responses,
-                id='select-response'
-            )
-            yield Label("justification")
-            yield RadioSelectionList(
-                *justifications,
-                id='select-justification',
-            )
-            yield Label("detail")
-            yield TextArea(self.vex_data['detail'], id='text-detail')
-        yield OptionList(classes="box templates", id='select-template')
-        yield Footer()
+
+        states = RadioSelectionList(
+            *states,
+            id='select-state', classes="box",
+        )
+        states.border_title = 'state'
+        responses = SelectionList[int](
+            *responses,
+            id='select-response', classes="box",
+        )
+        responses.border_title = 'response'
+        justifications = RadioSelectionList(
+            *justifications,
+            id='select-justification', classes="box",
+        )
+        justifications.border_title = 'justification'
+        detail = TextArea(self.vex_data['detail'], id='text-detail', classes="box")
+        detail.border_title = 'detail'
+        return states, responses, justifications, detail
+
+    @property
+    def focus_chain(self) -> list[Widget]:
+        try:
+            return [
+                self.query_one('#select-state'),
+                self.query_one('#select-response'),
+                self.query_one('#select-justification'),
+                self.query_one('#select-template'),
+                self.query_one('#view-vexdata'),
+            ]
+        except Exception as e:
+            pass
+        return []
 
     def on_mount(self) -> None:
         self.log(f'vex data {self.vex_data} {self.vex_schema}')
@@ -81,31 +119,40 @@ class VulnearabilityEditor(Screen):
         templates = [k for k, v in self.vex_templates.items()
                      if (v.get('match') in ('all', self.vuln_details)
                          or k in self.vuln_details)]
-        self.log('****tempaltes', templates)
+        self.log('****templates', templates)
         self.query_one('#select-template').clear_options()
         self.query_one('#select-template').add_options(templates)
+        # calling focus here causes the state to be deselected/wrong
+        #self.query_one('#select-state').focus()
+
+    def action_save(self):
+        data = self.data()
+        self.dismiss(data)
+
+    def action_save_template(self):
+        data = self.data()
+
+        def on_dismiss(key):
+            self.vex_templates = self.app.bogrod.add_as_template(key, data)
+            self.on_mount()
+
+        self.app.push_screen(InputModal(), on_dismiss)
+
+    def action_select_template(self):
+        options = self.query_one('#select-template')
+        options.highlighted = 0 if options.highlighted is None else options.highlighted
+        options.focus()
 
     def on_key(self, event) -> None:
         self.log(f"key {event.key}")
         if event.key == 'enter':
             event.prevent_default()
-        if event.key == 'ctrl+s':
-            data = self.data()
-            self.dismiss(data)
-        if event.key == 'ctrl+t':
-            data = self.data()
-
-            def on_dismiss(key):
-                self.vex_templates = self.app.bogrod.add_as_template(key, data)
-                self.on_mount()
-
-            self.app.push_screen(InputModal(), on_dismiss)
-
-        if event.key == 'space' and self.app.focused.id == 'select-template':
-            option_list = self.app.focused
+        if event.key == 'space' and self.focused.id == 'select-template':
+            option_list = self.focused
             template = option_list.get_option_at_index(option_list.highlighted).prompt
             self.vex_data = dict(self.vex_templates[template])
             self.on_mount()
+            self.action_select_template()
 
     def on_selection_list_select(self, event):
         self.log(f"selection {event}")

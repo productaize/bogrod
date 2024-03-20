@@ -6,8 +6,8 @@ Screen.editor {
 
 Screen.editor > Horizontal {
   layout: grid;
-  grid-size: 4 2;
-  grid-columns: 1fr 8fr;
+  grid-size: 2 2;
+  grid-columns: 4fr 4fr;
 
 }
 
