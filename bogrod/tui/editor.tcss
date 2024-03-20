@@ -24,3 +24,16 @@ OptionList.templates {
 Markdown {
   margin: 0;
 }
+
+InputModal {
+   align: center middle;
+}
+
+InputModal > Container {
+    width: auto;
+    height: auto;
+}
+
+InputModal > Container > Input {
+    width: 32;
+}

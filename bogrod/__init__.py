@@ -77,7 +77,9 @@ class Bogrod:
         severity_rank_d = lambda d: severity_rank(d[1])
         severities = severities or self.severities
         if as_dict:
-            vuln = {v['id']: v for v in vuln if self._vuln_severity(v) in severities or severities in ('*', 'all')}
+            vuln = {v['id']: v for v in vuln
+                    if (self._vuln_severity(v) in severities)
+                    or (severities in ('*', 'all'))}
             return dict(sorted(vuln.items(), key=severity_rank_d))
         return vuln if not ordered else sorted(vuln, key=severity_rank)
 
@@ -101,6 +103,14 @@ class Bogrod:
         vector = vector or tryOr(lambda: matches[v['id']]['cvss'][0]['vector'], '')
         vector = vector or tryOr(lambda: matches[v['id']]['relatedVulnerabilities'][0]['cvss'][0]['vector'], '')
         return vector
+
+    def add_as_template(self, key, data, match='all'):
+        # todo move to vex class
+        templates = self.vex.setdefault('templates', {})
+        entry = templates.setdefault(key, {})
+        entry.update(data)
+        entry['match'] = match
+        return templates
 
     def read_notes(self, path):
         with open(path, 'r') as fin:
@@ -206,6 +216,12 @@ class Bogrod:
         except:
             print(f"WARNING: could not read --vex-file {path}. Specify -x to create from sbom")
             self.vex = {}
+        for k, v in self.vex.items():
+            if k == 'templates':
+                continue
+            if 'state' not in v:
+                v['state'] = 'in_triage'
+        return self.vex
 
     def templates(self):
         return self.vex.get('templates', {})
@@ -317,7 +333,7 @@ class Bogrod:
         self.validate()
         return self.vex
 
-    def _generate_report_data(self, severities=None, columns=None, vectors=None, states=None, components=None):
+    def _generate_report_data(self, severities=None, columns=None, vectors=None, states=None, components=None, issues=None):
         notes = self.security_notes()
         data = []
         severities = severities or self.severities
@@ -327,7 +343,7 @@ class Bogrod:
         for vuln in self.vulnerabilities():
             severity = self._vuln_severity(vuln)
             vector = self._vuln_vector(vuln)
-            if severity not in severities:
+            if '*' not in severities and severity not in severities:
                 continue
             if vector and vectors:
                 pattern = '|'.join(v.strip() for v in vectors if v)
@@ -344,6 +360,8 @@ class Bogrod:
             short = description[0:min(len(description), 40)]
             vex = notes.get(vuln['id']) or self.vex.get(vuln['id']) or {}
             issues_ind = '*' if vex.get('report', {}).get('issues') else ''
+            if issues != '*' and issues and not issues_ind:
+                continue
             record = {
                 'id': vuln['id'],
                 'name': vuln['source']['name'],

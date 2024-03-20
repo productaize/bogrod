@@ -6,11 +6,11 @@ from textwrap import dedent, wrap
 
 import yaml
 from textual.app import App, ComposeResult
-from textual.containers import Horizontal
+from textual.containers import Horizontal, Container
 from textual.logging import TextualHandler
-from textual.screen import Screen
+from textual.screen import Screen, ModalScreen
 from textual.widgets import Header, Footer, OptionList, DataTable, Label, SelectionList, TextArea, TabbedContent, \
-    TabPane
+    TabPane, Input
 
 logging.basicConfig(
     level="NOTSET",
@@ -36,6 +36,22 @@ class RadioSelectionList(SelectionList):
         active = toggled in event.selection_list.selected
         self.deselect_all()
         self.select(toggled) if active else None
+
+
+class InputModal(ModalScreen):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def compose(self) -> ComposeResult:
+        with Container():
+            yield Input(id='input-modal', classes="box")
+
+    def on_key(self, event) -> None:
+        if event.key == 'enter':
+            self.dismiss(self.data())
+
+    def data(self):
+        return self.query_one('#input-modal').value
 
 
 class VulnearabilityEditor(Screen):
@@ -78,9 +94,7 @@ class VulnearabilityEditor(Screen):
             )
             yield Label("detail")
             yield TextArea(self.vex_data['detail'], id='text-detail')
-        templates = [k for k, v in self.vex_templates.items() if k in self.vuln_details]
-        self.log('****tempaltes', templates)
-        yield OptionList(*templates, classes="box templates", id='select-template')
+        yield OptionList(classes="box templates", id='select-template')
         yield Footer()
 
     def on_mount(self) -> None:
@@ -107,11 +121,29 @@ class VulnearabilityEditor(Screen):
         select_multiple_options('#select-response', 'response')
         self.query_one('#text-detail').text = self.vex_data['detail']
 
+        templates = [k for k, v in self.vex_templates.items()
+                     if (v.get('match') in ('all', self.vuln_details)
+                         or k in self.vuln_details)]
+        self.log('****tempaltes', templates)
+        self.query_one('#select-template').clear_options()
+        self.query_one('#select-template').add_options(templates)
+
     def on_key(self, event) -> None:
         self.log(f"key {event.key}")
+        if event.key == 'enter':
+            event.prevent_default()
         if event.key == 'ctrl+s':
             data = self.data()
             self.dismiss(data)
+        if event.key == 'ctrl+t':
+            data = self.data()
+
+            def on_dismiss(key):
+                self.vex_templates = self.app.bogrod.add_as_template(key, data)
+                self.on_mount()
+
+            self.app.push_screen(InputModal(), on_dismiss)
+
         if event.key == 'space' and self.app.focused.id == 'select-template':
             option_list = self.app.focused
             template = option_list.get_option_at_index(option_list.highlighted).prompt
@@ -153,32 +185,37 @@ class BogrodApp(App):
         super().__init__(*args, **kwargs)
         self.bogrod = bogrod
         self.report_columns = 'id,name,severity,state,vector,url'.split(',')
-        self.data = self.bogrod._generate_report_data(columns=self.report_columns)
-        self.all_data = self.bogrod.vulnerabilities(as_dict=True)
+        self.all_data = self.bogrod.vulnerabilities(as_dict=True, severities='*')
+        self.data = None
         self.filters = {
-            'severity': 'critical',
+            'severity': '*',
             'vector': None,
             'state': None,
+            'issues': None,
         }
+        self.bogrod.severities = '*'
+        self.filter_data()
 
     def compose(self) -> ComposeResult:
         yield Header(show_clock=False)
         # yield VulnerabilitiesList(classes="box", id='filter-severity')
-        severity, vectors, states, components = self.make_filters()
+        severity, vectors, states, components, issues = self.make_filters()
         yield severity
         # yield VulnerabilityView(classes="box", id="vulnerability-view")
-        yield self.make_vuln_view()
+        yield DataTable(classes="box", id="vulnerability-view")
         yield vectors
         yield states
         yield components
+        yield issues
         yield Footer()
 
     def make_filters(self):
         # severity
-        severity = OptionList(*[
-            "*", "critical", "high", "medium", "low"
-        ], name='severity', classes="box", id='filter-severity')
+        severities = "*", "critical", "high", "medium", "low"
+        severity = OptionList(*severities,
+                              name='severity', classes="box", id='filter-severity')
         severity.border_title = 'severity'
+        severity.highlighted = severities.index(self.filters.get('severity') or 0)
         # vectors
         vector_options = ['*'] + list(sorted(self.bogrod._vectors()))
         vectors = OptionList(*vector_options,
@@ -192,25 +229,25 @@ class BogrodApp(App):
         components = ['*'] + list(sorted(self.bogrod._components()))
         components = OptionList(*components,
                                 name='components', classes="box", id='filter-components')
-        return severity, vectors, states, components
+        # has issues
+        issues = ['*', 'issues', 'no issues']
+        issues = OptionList(*issues,
+                            name='issues', classes="box", id='filter-issues')
+        return severity, vectors, states, components, issues
 
     def make_vuln_view(self):
-        table = self.vuln_table = DataTable(classes="box", id="vulnerability-view")
+        table: DataTable
+        initial = not hasattr(self, 'vuln_table')
+        table = self.vuln_table = self.query_one('#vulnerability-view')
         table.cursor_type = 'row'
-
-        def on_mount(initial=False):
-            data = self.data
-            table.clear()
-            table.add_columns(*data[0].keys()) if initial else None
-            table.add_rows(list(row.values()) for row in data)
-
-        def reload(event):
-            on_mount()
-            table.refresh()
-
-        table.reload = reload
-
-        self._on_mount_cb.append(on_mount)
+        self.filter_data()
+        data = self.data
+        cur = table.cursor_row
+        table.clear()
+        table.add_columns(*data[0].keys()) if initial else None
+        table.add_rows(list(row.values()) for row in data)
+        table.refresh()
+        table.move_cursor(row=cur)
         return table
 
     def filter_data(self, **kwargs):
@@ -226,6 +263,8 @@ class BogrodApp(App):
             'columns': self.report_columns,
             'states': setfilter('state'),
             'components': setfilter('component'),
+            'issues': (False if kwargs.get('issues') == 'no issues'
+                       else True if kwargs.get('issues') == 'issues' else None),
         }
         self.log(f'filter_data {report_filters}')
         self.data = self.bogrod._generate_report_data(**report_filters)
@@ -279,9 +318,9 @@ class BogrodApp(App):
 
         def on_dismiss(data):
             self.bogrod.vex[vuln['id']].update(data)
-            templates = self.bogrod.vex.setdefault('templates', {})
-            templates.setdefault(details_data['artifact'], {}).update(data)
-            templates.setdefault(details_data['component'], {}).update(data)
+            self.bogrod.add_as_template(details_data['artifact'], data, match='artifact')
+            self.bogrod.add_as_template(details_data['component'], data, match='component')
+            self.on_mount()
 
         self.push_screen(editor, on_dismiss)
 
@@ -300,8 +339,8 @@ class BogrodApp(App):
 
     def on_mount(self) -> None:
         self.title = 'bogrod'
-        for cb in self._on_mount_cb:
-            cb(initial=True)
+        self.filter_data(**self.filters)
+        self.make_vuln_view()
 
     def on_key(self, key) -> None:
         if key.key == 'enter':
@@ -320,10 +359,12 @@ class BogrodApp(App):
         elif event.option_list.id == 'filter-components':
             self.log(f"****components {event.option.prompt}")
             self.filters['component'] = event.option.prompt
+        elif event.option_list.id == 'filter-issues':
+            self.log(f"****issues {event.option.prompt}")
+            self.filters['issues'] = event.option.prompt
         else:
             return
-        self.filter_data(**self.filters)
-        self.vuln_table.reload(event)
+        self.make_vuln_view()
 
     @contextmanager
     def suspend(self):

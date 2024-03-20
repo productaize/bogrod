@@ -52317,7 +52317,7 @@
       ],
       "analysis": {
         "state": "resolved",
-        "detail": "python 3.10 is not used",
+        "detail": "python 3.10 is not used \n\nasasdflasdf",
         "response": [
           "can_not_fix"
         ],
