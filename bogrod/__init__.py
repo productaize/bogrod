@@ -738,7 +738,7 @@ def main(argv=None):
     if args.work:
         vex_file = args.vex_file or args.sbom
         if sys.argv[0] == '-c' or args.tui:
-            from bogrod.tui import BogrodApp
+            from bogrod.tui.app import BogrodApp
             bogrod.app = BogrodApp(bogrod=bogrod)
             bogrod.app.run() if args.tui else None
         else:
