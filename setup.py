@@ -21,6 +21,10 @@ setup(
         'pyyaml',
         'tabulate',
         'attrdict',
+        'textual',
+        'textual-dev', # for testing
+        'requests',
+        'yaspin',
     ],
     entry_points = {
         'console_scripts': [

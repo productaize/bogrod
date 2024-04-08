@@ -1,0 +1,39 @@
+Screen.editor {
+  layout: grid;
+  grid-size: 2 2;
+  grid-columns: 1fr;
+}
+
+Screen.editor > Horizontal {
+  layout: grid;
+  grid-size: 2 2;
+  grid-columns: 4fr 4fr;
+
+}
+
+Screen.editor > TabbedContent > TabPane {
+    layout:vertical;
+    height: 1fr;
+}
+
+OptionList.templates {
+  layout: vertical;
+  width: 1fr;
+}
+
+Markdown {
+  margin: 0;
+}
+
+InputModal {
+   align: center middle;
+}
+
+InputModal > Container {
+    width: auto;
+    height: auto;
+}
+
+InputModal > Container > Input {
+    width: 32;
+}

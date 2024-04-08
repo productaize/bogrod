@@ -2,3 +2,9 @@
 sbom=releasenotes/sbom/jupyter-base-notebook.json
 update_vex=yes
 merge_vex=yes
+
+[aggregators]
+dummy.delay=2
+dummy.report_timeout=60
+dummy.report_interval=2
+
