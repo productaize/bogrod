@@ -13,6 +13,7 @@ from tabulate import tabulate
 from tempfile import NamedTemporaryFile
 from textwrap import dedent, wrap
 
+from bogrod.sbom import CycloneDXSBOM
 from bogrod.util import dict_merge, tabulate_data, tryOr
 
 
@@ -43,6 +44,10 @@ class Bogrod:
                 - <response code>
             state: <state code>
             justification: <justification code>
+            related:
+                - component: component-name
+            history:
+                - <new|resolved|unchanged>: component-name
 
         # notes.yaml
         ...
@@ -60,6 +65,7 @@ class Bogrod:
         self.vex = vex or {}
         self.grype = grype or {}
         self.report_columns = 'id,name,severity,state,affects,url'.split(',')
+        self.diff_data = {}
 
     def vulnerabilities(self, as_dict=False, severities=None, ordered=False):
         vuln = self.data.get('vulnerabilities', [])
@@ -207,12 +213,11 @@ class Bogrod:
             if fixed:
                 # check if we have previously fixed this
                 compnts = comp.setdefault('components', [])
-                bom_refs = { v.get('bom-ref') for v in compnts}
+                bom_refs = {v.get('bom-ref') for v in compnts}
                 top_level = raw_comp['bom-ref'].split('sbom:')[-1]
                 if top_level not in bom_refs:
                     compnts.append(raw_comp)
                 comp['bom-ref'] = f'sbom:{top_level}'
-
 
     def update_vex(self):
         # https://github.com/CycloneDX/bom-examples/blob/master/VEX/vex.json
@@ -221,6 +226,7 @@ class Bogrod:
         self.vex = self.vex if self.vex is not None and not self.notes else self.notes.get('security-vex', {})
         ensure_list = lambda v: v if isinstance(v, list) else v.split(',')
         ensure_no_empty = lambda l: [e for e in l if e]
+        component = {'component': self.data.get('metadata', {}).get('component', {}).get('name')}
         for vuln in self.vulnerabilities():
             vuln_id = vuln['id']
             vex = all_vex.setdefault(vuln_id, {})
@@ -241,12 +247,24 @@ class Bogrod:
                 del vuln['analysis']['resources']
             # track vex related info to vulnerability's sbom component
             vex.update(analysis)
-            component = {'component': self.data.get('metadata', {}).get('component', {}).get('name')}
-            related = vex.setdefault('related') or []
+            # -- component
+            related = vex.setdefault('related', [])
+            if related is None:
+                vex['related'] = related = []
             if isinstance(related, dict):
                 related = vex['related'] = [{k: v} for k, v in related.items()]
+                vex['related'] = related
             if component not in related:
                 related.append(component)
+        # -- record history of changes in vex
+        for vuln_id, vex in all_vex.items():
+            history = vex.setdefault('history', [])
+            diff = self.diff_data.get(vuln_id) or 'added'
+            diff_in = component['component']
+            change = {diff: diff_in}
+            if change not in history:
+                history.append(change)
+
         self.validate()
         return self.vex
 
@@ -255,6 +273,7 @@ class Bogrod:
         data = []
         severities = severities or self.severities
         columns = columns or self.report_columns
+        diff = self.diff_data
         # build list of dict of each vulnerability
         for vuln in self.vulnerabilities():
             severity = self._vuln_severity(vuln)
@@ -274,6 +293,7 @@ class Bogrod:
                 'description': description,
                 'short': short,
                 'url': vuln['source'].get('url'),
+                'change': diff.get(vuln['id']),
             }
             record = {k: v for k, v in record.items() if k in columns}
             data.append(record)
@@ -438,6 +458,21 @@ class Bogrod:
                 os.unlink(fout.name)
                 break
 
+    def diff(self, other_sbomfile):
+        current = CycloneDXSBOM(self.data)
+        other = CycloneDXSBOM.from_file(other_sbomfile)
+        self.diff_data = current.diff(other)
+
+    def report_diff(self, stream=None):
+        data = []
+        for vuln_id, change in self.diff_data.items():
+            data.append({
+                'vuln_id': vuln_id,
+                'change': change,
+            })
+        headers = 'keys'
+        print(tabulate(data, headers=headers), file=stream)
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -467,6 +502,8 @@ def main():
                         help='work each vulnerability')
     parser.add_argument('-g', '--grype',
                         help='use grype SBOM to match vulnerabilities at /path/to/grype.json')
+    parser.add_argument('--diff',
+                        help='/path/to/cyclonedx-sbom.json')
     args = parser.parse_args()
 
     def write_vex_merge(vex_file):
@@ -558,6 +595,11 @@ def main():
         bogrod.write_notes(args.notes)
     if args.grype:
         bogrod.read_grype(args.grype)
+    if args.diff:
+        bogrod.diff(args.diff)
+        if not args.work:
+            bogrod.report_diff()
+            exit(0)
     if args.update_vex:
         vex_file = args.vex_file or args.sbom
         bogrod.update_vex()
@@ -566,6 +608,7 @@ def main():
         vex_file = args.vex_file or args.sbom
         bogrod.work()
         write_vex_merge(vex_file)
+
     bogrod.report(format=args.output, summary=args.summary)
 
 
