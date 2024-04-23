@@ -1,12 +1,14 @@
 .PHONY: dist image help
 
 sbom:
+	# get image
+	docker pull -q jupyter/base-notebook:ubuntu-20.04
 	# sbom
-	syft jupyter/base-notebook:ubuntu-20.04 --file releasenotes/sbom/jupyter-base-notebook.syft.json --output json
+	syft jupyter/base-notebook:ubuntu-20.04 --output json=releasenotes/sbom/jupyter-base-notebook.syft.json
 	# grype format, including match information
-	grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --file releasenotes/sbom/jupyter-base-notebook.grype.json --output json
+	grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --output json=releasenotes/sbom/jupyter-base-notebook.grype.json
 	# cyclonedx format
-	grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --file releasenotes/sbom/jupyter-base-notebook.cdx.json --output embedded-cyclonedx-vex-json
+	grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --output cyclonedx-json=releasenotes/sbom/jupyter-base-notebook.cdx.json
 	# check
 	bogrod -F jupyter
 
@@ -37,8 +39,8 @@ release: dist
 
 install-sbom-tools:
 	# install grype and syft
-	curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b $HOME/.local/bin
-	curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b $HOME/.local/bin
+	curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b ${HOME}/.local/bin
+	curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b ${HOME}/.local/bin
 	pip install reno
 	pip install -e .
 

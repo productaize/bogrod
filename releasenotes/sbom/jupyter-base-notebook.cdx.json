@@ -2,17 +2,17 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:2893f675-33ce-4e44-a1d6-0e3c951ca202",
+  "serialNumber": "urn:uuid:ee1c7bbb-2d63-46fb-b0c9-909fdf796100",
   "version": 1,
   "metadata": {
-    "timestamp": "2024-04-23T13:48:54+02:00",
+    "timestamp": "2024-04-23T15:24:58+02:00",
     "tools": {
       "components": [
         {
           "type": "application",
           "author": "anchore",
           "name": "grype",
-          "version": "0.75.0"
+          "version": "0.77.0"
         }
       ]
     },
@@ -7166,7 +7166,7 @@
       "properties": [
         {
           "name": "syft:package:foundBy",
-          "value": "binary-cataloger"
+          "value": "binary-classifier-cataloger"
         },
         {
           "name": "syft:package:type",
@@ -24151,7 +24151,7 @@
       "name": "libdb5.3",
       "version": "5.3.28+dfsg1-0.6ubuntu2",
       "cpe": "cpe:2.3:a:libdb5.3:libdb5.3:5.3.28\\+dfsg1-0.6ubuntu2:*:*:*:*:*:*:*",
-      "purl": "pkg:deb/ubuntu/libdb5.3@5.3.28+dfsg1-0.6ubuntu2?arch=amd64&upstream=db5.3&distro=ubuntu-20.04",
+      "purl": "pkg:deb/ubuntu/libdb5.3@5.3.28%2Bdfsg1-0.6ubuntu2?arch=amd64&upstream=db5.3&distro=ubuntu-20.04",
       "properties": [
         {
           "name": "syft:package:foundBy",
@@ -24719,7 +24719,7 @@
         }
       ],
       "cpe": "cpe:2.3:a:libgmp10:libgmp10:2\\:6.2.0\\+dfsg-4:*:*:*:*:*:*:*",
-      "purl": "pkg:deb/ubuntu/libgmp10@2:6.2.0+dfsg-4?arch=amd64&upstream=gmp&distro=ubuntu-20.04",
+      "purl": "pkg:deb/ubuntu/libgmp10@2:6.2.0%2Bdfsg-4?arch=amd64&upstream=gmp&distro=ubuntu-20.04",
       "properties": [
         {
           "name": "syft:package:foundBy",
@@ -25055,7 +25055,7 @@
         }
       ],
       "cpe": "cpe:2.3:a:libhogweed5:libhogweed5:3.5.1\\+really3.5.1-2ubuntu0.2:*:*:*:*:*:*:*",
-      "purl": "pkg:deb/ubuntu/libhogweed5@3.5.1+really3.5.1-2ubuntu0.2?arch=amd64&upstream=nettle&distro=ubuntu-20.04",
+      "purl": "pkg:deb/ubuntu/libhogweed5@3.5.1%2Breally3.5.1-2ubuntu0.2?arch=amd64&upstream=nettle&distro=ubuntu-20.04",
       "properties": [
         {
           "name": "syft:package:foundBy",
@@ -25928,7 +25928,7 @@
         }
       ],
       "cpe": "cpe:2.3:a:libnettle7:libnettle7:3.5.1\\+really3.5.1-2ubuntu0.2:*:*:*:*:*:*:*",
-      "purl": "pkg:deb/ubuntu/libnettle7@3.5.1+really3.5.1-2ubuntu0.2?arch=amd64&upstream=nettle&distro=ubuntu-20.04",
+      "purl": "pkg:deb/ubuntu/libnettle7@3.5.1%2Breally3.5.1-2ubuntu0.2?arch=amd64&upstream=nettle&distro=ubuntu-20.04",
       "properties": [
         {
           "name": "syft:package:foundBy",
@@ -27969,7 +27969,7 @@
         }
       ],
       "cpe": "cpe:2.3:a:libstdc\\+\\+6:libstdc\\+\\+6:10.3.0-1ubuntu1\\~20.04:*:*:*:*:*:*:*",
-      "purl": "pkg:deb/ubuntu/libstdc++6@10.3.0-1ubuntu1~20.04?arch=amd64&upstream=gcc-10&distro=ubuntu-20.04",
+      "purl": "pkg:deb/ubuntu/libstdc%2B%2B6@10.3.0-1ubuntu1~20.04?arch=amd64&upstream=gcc-10&distro=ubuntu-20.04",
       "properties": [
         {
           "name": "syft:package:foundBy",
@@ -28627,7 +28627,7 @@
         }
       ],
       "cpe": "cpe:2.3:a:libzstd1:libzstd1:1.4.4\\+dfsg-3ubuntu0.1:*:*:*:*:*:*:*",
-      "purl": "pkg:deb/ubuntu/libzstd1@1.4.4+dfsg-3ubuntu0.1?arch=amd64&upstream=libzstd&distro=ubuntu-20.04",
+      "purl": "pkg:deb/ubuntu/libzstd1@1.4.4%2Bdfsg-3ubuntu0.1?arch=amd64&upstream=libzstd&distro=ubuntu-20.04",
       "properties": [
         {
           "name": "syft:package:foundBy",
@@ -34454,6 +34454,40 @@
       ]
     },
     {
+      "bom-ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f",
+      "type": "application",
+      "name": "openssl",
+      "version": "1.1.1q",
+      "cpe": "cpe:2.3:a:openssl:openssl:1.1.1q:*:*:*:*:*:*:*",
+      "purl": "pkg:generic/openssl@1.1.1q",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "binary-classifier-cataloger"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "binary"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "binary-signature"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:openssl:openssl:1.1.1q:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:layerID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/opt/conda/bin/openssl"
+        }
+      ]
+    },
+    {
       "bom-ref": "pkg:npm/p-map@4.0.0?package-id=37b6225275b8fc0c",
       "type": "library",
       "author": "Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)",
@@ -39846,7 +39880,7 @@
       "properties": [
         {
           "name": "syft:package:foundBy",
-          "value": "binary-cataloger"
+          "value": "binary-classifier-cataloger"
         },
         {
           "name": "syft:package:type",
@@ -42864,7 +42898,7 @@
         }
       ],
       "cpe": "cpe:2.3:a:sensible-utils:sensible-utils:0.0.12\\+nmu1:*:*:*:*:*:*:*",
-      "purl": "pkg:deb/ubuntu/sensible-utils@0.0.12+nmu1?arch=all&distro=ubuntu-20.04",
+      "purl": "pkg:deb/ubuntu/sensible-utils@0.0.12%2Bnmu1?arch=all&distro=ubuntu-20.04",
       "properties": [
         {
           "name": "syft:package:foundBy",
@@ -45456,7 +45490,7 @@
         }
       ],
       "cpe": "cpe:2.3:a:tar:tar:1.30\\+dfsg-7ubuntu0.20.04.2:*:*:*:*:*:*:*",
-      "purl": "pkg:deb/ubuntu/tar@1.30+dfsg-7ubuntu0.20.04.2?arch=amd64&distro=ubuntu-20.04",
+      "purl": "pkg:deb/ubuntu/tar@1.30%2Bdfsg-7ubuntu0.20.04.2?arch=amd64&distro=ubuntu-20.04",
       "properties": [
         {
           "name": "syft:package:foundBy",
@@ -51045,7 +51079,7 @@
   ],
   "vulnerabilities": [
     {
-      "bom-ref": "urn:uuid:ad37e1d8-0029-45f7-8912-1cd2c6367874",
+      "bom-ref": "urn:uuid:62628675-f264-41e9-bc2a-c0d019ea71cf",
       "id": "CVE-2007-4559",
       "source": {
         "name": "nvd-cpe",
@@ -51110,7 +51144,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0e50b8f6-d40f-470e-a2fc-c8a1d7ae0622",
+      "bom-ref": "urn:uuid:ba1a903b-33d4-4fc8-ab5a-0023f41c6449",
       "id": "CVE-2013-4235",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51147,7 +51181,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:adf863b7-2425-4843-99a0-2bf5f51a77bd",
+      "bom-ref": "urn:uuid:3e9f0be7-2f83-4465-bc5e-2a68084c4303",
       "id": "CVE-2013-4235",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51184,7 +51218,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2413a5d7-5bc5-4bc0-8f21-6ff38fcf2a50",
+      "bom-ref": "urn:uuid:6f202464-1f2f-43be-880d-546401af50d5",
       "id": "CVE-2015-20107",
       "source": {
         "name": "nvd-cpe",
@@ -51309,16 +51343,13 @@
         }
       ],
       "analysis": {
-        "state": "not_affected",
-        "detail": "no further information",
-        "response": [
-          "will_not_fix"
-        ],
-        "justification": "code_not_present"
+        "state": "in_triage",
+        "detail": "",
+        "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:ee314761-f6f2-4e00-b0a7-7a2e42a87f17",
+      "bom-ref": "urn:uuid:dea723e2-dcf1-4893-8968-a8c0f94cfedd",
       "id": "CVE-2016-20013",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51355,7 +51386,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d25b14e7-9583-4008-880f-8837c35139da",
+      "bom-ref": "urn:uuid:37bf2a16-65c7-4e8d-b783-b267ae577d2c",
       "id": "CVE-2016-20013",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51392,7 +51423,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2e89b6a2-9190-4b04-82bc-00aa1b7cd207",
+      "bom-ref": "urn:uuid:897485a0-6690-4c74-80da-24116fbe6c2d",
       "id": "CVE-2016-20013",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51429,7 +51460,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a23d7cd5-8c33-4c06-a4ff-0a234a716647",
+      "bom-ref": "urn:uuid:c6a84f22-254a-4cb8-900b-ceb31501634f",
       "id": "CVE-2016-2781",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51466,7 +51497,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:773465ba-7b52-4cc3-af16-480de0ba551c",
+      "bom-ref": "urn:uuid:a02acde7-096d-492a-a908-44477802b0b3",
       "id": "CVE-2017-11164",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51503,7 +51534,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9b83b08f-0724-421d-9d86-cc4fff1cd63e",
+      "bom-ref": "urn:uuid:feabba9d-7129-4854-9020-4c81e883fd66",
       "id": "CVE-2020-10735",
       "source": {
         "name": "nvd-cpe",
@@ -51616,13 +51647,13 @@
         }
       ],
       "analysis": {
-        "state": "not_affected",
-        "detail": "even if this is used it has minor impact",
+        "state": "in_triage",
+        "detail": "",
         "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:e8d3fbca-256f-48e6-9773-ec1f38f25a6a",
+      "bom-ref": "urn:uuid:6b3089e3-de91-4fdc-bfab-8a1b8565162c",
       "id": "CVE-2020-16156",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51659,7 +51690,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:dc263eb9-9f93-4635-ada3-1be4245aad83",
+      "bom-ref": "urn:uuid:55cd2f7e-2e95-4e2d-9b14-23a2596bd73a",
       "id": "CVE-2020-22916",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51696,7 +51727,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b680c58f-d4eb-46e9-acab-672a2292ec87",
+      "bom-ref": "urn:uuid:f25ac11e-acc9-443f-ab7c-302b331b27fb",
       "id": "CVE-2021-31879",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51733,7 +51764,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c1c236f0-0c46-49fd-9820-52eb6e2bf0cd",
+      "bom-ref": "urn:uuid:8e3a1557-54a1-418b-8b33-a5559f79ea47",
       "id": "CVE-2021-39537",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51770,7 +51801,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bc3bd963-e762-454d-9c60-7423cc47f469",
+      "bom-ref": "urn:uuid:54d9c50d-22a7-4310-954c-e595e6051cf3",
       "id": "CVE-2021-39537",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51807,7 +51838,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7b041f2f-7e27-4436-a5e0-aec37b6f9485",
+      "bom-ref": "urn:uuid:c0277ea6-0929-4fd3-9c07-75842424a61f",
       "id": "CVE-2021-39537",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51844,7 +51875,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0a4d9cf3-966a-4ef8-9689-b83ffc027de5",
+      "bom-ref": "urn:uuid:b33af137-0f7b-4a06-93c2-f04ebb4dd447",
       "id": "CVE-2021-39537",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51881,7 +51912,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f11721a9-964a-4af1-91f2-74a4184832f3",
+      "bom-ref": "urn:uuid:bc35899d-9687-4ce2-a005-c5077f0e788e",
       "id": "CVE-2021-39537",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51918,7 +51949,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:804fc4c3-a34d-4f88-aac6-b9531c0fe0bd",
+      "bom-ref": "urn:uuid:7cae02f4-c8a2-4ba8-9319-6165abd2e70b",
       "id": "CVE-2021-43618",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51955,7 +51986,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b62e0c52-f6e4-4dce-bff8-836c7be5ed31",
+      "bom-ref": "urn:uuid:8fb0b8f6-d42f-4920-b279-63e9246bf376",
       "id": "CVE-2022-23491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -51992,7 +52023,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1f1443ca-1f32-4896-ac83-2288fdc39ddb",
+      "bom-ref": "urn:uuid:f6cc6b53-c619-4b27-a3fb-0afbd6d38a10",
       "id": "CVE-2022-28321",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52029,7 +52060,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:909d22ec-7c7f-42f8-a3df-a67776fd6d93",
+      "bom-ref": "urn:uuid:d4b656c6-7228-4331-8186-1a5fb8302a10",
       "id": "CVE-2022-28321",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52066,7 +52097,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:910b41db-c834-4e61-b350-37f46fdf15f2",
+      "bom-ref": "urn:uuid:9bbac26a-3ba8-409e-a8c9-fa60bd5ac7bd",
       "id": "CVE-2022-28321",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52103,7 +52134,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:85bd3e00-76bf-4370-97f3-b4a9a30caa7b",
+      "bom-ref": "urn:uuid:46867ec5-a6df-428a-86fc-895788f7715c",
       "id": "CVE-2022-28321",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52140,7 +52171,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7f27d588-1cc2-40b5-8bfb-c40a974a2435",
+      "bom-ref": "urn:uuid:f28b6f96-7746-46c2-b8b4-e3a5d6f3f350",
       "id": "CVE-2022-29458",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52177,7 +52208,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a49c10f1-2a89-4b6a-a92f-16871eeff2e2",
+      "bom-ref": "urn:uuid:31e669d5-1d00-4bc9-a10e-e9f0d4af6ff8",
       "id": "CVE-2022-29458",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52214,7 +52245,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2882409d-33ee-430d-add0-40792d590f8e",
+      "bom-ref": "urn:uuid:88f536e5-04b7-4e02-8865-d8b0ddb74fb9",
       "id": "CVE-2022-29458",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52251,7 +52282,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:beee0887-49de-445a-ad5d-e8127588b527",
+      "bom-ref": "urn:uuid:d73c736c-b5d6-494e-9c4e-aead777cf19b",
       "id": "CVE-2022-29458",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52288,7 +52319,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:dba6016d-e548-40f0-a0a0-79df659f3147",
+      "bom-ref": "urn:uuid:cb94bc92-f601-4811-a738-dee80bd3cb3e",
       "id": "CVE-2022-29458",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52325,7 +52356,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:10d6b93e-ec2a-40d9-a687-b7263848e07b",
+      "bom-ref": "urn:uuid:3e81a909-2b60-45fa-9841-a25de58c981c",
       "id": "CVE-2022-3219",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52362,7 +52393,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:fd4ed0a1-8fd4-46d2-8827-36b385775efc",
+      "bom-ref": "urn:uuid:43cf2335-174a-44f5-97d4-aa77970f3d31",
       "id": "CVE-2022-37434",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52399,7 +52430,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c5a97c51-6eb8-48ef-8a40-dd3ccf13e27d",
+      "bom-ref": "urn:uuid:21911cff-7d17-4ba9-9dae-f72347996774",
       "id": "CVE-2022-37454",
       "source": {
         "name": "nvd-cpe",
@@ -52470,16 +52501,13 @@
         }
       ],
       "analysis": {
-        "state": "resolved",
-        "detail": "python 3.10 is not used \n\nasasdflasdf",
-        "response": [
-          "can_not_fix"
-        ],
-        "justification": "code_not_reachable"
+        "state": "in_triage",
+        "detail": "",
+        "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:07de9701-496d-4618-8198-0d418c8eff60",
+      "bom-ref": "urn:uuid:84511896-09a5-49f3-be21-a4a35b6d1ec8",
       "id": "CVE-2022-3821",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52516,7 +52544,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:40fef95c-993b-4b97-9bff-d7602c8dbb49",
+      "bom-ref": "urn:uuid:e1ce9218-b8f7-475d-84a5-9ae788df6bbe",
       "id": "CVE-2022-3821",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52553,7 +52581,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4f5b8df2-7306-4b04-ac40-d4d6c7c01092",
+      "bom-ref": "urn:uuid:aecafa67-dabf-4200-ad7c-3ce20fa183bb",
       "id": "CVE-2022-42919",
       "source": {
         "name": "nvd-cpe",
@@ -52627,13 +52655,13 @@
         }
       ],
       "analysis": {
-        "state": "not_affected",
-        "detail": "no further information",
+        "state": "in_triage",
+        "detail": "",
         "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:4c446d7f-49a3-4ce1-a2b6-abb300831ad6",
+      "bom-ref": "urn:uuid:f931933f-8a57-41b3-b4d0-5a043091b87e",
       "id": "CVE-2022-4304",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52670,7 +52698,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:72030315-e289-4dc2-a86c-84e813adc392",
+      "bom-ref": "urn:uuid:edfc9f59-eaeb-422a-be13-588bc5a87945",
       "id": "CVE-2022-4304",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52707,7 +52735,51 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d8fb9d63-7971-4985-bf4c-57c60b82198f",
+      "bom-ref": "urn:uuid:d14f7794-4303-40fd-8ac3-3a1897972c12",
+      "id": "CVE-2022-4304",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-4304"
+      },
+      "references": [
+        {
+          "id": "CVE-2022-4304",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-4304"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5.9,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "description": "A timing based side channel exists in the OpenSSL RSA Decryption implementation\nwhich could be sufficient to recover a plaintext across a network in a\nBleichenbacher style attack. To achieve a successful decryption an attacker\nwould have to be able to send a very large number of trial messages for\ndecryption. The vulnerability affects all RSA padding modes: PKCS#1 v1.5,\nRSA-OEAP and RSASVE.\n\nFor example, in a TLS connection, RSA is commonly used by a client to send an\nencrypted pre-master secret to the server. An attacker that had observed a\ngenuine connection between a client and a server could use this flaw to send\ntrial messages to the server and record the time taken to process them. After a\nsufficiently large number of messages the attacker could recover the pre-master\nsecret used for the original connection and thus be able to decrypt the\napplication data sent over that connection.\n\n",
+      "advisories": [
+        {
+          "url": "https://security.gentoo.org/glsa/202402-08"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20230207.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:3c187af2-5877-41c4-8cf1-ebfdebc3c5f0",
       "id": "CVE-2022-4415",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52744,7 +52816,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c1e03ea8-a51f-4085-a848-64cc4b00fba8",
+      "bom-ref": "urn:uuid:78a7494c-98f8-477a-bcab-d5b7cd5c2244",
       "id": "CVE-2022-4415",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52781,7 +52853,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6f241e9b-a8ec-40ed-964d-d161790572c3",
+      "bom-ref": "urn:uuid:bc0d4ca5-236d-4518-a4af-b22f579bea05",
       "id": "CVE-2022-4450",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52818,7 +52890,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:69234930-a788-4c48-8432-0226c90a4331",
+      "bom-ref": "urn:uuid:950292dc-9606-450d-b87d-9ee95499d98c",
       "id": "CVE-2022-4450",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -52855,7 +52927,57 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a60b821e-3739-4055-b748-3f4541c6b7aa",
+      "bom-ref": "urn:uuid:cac8a4c7-b48f-45a4-9030-c6ec7bc472f5",
+      "id": "CVE-2022-4450",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-4450"
+      },
+      "references": [
+        {
+          "id": "CVE-2022-4450",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-4450"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "description": "The function PEM_read_bio_ex() reads a PEM file from a BIO and parses and\ndecodes the \"name\" (e.g. \"CERTIFICATE\"), any header data and the payload data.\nIf the function succeeds then the \"name_out\", \"header\" and \"data\" arguments are\npopulated with pointers to buffers containing the relevant decoded data. The\ncaller is responsible for freeing those buffers. It is possible to construct a\nPEM file that results in 0 bytes of payload data. In this case PEM_read_bio_ex()\nwill return a failure code but will populate the header argument with a pointer\nto a buffer that has already been freed. If the caller also frees this buffer\nthen a double free will occur. This will most likely lead to a crash. This\ncould be exploited by an attacker who has the ability to supply malicious PEM\nfiles for parsing to achieve a denial of service attack.\n\nThe functions PEM_read_bio() and PEM_read() are simple wrappers around\nPEM_read_bio_ex() and therefore these functions are also directly affected.\n\nThese functions are also called indirectly by a number of other OpenSSL\nfunctions including PEM_X509_INFO_read_bio_ex() and\nSSL_CTX_use_serverinfo_file() which are also vulnerable. Some OpenSSL internal\nuses of these functions are not vulnerable because the caller does not free the\nheader argument if PEM_read_bio_ex() returns a failure code. These locations\ninclude the PEM_read_bio_TYPE() functions as well as the decoders introduced in\nOpenSSL 3.0.\n\nThe OpenSSL asn1parse command line application is also impacted by this issue.\n\n\n",
+      "advisories": [
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=63bcf189be73a9cc1264059bed6f57974be74a83"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=bbcf509bd046b34cca19c766bbddc31683d0858b"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202402-08"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20230207.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:e623567f-5ec8-4a34-a911-b10799b9b066",
       "id": "CVE-2022-45061",
       "source": {
         "name": "nvd-cpe",
@@ -52989,16 +53111,13 @@
         }
       ],
       "analysis": {
-        "state": "resolved",
-        "detail": "not used, ..asdfasdf",
-        "response": [
-          "will_not_fix"
-        ],
-        "justification": "code_not_present"
+        "state": "in_triage",
+        "detail": "",
+        "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:8e587fa9-04fa-446c-9beb-aa2ab32679d4",
+      "bom-ref": "urn:uuid:e4d26c14-d9fa-4e70-b88e-e98fb5d38c3f",
       "id": "CVE-2022-48303",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53035,7 +53154,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d14fe9b2-7017-41e6-83ba-b47249676083",
+      "bom-ref": "urn:uuid:8ac78948-9324-458e-86e0-8b9f895dd7f6",
       "id": "CVE-2023-0215",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53072,7 +53191,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2048afdf-db00-46f6-990c-81229de4c3db",
+      "bom-ref": "urn:uuid:7f3e06f1-90ef-4e2c-b4d2-1d9c94deabc1",
       "id": "CVE-2023-0215",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53109,7 +53228,66 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6c3e0a75-f750-4318-934e-05182874114f",
+      "bom-ref": "urn:uuid:e796a63e-0442-4e74-8420-aef0d064aa40",
+      "id": "CVE-2023-0215",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0215"
+      },
+      "references": [
+        {
+          "id": "CVE-2023-0215",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0215"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "description": "The public API function BIO_new_NDEF is a helper function used for streaming\nASN.1 data via a BIO. It is primarily used internally to OpenSSL to support the\nSMIME, CMS and PKCS7 streaming capabilities, but may also be called directly by\nend user applications.\n\nThe function receives a BIO from the caller, prepends a new BIO_f_asn1 filter\nBIO onto the front of it to form a BIO chain, and then returns the new head of\nthe BIO chain to the caller. Under certain conditions, for example if a CMS\nrecipient public key is invalid, the new filter BIO is freed and the function\nreturns a NULL result indicating a failure. However, in this case, the BIO chain\nis not properly cleaned up and the BIO passed by the caller still retains\ninternal pointers to the previously freed filter BIO. If the caller then goes on\nto call BIO_pop() on the BIO then a use-after-free will occur. This will most\nlikely result in a crash.\n\n\n\nThis scenario occurs directly in the internal function B64_write_ASN1() which\nmay cause BIO_new_NDEF() to be called and will subsequently call BIO_pop() on\nthe BIO. This internal function is in turn called by the public API functions\nPEM_write_bio_ASN1_stream, PEM_write_bio_CMS_stream, PEM_write_bio_PKCS7_stream,\nSMIME_write_ASN1, SMIME_write_CMS and SMIME_write_PKCS7.\n\nOther public API functions that may be impacted by this include\ni2d_ASN1_bio_stream, BIO_new_CMS, BIO_new_PKCS7, i2d_CMS_bio_stream and\ni2d_PKCS7_bio_stream.\n\nThe OpenSSL cms and smime command line applications are similarly affected.\n\n\n\n",
+      "advisories": [
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=8818064ce3c3c0f1b740a5aaba2a987e75bfbafd"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=9816136fe31d92ace4037d5da5257f763aeeb4eb"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=c3829dd8825c654652201e16f8a0a0c46ee3f344"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202402-08"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20230427-0007/"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20230427-0009/"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20230207.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:1ca25308-6eb1-4930-8a9e-9dd944f57d0b",
       "id": "CVE-2023-0286",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53146,7 +53324,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1667325f-3e97-4c0e-8081-bddb81d5b439",
+      "bom-ref": "urn:uuid:a8e3bd08-7b0c-4061-95f3-425978a2de54",
       "id": "CVE-2023-0286",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53183,7 +53361,66 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9b284bfb-a794-42ef-9962-a7b632c101d4",
+      "bom-ref": "urn:uuid:094a4084-4cfc-4276-b599-a2793bdf8812",
+      "id": "CVE-2023-0286",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0286"
+      },
+      "references": [
+        {
+          "id": "CVE-2023-0286",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0286"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.4,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H"
+        }
+      ],
+      "description": "There is a type confusion vulnerability relating to X.400 address processing\ninside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but\nthe public structure definition for GENERAL_NAME incorrectly specified the type\nof the x400Address field as ASN1_TYPE. This field is subsequently interpreted by\nthe OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an\nASN1_STRING.\n\nWhen CRL checking is enabled (i.e. the application sets the\nX509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass\narbitrary pointers to a memcmp call, enabling them to read memory contents or\nenact a denial of service. In most cases, the attack requires the attacker to\nprovide both the certificate chain and CRL, neither of which need to have a\nvalid signature. If the attacker only controls one of these inputs, the other\ninput must already contain an X.400 address as a CRL distribution point, which\nis uncommon. As such, this vulnerability is most likely to only affect\napplications which have implemented their own functionality for retrieving CRLs\nover a network.\n\n",
+      "advisories": [
+        {
+          "url": "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.2-relnotes.txt"
+        },
+        {
+          "url": "https://ftp.openbsd.org/pub/OpenBSD/patches/7.2/common/018_x509.patch.sig"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2c6c9d439b484e1ba9830d8454a34fa4f80fdfe9"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2f7530077e0ef79d98718138716bc51ca0cad658"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=fd2af07dc083a350c959147097003a14a5e8ac4d"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202402-08"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20230207.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:6be6ad2b-04bf-4576-8bb7-92f4370f86b9",
       "id": "CVE-2023-0361",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53220,7 +53457,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a6efce5b-0b40-42dc-b14d-6463be9348ed",
+      "bom-ref": "urn:uuid:cc4a2b77-1d11-4136-8607-4d38b47b4f33",
       "id": "CVE-2023-0464",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53257,7 +53494,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:44c2f653-2799-4287-a60b-43193a38404c",
+      "bom-ref": "urn:uuid:69455da3-d9c8-4308-a95e-4e098a213f2c",
       "id": "CVE-2023-0464",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53294,7 +53531,72 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e9029568-7c22-400e-8cf7-a983b4aceb87",
+      "bom-ref": "urn:uuid:4e3cc3ff-3074-4a17-a304-8ac3d9deb996",
+      "id": "CVE-2023-0464",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0464"
+      },
+      "references": [
+        {
+          "id": "CVE-2023-0464",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0464"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "description": "A security vulnerability has been identified in all supported versions\n\nof OpenSSL related to the verification of X.509 certificate chains\nthat include policy constraints.  Attackers may be able to exploit this\nvulnerability by creating a malicious certificate chain that triggers\nexponential use of computational resources, leading to a denial-of-service\n(DoS) attack on affected systems.\n\nPolicy processing is disabled by default but can be enabled by passing\nthe `-policy' argument to the command line utilities or by calling the\n`X509_VERIFY_PARAM_set1_policies()' function.",
+      "advisories": [
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2017771e2db3e2b96f89bbe8766c3209f6a99545"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2dcd4f1e3115f38cefa43e3efbe9b801c27e642e"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=879f7080d7e141f415c79eaa3a8ac4a3dad0348b"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=959c59c7a0164117e7f8366466a32bb1f8d77ff1"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202402-08"
+        },
+        {
+          "url": "https://www.couchbase.com/alerts/"
+        },
+        {
+          "url": "https://www.debian.org/security/2023/dsa-5417"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20230322.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:567f4c75-83c7-463f-9eba-180ccb5992e5",
       "id": "CVE-2023-0465",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53331,7 +53633,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b94d0a20-1751-4847-b5d6-445517af116a",
+      "bom-ref": "urn:uuid:fc5f113c-58b7-4870-8290-496ead1998b4",
       "id": "CVE-2023-0465",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53368,7 +53670,72 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a670e22b-01a5-4dc2-b8e9-0636cc7ca62a",
+      "bom-ref": "urn:uuid:cf4ef840-2fe6-477f-89b1-b5977af46699",
+      "id": "CVE-2023-0465",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0465"
+      },
+      "references": [
+        {
+          "id": "CVE-2023-0465",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0465"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5.3,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        }
+      ],
+      "description": "Applications that use a non-default option when verifying certificates may be\nvulnerable to an attack from a malicious CA to circumvent certain checks.\n\nInvalid certificate policies in leaf certificates are silently ignored by\nOpenSSL and other certificate policy checks are skipped for that certificate.\nA malicious CA could use this to deliberately assert invalid certificate policies\nin order to circumvent policy checking on the certificate altogether.\n\nPolicy processing is disabled by default but can be enabled by passing\nthe `-policy' argument to the command line utilities or by calling the\n`X509_VERIFY_PARAM_set1_policies()' function.",
+      "advisories": [
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=10325176f3d3e98c6e2b3bf5ab1e3b334de6947a"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=1dd43e0709fece299b15208f36cc7c76209ba0bb"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=b013765abfa80036dc779dd0e50602c57bb3bf95"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=facfb1ab745646e97a1920977ae4a9965ea61d5c"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202402-08"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20230414-0001/"
+        },
+        {
+          "url": "https://www.debian.org/security/2023/dsa-5417"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20230328.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:fb8668d7-be61-4a39-9e3e-d29d06bd6454",
       "id": "CVE-2023-0466",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53405,7 +53772,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1dcda24d-e170-49f5-832e-d3d80f6520fe",
+      "bom-ref": "urn:uuid:a785a00c-f3fa-4526-8e81-a19938d339c6",
       "id": "CVE-2023-0466",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53442,7 +53809,75 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9d758b66-ce2d-45d8-8788-d197231d2d81",
+      "bom-ref": "urn:uuid:23448e7f-54a4-4743-a591-f92d8f059dea",
+      "id": "CVE-2023-0466",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0466"
+      },
+      "references": [
+        {
+          "id": "CVE-2023-0466",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0466"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5.3,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        }
+      ],
+      "description": "The function X509_VERIFY_PARAM_add0_policy() is documented to\nimplicitly enable the certificate policy check when doing certificate\nverification. However the implementation of the function does not\nenable the check which allows certificates with invalid or incorrect\npolicies to pass the certificate verification.\n\nAs suddenly enabling the policy check could break existing deployments it was\ndecided to keep the existing behavior of the X509_VERIFY_PARAM_add0_policy()\nfunction.\n\nInstead the applications that require OpenSSL to perform certificate\npolicy check need to use X509_VERIFY_PARAM_set1_policies() or explicitly\nenable the policy check by calling X509_VERIFY_PARAM_set_flags() with\nthe X509_V_FLAG_POLICY_CHECK flag argument.\n\nCertificate policy checks are disabled by default in OpenSSL and are not\ncommonly used by applications.",
+      "advisories": [
+        {
+          "url": "http://www.openwall.com/lists/oss-security/2023/09/28/4"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=0d16b7e99aafc0b4a6d729eec65a411a7e025f0a"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=51e8a84ce742db0f6c70510d0159dad8f7825908"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=73398dea26de9899fb4baa94098ad0a61f435c72"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=fc814a30fc4f0bc54fcea7d9a7462f5457aab061"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202402-08"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20230414-0001/"
+        },
+        {
+          "url": "https://www.debian.org/security/2023/dsa-5417"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20230328.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:e3e0c9aa-86e5-4523-aaa3-cc5be6709782",
       "id": "CVE-2023-22809",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53479,7 +53914,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:17cde52a-3ad2-481c-8408-bebe5ed2424f",
+      "bom-ref": "urn:uuid:f35bc670-b6f9-47d7-8721-9b226b49386d",
       "id": "CVE-2023-24329",
       "source": {
         "name": "nvd-cpe",
@@ -53598,7 +54033,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0fc320c8-4403-4a19-9536-148c45149624",
+      "bom-ref": "urn:uuid:542167ad-b03a-4734-ab86-9d3b1d39bc99",
       "id": "CVE-2023-2650",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53635,7 +54070,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e0ab8cfe-dbb2-4365-b7fa-0405c7ecb7ad",
+      "bom-ref": "urn:uuid:de6137c7-aab8-46bc-963e-dbf9bf1c18ea",
       "id": "CVE-2023-2650",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53672,7 +54107,81 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1dc4537d-bd5b-488a-b7c3-6a36cb13239c",
+      "bom-ref": "urn:uuid:8c92c379-d9d6-4515-b619-5c7a8ef2bc38",
+      "id": "CVE-2023-2650",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2650"
+      },
+      "references": [
+        {
+          "id": "CVE-2023-2650",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2650"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "description": "Issue summary: Processing some specially crafted ASN.1 object identifiers or\ndata containing them may be very slow.\n\nImpact summary: Applications that use OBJ_obj2txt() directly, or use any of\nthe OpenSSL subsystems OCSP, PKCS7/SMIME, CMS, CMP/CRMF or TS with no message\nsize limit may experience notable to very long delays when processing those\nmessages, which may lead to a Denial of Service.\n\nAn OBJECT IDENTIFIER is composed of a series of numbers - sub-identifiers -\nmost of which have no size limit.  OBJ_obj2txt() may be used to translate\nan ASN.1 OBJECT IDENTIFIER given in DER encoding form (using the OpenSSL\ntype ASN1_OBJECT) to its canonical numeric text form, which are the\nsub-identifiers of the OBJECT IDENTIFIER in decimal form, separated by\nperiods.\n\nWhen one of the sub-identifiers in the OBJECT IDENTIFIER is very large\n(these are sizes that are seen as absurdly large, taking up tens or hundreds\nof KiBs), the translation to a decimal number in text may take a very long\ntime.  The time complexity is O(n^2) with 'n' being the size of the\nsub-identifiers in bytes (*).\n\nWith OpenSSL 3.0, support to fetch cryptographic algorithms using names /\nidentifiers in string form was introduced.  This includes using OBJECT\nIDENTIFIERs in canonical numeric text form as identifiers for fetching\nalgorithms.\n\nSuch OBJECT IDENTIFIERs may be received through the ASN.1 structure\nAlgorithmIdentifier, which is commonly used in multiple protocols to specify\nwhat cryptographic algorithm should be used to sign or verify, encrypt or\ndecrypt, or digest passed data.\n\nApplications that call OBJ_obj2txt() directly with untrusted data are\naffected, with any version of OpenSSL.  If the use is for the mere purpose\nof display, the severity is considered low.\n\nIn OpenSSL 3.0 and newer, this affects the subsystems OCSP, PKCS7/SMIME,\nCMS, CMP/CRMF or TS.  It also impacts anything that processes X.509\ncertificates, including simple things like verifying its signature.\n\nThe impact on TLS is relatively low, because all versions of OpenSSL have a\n100KiB limit on the peer's certificate chain.  Additionally, this only\nimpacts clients, or servers that have explicitly enabled client\nauthentication.\n\nIn OpenSSL 1.1.1 and 1.0.2, this only affects displaying diverse objects,\nsuch as X.509 certificates.  This is assumed to not happen in such a way\nthat it would cause a Denial of Service, so these versions are considered\nnot affected by this issue in such a way that it would be cause for concern,\nand the severity is therefore considered low.",
+      "advisories": [
+        {
+          "url": "http://www.openwall.com/lists/oss-security/2023/05/30/1"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=423a2bc737a908ad0c77bda470b2b59dc879936b"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=853c5e56ee0b8650c73140816bb8b91d6163422c"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=9e209944b35cf82368071f160a744b6178f9b098"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=db779b0e10b047f2585615e0b8f2acdf21f8544a"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2023/06/msg00011.html"
+        },
+        {
+          "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0009"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202402-08"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20230703-0001/"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20231027-0009/"
+        },
+        {
+          "url": "https://www.debian.org/security/2023/dsa-5417"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20230530.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:b3d2cc56-9a68-4f13-9d54-08c162f53e55",
       "id": "CVE-2023-26604",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53709,7 +54218,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4758e896-64a3-4344-903f-792376158d34",
+      "bom-ref": "urn:uuid:245be0f6-3774-4036-9ecb-daef60e11d45",
       "id": "CVE-2023-26604",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53746,7 +54255,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b387b46c-4bd7-4fab-9ed2-bd978c9fc1c4",
+      "bom-ref": "urn:uuid:a67eb083-3a26-4cfd-ba56-c0b15ee79358",
       "id": "CVE-2023-27043",
       "source": {
         "name": "nvd-cpe",
@@ -53853,7 +54362,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3a990c5b-4e0d-4f7f-ac51-77fc6dc4e914",
+      "bom-ref": "urn:uuid:db13bec3-c7e4-4f29-8fa0-b1e71ee88392",
       "id": "CVE-2023-28486",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53890,7 +54399,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:fe58199d-b5e9-4192-9ec5-fdefb0a8bead",
+      "bom-ref": "urn:uuid:b850416b-24a0-4f27-9bd8-284350bb65e0",
       "id": "CVE-2023-28487",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53927,7 +54436,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b5e39d37-fc3e-4c4c-acdf-6c7b966165d4",
+      "bom-ref": "urn:uuid:97d7a586-96ef-4b9a-88fb-5d84e0133c1b",
       "id": "CVE-2023-29383",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -53964,7 +54473,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3ff57846-6bfa-478b-b339-2ceb35749638",
+      "bom-ref": "urn:uuid:a1187f9f-0eca-4bce-82a0-cb74022a0717",
       "id": "CVE-2023-29383",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54001,7 +54510,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6e75d4e0-ffa3-45cb-9b60-8eb545d64f67",
+      "bom-ref": "urn:uuid:b4f4b320-e7c3-4d1f-8791-7e85f39ff100",
       "id": "CVE-2023-29491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54038,7 +54547,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:71379e4f-9dcb-41f9-aa24-6ff4b7e783df",
+      "bom-ref": "urn:uuid:19f2830b-76eb-4035-a10e-b590e8847791",
       "id": "CVE-2023-29491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54075,7 +54584,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d1ebba80-97fc-4c45-a242-c5e9d44f2534",
+      "bom-ref": "urn:uuid:f7181a93-834f-4683-8f9c-d3dc0aa39fd8",
       "id": "CVE-2023-29491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54112,7 +54621,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1dddb0e4-0243-42dc-80c4-6bd7c0b1d2d4",
+      "bom-ref": "urn:uuid:4d966db2-e558-46f1-8c98-0b7a4bd86cf8",
       "id": "CVE-2023-29491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54149,7 +54658,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d8b83edf-2d39-42db-9ae1-7c3ec136dd1d",
+      "bom-ref": "urn:uuid:315abfe2-5fad-4177-82f7-592352fe14ae",
       "id": "CVE-2023-29491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54186,7 +54695,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:82eb83d1-8261-4a53-98c4-8240b54d8f05",
+      "bom-ref": "urn:uuid:a1003234-2006-4dbb-96b1-bd8b8488b4bb",
       "id": "CVE-2023-31484",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54223,7 +54732,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e841ef8c-166f-4b1e-ad74-e74854bdd781",
+      "bom-ref": "urn:uuid:3712ede1-0b59-41fe-8d94-90d89c74bbcb",
       "id": "CVE-2023-3446",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54260,7 +54769,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e254edf8-8d3f-4b98-bcf0-075636b43c92",
+      "bom-ref": "urn:uuid:ce7cf3d5-15ee-4ebf-bc4b-00e191c2ce21",
       "id": "CVE-2023-3446",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54297,7 +54806,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3fb37d73-83fa-4356-b58a-df1f9c14b7b1",
+      "bom-ref": "urn:uuid:e55e5b95-0b86-4a22-9f3a-3778f448487d",
       "id": "CVE-2023-36632",
       "source": {
         "name": "nvd-cpe",
@@ -54347,7 +54856,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e058fb7e-3a89-4fb6-8665-31805b65cd3e",
+      "bom-ref": "urn:uuid:4e0550a3-57f9-41d3-87ed-96e6476e01ff",
       "id": "CVE-2023-3817",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54384,7 +54893,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5664ebed-ac22-4e85-8d1e-1d2f15b15414",
+      "bom-ref": "urn:uuid:2e515d0b-25e1-4e55-ac96-957ce8303898",
       "id": "CVE-2023-3817",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54421,7 +54930,87 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5ad975e7-7d95-4021-9cbc-5dd6b64c58ac",
+      "bom-ref": "urn:uuid:ebfeff41-4325-4dee-a4e8-0d0d149f8498",
+      "id": "CVE-2023-3817",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-3817"
+      },
+      "references": [
+        {
+          "id": "CVE-2023-3817",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-3817"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5.3,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "description": "Issue summary: Checking excessively long DH keys or parameters may be very slow.\n\nImpact summary: Applications that use the functions DH_check(), DH_check_ex()\nor EVP_PKEY_param_check() to check a DH key or DH parameters may experience long\ndelays. Where the key or parameters that are being checked have been obtained\nfrom an untrusted source this may lead to a Denial of Service.\n\nThe function DH_check() performs various checks on DH parameters. After fixing\nCVE-2023-3446 it was discovered that a large q parameter value can also trigger\nan overly long computation during some of these checks. A correct q value,\nif present, cannot be larger than the modulus p parameter, thus it is\nunnecessary to perform these checks if q is larger than p.\n\nAn application that calls DH_check() and supplies a key or parameters obtained\nfrom an untrusted source could be vulnerable to a Denial of Service attack.\n\nThe function DH_check() is itself called by a number of other OpenSSL functions.\nAn application calling any of those other functions may similarly be affected.\nThe other functions affected by this are DH_check_ex() and\nEVP_PKEY_param_check().\n\nAlso vulnerable are the OpenSSL dhparam and pkeyparam command line applications\nwhen using the \"-check\" option.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\n\nThe OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue.",
+      "advisories": [
+        {
+          "url": "http://seclists.org/fulldisclosure/2023/Jul/43"
+        },
+        {
+          "url": "http://www.openwall.com/lists/oss-security/2023/07/31/1"
+        },
+        {
+          "url": "http://www.openwall.com/lists/oss-security/2023/09/22/11"
+        },
+        {
+          "url": "http://www.openwall.com/lists/oss-security/2023/09/22/9"
+        },
+        {
+          "url": "http://www.openwall.com/lists/oss-security/2023/11/06/2"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=6a1eb62c29db6cb5eec707f9338aee00f44e26f5"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=869ad69aadd985c7b8ca6f4e5dd0eb274c9f3644"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=9002fd07327a91f35ba6c1307e71fa6fd4409b7f"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=91ddeba0f2269b017dc06c46c993a788974b1aa5"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2023/08/msg00019.html"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202402-08"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20230818-0014/"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20231027-0008/"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20230731.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:6c585dbe-5199-4d2b-a955-ab79e001b949",
       "id": "CVE-2023-39804",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54458,7 +55047,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:be6412b0-820e-4e39-86d7-3a2e2bd1f7ad",
+      "bom-ref": "urn:uuid:2b41b244-1da1-4aa8-a2bc-fa1188bdd9fc",
       "id": "CVE-2023-4016",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54495,7 +55084,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:abf8aa21-56e3-484d-9b7c-571558ce9566",
+      "bom-ref": "urn:uuid:228e4c73-0758-4e78-aa8b-6fbaee512928",
       "id": "CVE-2023-4016",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54532,7 +55121,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:88664c92-2866-413e-9a22-0fc05fd45c12",
+      "bom-ref": "urn:uuid:09f649de-0d54-44c0-94d2-bc1fb6e67f9f",
       "id": "CVE-2023-40217",
       "source": {
         "name": "nvd-cpe",
@@ -54585,7 +55174,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4e836012-5f89-468a-8d6f-fa45a493511c",
+      "bom-ref": "urn:uuid:0f8ea28f-6f4c-49fb-aed0-ec30b1d02575",
       "id": "CVE-2023-45918",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54622,7 +55211,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bb5eaf8e-fc0c-4c96-90a9-1701631d56a6",
+      "bom-ref": "urn:uuid:82da1739-4de6-4018-91c4-4291890a3ebb",
       "id": "CVE-2023-45918",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54659,7 +55248,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:422bb85c-d57d-4544-aec9-cc05203443ba",
+      "bom-ref": "urn:uuid:e5915fbe-5ef8-4ad5-bd5d-6a6eb19a8a0e",
       "id": "CVE-2023-45918",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54696,7 +55285,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:45660296-e945-47d8-9393-b9a0170d9f02",
+      "bom-ref": "urn:uuid:3857a5f3-5c49-479d-bb54-14abb6cf0166",
       "id": "CVE-2023-45918",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54733,7 +55322,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:22cd6658-ebf4-4659-9b48-bee50dc59ea9",
+      "bom-ref": "urn:uuid:58520f77-0905-4688-8f3f-f06bdcf5187a",
       "id": "CVE-2023-45918",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54770,7 +55359,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7e705681-e739-4bc8-834a-ba8b34568d03",
+      "bom-ref": "urn:uuid:652fa2b8-93e4-4d08-a3bb-ea33b2465859",
       "id": "CVE-2023-4641",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54807,7 +55396,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2191c29f-0b80-4aca-82ff-12f990cc875b",
+      "bom-ref": "urn:uuid:5403af64-3fbd-410a-b81c-45084faf4df4",
       "id": "CVE-2023-4641",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54844,7 +55433,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ac6806ed-d2e2-4f5a-84ec-2e5f76ea8667",
+      "bom-ref": "urn:uuid:07a53850-2b72-4c44-b799-3977c73fdb0b",
       "id": "CVE-2023-47038",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54881,7 +55470,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6411d4d8-110c-4aec-8e98-521ccb0d6eb8",
+      "bom-ref": "urn:uuid:71932746-4d39-44d9-ac76-78022d687cfa",
       "id": "CVE-2023-4806",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54918,7 +55507,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:cf926ce7-7bc3-4cc4-bf7f-b49f3e605066",
+      "bom-ref": "urn:uuid:c6f95927-1f3c-4553-ac41-c15c9086f0e2",
       "id": "CVE-2023-4806",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54955,7 +55544,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e6194e75-89bf-422e-8c92-c117de4ae26a",
+      "bom-ref": "urn:uuid:5ab1dc2e-5b3d-4b43-925b-47889e0a21b5",
       "id": "CVE-2023-4806",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -54992,7 +55581,60 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:693d8233-13e5-4380-9ae1-ca275e613358",
+      "bom-ref": "urn:uuid:1018e097-f8d9-4c2f-b9e2-93ac60b31fa6",
+      "id": "CVE-2023-4807",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4807"
+      },
+      "references": [
+        {
+          "id": "CVE-2023-4807",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4807"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.8,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "description": "Issue summary: The POLY1305 MAC (message authentication code) implementation\ncontains a bug that might corrupt the internal state of applications on the\nWindows 64 platform when running on newer X86_64 processors supporting the\nAVX512-IFMA instructions.\n\nImpact summary: If in an application that uses the OpenSSL library an attacker\ncan influence whether the POLY1305 MAC algorithm is used, the application\nstate might be corrupted with various application dependent consequences.\n\nThe POLY1305 MAC (message authentication code) implementation in OpenSSL does\nnot save the contents of non-volatile XMM registers on Windows 64 platform\nwhen calculating the MAC of data larger than 64 bytes. Before returning to\nthe caller all the XMM registers are set to zero rather than restoring their\nprevious content. The vulnerable code is used only on newer x86_64 processors\nsupporting the AVX512-IFMA instructions.\n\nThe consequences of this kind of internal application state corruption can\nbe various - from no consequences, if the calling application does not\ndepend on the contents of non-volatile XMM registers at all, to the worst\nconsequences, where the attacker could get complete control of the application\nprocess. However given the contents of the registers are just zeroized so\nthe attacker cannot put arbitrary values inside, the most likely consequence,\nif any, would be an incorrect result of some application dependent\ncalculations or a crash leading to a denial of service.\n\nThe POLY1305 MAC algorithm is most frequently used as part of the\nCHACHA20-POLY1305 AEAD (authenticated encryption with associated data)\nalgorithm. The most common usage of this AEAD cipher is with TLS protocol\nversions 1.2 and 1.3 and a malicious client can influence whether this AEAD\ncipher is used by the server. This implies that server applications using\nOpenSSL can be potentially impacted. However we are currently not aware of\nany concrete application that would be affected by this issue therefore we\nconsider this a Low severity security issue.\n\nAs a workaround the AVX512-IFMA instructions support can be disabled at\nruntime by setting the environment variable OPENSSL_ia32cap:\n\n   OPENSSL_ia32cap=:~0x200000\n\nThe FIPS provider is not affected by this issue.",
+      "advisories": [
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=4bfac4471f53c4f74c8d81020beb938f92d84ca5"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=6754de4a121ec7f261b16723180df6592cbb4508"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=a632d534c73eeb3e3db8c7540d811194ef7c79ff"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20230921-0001/"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20230908.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:1302bd69-f32e-4d03-b8d1-edb9c98a7564",
       "id": "CVE-2023-4813",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55029,7 +55671,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f0a9a4aa-2ef6-4efd-9a67-8130ff4b00ba",
+      "bom-ref": "urn:uuid:54a9184f-68ce-4356-a295-d6a78cba1e52",
       "id": "CVE-2023-4813",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55066,7 +55708,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0733c837-05e9-4766-8adb-b7db2b6ba99b",
+      "bom-ref": "urn:uuid:3ff261c1-6607-448c-800f-4f0eed8f494b",
       "id": "CVE-2023-4813",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55103,7 +55745,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:fc1c2064-0a5f-4d9c-a4ff-94efddd70028",
+      "bom-ref": "urn:uuid:6a8e1ff1-6351-4a1d-968b-47c9669f1201",
       "id": "CVE-2023-50495",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55140,7 +55782,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c66d97b0-0502-472a-90d4-a92c639e180f",
+      "bom-ref": "urn:uuid:3878ceb6-df9f-4c0c-884e-5c4133ab3b30",
       "id": "CVE-2023-50495",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55177,7 +55819,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e9192479-e3b7-46ee-97fc-3f2eb7f138a0",
+      "bom-ref": "urn:uuid:2cd8d792-d640-45a7-92c3-46ba25e81650",
       "id": "CVE-2023-50495",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55214,7 +55856,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bf6a342a-4dc8-413f-ab1d-603b7a07140f",
+      "bom-ref": "urn:uuid:ad66ab31-31aa-447e-bb71-de1c84540f5d",
       "id": "CVE-2023-50495",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55251,7 +55893,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1ac9a0ac-fc82-4b70-a167-c6c75b7494d4",
+      "bom-ref": "urn:uuid:aa1ae671-98c3-4240-9314-d82363de7eb2",
       "id": "CVE-2023-50495",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55288,7 +55930,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:230a0588-bd2d-4f44-8388-44033894c097",
+      "bom-ref": "urn:uuid:2b8ecd9e-ba58-4526-bec1-93046d8f1984",
       "id": "CVE-2023-5678",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55325,7 +55967,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f1e8b008-1919-4736-8776-9b71c65563e6",
+      "bom-ref": "urn:uuid:d3f8ead9-8304-4cdb-bae4-9c54224c680b",
       "id": "CVE-2023-5678",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55362,7 +56004,63 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4e0284fd-6c01-4d13-b118-c833f865c3a1",
+      "bom-ref": "urn:uuid:b3c5e877-dc0a-4204-8855-ffd634e35f29",
+      "id": "CVE-2023-5678",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-5678"
+      },
+      "references": [
+        {
+          "id": "CVE-2023-5678",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-5678"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5.3,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "description": "Issue summary: Generating excessively long X9.42 DH keys or checking\nexcessively long X9.42 DH keys or parameters may be very slow.\n\nImpact summary: Applications that use the functions DH_generate_key() to\ngenerate an X9.42 DH key may experience long delays.  Likewise, applications\nthat use DH_check_pub_key(), DH_check_pub_key_ex() or EVP_PKEY_public_check()\nto check an X9.42 DH key or X9.42 DH parameters may experience long delays.\nWhere the key or parameters that are being checked have been obtained from\nan untrusted source this may lead to a Denial of Service.\n\nWhile DH_check() performs all the necessary checks (as of CVE-2023-3817),\nDH_check_pub_key() doesn't make any of these checks, and is therefore\nvulnerable for excessively large P and Q parameters.\n\nLikewise, while DH_generate_key() performs a check for an excessively large\nP, it doesn't check for an excessively large Q.\n\nAn application that calls DH_generate_key() or DH_check_pub_key() and\nsupplies a key or parameters obtained from an untrusted source could be\nvulnerable to a Denial of Service attack.\n\nDH_generate_key() and DH_check_pub_key() are also called by a number of\nother OpenSSL functions.  An application calling any of those other\nfunctions may similarly be affected.  The other functions affected by this\nare DH_check_pub_key_ex(), EVP_PKEY_public_check(), and EVP_PKEY_generate().\n\nAlso vulnerable are the OpenSSL pkey command line application when using the\n\"-pubcheck\" option, as well as the OpenSSL genpkey command line application.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\n\nThe OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue.\n\n",
+      "advisories": [
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=34efaef6c103d636ab507a0cc34dca4d3aecc055"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=710fee740904b6290fef0dd5536fbcedbc38ff0c"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=db925ae2e65d0d925adef429afc37f75bd1c2017"
+        },
+        {
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=ddeb4b6c6d527e54ce9a99cba785c0f7776e54b6"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20231130-0010/"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20231106.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:1b963f3c-63d1-4eb0-b4d0-83162fd640da",
       "id": "CVE-2023-5981",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55399,7 +56097,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:31c57bf5-d980-4b08-bd3b-f0d058f3c5e4",
+      "bom-ref": "urn:uuid:0c2f3e37-3d7c-4cb8-a547-294f55774810",
       "id": "CVE-2023-6597",
       "source": {
         "name": "nvd-cpe",
@@ -55464,7 +56162,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9c5764f1-dde5-4c1a-80a2-6bbf0a480ba0",
+      "bom-ref": "urn:uuid:8a5ba7bc-4ad7-4807-9a36-ab24d4072cb2",
       "id": "CVE-2023-7008",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55501,7 +56199,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9cb8d47b-88e4-433c-923c-ef047746cb88",
+      "bom-ref": "urn:uuid:915d7e45-922f-4c8f-92e6-445071f5281a",
       "id": "CVE-2023-7008",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55538,7 +56236,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:04ffe81c-4866-49c7-99c1-33c7cd34e79f",
+      "bom-ref": "urn:uuid:463b2b05-9ec6-4c78-9c31-5e61f7365cb6",
       "id": "CVE-2024-0450",
       "source": {
         "name": "nvd-cpe",
@@ -55609,7 +56307,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4899b7a2-87dd-45e6-a293-5f8ce50d449b",
+      "bom-ref": "urn:uuid:7986f900-1f1f-40ce-a34e-8854b2c34a3a",
       "id": "CVE-2024-0553",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55646,7 +56344,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5bf9c65e-8d11-4aa8-b158-06dc0376379d",
+      "bom-ref": "urn:uuid:632441c1-a97d-41cd-b91d-8067eafda2ae",
       "id": "CVE-2024-0727",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55683,7 +56381,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d8f08c8f-a112-495b-a38f-4820ff3085ec",
+      "bom-ref": "urn:uuid:48dbbbb3-840a-4273-8af1-a95d899dd687",
       "id": "CVE-2024-0727",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55720,7 +56418,66 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:23e5f0ae-7d71-41f1-ab5e-8dd69db51817",
+      "bom-ref": "urn:uuid:b2fa7277-9c9e-464e-b6ad-2dad38b065fe",
+      "id": "CVE-2024-0727",
+      "source": {
+        "name": "nvd-cpe",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0727"
+      },
+      "references": [
+        {
+          "id": "CVE-2024-0727",
+          "source": {
+            "name": "nvd-cpe",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0727"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "description": "Issue summary: Processing a maliciously formatted PKCS12 file may lead OpenSSL\nto crash leading to a potential Denial of Service attack\n\nImpact summary: Applications loading files in the PKCS12 format from untrusted\nsources might terminate abruptly.\n\nA file in PKCS12 format can contain certificates and keys and may come from an\nuntrusted source. The PKCS12 specification allows certain fields to be NULL, but\nOpenSSL does not correctly check for this case. This can lead to a NULL pointer\ndereference that results in OpenSSL crashing. If an application processes PKCS12\nfiles from an untrusted source using the OpenSSL APIs then that application will\nbe vulnerable to this issue.\n\nOpenSSL APIs that are vulnerable to this are: PKCS12_parse(),\nPKCS12_unpack_p7data(), PKCS12_unpack_p7encdata(), PKCS12_unpack_authsafes()\nand PKCS12_newpass().\n\nWe have also fixed a similar issue in SMIME_write_PKCS7(). However since this\nfunction is related to writing data we do not consider it security significant.\n\nThe FIPS modules in 3.2, 3.1 and 3.0 are not affected by this issue.",
+      "advisories": [
+        {
+          "url": "https://github.com/openssl/openssl/commit/09df4395b5071217b76dc7d3d2e630eb8c5a79c2"
+        },
+        {
+          "url": "https://github.com/openssl/openssl/commit/775acfdbd0c6af9ac855f34969cdab0c0c90844a"
+        },
+        {
+          "url": "https://github.com/openssl/openssl/commit/d135eeab8a5dbf72b3da5240bab9ddb7678dbd2c"
+        },
+        {
+          "url": "https://github.openssl.org/openssl/extended-releases/commit/03b3941d60c4bce58fab69a0c22377ab439bc0e8"
+        },
+        {
+          "url": "https://github.openssl.org/openssl/extended-releases/commit/aebaa5883e31122b404e450732dc833dc9dee539"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20240208-0006/"
+        },
+        {
+          "url": "https://www.openssl.org/news/secadv/20240125.txt"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:generic/openssl@1.1.1q?package-id=48a91bc965f0494f"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "",
+        "response": []
+      }
+    },
+    {
+      "bom-ref": "urn:uuid:605c6f9a-f30e-45ed-a835-06ccb5ec915b",
       "id": "CVE-2024-2236",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55757,7 +56514,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:06877178-d70f-4e80-9bee-8983b753e58a",
+      "bom-ref": "urn:uuid:32a986ea-4418-4f9f-a5be-1759f71d3344",
       "id": "CVE-2024-22365",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55794,7 +56551,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1754f1f5-5e1d-4210-be2a-365421dd89fb",
+      "bom-ref": "urn:uuid:0d873bc3-de45-428e-8868-b8f5a02880b1",
       "id": "CVE-2024-22365",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55831,7 +56588,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:80f9a899-5a57-4956-b185-82c6e664f2ed",
+      "bom-ref": "urn:uuid:97bda25c-9c7d-4c1f-8703-04d8a4ee8271",
       "id": "CVE-2024-22365",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55868,7 +56625,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:17637326-89bb-4f71-88a3-99176cadcd9c",
+      "bom-ref": "urn:uuid:d1aa6b03-e188-4607-aaa6-ff348ed286a7",
       "id": "CVE-2024-22365",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55905,7 +56662,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ddf2cdaf-9e32-447a-b320-e8d5507f753f",
+      "bom-ref": "urn:uuid:fb5f8da9-f23a-414a-940e-da4bf97d11c5",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55942,7 +56699,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:32621c06-7ba5-4da1-b432-d11c3f36ce3e",
+      "bom-ref": "urn:uuid:0ba2ab60-8f1d-4ade-ac14-293ed89e7560",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -55979,7 +56736,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f3134891-4bdc-4273-a6ba-0cb56dc47044",
+      "bom-ref": "urn:uuid:1476f030-e3b4-4bf1-bdac-7b1bb890f502",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -56016,7 +56773,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:01a0f40a-88bd-4808-a545-2286d02b0039",
+      "bom-ref": "urn:uuid:fd92304b-7bb6-4f72-bd66-07c5d9e3ace9",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -56053,7 +56810,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:da28d95b-0ef5-4498-baff-b8c8f80a62e4",
+      "bom-ref": "urn:uuid:73879120-2ebc-4212-b9b9-262deb7b105f",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -56090,7 +56847,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:af68a2d8-1de1-405e-b4dc-4e65d597f2af",
+      "bom-ref": "urn:uuid:845c6797-f7ba-4f65-a258-0c3dc3558acb",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -56127,7 +56884,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:496d5150-e38b-4e94-b2c1-14b8ca78ffc6",
+      "bom-ref": "urn:uuid:a2bf6a44-adf8-43a8-9147-07df00e5fee8",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -56164,7 +56921,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b35e0caa-407e-4fa4-ad33-b5771732468a",
+      "bom-ref": "urn:uuid:6e4f1672-b874-4186-9ea9-2b62a808fb6e",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -56201,7 +56958,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:471e554c-e00c-45d5-a5fe-023a41703c3e",
+      "bom-ref": "urn:uuid:7fbeaa98-6dc7-4896-bf0f-62d276753d03",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -56238,7 +56995,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e297aba3-2ffe-403f-9798-6de39325cf31",
+      "bom-ref": "urn:uuid:b9f8bc9f-b538-4b98-8295-9995cbd0f5f9",
       "id": "CVE-2024-28834",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -56275,7 +57032,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:66d8840d-2dd8-4099-919b-8940f5f71878",
+      "bom-ref": "urn:uuid:34d8f2e6-72fb-4b61-9aed-993e6719df60",
       "id": "CVE-2024-2961",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -56312,7 +57069,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:067a0c78-c36f-4a54-b6f5-cb81ca8ee538",
+      "bom-ref": "urn:uuid:14e0a28d-f10b-4673-a1cd-ee192eab500d",
       "id": "CVE-2024-2961",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -56349,7 +57106,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4d5373a2-5f0c-40bf-9270-620829858f8b",
+      "bom-ref": "urn:uuid:25d8e75f-9160-46f5-92b8-270f1594bcd4",
       "id": "CVE-2024-2961",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -56386,7 +57143,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a5404919-c8b4-4932-85e6-e4c96b8bc139",
+      "bom-ref": "urn:uuid:bfc1ceee-0172-4148-b49b-e1cadb37ce39",
       "id": "GHSA-29gw-9793-fvw7",
       "source": {
         "name": "github-language-python",
@@ -56427,7 +57184,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6c1389e7-a26e-4429-95c0-9dce003d8a85",
+      "bom-ref": "urn:uuid:5293cd34-20c6-4f54-be60-422bd533fd0a",
       "id": "GHSA-39hc-v87j-747x",
       "source": {
         "name": "github-language-python",
@@ -56465,7 +57222,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:cd5f6785-02c3-4287-9abb-958661fa7576",
+      "bom-ref": "urn:uuid:88dc87a2-2774-4e18-bbd6-c7a4a639dd9c",
       "id": "GHSA-3pgj-pg6c-r5p7",
       "source": {
         "name": "github-language-python",
@@ -56506,7 +57263,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0b6cd0b3-a99b-48eb-bba7-e1ebd0066ef5",
+      "bom-ref": "urn:uuid:dd4ae103-dbbd-4319-b892-76c819d5345a",
       "id": "GHSA-3ww4-gg4f-jr7f",
       "source": {
         "name": "github-language-python",
@@ -56547,7 +57304,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6a209af7-a959-4d69-afe5-4f407819b9d9",
+      "bom-ref": "urn:uuid:6755f050-7f9c-4322-95ba-57d73d519e62",
       "id": "GHSA-43fp-rhv2-5gv8",
       "source": {
         "name": "github-language-python",
@@ -56588,7 +57345,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:92d3206e-f1c2-45a2-925d-23e84ecb3aa0",
+      "bom-ref": "urn:uuid:477c9fdb-3dab-464f-8b55-4a539cc85f5f",
       "id": "GHSA-44cc-43rp-5947",
       "source": {
         "name": "github-language-python",
@@ -56629,7 +57386,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7a9c7b94-878f-4952-8bd6-af2b341819b4",
+      "bom-ref": "urn:uuid:32790c09-616a-4f4a-bb07-f0ac632ea6bb",
       "id": "GHSA-5cpq-8wj7-hf2v",
       "source": {
         "name": "github-language-python",
@@ -56667,7 +57424,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6782fcb7-4634-42c5-b7f1-72f5b69a99a5",
+      "bom-ref": "urn:uuid:21b2149f-76b3-4113-963c-82c3ad85ba29",
       "id": "GHSA-64x5-55rw-9974",
       "source": {
         "name": "github-language-python",
@@ -56708,7 +57465,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:09711cd4-c54c-457e-b3b8-118439e7c917",
+      "bom-ref": "urn:uuid:df113d8c-1659-4a84-a291-ac303d15700f",
       "id": "GHSA-6vqw-3v5j-54x4",
       "source": {
         "name": "github-language-python",
@@ -56749,7 +57506,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b889e636-0a57-4ac7-b01a-b58164116a3f",
+      "bom-ref": "urn:uuid:a5a79695-15f3-4833-bda1-f55213a685d0",
       "id": "GHSA-78xj-cgh5-2h22",
       "source": {
         "name": "github-language-javascript",
@@ -56787,7 +57544,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d0015055-2f7e-4870-a6dd-b408ec556040",
+      "bom-ref": "urn:uuid:73a9e6b8-cf14-48a3-8736-4e9ad919b846",
       "id": "GHSA-7r3h-4ph8-w38g",
       "source": {
         "name": "github-language-python",
@@ -56828,7 +57585,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:103d73a2-1a01-44bd-b34a-14fd502aa5d4",
+      "bom-ref": "urn:uuid:cb31a1b2-7bb3-45e9-87b4-4dcedc2208ca",
       "id": "GHSA-9v9h-cgj8-h64p",
       "source": {
         "name": "github-language-python",
@@ -56869,7 +57626,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d6772102-f837-4644-b3d9-661f6baff33f",
+      "bom-ref": "urn:uuid:dcc1bc37-fec1-41a4-ab58-e9cce2193a22",
       "id": "GHSA-c2qf-rxjj-qqgw",
       "source": {
         "name": "github-language-javascript",
@@ -56910,7 +57667,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:802add55-9159-446f-8bc7-4d4d20041ca4",
+      "bom-ref": "urn:uuid:90d959e4-8858-4913-a712-04f7e7f1b00e",
       "id": "GHSA-cxjh-pqwp-8mfp",
       "source": {
         "name": "github-language-javascript",
@@ -56951,7 +57708,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0c2e762b-07eb-460a-8388-da5415d2089b",
+      "bom-ref": "urn:uuid:5908085a-64f6-4c7d-8821-f4902b086ec5",
       "id": "GHSA-f5x3-32g6-xq36",
       "source": {
         "name": "github-language-javascript",
@@ -56992,7 +57749,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c9c97744-36dc-4144-8ef6-6c0321c81416",
+      "bom-ref": "urn:uuid:eb84d539-15da-4107-b378-04ac050395ee",
       "id": "GHSA-g4mx-q9vg-27p4",
       "source": {
         "name": "github-language-python",
@@ -57033,7 +57790,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3341907e-ed32-4242-953d-9c86cde689f9",
+      "bom-ref": "urn:uuid:10f1c6e5-40a3-4bb2-83f7-3b5cd68013c2",
       "id": "GHSA-h56g-gq9v-vc8r",
       "source": {
         "name": "github-language-python",
@@ -57074,7 +57831,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8c9a3348-19d0-4170-a050-0f76fca79fb3",
+      "bom-ref": "urn:uuid:35d3a5eb-bd58-48ca-879a-febad603b131",
       "id": "GHSA-h5c8-rqwp-cp95",
       "source": {
         "name": "github-language-python",
@@ -57115,7 +57872,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e065666c-d99c-4eef-8d82-4f8ffaa077f2",
+      "bom-ref": "urn:uuid:63acb021-3266-4968-938c-6c6667f6aa54",
       "id": "GHSA-hj3f-6gcp-jg8j",
       "source": {
         "name": "github-language-python",
@@ -57156,7 +57913,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:479e85bd-25b1-44ae-bc70-ff277c7fe2a9",
+      "bom-ref": "urn:uuid:30dee33d-7d78-4bab-a126-7a107a2d3781",
       "id": "GHSA-hj9c-8jmm-8c52",
       "source": {
         "name": "github-language-javascript",
@@ -57192,12 +57949,12 @@
       ],
       "analysis": {
         "state": "in_triage",
-        "detail": "no further information",
+        "detail": "",
         "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:7206eecc-7655-4b8f-9552-bce10856ee10",
+      "bom-ref": "urn:uuid:34969a63-f16b-430d-9ba9-c41b1fd86c90",
       "id": "GHSA-j8r2-6x86-q33q",
       "source": {
         "name": "github-language-python",
@@ -57238,7 +57995,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8e385fdc-6176-4f11-8a93-1d4a295ad744",
+      "bom-ref": "urn:uuid:124aadae-44e1-4d3a-8adc-b2e78e79d8da",
       "id": "GHSA-jchw-25xp-jwwc",
       "source": {
         "name": "github-language-javascript",
@@ -57279,7 +58036,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d3214828-6037-4c93-ae9b-66a0764b3e16",
+      "bom-ref": "urn:uuid:f6d7b63a-6872-40e3-9568-26de585b127d",
       "id": "GHSA-jfhm-5ghh-2f97",
       "source": {
         "name": "github-language-python",
@@ -57320,7 +58077,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:aa7bb992-acf0-424e-9dcf-280e4ae05d38",
+      "bom-ref": "urn:uuid:937d31c8-88f9-4eb1-aea3-b83c09a9b827",
       "id": "GHSA-jjg7-2v4v-x38h",
       "source": {
         "name": "github-language-python",
@@ -57361,7 +58118,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f854a6b6-7683-44f2-a265-80c786bc3f5e",
+      "bom-ref": "urn:uuid:be18a35c-6edf-4159-8710-9c3880a11258",
       "id": "GHSA-jm77-qphf-c4w8",
       "source": {
         "name": "github-language-python",
@@ -57399,7 +58156,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:81640979-8d6c-43b2-9701-8a74a8e42ab1",
+      "bom-ref": "urn:uuid:97ce1205-5b02-42b0-9279-4eef13808e23",
       "id": "GHSA-m678-f26j-3hrp",
       "source": {
         "name": "github-language-python",
@@ -57435,12 +58192,12 @@
       ],
       "analysis": {
         "state": "in_triage",
-        "detail": "no further information",
+        "detail": "",
         "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:f32a9f16-ea15-4102-990e-cbb725fe0612",
+      "bom-ref": "urn:uuid:6f213542-a788-4663-ad70-b0e392f37d60",
       "id": "GHSA-mq26-g339-26xf",
       "source": {
         "name": "github-language-python",
@@ -57481,7 +58238,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:29be0854-696f-4c08-9bed-8bc4b8fbdb2a",
+      "bom-ref": "urn:uuid:ded40b58-cd38-472d-888b-a9625484de59",
       "id": "GHSA-mrwq-x4v8-fh7p",
       "source": {
         "name": "github-language-python",
@@ -57522,7 +58279,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d614ec33-d492-40db-bce1-e2505353b797",
+      "bom-ref": "urn:uuid:78fa53bf-17b4-4179-b8b4-1686f8a90c6e",
       "id": "GHSA-qppv-j76h-2rpx",
       "source": {
         "name": "github-language-python",
@@ -57560,7 +58317,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7127a57a-b3c6-4e00-9fc3-ddffe0dfccda",
+      "bom-ref": "urn:uuid:6870863d-c23f-486a-8b74-37be55e2707d",
       "id": "GHSA-qwmp-2cf2-g9g6",
       "source": {
         "name": "github-language-python",
@@ -57601,7 +58358,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8a345378-0cba-4341-bea4-ffa9176ab822",
+      "bom-ref": "urn:uuid:3a368ce7-922a-4399-ae2a-4d1939adede9",
       "id": "GHSA-r726-vmfq-j9j3",
       "source": {
         "name": "github-language-python",
@@ -57642,7 +58399,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4bb3f3c0-7653-4595-bb77-580784c57eb0",
+      "bom-ref": "urn:uuid:19ce645b-2b05-4b2e-a4b3-e3b053cbc474",
       "id": "GHSA-r9hx-vwmv-q579",
       "source": {
         "name": "github-language-python",
@@ -57683,7 +58440,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2ccb4f37-60a6-4fa4-b5b2-7a2247285a8c",
+      "bom-ref": "urn:uuid:610ddbbd-260b-498b-934c-7c74d5ce0e0c",
       "id": "GHSA-rc47-6667-2j5j",
       "source": {
         "name": "github-language-javascript",
@@ -57724,7 +58481,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:48ba4e8d-021d-4df0-9a80-abadf4c023c8",
+      "bom-ref": "urn:uuid:19d49d88-5c1c-4739-8fef-511a1e181cc0",
       "id": "GHSA-v845-jxx5-vc9f",
       "source": {
         "name": "github-language-python",
@@ -57765,7 +58522,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0f85994b-18a4-4929-a232-5897fd5cabe7",
+      "bom-ref": "urn:uuid:7c730c95-5a63-471b-8255-0c9a8c48e56b",
       "id": "GHSA-v8gr-m533-ghj9",
       "source": {
         "name": "github-language-python",
@@ -57803,7 +58560,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bdc0d195-3e58-4369-8b05-6df2233baccd",
+      "bom-ref": "urn:uuid:4cec404a-5509-4d0e-af2d-c63c2234db18",
       "id": "GHSA-w7pp-m8wf-vj6r",
       "source": {
         "name": "github-language-python",
@@ -57844,7 +58601,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0b85e61c-5e99-47b5-bf95-a24be0d7990a",
+      "bom-ref": "urn:uuid:033a2a3f-732b-4502-8d16-aaf21b168b7e",
       "id": "GHSA-x4qr-2fvf-3mr5",
       "source": {
         "name": "github-language-python",
@@ -57885,7 +58642,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f94a0668-a008-4697-ad71-160359bb7822",
+      "bom-ref": "urn:uuid:1f1f222f-a29a-4d71-997a-1b45122173f8",
       "id": "GHSA-xqr8-7jwr-rhp7",
       "source": {
         "name": "github-language-python",

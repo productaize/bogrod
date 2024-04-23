@@ -1,9 +1,13 @@
 name: sbom checks using bogrod
 
+# ****
+# **** This is for demo purpose only -- does not actually check the bogrod sbom
+# ****
+
 on:
   push:
     branches:
-      - "release/**"
+      - "release/demo**"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,7 +16,19 @@ jobs:
       matrix:
         python-version: ["3.11"]
     steps:
-    - name: check sbom
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: install sbom tools
       run: |
         make install-sbom-tools
+    - name: check sbom
+      run: |
         make sbom

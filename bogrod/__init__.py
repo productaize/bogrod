@@ -661,9 +661,12 @@ class Bogrod:
         headers = 'keys'
         print(tabulate(data, headers=headers), file=stream)
 
+    def has_issues(self):
+        return
+
 
 def main(argv=None):
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(prog='bogrod')
     parser.add_argument('sbom',
                         help='/path/to/cyclonedx-sbom.json')
     parser.add_argument('-n', '--notes',
@@ -852,5 +855,4 @@ def main(argv=None):
     return bogrod
 
 
-if __name__ == '__main__':
-    bogrod = main(sys.argv)
+
