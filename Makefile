@@ -7,6 +7,8 @@ sbom:
 	grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --file releasenotes/sbom/jupyter-base-notebook.grype.json --output json
 	# cyclonedx format
 	grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --file releasenotes/sbom/jupyter-base-notebook.cdx.json --output embedded-cyclonedx-vex-json
+	# check
+	bogrod -F jupyter
 
 notes:
 	reno new rc1 .
@@ -32,3 +34,11 @@ dist:
 
 release: dist
 	twine upload --skip-existing --repository pypi-productaize dist/*gz dist/*whl
+
+install-sbom-tools:
+	# install grype and syft
+	curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b $HOME/.local/bin
+	curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b $HOME/.local/bin
+	pip install reno
+	pip install -e .
+
