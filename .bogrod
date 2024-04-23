@@ -8,3 +8,8 @@ dummy.delay=2
 dummy.report_timeout=60
 dummy.report_interval=2
 
+[demo.elementaris]
+elementaris.url=https://ORGNAME.elementaris.essentx.com/api/v1/
+elementaris.token=keyring:essentx:apikey
+elementaris.report_timeout=300
+elementaris.report_interval=30

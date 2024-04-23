@@ -14,10 +14,15 @@ class EssentxElementaris(SBOMAggregator):
         [aggregator]
         elementaris.url=https://<company>.elementaris.essentx.com/api/v1/
         elementaris.token=<API>
+        elementaris.report_timeout=<seconds>
+        elementaris.report_interval=<seconds>
 
     Args:
         url (str): the base URL for the Elementaris service
-        token (str): the API token for the Elementaris service
+        token (str): the API token for the Elementaris service. The token
+          can be specified as "[keyring:]<user>:<token>". If "keyring:"
+          is specified, <user> and <service> are used to retrieve the actual
+          token as keyring.get_password(servicename=user, username=token).
 
     Notes:
         The Elementaris service requires an API token for authentication.
