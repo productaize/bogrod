@@ -31,11 +31,17 @@ dist:
 	rm -rf ./dist/*
 	rm -rf ./build/*
 	# set DISTTAGS to specify eg --python-tag for bdist
-	python setup.py sdist bdist_wheel ${DISTTAGS}
+	python -m build
 	twine check dist/*.whl
 
-release: dist
+release: test dist
 	twine upload --skip-existing --repository pypi-productaize dist/*gz dist/*whl
+
+release-test: test dist
+	# upload and install
+	twine upload --repository testpypi-productaize dist/*gz dist/*whl
+	pip install -U --pre -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ bogrod
+	bogrod --version
 
 install-sbom-tools:
 	# install grype and syft
@@ -44,3 +50,5 @@ install-sbom-tools:
 	pip install reno
 	pip install -e .
 
+test:
+	tox

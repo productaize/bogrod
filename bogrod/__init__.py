@@ -665,8 +665,22 @@ class Bogrod:
         return
 
 
-def main(argv=None):
+def check_args(argv):
+    # setup argument parser
     parser = argparse.ArgumentParser(prog='bogrod')
+    # test for --version first
+    try:
+        parser.add_argument('--version', help='show version', action='store_true')
+        args = parser.parse_args(argv)
+    except:
+        args = None
+    # show version
+    if args and args.version:
+        with open(Path(__file__).parent / 'VERSION') as fin:
+            version = fin.read()
+        print(version)
+        exit(0)
+    # no --version argument, continue
     parser.add_argument('sbom',
                         help='/path/to/cyclonedx-sbom.json')
     parser.add_argument('-n', '--notes',
@@ -691,9 +705,6 @@ def main(argv=None):
     parser.add_argument('-W', '--work',
                         action='store_true',
                         help='work each vulnerability')
-    parser.add_argument('--tui',
-                        action='store_true',
-                        help='use tui')
     parser.add_argument('-g', '--grype',
                         help='use grype SBOM to match vulnerabilities at /path/to/grype.json')
     parser.add_argument('--diff',
@@ -707,6 +718,10 @@ def main(argv=None):
     parser.add_argument('-F', '--fail-on-issues', action='store_true', dest='fail_on_issues',
                         help='if there are pending issues or unresolved vulnerabilities, exit with error')
     args = parser.parse_args(argv)
+    return args
+
+def main(argv=None):
+    args = check_args(argv)
 
     def write_vex_merge(vex_file):
         bogrod.write_vex(vex_file)
@@ -843,16 +858,10 @@ def main(argv=None):
         exit(0)
     if args.work:
         vex_file = args.vex_file or args.sbom
-        if sys.argv[0] == '-c' or args.tui:
-            from bogrod.tui.app import BogrodApp
-            bogrod.app = BogrodApp(bogrod=bogrod)
-            bogrod.app.run() if args.tui else None
-        else:
-            bogrod.work()
+        from bogrod.tui.app import BogrodApp
+        bogrod.app = BogrodApp(bogrod=bogrod)
+        bogrod.app.run()
         write_vex_merge(vex_file)
     else:
         bogrod.report(format=args.output, summary=args.summary, fail_on_issues=args.fail_on_issues)
     return bogrod
-
-
-

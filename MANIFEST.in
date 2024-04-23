@@ -1,0 +1,7 @@
+include docs
+include LICENSE
+include NOTICE
+include README.md
+include bogrod/VERSION
+recursive-include bogrod/resources *.
+recursive-include bogrod/tui *.tcss
