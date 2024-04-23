@@ -1,0 +1,18 @@
+name: sbom checks using bogrod
+
+on:
+  push:
+    branches:
+      - "release/**"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11"]
+    steps:
+    - name: check sbom
+      run: |
+        make install-sbom-tools
+        make sbom

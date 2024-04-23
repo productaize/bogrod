@@ -1,5 +1,5 @@
 [jupyter]
-sbom=releasenotes/sbom/jupyter-base-notebook.json
+sbom=releasenotes/sbom/jupyter-base-notebook.cdx.json
 update_vex=yes
 merge_vex=yes
 

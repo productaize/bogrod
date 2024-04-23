@@ -261,7 +261,8 @@ class Bogrod:
                             related_vuln_id = related[vuln_id]['origins'][0]
                             self.add_vulnerability_from(vuln_id, related_vuln_id)
                         else:
-                            self.add_vulnerability(vuln_id, name=None, description=None, severity=reportedSeverity, url=None)
+                            self.add_vulnerability(vuln_id, name=None, description=None, severity=reportedSeverity,
+                                                   url=None)
             return vex_issues
 
     def add_vulnerability(self, vuln_id, name, description, severity, url):
@@ -463,7 +464,7 @@ class Bogrod:
         data = sorted(data, key=severity_rank)
         return data
 
-    def report(self, format='table', stream=None, severities=None, columns=None, summary=False):
+    def report(self, format='table', stream=None, severities=None, columns=None, summary=False, fail_on_issues=False):
         data = self._generate_report_data(severities=severities, columns=columns)
         if summary:
             print("\nbogrod SBOM Summary Report\n")
@@ -480,6 +481,13 @@ class Bogrod:
         else:
             for rec in data:
                 print("{id:20} {severity:8} {note}".format(**rec))
+        if fail_on_issues:
+            is_open = lambda rec: rec.get('state') in ('in_triage', 'exploitable')
+            has_issues = lambda rec: '*' in rec.get('vulnerability', '*')
+            should_fail = any(is_open(rec) or has_issues(rec) for rec in data)
+            if should_fail:
+                print("ERROR: found open issues or unresolved vulnerabilities")
+                sys.exit(1)
 
     def _get_sbom_schema(self):
         # TODO get the actual schema
@@ -693,6 +701,8 @@ def main(argv=None):
                         help='specify target aggregator to upload sbom and get issues report')
     parser.add_argument('--upload-tentative', action='store_true',
                         help='if specified upload sbom as tentative')
+    parser.add_argument('-F', '--fail-on-issues', action='store_true', dest='fail_on_issues',
+                        help='if there are pending issues or unresolved vulnerabilities, exit with error')
     args = parser.parse_args(argv)
 
     def write_vex_merge(vex_file):
@@ -838,7 +848,7 @@ def main(argv=None):
             bogrod.work()
         write_vex_merge(vex_file)
     else:
-        bogrod.report(format=args.output, summary=args.summary)
+        bogrod.report(format=args.output, summary=args.summary, fail_on_issues=args.fail_on_issues)
     return bogrod
 
 
