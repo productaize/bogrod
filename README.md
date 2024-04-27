@@ -46,7 +46,7 @@ Run as a command line utility:
     usage: bogrod [-h] [-n NOTES] [-o OUTPUT] [-S] [-s SEVERITIES] [-x] [--vex-file VEX_FILE] [-p SBOM_PROPERTIES] [-m] [-w] [-W] [-g GRYPE] sbom
 
     positional arguments:
-      sbom                  /path/to/cyclonedx-sbom.json
+      sbom                  name of sbom in .bogrod, or /path/to/cyclonedx-sbom.json
     
     optional arguments:
       -h, --help            show this help message and exit
@@ -65,6 +65,23 @@ Run as a command line utility:
       -w, --write-notes     update notes according to sbom (add new, mark fixed)
       -W, --work            work each vulnerability
       -g GRYPE, --grype GRYPE
+
+Filename conventions
+--------------------
+
+bogrod uses the following conventions for filenames. This simplifies finding all related
+files to a given SBOM. When giving the path to the SBOM file using the .cdx.json extension, 
+bogrod will look for the other corresponding files (grype, syft) in the same directory by
+replacing .cdx with .grype and .syft, respectively.
+
+    # cylconedx json format
+    releasenotes/sbom/<image-name>.cdx.json
+    # grype json format
+    releasenotes/sbom/<image-name>.grype.json
+    # syft json format
+    releasenotes/sbom/<image-name>.syft.json
+    # vex yaml format
+    releasenotes/sbom/vex.yaml
 
 Example workflow
 ----------------
@@ -92,7 +109,7 @@ VEX analysis information.
         # -- bogrod automatically uses the .grype report to provide additional information for each vulnerability 
         $ bogrod --work -S releasenotes/sbom/jupyter-base-notebook.cdx.json --vex-file releasenotes/sbom/vex.yaml --update-vex --merge-vex 
 
-Note that bogrod will automatically find the .vex and .grype files corresponding to the .cdx file,
+Note that bogrod will automatically find the .vex and .grype files corresponding to the .cdx file, 
 if these are not specified.
 
 Working with vulnerabilities
@@ -104,12 +121,13 @@ so that you can select and analyze each one in turn.
 
     $ bogrod jupyter -W
 
-![bogrod demo](resources/demo1.jpg)
+![bogrod demo](resources/demo1.png)
 
-    Select 1
-![bogrod demo](resources/demo2.jpg)
+    Press Enter to show the details of the vulnerability
 
-    Save analysis and quit
+![bogrod demo](resources/demo2.png)
+
+    Save analysis and quit by pressing Ctrl-C or Q
 
 ![bogrod demo](resources/demo3.jpg)
 
@@ -137,8 +155,7 @@ SBOM file:
     update_vex=yes
     merge_vex=yes
 
-In order to specify bogrod's command line options for all images, use a global
-section:
+In order to specify bogrod's command line options for all images, use a global section:
 
     # .bogrod
     [global]
@@ -180,6 +197,36 @@ providing more details:
         related:
         - component: jupyter/base-notebook:ubuntu-20.04
         - duplicates: CVE-2019-10773
+
+
+Using VEX Analysis Templates
+----------------------------
+
+In the vex.yaml file you can use templates to avoid having to manually re-enter the 
+same analysis for multiple vulnerabilities. For example, you can define a response template 
+by component or artificat, or as a generally applicable template. The templates
+are shown in the *Templates* section of the VEX analysis detail screen.
+
+    # vex.yaml
+    templates:
+      pkg:generic/python@3.10.6?package-id=aadd06b57d8f4fc4:
+        detail: 'this is not used in production'
+        justification: ''
+        match: component
+        response: []
+        state: in_triage
+      python-3.10.6:
+        detail: ''
+        justification: ''
+        match: artifact
+        response: []
+        state: in_triage
+      some template:
+        detail: ''
+        justification: ''
+        match: all
+        response: []
+        state: in_triage
 
 
 SBOM Metadata Update
@@ -244,6 +291,30 @@ strips any repository information contained in the original image name, if any
           ]
         },
         ...
+
+
+Using bogrod in a CICD pipeline
+-------------------------------
+
+To use bogrod in a CICD pipeline, you can use the following steps. This will install and run
+grype and syft to create the SBOMs, and then use bogrod to analyze the vulnerabilities. If one
+or more vulnerabilities are in state in_triage or exploitable, the pipeline will fail.
+
+    1. Install syft and grype
+
+        curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b ${HOME}/.local/bin
+        curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b ${HOME}/.local/bin
+
+    2. Create SBOM files 
+
+        syft jupyter/base-notebook:ubuntu-20.04 --output json=releasenotes/sbom/jupyter-base-notebook.syft.json
+        grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --output json=releasenotes/sbom/jupyter-base-notebook.grype.json
+        grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --output cyclonedx-json=releasenotes/sbom/jupyter-base-notebook.cdx.json
+
+    3. Call bogrod
+
+        bogrod --fail-on-issues releasenotes/sbom/jupyter-base-notebook.cdx.json
+
 
 Release Notes Format
 --------------------

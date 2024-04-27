@@ -1,16 +1,26 @@
+import contextlib
 import unittest
 from io import StringIO
-from pathlib import Path
 from unittest import skip
 
 import bogrod
-
 from bogrod import Bogrod
-
-BASE_PATH = Path(bogrod.__file__).parent.parent
+from bogrod.tests import BASE_PATH
 
 
 class BogrodTests(unittest.TestCase):
+    # TODO add more tests
+    def test_main(self):
+        f = StringIO()
+        with contextlib.redirect_stdout(f):
+            bogrod.main(['jupyter'])
+        output = f.getvalue()
+        self.assertIn('bogrod', output)
+
+    def test_contrib_base(self):
+        from bogrod.contrib import aggregators
+        self.assertIn('dummy', aggregators)
+
     @skip('functionality currently not working properly')
     def test_from_file(self):
         notes_file = BASE_PATH / 'releasenotes/notes/rc1-99e6a29d3335a383.yaml'

@@ -1,14 +1,22 @@
 from pathlib import Path
 
-from setuptools import setup
+from setuptools import setup, find_packages, find_namespace_packages
 
 README = open(Path(__file__).parent /'README.md').read()
 version = open(Path(__file__).parent / 'bogrod' / 'VERSION').read()
 
+dev_deps = [
+    'tox',
+    'pytest',
+    'build',
+    'pytest-textual-snapshot',
+]
+
 setup(
     name='bogrod',
     version=version,
-    packages=['bogrod', 'bogrod.tests'],
+    packages=find_packages() + find_namespace_packages(),
+    include_package_data=True,
     url='https://github.com/productaize/bogrod',
     license='MIT',
     author='Patrick Senti',
@@ -25,10 +33,14 @@ setup(
         'textual-dev', # for testing
         'requests',
         'yaspin',
+        'keyring',
     ],
     entry_points = {
         'console_scripts': [
             'bogrod=bogrod:main'
         ]
+    },
+    extras_require={
+        'dev': dev_deps,
     }
 )

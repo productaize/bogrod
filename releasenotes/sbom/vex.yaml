@@ -138,6 +138,7 @@ CVE-2022-37454:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
@@ -830,3 +831,16 @@ GHSA-xqr8-7jwr-rhp7:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+templates:
+  pkg:generic/python@3.10.6?package-id=aadd06b57d8f4fc4:
+    detail: ''
+    justification: ''
+    match: component
+    response: []
+    state: in_triage
+  python-3.10.6:
+    detail: ''
+    justification: ''
+    match: artifact
+    response: []
+    state: in_triage
