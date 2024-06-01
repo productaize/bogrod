@@ -1,3 +1,4 @@
+import webbrowser
 from io import StringIO
 
 import yaml
@@ -6,35 +7,38 @@ from textual.binding import Binding
 from textual.containers import Horizontal
 from textual.screen import Screen
 from textual.widget import Widget
-from textual.widgets import Header, TextArea, Label, SelectionList, OptionList, Footer
+from textual.widgets import Header, TextArea, SelectionList, OptionList, Footer
 
-from bogrod.util import tryOr
-from bogrod.tui.widgets.modals import InputModal
+from bogrod.tui.widgets.modals import InputModal, HelpableMixin
 from bogrod.tui.widgets.radioslist import RadioSelectionList
+from bogrod.util import tryOr
 
 
-class VulnearabilityEditor(Screen):
+class VulnearabilityEditor(HelpableMixin, Screen):
     CSS_PATH = "editor.tcss"
 
     BINDINGS = [
         Binding(key="ctrl+s", action='save', description="save"),
         Binding(key="enter", action='ignore', show=False),
         Binding(key='ctrl+t', action='save_template', description='save as template'),
-        Binding(key='t', action='select_template', description='get template'),
+        Binding(key='v,V', action='browse_url', description='browse CVE-related web page', show=True),
+        Binding(key='t,T', action='select_template', description='get template'),
+        Binding(key="?", action='help', description="help", priority=True, show=True),
     ]
 
-    def __init__(self, *args, vex_data=None, vuln_details=None, vex_schema=None,
+    def __init__(self, *args, vex_data=None, vuln_data=None, vuln_details=None, vex_schema=None,
                  templates=None, **kwargs):
         super().__init__(*args, **kwargs)
         self.vex_schema = vex_schema
         self.vuln_details = vuln_details
+        self.vuln_data = vuln_data
         self.vex_data = vex_data
         self.vex_templates = templates
 
     def compose(self) -> ComposeResult:
         # yield Static("one", classes="box")
         yield Header()
-        details =  TextArea(self.vuln_details, id='view-details', classes="box", read_only=True)
+        details = TextArea(self.vuln_details, id='view-details', classes="box", read_only=True)
         details.border_title = 'details'
         yield details
         vex_raw = StringIO()
@@ -95,6 +99,7 @@ class VulnearabilityEditor(Screen):
 
     def on_mount(self) -> None:
         self.log(f'vex data {self.vex_data} {self.vex_schema}')
+        self.get_widget_by_id('select-state').focus()
 
         def select_single_option(id, key):
             option = tryOr(lambda: self.vex_schema[key].index(self.vex_data[key]), None)
@@ -124,7 +129,7 @@ class VulnearabilityEditor(Screen):
         self.query_one('#select-template').clear_options()
         self.query_one('#select-template').add_options(templates)
         # calling focus here causes the state to be deselected/wrong
-        #self.query_one('#select-state').focus()
+        # self.query_one('#select-state').focus()
 
     def action_save(self):
         data = self.data()
@@ -137,12 +142,16 @@ class VulnearabilityEditor(Screen):
             self.vex_templates = self.app.bogrod.add_as_template(key, data)
             self.on_mount()
 
-        self.app.push_screen(InputModal(), on_dismiss)
+        self.app.push_screen(InputModal(border_title='template name'), on_dismiss)
 
     def action_select_template(self):
         options = self.query_one('#select-template')
         options.highlighted = 0 if options.highlighted is None else options.highlighted
         options.focus()
+
+    def action_browse_url(self):
+        url = self.vuln_data.get('url')
+        webbrowser.open(url) if url else None
 
     def on_key(self, event) -> None:
         self.log(f"key {event.key}")
@@ -180,3 +189,27 @@ class VulnearabilityEditor(Screen):
         }
         self.log(f"****data {_data}")
         return _data
+
+    @property
+    def help_bindings(self):
+        return [b for b in self.BINDINGS if b.key != 'enter']
+
+    @property
+    def help_text(self):
+        return """
+        * **Purpose** 
+          
+          Use this page to edit your vulnerability analysis. For every vulnerability, 
+          you should define the state, response, justification and provide additional details.
+        
+        * **Templates**
+        
+          Your analysis is automatically stored as a component template. Apply any 
+          template by pressing T and selecting the template from the list, then press
+          space. Store any response as a template by pressing Ctrl+T. 
+          
+        * **Bulk updates**
+        
+          If you have selected multiple vulnerabilities before entering this page,
+          update all the selected vulnerabilities by pressing Ctrl+S.
+        """

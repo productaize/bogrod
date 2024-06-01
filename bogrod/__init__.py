@@ -1,4 +1,5 @@
 import argparse
+import logging
 from configparser import ConfigParser
 from contextlib import redirect_stderr
 from io import StringIO
@@ -6,10 +7,13 @@ from pathlib import Path
 
 import keyring
 import yaml
+from yaspin import yaspin
 
-from bogrod import contrib
+from bogrod import contrib, settings
 from bogrod.controller import Bogrod
 from bogrod.sbom import CycloneDXSBOM
+
+logger = logging.getLogger(__name__)
 
 
 def check_args(argv):
@@ -65,12 +69,17 @@ def check_args(argv):
                         help='if specified upload sbom as tentative')
     parser.add_argument('-F', '--fail-on-issues', action='store_true', dest='fail_on_issues',
                         help='if there are pending issues or unresolved vulnerabilities, exit with error')
+    parser.add_argument('-V', '--verbose', action='store_true',
+                        help='increase output verbosity')
     args = parser.parse_args(argv)
     return args
 
 
 def main(argv=None):
     args = check_args(argv)
+
+    if args.verbose:
+        logger.setLevel('DEBUG')
 
     def write_vex_merge(vex_file):
         bogrod.write_vex(vex_file)
@@ -112,105 +121,126 @@ def main(argv=None):
         if args.sbom in config.sections():
             update_args(args.sbom)
         elif not Path(args.sbom).exists():
-            print(f"{args.sbom} does not exist and not found in .bogrod file. Available: {','.join(config.sections())}")
+            logger.error(
+                f"{args.sbom} does not exist and not found in .bogrod file. Available: {','.join(config.sections())}")
             exit(1)
 
-    # find default files
-    # -- grype
-    if not args.grype:
-        grype_file = Path(args.sbom).parent / (Path(args.sbom).stem.replace('.cdx', '') + '.grype.json')
-        if grype_file.exists():
-            print("Found grype file: ", grype_file)
-            args.grype = grype_file
-    # -- vex
-    if not args.vex_file:
-        vex_file1 = Path(args.sbom).parent / (Path(args.sbom).stem.replace('.cdx', '') + '.vex.yaml')
-        vex_file2 = Path(args.sbom).parent / 'vex.yaml'
-        if vex_file1.exists():
-            print("Found vex file: ", vex_file1)
-            args.vex_file = vex_file1
-            args.update_vex = True
-            args.merge_vex = True
-        elif vex_file2.exists():
-            print("Found vex file: ", vex_file2)
-            args.vex_file = vex_file2
-            args.update_vex = True
-            args.merge_vex = True
+    def loadfiles():
+        # find default files
+        # -- grype
+        if not args.grype:
+            grype_file = Path(args.sbom).parent / (Path(args.sbom).stem.replace('.cdx', '') + '.grype.json')
+            if grype_file.exists():
+                logger.debug(f"Found grype file: {grype_file}")
+                args.grype = grype_file
+        # -- vex
+        if not args.vex_file:
+            vex_file1 = Path(args.sbom).parent / (Path(args.sbom).stem.replace('.cdx', '') + '.vex.yaml')
+            vex_file2 = Path(args.sbom).parent / 'vex.yaml'
+            if vex_file1.exists():
+                logger.debug(f"Found vex file: {vex_file1}")
+                args.vex_file = vex_file1
+                args.update_vex = True
+                args.merge_vex = True
+            elif vex_file2.exists():
+                logger.debug(f"Found vex file: {vex_file2}")
+                args.vex_file = vex_file2
+                args.update_vex = True
+                args.merge_vex = True
+            else:
+                logger.debug(f"Assuming vex file: {vex_file2}")
+                args.vex_file = vex_file2
+                args.update_vex = True
+                args.merge_vex = True
+        # -- vex issues report from aggregator (e.g. essentx)
+        if not args.vex_issues:
+            vex_issues_file = Path(args.sbom).parent / (Path(args.sbom).stem.replace('.cdx', '') + '.vexiss.yaml')
+            args.vex_issues = vex_issues_file
+            if vex_issues_file.exists():
+                logger.debug(f"Found vex issues: {vex_issues_file}")
+        # -- properties
+        if not args.sbom_properties:
+            prop_file = Path(args.sbom).parent / 'sbom-metadata.yaml'
+            if prop_file.exists():
+                logger.debug(f"Found sbom properties file: {prop_file}")
+                args.sbom_properties = prop_file
+        # -- release notes
+        if not args.notes:
+            notes_file = Path(args.sbom).parent.parent / 'notes' / (Path(args.sbom).stem + '.yaml')
+            if notes_file.exists():
+                logger.debug(f"Found release notes: {notes_file}")
+                args.notes = notes_file
+
+    def process():
+        if args.severities:
+            if args.severities == 'all':
+                args.severities = 'critical,high,medium,low,none,unknown'
+            bogrod.severities = args.severities.split(',')
+            settings.severities = bogrod.severities
+        if args.notes:
+            bogrod.read_notes(args.notes)
+            bogrod.update_notes()
+        if args.write_notes:
+            bogrod.write_notes(args.notes)
+        if args.grype:
+            bogrod.read_grype(args.grype)
+        if args.diff:
+            bogrod.diff(args.diff)
+            if not args.work:
+                yp.hide()
+                bogrod.report_diff()
+                exit(0)
+        if args.vex_file:
+            bogrod.read_vex(args.vex_file)
+        if args.vex_issues:
+            bogrod.read_vex_issues(args.vex_issues)
+        if args.update_vex:
+            vex_file = args.vex_file or args.sbom
+            bogrod.update_vex()
+            write_vex_merge(vex_file)
+        if args.upload:
+            yp.hide()
+            AggregatorClass = contrib.aggregators[args.upload]
+            params = {}
+            params_key = args.upload + '.'
+            for k, v in args.aggregators.items():
+                pk = k.replace(params_key, '')
+                if not k.startswith(params_key):
+                    continue
+                if v.startswith('keyring:'):
+                    params[pk] = keyring.get_password(*v.replace('keyring:', '').split(':'))
+                else:
+                    params[pk] = v
+            logger.debug(f'Uploading vex to {args.upload}')
+            aggregator = AggregatorClass(**params)
+            sbomID, report = aggregator.submit(args.projectpath, args.sbom, tentative=args.upload_tentative)
+            with open(args.vex_issues, 'w') as fout:
+                yaml.safe_dump(report, fout)
+            aggregator.summary(sbomID, report)
+            exit(0)
+        if args.work:
+            yp.hide()
+            vex_file = args.vex_file or args.sbom
+            from bogrod.tui.app import BogrodApp
+            bogrod.app = BogrodApp(bogrod=bogrod)
+            bogrod.app.run()
+            yp.text = 'saving...'
+            yp.show()
+            write_vex_merge(vex_file)
         else:
-            print("Assuming vex file: ", vex_file2)
-            args.vex_file = vex_file2
-            args.update_vex = True
-            args.merge_vex = True
-    # -- vex issues report from aggregator (e.g. essentx)
-    if not args.vex_issues:
-        vex_issues_file = Path(args.sbom).parent / (Path(args.sbom).stem.replace('.cdx', '') + '.vexiss.yaml')
-        args.vex_issues = vex_issues_file
-        if vex_issues_file.exists():
-            print("Found vex issues: ", vex_issues_file)
-    # -- properties
-    if not args.sbom_properties:
-        prop_file = Path(args.sbom).parent / 'sbom-metadata.yaml'
-        if prop_file.exists():
-            print("Found sbom properties file: ", prop_file)
-            args.sbom_properties = prop_file
-    # -- release notes
-    if not args.notes:
-        notes_file = Path(args.sbom).parent.parent / 'notes' / (Path(args.sbom).stem + '.yaml')
-        if notes_file.exists():
-            print("Found release notes: ", notes_file)
-            args.notes = notes_file
+            yp.hide()
+            bogrod.report(format=args.output, summary=args.summary, fail_on_issues=args.fail_on_issues)
 
     # process
-    bogrod = Bogrod.from_sbom(args.sbom)
-    if args.severities:
-        if args.severities == 'all':
-            args.severities = 'critical,high,medium,low,none,unknown'
-        bogrod.severities = args.severities.split(',')
-    if args.notes:
-        bogrod.read_notes(args.notes)
-        bogrod.update_notes()
-    if args.write_notes:
-        bogrod.write_notes(args.notes)
-    if args.grype:
-        bogrod.read_grype(args.grype)
-    if args.diff:
-        bogrod.diff(args.diff)
-        if not args.work:
-            bogrod.report_diff()
-            exit(0)
-    if args.vex_file:
-        bogrod.read_vex(args.vex_file)
-    if args.vex_issues:
-        bogrod.read_vex_issues(args.vex_issues)
-    if args.update_vex:
-        vex_file = args.vex_file or args.sbom
-        bogrod.update_vex()
-        write_vex_merge(vex_file)
-    if args.upload:
-        AggregatorClass = contrib.aggregators[args.upload]
-        params = {}
-        params_key = args.upload + '.'
-        for k, v in args.aggregators.items():
-            pk = k.replace(params_key, '')
-            if not k.startswith(params_key):
-                continue
-            if v.startswith('keyring:'):
-                params[pk] = keyring.get_password(*v.replace('keyring:', '').split(':'))
-            else:
-                params[pk] = v
-        print(f'Uploading vex to {args.upload}')
-        aggregator = AggregatorClass(**params)
-        sbomID, report = aggregator.submit(args.projectpath, args.sbom, tentative=args.upload_tentative)
-        with open(args.vex_issues, 'w') as fout:
-            yaml.safe_dump(report, fout)
-        aggregator.summary(sbomID, report)
-        exit(0)
-    if args.work:
-        vex_file = args.vex_file or args.sbom
-        from bogrod.tui.app import BogrodApp
-        bogrod.app = BogrodApp(bogrod=bogrod)
-        bogrod.app.run()
-        write_vex_merge(vex_file)
-    else:
-        bogrod.report(format=args.output, summary=args.summary, fail_on_issues=args.fail_on_issues)
+    with yaspin(text='loading...') as yp:
+        bogrod = Bogrod.from_sbom(args.sbom)
+        loadfiles()
+        process()
     return bogrod
+
+
+def main_cli():
+    # bogrod cli entry point
+    # -- required because main() returns a Bogrod instance, which is reported as rc=1
+    # -- however we want to return rc=0 if all is good, else bogrod.report() will exit(1), if -F is set
+    main()

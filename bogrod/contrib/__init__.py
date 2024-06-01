@@ -1,4 +1,4 @@
-from .aggregator import DummyAggregator
+from .dummy import DummyAggregator
 from .elementaris import EssentxElementaris
 
 aggregators = {
