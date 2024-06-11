@@ -6,7 +6,7 @@ from textual.binding import Binding
 from textual.screen import Screen
 from textual.widgets import Header, DataTable, Footer, OptionList
 
-from bogrod import tryOr
+from bogrod.util import tryOr
 from bogrod.tui import VulnearabilityEditor
 from bogrod.tui.widgets.modals import SearchModal
 

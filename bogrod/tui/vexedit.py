@@ -8,7 +8,7 @@ from textual.screen import Screen
 from textual.widget import Widget
 from textual.widgets import Header, TextArea, Label, SelectionList, OptionList, Footer
 
-from bogrod import tryOr
+from bogrod.util import tryOr
 from bogrod.tui.widgets.modals import InputModal
 from bogrod.tui.widgets.radioslist import RadioSelectionList
 
