@@ -6,7 +6,7 @@
 bogrod
 ======
 
-Manage vulnerabilities analysis (VEX/SBOM) in cyclonedx format like source code.
+Manage vulnerabilities SBOM and VEX analysis like source code.
 
 Why?
 ----
@@ -105,7 +105,7 @@ VEX analysis information.
 
         $ syft jupyter/base-notebook:ubuntu-20.04 --file releasenotes/sbom/jupyter-base-notebook.syft.json --output json
 
-2. Find VEX information
+2. Find detailed information for each vulnerability
 
         # we output two grype reports 
         # -- this first report includes detailed VEX information
@@ -118,8 +118,8 @@ VEX analysis information.
         # -- bogrod automatically uses the .grype report to provide additional information for each vulnerability 
         $ bogrod --work -S releasenotes/sbom/jupyter-base-notebook.cdx.json --vex-file releasenotes/sbom/vex.yaml --update-vex --merge-vex 
 
-Note that bogrod will automatically find the .vex and .grype files corresponding to the .cdx file,
-if these are not specified.
+Note that bogrod will automatically find the related .vex, .cdx, .grype files, if named according to
+the conventions described above.
 
 Working with vulnerabilities
 ----------------------------
@@ -132,22 +132,58 @@ so that you can filter, select and analyze each one in turn.
 
 ![bogrod demo](resources/demo1.png)
 
-    Press Enter to show the details of the vulnerability
+* Press Enter to show the details of the vulnerability.
+* Press V to show the vulnerability in its related NVD or CVE web page.
+* Save analysis and quit by pressing `Ctrl-C` or `Q`.
 
 ![bogrod demo](resources/demo2.png)
 
-    Save analysis and quit by pressing Ctrl-C or Q
+* Filter the list of vulnerabilites by the various quick criteria on the left by selecting
+  one of the listed values. Press `F` and use the `tab` key to cycle through the options.
+* Use the `/` key to enter a search term. Search terms are of the form `<column>:<value>`
+  where *column* is one of the columns in the table and *value* is the value to search for.
 
-![bogrod demo](resources/demo3.jpg)
+![bogrod demo](resources/demo3.png)
 
+* Edit multiple vulnerabilities at marking related entries using ctrl+space.
+* Then select any one of the marked entries to enter your analysis and press
+  `Ctrl+S` to save. All marked entries will be updated with the same analysis.
+
+![bogrod demo](resources/demo4.png)
+
+* Select or edit (`enter`) any vulnerability and press `V` to open the respective CVE   
+  or NVD page in your browser. This allows for a very smooth workflow because you don't
+  have to copy/paste the CVE-# to your browser.
+
+![bogrod demo](resources/demo5.png)
+
+* While editing a vulnerability, store the analysis as a template by pressing `Ctrl+T`.
+  This will store the analysis as a template for the component or artifact.
+* Apply a template by pressing `T` and selecting the template to apply.
+    * For every component analyzed, bogrod automatically creates a template by the name
+      of the component, making it easy to apply the same analysis to related vulnerabilities.
+
+![bogrod demo](resources/demo6.png)
+
+* Uploading vulnerabilities to a vulnerabilities management platform, such as [elementaris
+  by Essentx](https://github.com/essentxag/elementaris-docu), is straight forward.
+
+  $ bogrod --upload elementaris releasenotes/sbom/jupyter-base-notebook.cdx.json
+
+* The service automatically returns a report based on its own analysis. In case of  
+  issues found, the affected vulnerabilities will be marked by including a `*` postfix
+  to its state
+* Press enter to show the details of the vulnerability and the report from the service.
+
+![bogrod demo](resources/demo7.png)
 
 Working with multiple images
 ----------------------------
 
 Sometimes we may have the artefacts built from the same source image and thus
 find similar vulnerabilities. It would be a waste of time to keep analysing the
-same vulnerability multiple times. Therefore, we can combine bogrod's vex information
-(a yaml file) for multiple images, while bogrod keeps track of where each
+same vulnerability multiple times. Therefore, we can combine vex information
+stored by bogrod (a yaml file) for multiple images. bogrod keeps track of where each
 vulnerabillity came from.
 
 To simplify this process, create a .bogrod file that references each image's
@@ -181,7 +217,7 @@ Vulnerability Exploit information (VEX)
 ---------------------------------------
 
 Bogrod can extract vulnerability exploit information from
-the release notes or from a vex.yaml file (--vex-file)::
+the vex.yaml file (--vex-file)::
 
     # vex.yaml
     CVE-2022-999999:
@@ -320,30 +356,12 @@ or more vulnerabilities are in state in_triage or exploitable, the pipeline will
 
         bogrod --fail-on-issues releasenotes/sbom/jupyter-base-notebook.cdx.json
 
-Release Notes Format
---------------------
-
-[deprecated] This feature will be removed in a future version, in favor of templated reporting options.
-
-The release notes format is simply a YAML file with a security section:
-
-    # notes.yaml
-    # security:
-    #  - <CVE#> severity status [comment]
-    security:
-    - CVE-2022-999999 high open will fix in next release 
-    - CVE-2022-999989 high fixed will fix in next release
-
-This is a superset of the release notes format used by reno, the release notes tools.
-
-
 Pipeline with grype and reno
 ----------------------------
 
-1. reno => create release notes
+1. syft => scan image and create sbom
 2. grype => scan image and create sbom
 3. bogrod => update release notes with vulns found in sbom
-4. reno report => build release notes
 
 Tools
 -----
@@ -373,20 +391,22 @@ Specification
 * browser https://cyclonedx.org/docs/1.4/json/
 * jsonschema https://github.com/CycloneDX/specification/releases
 
+Commercial Support
+------------------
+
+Commercial training and support for use of bogrod is available from productaize.
+Please contact us at info at productaize.io for more information.
+
 What's in a name?
 -----------------
 
-I was looking for the name of a trusted secret keeper of sorts. A fan of Harry Potter's
-I found some character from Gringotts Wizarding Bank would be a great fit.
+I was looking for the name of a trusted secret keeper of sorts. An early fan of Harry Potter's
+I found some character from Gringotts Wizarding Bank would be a great fit. *Wikipedia* has this to say about Bogrod:
+*Bogrod, a goblin, is one of the counter staff (what would be tellers in a Muggle bank) at Gringotts Wizarding Bank in
+Diagon Alley.*
 
-*Wikipedia* has this to say about Bogrod:
+Credits:
 
-<a title="Eliedion, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Audio-animatronic_of_Harry_Potter_and_the_Escape_from_Gringotts.JPG"><img width="64" alt="Audio-animatronic of Harry Potter and the Escape from Gringotts" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Audio-animatronic_of_Harry_Potter_and_the_Escape_from_Gringotts.JPG/64px-Audio-animatronic_of_Harry_Potter_and_the_Escape_from_Gringotts.JPG"></a>
-Bogrod, a goblin, is one of the counter staff (what would be tellers in a Muggle bank) at Gringotts Wizarding Bank in
-Diagon Alley.
-
-Source: https://en.wikibooks.org/wiki/Muggles%27_Guide_to_Harry_Potter/Characters/Bogrod
-Image by: Eliedion, CC BY-SA
-4.0 https://commons.wikimedia.org/wiki/File:Audio-animatronic_of_Harry_Potter_and_the_Escape_from_Gringotts.JPG"><img
-width="64" alt="Audio-animatronic of Harry Potter and the Escape from Gringotts"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Audio-animatronic_of_Harry_Potter_and_the_Escape_from_Gringotts.JPG/64px-Audio-animatronic_of_Harry_Potter_and_the_Escape_from_Gringotts.JPG
+* Wikipedia: https://en.wikibooks.org/wiki/Muggles%27_Guide_to_Harry_Potter/Characters/Bogrod
+* Image by: Eliedion, CC BY-SA
+  4.0 https://commons.wikimedia.org/wiki/File:Audio-animatronic_of_Harry_Potter_and_the_Escape_from_Gringotts.JPG">
