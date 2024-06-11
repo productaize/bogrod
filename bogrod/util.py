@@ -68,15 +68,22 @@ def tryOr(fn, else_fn):
         return else_fn() if callable(else_fn) else else_fn
 
 
-def wait(s, delay=1):
+def wait(s, delay=1, sustain_ctrl_c=3):
     """
     drop-in for time.sleep() with status updates and Ctrl-C support
+
+    Args:
+        s (int): the number of seconds to wait
+        delay (int): the time to wait between updates
+        sustain_ctrl_c (int): the number of Ctrl-C presses to sustain before raising KeyboardInterrupt
 
     Usage:
         for delay in wait(seconds):
             print(f'waiting for {delay} seconds')
     """
     import time
+    if not hasattr(wait, '_control_c_count'):
+        wait._control_c_count = 0
 
     try:
         while s:
@@ -84,7 +91,11 @@ def wait(s, delay=1):
             time.sleep(delay)
             s -= 1
     except KeyboardInterrupt:
+        wait._control_c_count += 1
+        if wait._control_c_count >= sustain_ctrl_c:
+            raise
         pass
+
 
 # adapted from https://stackoverflow.com/a/66853182/890242
 class SafeNoAliasDumper(yaml.SafeDumper):

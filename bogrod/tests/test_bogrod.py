@@ -1,6 +1,8 @@
 import contextlib
+import random
 import unittest
 from io import StringIO
+from pathlib import Path
 from unittest import skip
 
 import bogrod
@@ -41,6 +43,46 @@ class BogrodTests(unittest.TestCase):
         sbom.report(stream=buffer)
         self.assertTrue(buffer.getvalue().startswith('id'))
         self.assertTrue(buffer.getvalue().__contains__('CVE-2021-27478'))
+
+    def test_cli(self):
+        base_path = Path(bogrod.__file__).parent.parent
+        with self.assertRaises(SystemExit):
+            bogrod.main(argv='--version'.split(' '))
+        bogrod.main(argv=f'{base_path}/releasenotes/sbom/jupyter-base-notebook.cdx.json'.split(' '))
+
+    def test_filter_issues(self):
+        bogrod = Bogrod.from_sbom(BASE_PATH / 'releasenotes/sbom/jupyter-base-notebook.cdx.json')
+        # -- no issues expected
+        data = bogrod._generate_report_data(issues=True)
+        self.assertEqual(len(data), 0)
+        # -- disregard issues
+        data = bogrod._generate_report_data(issues=False)
+        self.assertEqual(len(data), len(bogrod.data['vulnerabilities']))
+        # -- simulate an issue
+        for vuln in random.sample(bogrod.data['vulnerabilities'], 5):
+            vuln_id = vuln['id']
+            vex = bogrod.vex.setdefault(vuln_id, {})
+            vex_report = vex.setdefault('report', {})
+            vex_report['issues'] = [
+                {
+                    'id': 'CVE-2022-29999',
+                    'description': 'this is a test issue'
+                }
+            ]
+        data = bogrod._generate_report_data(issues=True)
+        # -- expect at least 5 issues
+        # -- we can have more than 5 issues because bogrod.data maintains a list of all issues (in SBOM),
+        #    while bogrod.vex maintains a list of CVEs (i.e. the same CVE can be referenced in SBOM multiple times)
+        self.assertTrue(len(data) >= 5)
+        # -- get 'no issues'
+        data = bogrod._generate_report_data(issues=False)
+        self.assertTrue(len(data) < len(bogrod.data['vulnerabilities']))
+        # -- get 'all issues'
+        data = bogrod._generate_report_data(issues=None)
+        self.assertEqual(len(data), len(bogrod.data['vulnerabilities']))
+        data = bogrod._generate_report_data(issues='*')
+        self.assertEqual(len(data), len(bogrod.data['vulnerabilities']))
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,29 +1,34 @@
-Screen {
+VulnerabilityList {
     layout: grid;
-    grid-size: 2 8;
-    grid-columns: 1fr 8fr;
+    grid-size: 2 6;
+    grid-columns: 1fr 6fr;
 }
 
 .box {
     height: 100%;
     width: 1fr;
-    border: solid green;
-
+    border: solid $primary-lighten-3;
+    scrollbar-size: 1 1;
 }
 
 .box:focus {
-    outline: heavy;
+    border: solid $success-lighten-3;
+    width: 1fr;
 }
 
 OptionList {
     layout: vertical;
     width: 1fr;
-    height: 100%;
     border: none;
 }
 
 HeaderTitle {
    content-align: left top;
+   offset: -8 0;
+}
+
+HeaderIcon {
+   visibility: hidden;
 }
 
 #vulnerability-view {
@@ -31,10 +36,29 @@ HeaderTitle {
 }
 
 SearchModal {
+   layout: grid;
+   background: $background 60%;
    align: center middle;
+   grid-size: 3;
 }
 
-SearchModal > Container > Input.box {
-   width: 100%;
-   height: 3;
+SearchModal > Grid {
+    column-span: 2;
+    height: 7;
 }
+
+#vulnerability-view {
+    row-span: 4;
+}
+
+#vulnerability-summary {
+    row-span: 2;
+    background: $background;
+    margin: 0;
+}
+
+#vulnerability-summary > MarkdownTable {
+    width: 60%;
+    margin-top: -1;
+}
+

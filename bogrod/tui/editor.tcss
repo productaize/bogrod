@@ -21,17 +21,20 @@ OptionList.templates {
   width: 1fr;
 }
 
-Markdown {
+Screen.editor Markdown {
   margin: 0;
 }
 
 InputModal {
+   layout: grid;
    align: center middle;
+   grid-size: 3;
 }
 
 InputModal > Container {
     width: auto;
-    height: auto;
+    height: 3;
+    column-span: 2;
 }
 
 InputModal > Container > Input {

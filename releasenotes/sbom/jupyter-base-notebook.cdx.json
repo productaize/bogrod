@@ -52501,7 +52501,7 @@
         }
       ],
       "analysis": {
-        "state": "in_triage",
+        "state": "not_affected",
         "detail": "",
         "response": []
       }

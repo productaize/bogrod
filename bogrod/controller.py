@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import re
 import subprocess
@@ -15,6 +16,8 @@ from jsonschema import ValidationError
 from tabulate import tabulate
 
 from bogrod.util import dict_merge, tabulate_data, tryOr, SafeNoAliasDumper
+
+logger = logging.getLogger(__name__)
 
 
 class Bogrod:
@@ -55,11 +58,11 @@ class Bogrod:
         - "<vulnerability id> <severity> <status>"
     """
 
-    def __init__(self, data, notes=None, vex=None, grype=None):
+    def __init__(self, data, notes=None, vex=None, grype=None, sbom_path=None):
         self.data = data
         self.notes = notes
         self.notes_path = None
-        self.sbom_path = None
+        self.sbom_path = sbom_path
         self.severities = 'critical,high,medium,low,none,unknown'.split(',')
         self.severities_order = 'critical,high,medium,low,none,unknown'.split(',')
         self.vex = vex or {}
@@ -84,6 +87,9 @@ class Bogrod:
         flatten = lambda l: [x for xs in l for x in xs if x]
         return set(flatten([self._vuln_vector(v).split('/') for v in self.vulnerabilities(severities=severities)]))
 
+    def _scores(self, severities=None):
+        return set([int(self._vuln_score(v)) for v in self.vulnerabilities(severities=severities)])
+
     def _states(self):
         return set([v.get('state', 'unknown') for k, v in self.vex.items() if k != 'templates'])
 
@@ -93,6 +99,9 @@ class Bogrod:
 
     def _vuln_severity(self, v):
         return ([s.get('severity') for s in v['ratings'] if s.get('severity')] + ['unknown'])[0]
+
+    def _vuln_score(self, v):
+        return ([s.get('score', 0) for s in v['ratings'] if s.get('score')] + [0])[0]
 
     def _vuln_vector(self, v):
         matches = self.grype_matches()
@@ -150,7 +159,7 @@ class Bogrod:
         assert self.notes, "no notes founds. use reno new to add"
         path = path or self.notes_path
         with open(path, 'w') as fout:
-            print("Writing release notes: ", path)
+            logger.debug(f"Writing release notes: {path}")
             yaml.safe_dump(self.notes, fout, default_style='|')
 
     def write_vex(self, path, properties=None):
@@ -170,16 +179,16 @@ class Bogrod:
                     # FIXME this duplicates self.merge_properties
                     dict_merge(data, properties)
                 with open(path, 'w') as fout:
-                    print("Writing vex to sbom: ", path)
+                    logger.debug(f"Writing vex to sbom: {path}")
                     json.dump(data, fout, indent=2)
             elif path.suffix == '.yaml':
                 data = self.vex
                 with open(path, 'w') as fout:
-                    print("Writing vex to yaml: ", path)
+                    logger.debug(f"Writing vex to yaml: {path}")
                     yaml.dump_all([data], fout, Dumper=SafeNoAliasDumper)
         else:
             with open(path, 'w') as fout:
-                print("Writing vex to json: ", path)
+                logger.debug(f"Writing vex to json: {path}")
                 if path.suffix == '.json':
                     json.dump(self.vex, fout, indent=2)
                 elif path.suffix == '.yaml':
@@ -201,17 +210,17 @@ class Bogrod:
 
     def read_grype(self, path):
         with open(path, 'r') as fin:
-            print("Reading grype: ", path)
+            logger.debug(f"Reading grype: {path}")
             self.grype = json.load(fin)
         return self.grype
 
     def read_vex(self, path):
         try:
             with open(path, 'r') as fin:
-                print("Reading vex: ", path)
+                logger.debug(f"Reading vex: {path}")
                 self.vex = yaml.safe_load(fin)
         except:
-            print(f"WARNING: could not read --vex-file {path}. Specify -x to create from sbom")
+            logger.debug(f"WARNING: could not read --vex-file {path}. Specify -x to create from sbom")
             self.vex = {}
         for k, v in self.vex.items():
             if k == 'templates':
@@ -227,14 +236,15 @@ class Bogrod:
         if not Path(path).exists():
             return
         with open(path, 'r') as fin:
-            print("Reading vex issues: ", path)
+            logger.debug(f"Reading vex issues: {path}")
             vex_issues = self.vex_issues = yaml.safe_load(fin)
             if 'report' not in vex_issues:
                 status = vex_issues.get('status')
                 sbomId = vex_issues.get('id')
-                print(f"WARNING: vex issues report does not contain 'report' key. Id: {sbomId} Status: {status}")
+                logging.warning(
+                    f"WARNING: vex issues report does not contain 'report' key. Id: {sbomId} Status: {status}")
             else:
-                report_vulns = vex_issues['report']['vulnerabilities']
+                report_vulns = vex_issues['report'].get('vulnerabilities', {})
                 sbom_vulns = self.vulnerabilities(as_dict=True, severities='*')
                 related = self.grype_related()
                 for vuln in report_vulns:
@@ -408,23 +418,33 @@ class Bogrod:
         return self.vex
 
     def _generate_report_data(self, severities=None, columns=None, vectors=None, states=None, components=None,
-                              issues=None, ids=None):
+                              issues=None, ids=None, affects=None, names=None, scores=None):
         notes = self.security_notes()
         data = []
         severities = severities or self.severities
         columns = columns or self.report_columns
+        components = components or affects
         diff = self.diff_data
         # build list of dict of each vulnerability
         for vuln in self.vulnerabilities():
             severity = self._vuln_severity(vuln)
             vector = self._vuln_vector(vuln)
+            score = self._vuln_score(vuln)
             if '*' not in severities and severity not in severities:
                 continue
             if vector and vectors:
                 pattern = '|'.join(v.strip() for v in vectors if v)
                 if re.search(pattern, vector) is None:
                     continue
-            if states and vuln['analysis']['state'] not in states:
+            vex = self.vex.get(vuln['id']) or notes.get(vuln['id']) or {}
+            issues_ind = '*' if vex.get('report', {}).get('issues') else ''
+            if (issues is False and issues_ind) or (issues is True and not issues_ind):
+                continue
+            if scores and not score >= min(scores):
+                continue
+            if states and not any(s in vex.get('state', '') for s in states):
+                continue
+            if names and not any(v in vuln['source']['name'] for v in names):
                 continue
             if components:
                 pattern = '|'.join(c.strip() for c in components if c)
@@ -435,18 +455,18 @@ class Bogrod:
                 continue
             description = vuln.get('description', ' ')
             short = description[0:min(len(description), 40)]
-            vex = notes.get(vuln['id']) or self.vex.get(vuln['id']) or {}
-            issues_ind = '*' if vex.get('report', {}).get('issues') else ''
-            if issues != '*' and issues and not issues_ind:
-                continue
             record = {
                 'id': vuln['id'],
-                'name': vuln['source']['name'],
+                'name': vuln['source']['name'],  # todo refactor
+                'source': vuln['source']['name'],
                 'severity': severity,
+                'score': score,
                 'state': vex.get('state', '') + issues_ind,
+                'issues': vex.get('report', {}).get('issues'),
                 'justification': vex.get('justification'),
                 'comment': vex.get('detail') or notes.get(vuln['id'], {}).get('comment'),
-                'affects': tryOr(lambda: vuln['affects'][0]['ref'].split('?')[0], None),
+                'affects': tryOr(lambda: vuln['affects'][0]['ref'].split('/')[-1].split('?')[0],
+                                 tryOr(lambda: vuln['affects'][0]['ref'], None)),
                 'description': description,
                 'short': short,
                 'url': vuln['source'].get('url'),
@@ -498,20 +518,20 @@ class Bogrod:
         return schema
 
     def validate(self, data=None):
-        print("Validating sbom...")
+        logging.debug("Validating sbom...")
         schema = self._get_sbom_schema()
         data = data or self.data
         try:
             jsonschema.validate(data, schema)
         except ValidationError as ex:
-            print(f"ValidationError: {ex.message} {ex.absolute_path}")
+            logging.error(f"ValidationError: {ex.message} {ex.absolute_path}")
 
     @classmethod
     def from_sbom(cls, sbom_path, notes_path=None):
-        print("Reading sbom: ", sbom_path)
+        logging.debug(f"Reading sbom: {sbom_path}")
         with open(sbom_path, 'r') as fin:
             data = json.load(fin)
-        bogrod = Bogrod(data)
+        bogrod = Bogrod(data, sbom_path=sbom_path)
         if notes_path is None:
             sbom_name = Path(sbom_path).name.replace('.json', '')
             candidates = list(Path('releasenotes/notes').glob(f'{sbom_name}*.yaml'))
@@ -591,7 +611,7 @@ class Bogrod:
         vuln = all_vuln[vuln_id]
         text = dedent("""
         # id: {id} 
-        # severity: {severity}
+        # severity: {severity} score: {score} 
         # vector: {vector} 
         # component: {component} 
         # artifact: {artifact}
@@ -606,6 +626,7 @@ class Bogrod:
         {vex_yml}
         """).strip().format(id=vuln_id,
                             severity=self._vuln_severity(vuln),
+                            score=self._vuln_score(vuln),
                             vector=self._vuln_vector(vuln),
                             description='\n# '.join(
                                 wrap(vuln.get('description', 'unknown'), subsequent_indent=' ' * 5)),
@@ -640,6 +661,7 @@ class Bogrod:
                 break
 
     def diff(self, other_sbomfile):
+        from bogrod import CycloneDXSBOM
         current = CycloneDXSBOM(self.data)
         other = CycloneDXSBOM.from_file(other_sbomfile)
         self.diff_data = current.diff(other)
@@ -651,7 +673,7 @@ class Bogrod:
             data.append({
                 'vuln_id': vuln_id,
                 'change': diff_data['delta'],
-                'description': diff_data['vuln']['affects'][0]
+                'description': (diff_data['vuln']['affects'] or ['unknown'])[0]
             })
         headers = 'keys'
         print(tabulate(data, headers=headers), file=stream)

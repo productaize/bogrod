@@ -1,0 +1,16 @@
+0.4.2
+- nicer UI colors and layout
+- bulk update of vulnerabilities (select multiple entries with space, then edit + ctrl-s one to update all)
+- adds a summary on top of the list screen, showing total number of entries by severity and state, top 5 components/vectors
+- search supports filters by any of the table columns (use <column>:value, column can be abbreviated, e.g. a:python => find all python entries)
+- enable fast browsing of each vulnerability by pressing the V key
+- current sbom file is displayed in title of list screen
+- cli can be used as 'bogrod' or 'bd'
+
+0.4.1
+- fix pypi package to be installable via pip
+- cli: add --version option
+- update README for clarity
+
+0.4.0
+- initial public release

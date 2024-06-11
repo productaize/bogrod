@@ -18,6 +18,7 @@ CVE-2015-20107:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
@@ -98,6 +99,7 @@ CVE-2022-23491:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
@@ -142,7 +144,7 @@ CVE-2022-37454:
   related:
   - component: jupyter/base-notebook
   response: []
-  state: in_triage
+  state: not_affected
 CVE-2022-3821:
   detail: ''
   history:
@@ -155,6 +157,7 @@ CVE-2022-42919:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
@@ -555,6 +558,7 @@ GHSA-3ww4-gg4f-jr7f:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
@@ -563,6 +567,7 @@ GHSA-43fp-rhv2-5gv8:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
@@ -827,12 +832,49 @@ GHSA-xqr8-7jwr-rhp7:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
 templates:
+  ca-certificates-20211016~20.04.1:
+    detail: ''
+    justification: ''
+    match: artifact
+    response: []
+    state: in_triage
+  certifi-2022.9.24:
+    detail: ''
+    justification: ''
+    match: artifact
+    response: []
+    state: in_triage
+  cryptography-38.0.1:
+    detail: ''
+    justification: ''
+    match: artifact
+    response: []
+    state: in_triage
+  pkg:deb/ubuntu/ca-certificates@20211016~20.04.1?arch=all&distro=ubuntu-20.04&package-id=d9d067c1625548ce:
+    detail: ''
+    justification: ''
+    match: component
+    response: []
+    state: in_triage
   pkg:generic/python@3.10.6?package-id=aadd06b57d8f4fc4:
+    detail: ''
+    justification: ''
+    match: component
+    response: []
+    state: not_affected
+  pkg:pypi/certifi@2022.9.24?package-id=fd5fdc0222e471a8:
+    detail: ''
+    justification: ''
+    match: component
+    response: []
+    state: in_triage
+  pkg:pypi/cryptography@38.0.1?package-id=6913ae4b60fe5b2f:
     detail: ''
     justification: ''
     match: component
@@ -843,4 +885,4 @@ templates:
     justification: ''
     match: artifact
     response: []
-    state: in_triage
+    state: not_affected
