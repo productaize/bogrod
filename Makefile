@@ -26,7 +26,13 @@ report:
 	bogrod releasenotes/sbom/jupyter-base-notebook.json --vex-file releasenotes/sbom/vex.yaml --notes releasenotes/notes/rc1-99e6a29d3335a383.yaml -w
 	reno report . --title FOO | pandoc -f rst > release-notes.html
 
-dist:
+bump-build:
+	bump2version build
+
+bump-release:
+	bump2version patch
+
+dist: bump-build
 	: "run setup.py sdist bdist_wheel"
 	rm -rf ./dist/*
 	rm -rf ./build/*
