@@ -71,6 +71,14 @@ CVE-2020-22916:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2021-23240:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2021-31879:
   detail: ''
   history:
@@ -88,6 +96,14 @@ CVE-2021-39537:
   response: []
   state: in_triage
 CVE-2021-43618:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2021-46848:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -146,6 +162,14 @@ CVE-2022-37454:
   response: []
   state: not_affected
 CVE-2022-3821:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2022-41409:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -338,6 +362,14 @@ CVE-2023-3446:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2023-35936:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2023-36632:
   detail: ''
   history:
@@ -347,6 +379,14 @@ CVE-2023-36632:
   response: []
   state: in_triage
 CVE-2023-3817:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-38745:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -371,6 +411,14 @@ CVE-2023-4016:
   response: []
   state: in_triage
 CVE-2023-40217:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-4039:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -466,6 +514,14 @@ CVE-2023-7008:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2024-0397:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2024-0450:
   detail: ''
   history:
@@ -490,6 +546,38 @@ CVE-2024-0727:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2024-10041:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-10524:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-10963:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-11168:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2024-2236:
   detail: ''
   history:
@@ -499,6 +587,14 @@ CVE-2024-2236:
   response: []
   state: in_triage
 CVE-2024-22365:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-2511:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -530,7 +626,151 @@ CVE-2024-2961:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2024-33599:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-33600:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-33601:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-33602:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-38428:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-4032:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-4741:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-50602:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-5535:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-6232:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-6923:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-7592:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-8088:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-9143:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-9287:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+GHSA-248v-346w-9cwc:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 GHSA-29gw-9793-fvw7:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+GHSA-2p57-rm9w-gvfp:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+GHSA-34jh-p97f-mpxf:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -604,6 +844,14 @@ GHSA-6vqw-3v5j-54x4:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+GHSA-753j-mpmx-qq6g:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 GHSA-78xj-cgh5-2h22:
   detail: ''
   history:
@@ -620,6 +868,30 @@ GHSA-7r3h-4ph8-w38g:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+GHSA-8w49-h785-mj3c:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+GHSA-9mvj-f7w8-pvh2:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+GHSA-9q39-rmj3-p4r2:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 GHSA-9v9h-cgj8-h64p:
   detail: ''
   history:
@@ -628,7 +900,31 @@ GHSA-9v9h-cgj8-h64p:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+GHSA-9wx4-h78v-vm56:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+GHSA-9x4q-3gxw-849f:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 GHSA-c2qf-rxjj-qqgw:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+GHSA-cx63-2mw6-8hw5:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -660,6 +956,22 @@ GHSA-g4mx-q9vg-27p4:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+GHSA-g7vv-2v7x-gj9p:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+GHSA-h4gh-qq45-vh27:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 GHSA-h56g-gq9v-vc8r:
   detail: ''
   history:
@@ -676,6 +988,14 @@ GHSA-h5c8-rqwp-cp95:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+GHSA-h75v-3vvj-5mfj:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 GHSA-hj3f-6gcp-jg8j:
   detail: ''
   history:
@@ -685,6 +1005,14 @@ GHSA-hj3f-6gcp-jg8j:
   response: []
   state: in_triage
 GHSA-hj9c-8jmm-8c52:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+GHSA-hrw6-wg82-cm62:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -709,6 +1037,14 @@ GHSA-jchw-25xp-jwwc:
   response: []
   state: in_triage
 GHSA-jfhm-5ghh-2f97:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+GHSA-jfmj-5v4g-7637:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -812,7 +1148,23 @@ GHSA-v8gr-m533-ghj9:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+GHSA-w235-7p84-xx57:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 GHSA-w7pp-m8wf-vj6r:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+GHSA-x3m3-4wpv-5vgc:
   detail: ''
   history:
   - added: jupyter/base-notebook

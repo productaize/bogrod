@@ -506,7 +506,9 @@ class Bogrod:
 
     def _get_sbom_schema(self):
         # TODO get the actual schema
-        schema_path = Path(__file__).parent / 'resources/bom-1.5.schema.json'
+        data = self.data
+        specVersion = data['specVersion']
+        schema_path = Path(__file__).parent / f'resources/bom-{specVersion}.schema.json'
         with open(schema_path) as fin:
             schema = json.load(fin)
         return schema
