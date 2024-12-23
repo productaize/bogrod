@@ -17,7 +17,7 @@ from bogrod.util import tryOr
 class VulnerabilityList(HelpableMixin, Screen):
     BINDINGS = [
         Binding(key="enter", action='edit_vulnerability', description="edit", priority=True, show=True),
-        Binding(key="q", action='quit', description="quit", priority=True, show=True),
+        Binding(key="ctrl-q", action='quit', description="quit", priority=True, show=True),
         Binding(key="?", action='help', description="help", priority=True, show=True),
         Binding(key="l,L", action='focus_table', description="go to list of vulnerabilities", show=True),
         Binding(key='f,F', action='focus_filter', description='go to filters', show=True),

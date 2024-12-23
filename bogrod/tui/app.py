@@ -11,8 +11,8 @@ class BogrodApp(App):
     def __init__(self, *args, bogrod=None, **kwargs):
         super().__init__(*args, **kwargs)
         self.bogrod = bogrod
-        list_screen = VulnerabilityList(bogrod=self.bogrod)
-        self.install_screen(list_screen, 'vulnerability-list')
 
     def on_mount(self):
+        list_screen = VulnerabilityList(bogrod=self.bogrod)
+        self.install_screen(list_screen, 'vulnerability-list')
         self.push_screen('vulnerability-list')
