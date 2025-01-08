@@ -27,24 +27,33 @@ report:
 	reno report . --title FOO | pandoc -f rst > release-notes.html
 
 bump-build:
-	bump2version build
+	@bump2version build
+	@cat bogrod/VERSION
 
 bump-release:
-	bump2version patch
+	@bump2version release 2> /dev/null || bump2version patch
+	@cat bogrod/VERSION
 
 dist: bump-build
 	: "run setup.py sdist bdist_wheel"
 	rm -rf ./dist/*
 	rm -rf ./build/*
 	# set DISTTAGS to specify eg --python-tag for bdist
+	pip install -U setuptools build
 	python -m build
 	twine check dist/*.whl
 
 release: test dist
+	bash -c "grep -qE '(-rc|-dev)' bogrod/VERSION || echo 'must be a final release. run make bump-release first'"
+	bash -c 'git checkout -b release-`head -n1 bogrod/VERSION`'
+	bash -c "git add .; git commit -m 'build release'; git push"
 	twine upload --skip-existing --repository pypi-productaize dist/*gz dist/*whl
 
-release-test: test dist
+release-test: dist
 	# upload and install
+	bash -c "grep -qE '(-rc)' bogrod/VERSION || echo 'must be a release candidate (-rc). run make bump-release first'"
+	bash -c 'git checkout -b build-`head -n1 bogrod/VERSION`'
+	bash -c "git add .; git commit -m 'build release test'; git push"
 	twine upload --repository testpypi-productaize dist/*gz dist/*whl
 	pip install -U --pre -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ bogrod
 	bogrod --version
