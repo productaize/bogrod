@@ -1,3 +1,8 @@
+0.4.3
+- upgrade dependencies
+- fix textual errors when using --work #33
+- enable CycloneDX version 1.6 SBOMs #32
+
 0.4.2
 - nicer UI colors and layout
 - bulk update of vulnerabilities (select multiple entries with space, then edit + ctrl-s one to update all)
