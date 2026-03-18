@@ -97,10 +97,10 @@ class Bogrod:
                    v.get('affects', []))
 
     def _vuln_severity(self, v):
-        return ([s.get('severity') for s in v['ratings'] if s.get('severity')] + ['unknown'])[0]
+        return ([s.get('severity') for s in v.get('ratings', []) if s.get('severity')] + ['unknown'])[0]
 
     def _vuln_score(self, v):
-        return ([s.get('score', 0) for s in v['ratings'] if s.get('score')] + [0])[0]
+        return ([s.get('score', 0) for s in v.get('ratings', []) if s.get('score')] + [0])[0]
 
     def _vuln_vector(self, v):
         matches = self.grype_matches()
@@ -339,6 +339,12 @@ class Bogrod:
         #    https://cyclonedx.org/docs/1.4/json/#metadata_component_components
         #    this seems the most appropriate location in order to keep the original
         meta = self.data['metadata']
+        if 'component' not in meta:
+            logger.warning(f'no component metadata metadata, adding default')
+            meta['component'] = {
+                'name': Path(self.sbom_path).name.split('.')[0],
+                'type': 'application',
+            }
         comp = meta['component']
         raw_comp = deepcopy(comp)
         fixed = False
@@ -443,7 +449,7 @@ class Bogrod:
                 continue
             if states and not any(s in vex.get('state', '') for s in states):
                 continue
-            if names and not any(v in vuln['source']['name'] for v in names):
+            if names and not any(v in vuln.get('source', {}).get('name', 'unknown') for v in names):
                 continue
             if components:
                 pattern = '|'.join(c.strip() for c in components if c)
@@ -456,8 +462,8 @@ class Bogrod:
             short = description[0:min(len(description), 40)]
             record = {
                 'id': vuln['id'],
-                'name': vuln['source']['name'],  # todo refactor
-                'source': vuln['source']['name'],
+                'name': tryOr(lambda: vuln['source']['name'], None),  # todo refactor
+                'source': tryOr(lambda: vuln['source']['name'], None),
                 'severity': severity,
                 'score': score,
                 'state': vex.get('state', '') + issues_ind,
@@ -468,7 +474,7 @@ class Bogrod:
                                  tryOr(lambda: vuln['affects'][0]['ref'], None)),
                 'description': description,
                 'short': short,
-                'url': vuln['source'].get('url'),
+                'url': tryOr(lambda: vuln['source'].get('url'), None),
                 'change': diff.get(vuln['id']),
                 'vector': self._vuln_vector(vuln),
             }

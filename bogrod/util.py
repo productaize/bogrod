@@ -101,3 +101,17 @@ def wait(s, delay=1, sustain_ctrl_c=3):
 class SafeNoAliasDumper(yaml.SafeDumper):
     def ignore_aliases(self, data):
         return True
+
+
+def get_vulnerability_url(vuln_data):
+    vuln_id = vuln_data.get('id', 'unknown')
+    url = vuln_data.get('url')
+    if not str(url).startswith('https://'):
+        match s := vuln_id.upper():
+            case _ if s.startswith('GHSA'):
+                url = f'https://github.com/advisories/{vuln_id}'
+            case _ if s.startswith('CVE'):
+                url = f'https://www.cve.org/CVERecord?id={vuln_id}'
+            case _:
+                url = f'https://osv.dev/vulnerability/{vuln_id}'
+    return url

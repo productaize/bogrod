@@ -1,13 +1,13 @@
-import contextlib
-import random
-import unittest
-from io import StringIO
 from pathlib import Path
 from unittest import skip
 
 import bogrod
+import contextlib
+import random
+import unittest
 from bogrod import Bogrod
 from bogrod.tests import BASE_PATH
+from io import StringIO
 
 
 class BogrodTests(unittest.TestCase):
@@ -82,6 +82,22 @@ class BogrodTests(unittest.TestCase):
         self.assertEqual(len(data), len(bogrod.data['vulnerabilities']))
         data = bogrod._generate_report_data(issues='*')
         self.assertEqual(len(data), len(bogrod.data['vulnerabilities']))
+
+    def test_pip_audit_cdx(self):
+        # test pip audit encoded cyclonedx json
+        bogrod = Bogrod.from_sbom(BASE_PATH / 'releasenotes/sbom/python-310.pipaudit.cdx.json')
+        data = bogrod._generate_report_data()
+        self.assertEqual(len(data), len(bogrod.data['vulnerabilities']))
+
+    def test_fix_metadata_component(self):
+        # test adding default metadata
+        bogrod = Bogrod.from_sbom(BASE_PATH / 'releasenotes/sbom/python-310.pipaudit.cdx.json')
+        self.assertFalse('component' in bogrod.data.get('metadata'))
+        bogrod.fix_metadata()
+        self.assertTrue('component' in bogrod.data.get('metadata'))
+        metadata = bogrod.data.get('metadata')
+        self.assertEqual(metadata['component']['name'], 'python-310')
+        self.assertEqual(metadata['component']['type'], 'application')
 
 
 if __name__ == '__main__':

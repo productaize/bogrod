@@ -1,17 +1,16 @@
-import webbrowser
 from collections import Counter
-from textwrap import wrap, dedent
 
+import webbrowser
 import yaml
+from bogrod.tui import VulnearabilityEditor
+from bogrod.tui.widgets.modals import SearchModal, HelpableMixin
+from bogrod.tui.widgets.multitable import MultiSelectDataTable
+from bogrod.util import tryOr, get_vulnerability_url
 from textual.app import ComposeResult
 from textual.binding import Binding
 from textual.screen import Screen
 from textual.widgets import Header, Footer, OptionList, Markdown
-
-from bogrod.tui import VulnearabilityEditor
-from bogrod.tui.widgets.modals import SearchModal, HelpableMixin
-from bogrod.tui.widgets.multitable import MultiSelectDataTable
-from bogrod.util import tryOr
+from textwrap import wrap, dedent
 
 
 class VulnerabilityList(HelpableMixin, Screen):
@@ -300,7 +299,7 @@ class VulnerabilityList(HelpableMixin, Screen):
 
     def action_browse_url(self):
         vuln_id = self.data[self.vuln_table.cursor_row]['id']
-        url = [v['url'] for v in self.data if v['id'] == vuln_id][0]
+        url = [get_vulnerability_url(v) for v in self.data if v['id'] == vuln_id][0]
         webbrowser.open(url)
 
     def action_search(self) -> None:

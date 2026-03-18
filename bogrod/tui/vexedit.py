@@ -1,17 +1,15 @@
 import webbrowser
-from io import StringIO
-
 import yaml
+from bogrod.tui.widgets.modals import InputModal, HelpableMixin
+from bogrod.tui.widgets.radioslist import RadioSelectionList
+from bogrod.util import tryOr, get_vulnerability_url
+from io import StringIO
 from textual.app import ComposeResult
 from textual.binding import Binding
 from textual.containers import Horizontal
 from textual.screen import Screen
 from textual.widget import Widget
 from textual.widgets import Header, TextArea, SelectionList, OptionList, Footer
-
-from bogrod.tui.widgets.modals import InputModal, HelpableMixin
-from bogrod.tui.widgets.radioslist import RadioSelectionList
-from bogrod.util import tryOr
 
 
 class VulnearabilityEditor(HelpableMixin, Screen):
@@ -150,7 +148,7 @@ class VulnearabilityEditor(HelpableMixin, Screen):
         options.focus()
 
     def action_browse_url(self):
-        url = self.vuln_data.get('url')
+        url = get_vulnerability_url(self.vuln_data)
         webbrowser.open(url) if url else None
 
     def on_key(self, event) -> None:
