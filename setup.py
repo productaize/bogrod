@@ -10,6 +10,7 @@ dev_deps = [
     'pytest',
     'build',
     'pytest-textual-snapshot',
+    'textual-dev',
 ]
 
 setup(
@@ -30,7 +31,6 @@ setup(
         'tabulate',
         'attrdict',
         'textual',
-        'textual-dev',  # for testing
         'requests',
         'yaspin',
         'keyring',

@@ -8,12 +8,12 @@ sbom:
 	# grype format, including match information
 	grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --output json=releasenotes/sbom/jupyter-base-notebook.grype.json
 	# cyclonedx format
-	grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --output cyclonedx-json=releasenotes/sbom/jupyter-base-notebook.cdx.json
-	# add pip audit cyclonedx
+	grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --output cyclonedx-json=releasenotes/sbom/jupyter-base-notebook.cdx.json	# add pip audit cyclonedx
 	pip-audit -f cyclonedx-json -o releasenotes/sbom/python-310.pipaudit.cdx.json
+	# trivy
+	trivy image jupyter/base-notebook:ubuntu-20.04 --format cyclonedx --scanners vuln -o releasenotes/sbom/jupyter-base-notebook.trivy.cdx.json
 	# check
 	bogrod -F jupyter
-
 
 notes:
 	reno new rc1 .
@@ -66,6 +66,7 @@ install-sbom-tools:
 	# install grype and syft
 	curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b ${HOME}/.local/bin
 	curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b ${HOME}/.local/bin
+	apt update && apt install -y trivy
 	pip install reno
 	pip install -e .
 

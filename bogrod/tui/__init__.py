@@ -1,12 +1,10 @@
 import logging
 import sys
-
+from bogrod.tui.vexedit import VulnearabilityEditor
 from textual.logging import TextualHandler
 
-from bogrod.tui.vexedit import VulnearabilityEditor
-
 logging.basicConfig(
-    level="NOTSET",
+    level="INFO",
     handlers=[TextualHandler()],
 )
 

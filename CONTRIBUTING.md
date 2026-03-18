@@ -128,6 +128,18 @@ The process is as follows:
 4. Create a pull request from the release. No code changes should be in this
    pull request.
 
+
+## Adding a new CycloneDX BOM version
+
+bogrod specifies the supported BOM versions in bogrod.settings.bom_spec_versions. To add new versions:
+
+1. add the new version in bogrod.settings.bom_spec_versions
+2. download the json spec from http://cyclonedx.org/schema/bom-{version}.schema.json to bogrod/resources
+
+This ensures that the new version is tested. The rationale for including the schemas as part of the package
+is to ensure bogrod can run airgapped.
+
+
 ## Debugging the TUI
 
 Be sure to install the textual devtools first (pip install textual-dev).
@@ -139,6 +151,7 @@ Be sure to install the textual devtools first (pip install textual-dev).
 3. Run the application in debug mode
 
         $ textual run --dev -c bogrod releasenotes/sbom/python-310.cdx.json -W
+
 
 ## Legal Notice
 

@@ -68,7 +68,7 @@ def check_args(argv):
                         help='if specified upload sbom as tentative')
     parser.add_argument('-F', '--fail-on-issues', action='store_true', dest='fail_on_issues',
                         help='if there are pending issues or unresolved vulnerabilities, exit with error')
-    parser.add_argument('-V', '--verbose', action='store_true',
+    parser.add_argument('-V', '--verbose', action='store_true', default=False,
                         help='increase output verbosity')
     args = parser.parse_args(argv)
     return args
@@ -79,6 +79,8 @@ def main(argv=None):
 
     if args.verbose:
         logger.setLevel('DEBUG')
+    else:
+        logger.setLevel('INFO')
 
     def write_vex_merge(vex_file):
         bogrod.write_vex(vex_file)
@@ -89,7 +91,7 @@ def main(argv=None):
             bogrod.write_vex(args.sbom, properties=prop_data)
 
     # load .bogrod ini file
-    if Path('.bogrod').exists():
+    if (Path.cwd() / '.bogrod').exists():
         config = ConfigParser()
         config.read('.bogrod')
 
