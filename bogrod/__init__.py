@@ -1,17 +1,16 @@
-import argparse
-import logging
-from configparser import ConfigParser
-from contextlib import redirect_stderr
-from io import StringIO
 from pathlib import Path
 
+import argparse
 import keyring
+import logging
 import yaml
-from yaspin import yaspin
-
 from bogrod import contrib, settings
 from bogrod.controller import Bogrod
 from bogrod.sbom import CycloneDXSBOM
+from configparser import ConfigParser
+from contextlib import redirect_stderr
+from io import StringIO
+from yaspin import yaspin
 
 logger = logging.getLogger(__name__)
 

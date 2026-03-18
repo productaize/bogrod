@@ -128,6 +128,18 @@ The process is as follows:
 4. Create a pull request from the release. No code changes should be in this
    pull request.
 
+## Debugging the TUI
+
+Be sure to install the textual devtools first (pip install textual-dev).
+
+1. Run textual console in one terminal:
+
+        $ textual console
+
+3. Run the application in debug mode
+
+        $ textual run --dev -c bogrod releasenotes/sbom/python-310.cdx.json -W
+
 ## Legal Notice
 
 > When contributing to this project, you agree that you have authored 100% of the content, that you have the
