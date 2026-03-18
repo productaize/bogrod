@@ -1,3 +1,10 @@
+0.4.4
+- feat: vulnerability viewer verifies that url is to actual vulnerability
+- chore: support cyclonedx 1.6, 1.7, trivy
+- chore: improve stability
+- chore: use module logger
+- chore: automate release building
+
 0.4.3
 - upgrade dependencies
 - fix textual errors when using --work #33
