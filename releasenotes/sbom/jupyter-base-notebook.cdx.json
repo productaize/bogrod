@@ -2,17 +2,17 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:036664d7-6c6a-4e61-a7cc-cbb03843dafd",
+  "serialNumber": "urn:uuid:ea147d01-fb6e-4ada-8291-4b6d1dd61d6e",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-03-18T19:02:51+01:00",
+    "timestamp": "2026-03-18T23:17:11+01:00",
     "tools": {
       "components": [
         {
           "type": "application",
           "author": "anchore",
           "name": "grype",
-          "version": "0.104.1"
+          "version": "0.109.1"
         }
       ]
     },
@@ -12378,7 +12378,7 @@
           }
         }
       ],
-      "cpe": "cpe:2.3:a:kpdecker:diff:5.0.0:*:*:*:*:*:*:*",
+      "cpe": "cpe:2.3:a:kpdecker:jsdiff:5.0.0:*:*:*:*:node.js:*:*",
       "purl": "pkg:npm/diff@5.0.0",
       "externalReferences": [
         {
@@ -12402,10 +12402,6 @@
         {
           "name": "syft:package:metadataType",
           "value": "javascript-npm-package"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:diff:diff:5.0.0:*:*:*:*:*:*:*"
         },
         {
           "name": "syft:location:0:layerID",
@@ -14912,7 +14908,7 @@
           }
         }
       ],
-      "cpe": "cpe:2.3:a:isaacs:glob:7.2.0:*:*:*:*:*:*:*",
+      "cpe": "cpe:2.3:a:isaacs:glob:7.2.0:*:*:*:*:node.js:*:*",
       "purl": "pkg:npm/glob@7.2.0",
       "externalReferences": [
         {
@@ -14936,10 +14932,6 @@
         {
           "name": "syft:package:metadataType",
           "value": "javascript-npm-package"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:glob:glob:7.2.0:*:*:*:*:*:*:*"
         },
         {
           "name": "syft:location:0:layerID",
@@ -24531,7 +24523,7 @@
       ]
     },
     {
-      "bom-ref": "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=a82ac38e35d8cf70&upstream=gmp",
+      "bom-ref": "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=ba37de0f8809c9a7&upstream=gmp",
       "type": "library",
       "publisher": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
       "name": "libgmp10",
@@ -24555,6 +24547,11 @@
         {
           "license": {
             "name": "GPL"
+          }
+        },
+        {
+          "license": {
+            "name": "This gmp package was built for Debian by     Steve M"
           }
         }
       ],
@@ -28999,7 +28996,7 @@
           }
         }
       ],
-      "cpe": "cpe:2.3:a:lru-cache:lru-cache:6.0.0:*:*:*:*:*:*:*",
+      "cpe": "cpe:2.3:a:isaacs:lru-cache:6.0.0:*:*:*:*:node.js:*:*",
       "purl": "pkg:npm/lru-cache@6.0.0",
       "externalReferences": [
         {
@@ -29025,34 +29022,6 @@
           "value": "javascript-npm-package"
         },
         {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lru-cache:lru_cache:6.0.0:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lru_cache:lru-cache:6.0.0:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lru_cache:lru_cache:6.0.0:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:isaacs:lru-cache:6.0.0:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:isaacs:lru_cache:6.0.0:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lru:lru-cache:6.0.0:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lru:lru_cache:6.0.0:*:*:*:*:*:*:*"
-        },
-        {
           "name": "syft:location:0:layerID",
           "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
         },
@@ -29076,7 +29045,7 @@
           }
         }
       ],
-      "cpe": "cpe:2.3:a:lru-cache:lru-cache:7.5.1:*:*:*:*:*:*:*",
+      "cpe": "cpe:2.3:a:isaacs:lru-cache:7.5.1:*:*:*:*:node.js:*:*",
       "purl": "pkg:npm/lru-cache@7.5.1",
       "externalReferences": [
         {
@@ -29100,34 +29069,6 @@
         {
           "name": "syft:package:metadataType",
           "value": "javascript-npm-package"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lru-cache:lru_cache:7.5.1:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lru_cache:lru-cache:7.5.1:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lru_cache:lru_cache:7.5.1:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:isaacs:lru-cache:7.5.1:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:isaacs:lru_cache:7.5.1:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lru:lru-cache:7.5.1:*:*:*:*:*:*:*"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lru:lru_cache:7.5.1:*:*:*:*:*:*:*"
         },
         {
           "name": "syft:location:0:layerID",
@@ -36275,6 +36216,11 @@
         },
         {
           "license": {
+            "id": "Artistic-dist"
+          }
+        },
+        {
+          "license": {
             "id": "BSD-3-Clause"
           }
         },
@@ -36386,11 +36332,6 @@
         {
           "license": {
             "name": "Unicode"
-          }
-        },
-        {
-          "license": {
-            "name": "Artistic-dist"
           }
         }
       ],
@@ -42515,7 +42456,7 @@
           }
         }
       ],
-      "cpe": "cpe:2.3:a:isaacs:rimraf:3.0.2:*:*:*:*:*:*:*",
+      "cpe": "cpe:2.3:a:isaacs:rimraf:3.0.2:*:*:*:*:node.js:*:*",
       "purl": "pkg:npm/rimraf@3.0.2",
       "externalReferences": [
         {
@@ -42539,10 +42480,6 @@
         {
           "name": "syft:package:metadataType",
           "value": "javascript-npm-package"
-        },
-        {
-          "name": "syft:cpe23",
-          "value": "cpe:2.3:a:rimraf:rimraf:3.0.2:*:*:*:*:*:*:*"
         },
         {
           "name": "syft:location:0:layerID",
@@ -47192,6 +47129,10 @@
           "value": "javascript-npm-package"
         },
         {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:isaacs:tar:6.1.11:*:*:*:*:node.js:*:*"
+        },
+        {
           "name": "syft:location:0:layerID",
           "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
         },
@@ -48521,7 +48462,7 @@
       ]
     },
     {
-      "bom-ref": "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038",
+      "bom-ref": "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d",
       "type": "library",
       "author": "Facebook <python-tornado@googlegroups.com>",
       "name": "tornado",
@@ -48529,7 +48470,7 @@
       "licenses": [
         {
           "license": {
-            "name": "http://www.apache.org/licenses/LICENSE-2.0"
+            "id": "Apache-2.0"
           }
         }
       ],
@@ -79137,7 +79078,17 @@
     {
       "bom-ref": "89a6319008d8b489",
       "type": "file",
-      "name": "/usr/share/keyrings/ubuntu-cloudimage-removed-keys.gpg"
+      "name": "/usr/share/keyrings/ubuntu-cloudimage-removed-keys.gpg",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
     },
     {
       "bom-ref": "7497482699696673",
@@ -97517,7 +97468,17 @@
     {
       "bom-ref": "4e39c9b7c6367868",
       "type": "file",
-      "name": "/usr/share/pandoc/data/odt/Configurations2/accelerator/current.xml"
+      "name": "/usr/share/pandoc/data/odt/Configurations2/accelerator/current.xml",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
     },
     {
       "bom-ref": "a4686f10292efdea",
@@ -111186,7 +111147,7 @@
       ]
     },
     {
-      "ref": "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=a82ac38e35d8cf70&upstream=gmp",
+      "ref": "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=ba37de0f8809c9a7&upstream=gmp",
       "dependsOn": [
         "pkg:deb/ubuntu/libc6@2.31-0ubuntu9.9?arch=amd64&distro=ubuntu-20.04&package-id=8082bdf6020d37c2&upstream=glibc"
       ]
@@ -111195,7 +111156,7 @@
       "ref": "pkg:deb/ubuntu/libgnutls30@3.6.13-2ubuntu1.7?arch=amd64&distro=ubuntu-20.04&package-id=746301c09ae8fbc6&upstream=gnutls28",
       "dependsOn": [
         "pkg:deb/ubuntu/libc6@2.31-0ubuntu9.9?arch=amd64&distro=ubuntu-20.04&package-id=8082bdf6020d37c2&upstream=glibc",
-        "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=a82ac38e35d8cf70&upstream=gmp",
+        "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=ba37de0f8809c9a7&upstream=gmp",
         "pkg:deb/ubuntu/libhogweed5@3.5.1%2Breally3.5.1-2ubuntu0.2?arch=amd64&distro=ubuntu-20.04&package-id=7ad28690067a41d2&upstream=nettle",
         "pkg:deb/ubuntu/libidn2-0@2.2.0-2?arch=amd64&distro=ubuntu-20.04&package-id=9ff87c69426b1864&upstream=libidn2",
         "pkg:deb/ubuntu/libnettle7@3.5.1%2Breally3.5.1-2ubuntu0.2?arch=amd64&distro=ubuntu-20.04&package-id=c75005636b774643&upstream=nettle",
@@ -111214,7 +111175,7 @@
       "ref": "pkg:deb/ubuntu/libhogweed5@3.5.1%2Breally3.5.1-2ubuntu0.2?arch=amd64&distro=ubuntu-20.04&package-id=7ad28690067a41d2&upstream=nettle",
       "dependsOn": [
         "pkg:deb/ubuntu/libc6@2.31-0ubuntu9.9?arch=amd64&distro=ubuntu-20.04&package-id=8082bdf6020d37c2&upstream=glibc",
-        "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=a82ac38e35d8cf70&upstream=gmp",
+        "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=ba37de0f8809c9a7&upstream=gmp",
         "pkg:deb/ubuntu/libnettle7@3.5.1%2Breally3.5.1-2ubuntu0.2?arch=amd64&distro=ubuntu-20.04&package-id=c75005636b774643&upstream=nettle"
       ]
     },
@@ -111500,7 +111461,7 @@
         "pkg:deb/ubuntu/libatomic1@10.3.0-1ubuntu1~20.04?arch=amd64&distro=ubuntu-20.04&package-id=e86d0a97fe5ca3ce&upstream=gcc-10",
         "pkg:deb/ubuntu/libc6@2.31-0ubuntu9.9?arch=amd64&distro=ubuntu-20.04&package-id=8082bdf6020d37c2&upstream=glibc",
         "pkg:deb/ubuntu/libffi7@3.3-4?arch=amd64&distro=ubuntu-20.04&package-id=bddff8f8a797f8e4&upstream=libffi",
-        "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=a82ac38e35d8cf70&upstream=gmp",
+        "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=ba37de0f8809c9a7&upstream=gmp",
         "pkg:deb/ubuntu/libpcre3@2%3A8.39-12ubuntu0.1?arch=amd64&distro=ubuntu-20.04&package-id=0ba584134a6d7914&upstream=pcre3",
         "pkg:deb/ubuntu/pandoc-data@2.5-3build2?arch=all&distro=ubuntu-20.04&package-id=62875a6c49c6e9c0&upstream=pandoc",
         "pkg:deb/ubuntu/zlib1g@1%3A1.2.11.dfsg-2ubuntu1.4?arch=amd64&distro=ubuntu-20.04&package-id=2b013647c6adf706&upstream=zlib"
@@ -111629,7 +111590,9 @@
       "dependsOn": [
         "pkg:pypi/importlib-metadata@4.11.4?package-id=e5b4aa9f38970930",
         "pkg:pypi/importlib-resources@5.10.0?package-id=e44d5b322da3020e",
-        "pkg:pypi/python-dateutil@2.8.2?package-id=7b67693a7f49b20e"
+        "pkg:pypi/mako@1.2.3?package-id=ef5e1abfc6c32155",
+        "pkg:pypi/python-dateutil@2.8.2?package-id=7b67693a7f49b20e",
+        "pkg:pypi/sqlalchemy@1.4.41?package-id=2af4050df360d4f6"
       ]
     },
     {
@@ -111756,7 +111719,7 @@
         "pkg:pypi/packaging@21.3?package-id=32c3820ac69a81e7",
         "pkg:pypi/psutil@5.9.2?package-id=db036ba559feeefd",
         "pkg:pypi/pyzmq@24.0.1?package-id=c9f25bfa89c8c4a5",
-        "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038",
+        "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d",
         "pkg:pypi/traitlets@5.4.0?package-id=4014a4582abe59b2"
       ]
     },
@@ -111788,6 +111751,13 @@
       ]
     },
     {
+      "ref": "pkg:pypi/jinja2@3.1.2?package-id=0bfb9e834b70caed",
+      "dependsOn": [
+        "pkg:pypi/babel@2.10.3?package-id=e37696aa32f0a70e",
+        "pkg:pypi/markupsafe@2.1.1?package-id=28ae61c800f50f45"
+      ]
+    },
+    {
       "ref": "pkg:pypi/jsonschema@4.16.0?package-id=e2c426fc51640fda",
       "dependsOn": [
         "pkg:pypi/attrs@22.1.0?package-id=fe7a4a01490a8aec",
@@ -111809,7 +111779,7 @@
         "pkg:pypi/nest-asyncio@1.5.6?package-id=e3e3518812b9a40d",
         "pkg:pypi/python-dateutil@2.8.2?package-id=7b67693a7f49b20e",
         "pkg:pypi/pyzmq@24.0.1?package-id=c9f25bfa89c8c4a5",
-        "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038",
+        "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d",
         "pkg:pypi/traitlets@5.4.0?package-id=4014a4582abe59b2"
       ]
     },
@@ -111835,8 +111805,9 @@
         "pkg:pypi/prometheus-client@0.14.1?package-id=f4d903db5cf36bea",
         "pkg:pypi/pyzmq@24.0.1?package-id=c9f25bfa89c8c4a5",
         "pkg:pypi/requests@2.28.1?package-id=1983b7139725a169",
+        "pkg:pypi/send2trash@1.8.0?package-id=33082fb482b86541",
         "pkg:pypi/terminado@0.16.0?package-id=a97c4e44bc8e794f",
-        "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038",
+        "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d",
         "pkg:pypi/traitlets@5.4.0?package-id=4014a4582abe59b2",
         "pkg:pypi/websocket-client@1.4.1?package-id=0ac1f0ef853166c1"
       ]
@@ -111846,6 +111817,7 @@
       "dependsOn": [
         "pkg:pypi/jsonschema@4.16.0?package-id=e2c426fc51640fda",
         "pkg:pypi/python-json-logger@2.0.1?package-id=e60b9c2474d26436",
+        "pkg:pypi/ruamel-yaml@0.17.21?package-id=1cf6cf1880aae420",
         "pkg:pypi/traitlets@5.4.0?package-id=4014a4582abe59b2"
       ]
     },
@@ -111865,7 +111837,8 @@
         "pkg:pypi/psutil@5.9.2?package-id=db036ba559feeefd",
         "pkg:pypi/python-dateutil@2.8.2?package-id=7b67693a7f49b20e",
         "pkg:pypi/requests@2.28.1?package-id=1983b7139725a169",
-        "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038",
+        "pkg:pypi/sqlalchemy@1.4.41?package-id=2af4050df360d4f6",
+        "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d",
         "pkg:pypi/traitlets@5.4.0?package-id=4014a4582abe59b2"
       ]
     },
@@ -111897,13 +111870,15 @@
         "pkg:pypi/packaging@21.3?package-id=32c3820ac69a81e7",
         "pkg:pypi/requests@2.28.1?package-id=1983b7139725a169",
         "pkg:pypi/tomli@2.0.1?package-id=32627b10ec527f85",
-        "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038"
+        "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d"
       ]
     },
     {
       "ref": "pkg:pypi/mako@1.2.3?package-id=ef5e1abfc6c32155",
       "dependsOn": [
-        "pkg:pypi/importlib-metadata@4.11.4?package-id=e5b4aa9f38970930"
+        "pkg:pypi/babel@2.10.3?package-id=e37696aa32f0a70e",
+        "pkg:pypi/importlib-metadata@4.11.4?package-id=e5b4aa9f38970930",
+        "pkg:pypi/markupsafe@2.1.1?package-id=28ae61c800f50f45"
       ]
     },
     {
@@ -111936,8 +111911,9 @@
         "pkg:pypi/prometheus-client@0.14.1?package-id=f4d903db5cf36bea",
         "pkg:pypi/pyzmq@24.0.1?package-id=c9f25bfa89c8c4a5",
         "pkg:pypi/requests@2.28.1?package-id=1983b7139725a169",
+        "pkg:pypi/send2trash@1.8.0?package-id=33082fb482b86541",
         "pkg:pypi/terminado@0.16.0?package-id=a97c4e44bc8e794f",
-        "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038",
+        "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d",
         "pkg:pypi/traitlets@5.4.0?package-id=4014a4582abe59b2"
       ]
     },
@@ -111975,7 +111951,7 @@
         "pkg:pypi/pandocfilters@1.5.0?package-id=b155a031767b95a8",
         "pkg:pypi/pygments@2.13.0?package-id=949ad2a4a2ea37ea",
         "pkg:pypi/tinycss2@1.1.1?package-id=8115818768bc17ed",
-        "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038",
+        "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d",
         "pkg:pypi/traitlets@5.4.0?package-id=4014a4582abe59b2"
       ]
     },
@@ -112010,8 +111986,9 @@
         "pkg:pypi/prometheus-client@0.14.1?package-id=f4d903db5cf36bea",
         "pkg:pypi/pyzmq@24.0.1?package-id=c9f25bfa89c8c4a5",
         "pkg:pypi/requests@2.28.1?package-id=1983b7139725a169",
+        "pkg:pypi/send2trash@1.8.0?package-id=33082fb482b86541",
         "pkg:pypi/terminado@0.16.0?package-id=a97c4e44bc8e794f",
-        "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038",
+        "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d",
         "pkg:pypi/traitlets@5.4.0?package-id=4014a4582abe59b2"
       ]
     },
@@ -112083,7 +112060,14 @@
         "pkg:pypi/certifi@2022.9.24?package-id=c503ac7abd5ac915",
         "pkg:pypi/charset-normalizer@2.1.1?package-id=37c6df41e50b4766",
         "pkg:pypi/idna@3.4?package-id=eb236852f5a5f513",
+        "pkg:pypi/pysocks@1.7.1?package-id=d753a74471a51d3c",
         "pkg:pypi/urllib3@1.26.11?package-id=4a38091702795b4e"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/ruamel-yaml@0.17.21?package-id=1cf6cf1880aae420",
+      "dependsOn": [
+        "pkg:pypi/ruamel-yaml-clib@0.2.6?package-id=0ae310a9fed3a3de"
       ]
     },
     {
@@ -112113,7 +112097,7 @@
       "ref": "pkg:pypi/terminado@0.16.0?package-id=a97c4e44bc8e794f",
       "dependsOn": [
         "pkg:pypi/ptyprocess@0.7.0?package-id=b42a6c89b1dfad0e",
-        "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038"
+        "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d"
       ]
     },
     {
@@ -112137,13 +112121,21 @@
         "pkg:pypi/brotlipy@0.7.0?package-id=de1596090707db37",
         "pkg:pypi/certifi@2022.9.24?package-id=c503ac7abd5ac915",
         "pkg:pypi/cryptography@38.0.1?package-id=4f8da935e3077c2a",
-        "pkg:pypi/idna@3.4?package-id=eb236852f5a5f513"
+        "pkg:pypi/idna@3.4?package-id=eb236852f5a5f513",
+        "pkg:pypi/pyopenssl@22.0.0?package-id=be32a01797d67172",
+        "pkg:pypi/pysocks@1.7.1?package-id=d753a74471a51d3c"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/wcwidth@0.2.5?package-id=0c0cff532c6e4be6",
+      "dependsOn": [
+        "pkg:pypi/backports-functools-lru-cache@1.6.4?package-id=d9218e7f7802efea"
       ]
     }
   ],
   "vulnerabilities": [
     {
-      "bom-ref": "urn:uuid:78a71962-cc44-4eb1-a348-48768010bae1",
+      "bom-ref": "urn:uuid:be336437-6e14-4564-9817-23950982fc1d",
       "id": "CVE-2023-0286",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -112184,7 +112176,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d2576046-00d5-482b-8b0b-c0728eb1d889",
+      "bom-ref": "urn:uuid:f886dbdf-4a97-47e1-9aad-a0fb4e451f47",
       "id": "CVE-2023-0286",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -112225,7 +112217,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bf0cbeae-dd72-4f0f-b821-f29aab6c56da",
+      "bom-ref": "urn:uuid:88e97b54-ea4e-4e1f-9e48-800910ad992f",
       "id": "GHSA-2p57-rm9w-gvfp",
       "source": {
         "name": "github-language-javascript",
@@ -112286,7 +112278,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ebc2599d-144e-497d-9498-73149e1fd131",
+      "bom-ref": "urn:uuid:e5fa0cea-1e9b-4055-afc3-27e4a3766f6d",
       "id": "GHSA-x4qr-2fvf-3mr5",
       "source": {
         "name": "github-language-python",
@@ -112368,7 +112360,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e82ed7c7-5df4-46b6-bff1-5c615eec5fe9",
+      "bom-ref": "urn:uuid:d5414254-0260-41e0-a4ea-24b4e6f728c6",
       "id": "CVE-2023-0286",
       "source": {
         "name": "nvd-cpe",
@@ -112444,7 +112436,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0fec86f3-29fb-44ab-b242-a14f69fda674",
+      "bom-ref": "urn:uuid:19b16f15-9f9f-468a-aec6-f5a714e0dd65",
       "id": "CVE-2007-4559",
       "source": {
         "name": "nvd-cpe",
@@ -112532,7 +112524,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:29e33fcb-8512-48c6-99ee-c325d006e858",
+      "bom-ref": "urn:uuid:3ddc0cab-e0d7-468e-8776-7e5fbcb328fe",
       "id": "CVE-2023-2650",
       "source": {
         "name": "nvd-cpe",
@@ -112620,7 +112612,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6f01bc77-2af4-4489-891f-a272240480bd",
+      "bom-ref": "urn:uuid:f7f99926-927d-4cc1-944c-4b489858201f",
       "id": "CVE-2024-2961",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -112661,7 +112653,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5d5a1cff-7bc9-47bb-9a09-709f45a9a19c",
+      "bom-ref": "urn:uuid:e3b56321-7acc-4c3b-92b8-02e33932cf67",
       "id": "CVE-2024-2961",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -112702,7 +112694,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d420b570-7693-4cee-8531-af71b628d967",
+      "bom-ref": "urn:uuid:a147c694-894a-4e92-bc09-9b72197c04f1",
       "id": "CVE-2024-2961",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -112743,7 +112735,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4639e085-1106-4186-b199-cff78264bb32",
+      "bom-ref": "urn:uuid:456164d2-6261-4c31-8638-c5f80b5f5e74",
       "id": "CVE-2022-37434",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -112784,7 +112776,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2f7d8705-a8c8-4625-bc8e-a89b827d5aab",
+      "bom-ref": "urn:uuid:dc7b6d5b-e425-4e21-af6b-4e869b13ad16",
       "id": "CVE-2023-2650",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -112825,7 +112817,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:071e25da-c137-484e-9e41-267c701d7396",
+      "bom-ref": "urn:uuid:d86075e2-cd75-44ee-9632-882f2ad64c89",
       "id": "CVE-2023-2650",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -112866,7 +112858,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b6b082e5-0c28-415b-85f5-60f1940eab8b",
+      "bom-ref": "urn:uuid:87c14b47-427b-4b60-95d3-52dd510e81cf",
       "id": "CVE-2023-22809",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -112907,7 +112899,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:dba9512f-5cd4-4ee0-969c-09e44ff8e06d",
+      "bom-ref": "urn:uuid:b9d2ef02-af7f-423e-bc88-78f9458fc910",
       "id": "GHSA-248v-346w-9cwc",
       "source": {
         "name": "github-language-python",
@@ -112969,7 +112961,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4e5a8999-139d-494a-9046-98a6e700369b",
+      "bom-ref": "urn:uuid:ac25442a-866d-4b87-9c89-c446ee3ddffd",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113010,7 +113002,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bcc086b1-424d-407d-a2b0-f176634bb054",
+      "bom-ref": "urn:uuid:49862092-99fe-412e-82ad-c89a592a58b1",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113051,7 +113043,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bca6acb2-2246-4e73-8cbe-ecc2996c1655",
+      "bom-ref": "urn:uuid:239c81e5-21f1-49ee-8578-7b9ac9835293",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113092,7 +113084,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b6868fa5-a7b7-4b7a-a674-2e75356b6293",
+      "bom-ref": "urn:uuid:647318f2-853d-4aa9-ba29-e26e97bce8f3",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113133,7 +113125,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bf18846e-080f-4808-8fa4-fa49c3c233c7",
+      "bom-ref": "urn:uuid:b3055044-6308-42fb-ac1b-3644935c2043",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113174,7 +113166,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b6fbe099-8581-4c40-a48f-f805dce21163",
+      "bom-ref": "urn:uuid:1de5886a-330f-4cd9-8f91-b411f10b0c81",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113215,7 +113207,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0b9a70c8-64c5-4127-bbd7-7e4295f59d09",
+      "bom-ref": "urn:uuid:600cc935-2aaa-499f-9341-d022eee32889",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113256,7 +113248,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:81e74e64-35e8-4c3f-a0bc-36796e7d1fca",
+      "bom-ref": "urn:uuid:2aab8493-432c-4971-98ba-cced37cd9174",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113297,7 +113289,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b2346f5a-1e5f-4682-9fd1-1c975ec21e5f",
+      "bom-ref": "urn:uuid:9401fa6f-12ac-4a7a-94c4-c738df60e54b",
       "id": "CVE-2024-28085",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113338,7 +113330,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e63d6bcd-acfc-4e99-a2dd-379274f7f820",
+      "bom-ref": "urn:uuid:89bf58a2-28c3-4fc2-8b36-93f1f6927090",
       "id": "GHSA-cx63-2mw6-8hw5",
       "source": {
         "name": "github-language-python",
@@ -113405,7 +113397,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d1aceb64-304f-45a7-976a-813586201d1e",
+      "bom-ref": "urn:uuid:b556292c-127a-4284-96e4-8c1169e2d58d",
       "id": "CVE-2024-5535",
       "source": {
         "name": "nvd-cpe",
@@ -113496,7 +113488,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6aa37a0b-0af4-4fd6-8aee-bba651f2bfd3",
+      "bom-ref": "urn:uuid:5b873242-88ac-41ca-87dc-87d808e8da21",
       "id": "GHSA-j8r2-6x86-q33q",
       "source": {
         "name": "github-language-python",
@@ -113569,7 +113561,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7f2a9f86-8ab5-4deb-8f3c-bf1c64b43265",
+      "bom-ref": "urn:uuid:5f6268fe-bdb5-471d-b086-c7127299a340",
       "id": "CVE-2024-2511",
       "source": {
         "name": "nvd-cpe",
@@ -113642,7 +113634,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5d1cb22f-773d-495b-b721-ecc809717f71",
+      "bom-ref": "urn:uuid:c5ba5acb-e278-4661-b6ba-efc3ff3fb770",
       "id": "CVE-2023-0361",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113683,7 +113675,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9e5f32f7-66a8-400e-985f-f297fa62f00c",
+      "bom-ref": "urn:uuid:7812c76c-c25e-425a-aab4-c2fd50a7efaa",
       "id": "CVE-2024-6232",
       "source": {
         "name": "nvd-cpe",
@@ -113774,7 +113766,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:33a4c87d-e72a-4869-923c-4a3e1c5d4f56",
+      "bom-ref": "urn:uuid:e7a88854-f221-4eca-861e-5167d908a466",
       "id": "CVE-2024-5535",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113815,7 +113807,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:385292ab-382a-4e4e-94f2-277e13c8a7b4",
+      "bom-ref": "urn:uuid:cf5e8541-1f96-44e2-9f30-428e2d842dab",
       "id": "CVE-2024-5535",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113856,7 +113848,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:aaf9103d-c80a-49e7-a6bf-92f1bd47f62f",
+      "bom-ref": "urn:uuid:8b389830-e369-401f-b1ad-d4e659e24963",
       "id": "CVE-2023-26604",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113897,7 +113889,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4fbf5f5a-2921-43f3-8ddd-9c1091bc090f",
+      "bom-ref": "urn:uuid:a0cebd16-515a-4144-b262-06f77cd6b423",
       "id": "CVE-2023-26604",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113938,7 +113930,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:38677264-f5c4-4c21-b0e2-5c4e4f3a3d01",
+      "bom-ref": "urn:uuid:cf74ec80-0756-487d-90d3-1e7543bce9b9",
       "id": "CVE-2024-56433",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -113979,7 +113971,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b878ab14-a7ba-4417-8119-5af4966235ef",
+      "bom-ref": "urn:uuid:d424a3dd-0fee-47ba-8624-6342ec5390c2",
       "id": "CVE-2024-56433",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -114020,7 +114012,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d269c74c-435b-4741-89fa-42db9c58697c",
+      "bom-ref": "urn:uuid:3e363fe9-8a90-4ae9-afa8-715ccec6ad5a",
       "id": "CVE-2024-2511",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -114061,7 +114053,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:de3784be-2081-4602-ae35-099e4e977230",
+      "bom-ref": "urn:uuid:45b37f17-19f7-41d6-9e85-94ab03f0a459",
       "id": "CVE-2024-2511",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -114102,7 +114094,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4741a8a0-6a8e-420f-8f94-45985450fbc2",
+      "bom-ref": "urn:uuid:2d1260c2-10fb-400c-b493-672ef35302f4",
       "id": "CVE-2022-37454",
       "source": {
         "name": "nvd-cpe",
@@ -114190,13 +114182,13 @@
         }
       ],
       "analysis": {
-        "state": "not_affected",
+        "state": "in_triage",
         "detail": "",
         "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:8515f387-9a74-4df9-ab02-62f98f9ba9d6",
+      "bom-ref": "urn:uuid:ef469a87-e023-4203-b95a-e3c66cc43a33",
       "id": "CVE-2023-24329",
       "source": {
         "name": "nvd-cpe",
@@ -114335,7 +114327,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f4dd7d45-9f07-4146-a049-00118f7a9cb7",
+      "bom-ref": "urn:uuid:912653dc-8b53-4f66-a9ae-795ddfa7ed1e",
       "id": "CVE-2025-0938",
       "source": {
         "name": "nvd-cpe",
@@ -114414,7 +114406,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f3c058e1-72e4-403e-9ab8-bb38fb1462c2",
+      "bom-ref": "urn:uuid:bd5d0056-e6b3-438e-81d0-5cb40271f234",
       "id": "GHSA-3ww4-gg4f-jr7f",
       "source": {
         "name": "github-language-python",
@@ -114481,7 +114473,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:fe1906e8-973a-4614-b413-1aeb4bc5e80a",
+      "bom-ref": "urn:uuid:d3220276-3b0f-4c92-a853-8425bad3225e",
       "id": "GHSA-7cx3-6m66-7c5m",
       "source": {
         "name": "github-language-python",
@@ -114529,7 +114521,7 @@
       ],
       "affects": [
         {
-          "ref": "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038"
+          "ref": "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d"
         }
       ],
       "analysis": {
@@ -114539,7 +114531,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:491701f1-5edc-4dd9-b460-ab8ad0e480b8",
+      "bom-ref": "urn:uuid:12270bf0-923e-4589-b734-616ef3c906a0",
       "id": "CVE-2024-28834",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -114580,7 +114572,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:22cafcdb-d195-407f-b596-e08be6f7a529",
+      "bom-ref": "urn:uuid:c140d5a7-58b1-4412-8dfb-6b4de2d65bce",
       "id": "CVE-2024-0553",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -114621,7 +114613,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a15908a7-fda9-4cfe-b3c2-bc500559318c",
+      "bom-ref": "urn:uuid:352a956e-0621-46b6-a4ce-8f72c56f35c8",
       "id": "CVE-2024-4032",
       "source": {
         "name": "nvd-cpe",
@@ -114709,7 +114701,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f684aac3-609f-4db2-9a6e-4ebf0311febd",
+      "bom-ref": "urn:uuid:685ea3ec-ca8a-467a-90da-2bee4a392362",
       "id": "GHSA-hj9c-8jmm-8c52",
       "source": {
         "name": "github-language-javascript",
@@ -114788,7 +114780,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e88d374a-65f0-480d-8931-3d4c714e8ced",
+      "bom-ref": "urn:uuid:42d80a88-ce77-40f0-a199-4d443372a240",
       "id": "GHSA-hrw6-wg82-cm62",
       "source": {
         "name": "github-language-python",
@@ -114846,7 +114838,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:717a9e05-249e-4739-9969-27c279b634dd",
+      "bom-ref": "urn:uuid:ae2d9062-297b-4ad1-9dde-0bfeea1653d0",
       "id": "CVE-2015-20107",
       "source": {
         "name": "nvd-cpe",
@@ -114988,7 +114980,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a2ee471e-b449-420e-b4fe-0b1bedf0db0e",
+      "bom-ref": "urn:uuid:346a825f-d274-42fd-a14b-9fa56e215df8",
       "id": "GHSA-jfhm-5ghh-2f97",
       "source": {
         "name": "github-language-python",
@@ -115058,7 +115050,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bdf41375-2601-4926-b5bc-85f380298c98",
+      "bom-ref": "urn:uuid:d6b334ff-86e7-4576-a0f1-83a97b15be6b",
       "id": "CVE-2023-0464",
       "source": {
         "name": "nvd-cpe",
@@ -115143,7 +115135,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3d08a3f2-2f37-440c-9c0e-483e7d18fb25",
+      "bom-ref": "urn:uuid:d51a1bcc-37b1-496a-a5a1-9559b883396d",
       "id": "GHSA-v845-jxx5-vc9f",
       "source": {
         "name": "github-language-python",
@@ -115231,7 +115223,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e8817e8d-661b-44c8-b107-6f20154f9c52",
+      "bom-ref": "urn:uuid:3f447af0-63cc-491c-b2ba-509a55b84c33",
       "id": "CVE-2023-31484",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -115272,7 +115264,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0761e567-9ea1-4487-ac4b-eaf855e9b492",
+      "bom-ref": "urn:uuid:bee749c1-0dc1-40d7-bec9-67d9d63a700a",
       "id": "CVE-2023-4807",
       "source": {
         "name": "nvd-cpe",
@@ -115339,7 +115331,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:aa5c8ea5-12d8-4f93-afb1-a6cd2b46f273",
+      "bom-ref": "urn:uuid:5b668052-a73e-47d9-b1e6-086a7b579eed",
       "id": "CVE-2023-4806",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -115380,7 +115372,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:876546ee-934a-4528-837e-eb750bd99f07",
+      "bom-ref": "urn:uuid:256a79f7-6696-44be-ac98-aa5c467a39a8",
       "id": "CVE-2023-4806",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -115421,7 +115413,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:dd75c054-2341-45dd-aac8-55cf8940f607",
+      "bom-ref": "urn:uuid:80358e0d-f260-4d96-957a-27be28ef7e3d",
       "id": "CVE-2023-4806",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -115462,7 +115454,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0356f8d9-38b1-418d-b7d8-641bb4735a46",
+      "bom-ref": "urn:uuid:b900c4a2-159c-46da-967a-ee4f4f4ad7d2",
       "id": "GHSA-h75v-3vvj-5mfj",
       "source": {
         "name": "github-language-python",
@@ -115532,7 +115524,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:67d209d2-a7c3-455a-881a-a2d3fbac61a8",
+      "bom-ref": "urn:uuid:dfd950f6-af34-4f75-99cb-1350eeaa7c37",
       "id": "CVE-2024-7592",
       "source": {
         "name": "nvd-cpe",
@@ -115620,7 +115612,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8cf05cc3-b96d-427d-9466-4776ef804882",
+      "bom-ref": "urn:uuid:ff9f3a59-b427-4a7c-b57c-9ee011145aa8",
       "id": "CVE-2023-3446",
       "source": {
         "name": "nvd-cpe",
@@ -115711,7 +115703,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2b180163-9de0-4e03-ad01-516d92c407ed",
+      "bom-ref": "urn:uuid:fe82ab6d-1a6f-4277-9fe3-2d7408e3d765",
       "id": "GHSA-w7pp-m8wf-vj6r",
       "source": {
         "name": "github-language-python",
@@ -115784,7 +115776,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6510cd6a-06b5-4a01-8d1b-e30290ce03f3",
+      "bom-ref": "urn:uuid:06f260b9-8316-41a3-946d-c82c1ef85c3c",
       "id": "GHSA-c2qf-rxjj-qqgw",
       "source": {
         "name": "github-language-javascript",
@@ -115875,7 +115867,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:94c01150-3e9d-4130-bed4-3bbb4cda9a15",
+      "bom-ref": "urn:uuid:128c9384-c121-4822-bc24-1ee10be636d2",
       "id": "GHSA-r9hx-vwmv-q579",
       "source": {
         "name": "github-language-python",
@@ -115975,7 +115967,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d8406ec0-520d-4621-97c0-4742303f62b9",
+      "bom-ref": "urn:uuid:77f3d1e8-96ed-4cc2-be38-8ed5f7093bef",
       "id": "GHSA-cxjh-pqwp-8mfp",
       "source": {
         "name": "github-language-javascript",
@@ -116042,7 +116034,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2d0f1147-8306-42fc-accc-4696029c31a1",
+      "bom-ref": "urn:uuid:f57cbe17-10c0-47f4-9167-dfb57f54ff74",
       "id": "GHSA-jjg7-2v4v-x38h",
       "source": {
         "name": "github-language-python",
@@ -116124,7 +116116,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:fb17b2a7-40e4-4d3e-aaf8-f8bcb3f20179",
+      "bom-ref": "urn:uuid:90994551-7e23-488f-87ee-25dec3eb4e3c",
       "id": "CVE-2023-0215",
       "source": {
         "name": "nvd-cpe",
@@ -116203,7 +116195,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b760c29e-c2c8-474e-a278-09514ef68304",
+      "bom-ref": "urn:uuid:77ca7d8b-b5d9-40e0-b276-7c8f432a282d",
       "id": "GHSA-5rjg-fvgr-3xxf",
       "source": {
         "name": "github-language-python",
@@ -116270,7 +116262,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:97ac04f7-a38d-4f11-893e-fb150c70c922",
+      "bom-ref": "urn:uuid:b82db176-f648-4d27-9c85-d95c7054c7cd",
       "id": "CVE-2023-0466",
       "source": {
         "name": "nvd-cpe",
@@ -116352,7 +116344,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:50d8d56b-1060-4015-9bdb-3e4a91e34c28",
+      "bom-ref": "urn:uuid:eed138b5-f53f-4f41-b3eb-10fda384be48",
       "id": "GHSA-6vqw-3v5j-54x4",
       "source": {
         "name": "github-language-python",
@@ -116413,7 +116405,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5db38509-dc3f-4308-bfb1-9f510a97dcd6",
+      "bom-ref": "urn:uuid:c223317a-176a-4081-8b5d-1074c6177f56",
       "id": "GHSA-9q39-rmj3-p4r2",
       "source": {
         "name": "github-language-python",
@@ -116477,7 +116469,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1fcd9d33-d339-440b-bffa-702b4210c799",
+      "bom-ref": "urn:uuid:cb188a31-2f49-44d3-8cae-f6b0712e054a",
       "id": "CVE-2023-5678",
       "source": {
         "name": "nvd-cpe",
@@ -116556,7 +116548,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:87af651b-9a33-4cb1-a059-f75926238b06",
+      "bom-ref": "urn:uuid:92d834e3-0f89-4fdc-a97b-500dfe41b656",
       "id": "CVE-2024-33599",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -116597,7 +116589,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1b7e70c1-922f-4223-887c-b4f314937f48",
+      "bom-ref": "urn:uuid:5c9a3e43-8fda-47f3-ae02-c38601ca4730",
       "id": "CVE-2024-33599",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -116638,7 +116630,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e8f4e954-8407-48b5-940c-a1dd5ce6f2b8",
+      "bom-ref": "urn:uuid:f514f1a2-e3ce-4d03-8117-23442d8838fe",
       "id": "CVE-2024-33599",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -116679,7 +116671,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:dd942958-184e-4184-b7e5-97aea22a0f66",
+      "bom-ref": "urn:uuid:c270f8b1-bec3-43e1-b17f-8d3455d35a1d",
       "id": "GHSA-64x5-55rw-9974",
       "source": {
         "name": "github-language-python",
@@ -116743,7 +116735,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9c9bff96-1cf0-473e-9cdd-0eff62bc3296",
+      "bom-ref": "urn:uuid:644070ab-1855-4c0d-a90a-a211924c6540",
       "id": "CVE-2023-40217",
       "source": {
         "name": "nvd-cpe",
@@ -116810,7 +116802,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:37066952-1d5a-45cd-8b32-71cda6eb8aba",
+      "bom-ref": "urn:uuid:78e081f5-2b6d-4aac-91bf-b6a91f9dbfec",
       "id": "CVE-2024-9143",
       "source": {
         "name": "nvd-cpe",
@@ -116895,7 +116887,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4f1fb56a-539a-4828-91e7-976c4b361c89",
+      "bom-ref": "urn:uuid:b961d81a-18cc-465f-8c2a-13e4de7464c5",
       "id": "GHSA-m678-f26j-3hrp",
       "source": {
         "name": "github-language-python",
@@ -116974,7 +116966,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:586577b1-d96d-4f33-87c2-bfb208722648",
+      "bom-ref": "urn:uuid:b5747555-7142-4215-a23c-0174b3798aba",
       "id": "CVE-2020-10735",
       "source": {
         "name": "nvd-cpe",
@@ -117107,7 +117099,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1bdd3ef7-85de-4291-8d4b-123aa576107d",
+      "bom-ref": "urn:uuid:ea2dbace-c187-466f-95c0-1da92f6fab46",
       "id": "CVE-2023-5981",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -117148,7 +117140,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:af36ffac-aade-4325-8371-6d1b5c837b6b",
+      "bom-ref": "urn:uuid:8c4b6325-a3c6-465f-8d7d-e23a430dd833",
       "id": "CVE-2024-0397",
       "source": {
         "name": "nvd-cpe",
@@ -117230,7 +117222,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8441774e-904e-45ae-aa5b-1ec7662c22bb",
+      "bom-ref": "urn:uuid:0127d93b-a3a6-4b11-8766-7621db484d1e",
       "id": "CVE-2024-12133",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -117271,7 +117263,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f2f0c50b-cf0f-4772-a234-cdf9eaeea694",
+      "bom-ref": "urn:uuid:78347ebc-98b8-4a19-ad63-ab6b3d8169e3",
       "id": "CVE-2023-3446",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -117312,7 +117304,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9e60b013-303f-4585-a4ed-d772881171d1",
+      "bom-ref": "urn:uuid:d0417c93-9ac9-4b93-a265-7c6f1356d9ec",
       "id": "CVE-2023-3446",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -117353,7 +117345,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:87dfe162-ed2e-477e-8df3-8e8efeea592b",
+      "bom-ref": "urn:uuid:34dcd75d-00d7-4602-8f6d-0a272e494c39",
       "id": "GHSA-gmj6-6f8f-6699",
       "source": {
         "name": "github-language-python",
@@ -117420,7 +117412,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:275acafa-27d6-4ea0-9b7a-9e7aa3eece4b",
+      "bom-ref": "urn:uuid:898625ca-6366-471c-9e8f-aae151f9e3aa",
       "id": "CVE-2024-12243",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -117461,7 +117453,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3b4aa396-0ba0-4e33-9d4d-e1be61d8a8b4",
+      "bom-ref": "urn:uuid:baccdedb-84c9-410c-b242-c20f86bb5bf0",
       "id": "GHSA-hj3f-6gcp-jg8j",
       "source": {
         "name": "github-language-python",
@@ -117521,7 +117513,7 @@
       ],
       "affects": [
         {
-          "ref": "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038"
+          "ref": "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d"
         }
       ],
       "analysis": {
@@ -117531,7 +117523,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a2abe8ba-4023-4a5f-bfbc-cb049113a992",
+      "bom-ref": "urn:uuid:a0dcd0c7-13cc-4ceb-b235-cff4dd1a00ff",
       "id": "GHSA-f5x3-32g6-xq36",
       "source": {
         "name": "github-language-javascript",
@@ -117589,7 +117581,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:315a9311-8da7-4163-a18b-d418a1a334d3",
+      "bom-ref": "urn:uuid:d931554f-a1be-4c0b-8827-fe861ac11abc",
       "id": "CVE-2023-0215",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -117630,7 +117622,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:50e2757a-9249-4db5-82f9-fd1d2368f651",
+      "bom-ref": "urn:uuid:4df75293-5da3-4fa4-9113-3bebb89af865",
       "id": "CVE-2023-0215",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -117671,7 +117663,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2a8af87e-d977-4db4-97f9-fd989a79ff15",
+      "bom-ref": "urn:uuid:0dcb8c19-5ecb-45de-9f64-7f6a1e0c6a8d",
       "id": "CVE-2023-0464",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -117712,7 +117704,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d71ddd2d-bf78-434a-be89-38c6102faa99",
+      "bom-ref": "urn:uuid:c7b601f2-b4aa-4475-b85d-0b664609b4da",
       "id": "CVE-2023-0464",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -117753,7 +117745,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7515ef69-d9c4-4fa0-91d0-1c233f4a6a21",
+      "bom-ref": "urn:uuid:e29fdc0a-d9ce-489c-be4a-e35204dd3472",
       "id": "CVE-2025-4330",
       "source": {
         "name": "nvd-cpe",
@@ -117835,7 +117827,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d2c78b34-df9d-47fe-a7bd-81b2f6bd272d",
+      "bom-ref": "urn:uuid:fedcfcc7-4db7-4056-b121-f1f3b5636d56",
       "id": "GHSA-x3m3-4wpv-5vgc",
       "source": {
         "name": "github-language-javascript",
@@ -117905,7 +117897,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8732e6d3-d128-4f07-8ff1-24905231d9b0",
+      "bom-ref": "urn:uuid:1ff5fa5b-a0f9-4ffa-94c3-b457953ad85e",
       "id": "CVE-2023-0465",
       "source": {
         "name": "nvd-cpe",
@@ -117984,7 +117976,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:eea79ba6-4efb-454d-aaee-0ef97bfd65a1",
+      "bom-ref": "urn:uuid:5a61cc04-9180-4ea6-b04a-9b26fae8ab04",
       "id": "GHSA-r726-vmfq-j9j3",
       "source": {
         "name": "github-language-python",
@@ -118057,7 +118049,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3cda91d5-ece7-4f26-9c05-995aedfec699",
+      "bom-ref": "urn:uuid:b08388e6-ae36-4a22-bdeb-7bc2a1ac0549",
       "id": "CVE-2024-33602",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -118098,7 +118090,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:37b1c85b-093a-458f-ac06-e7cd5df1228c",
+      "bom-ref": "urn:uuid:05f4e1cb-0392-4408-b4fb-1fc4fa490891",
       "id": "CVE-2024-33602",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -118139,7 +118131,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b7438371-23ed-4b2b-9472-d1e0ddcd45dd",
+      "bom-ref": "urn:uuid:e71e0060-6014-4b75-8cec-86d2311f0f91",
       "id": "CVE-2024-33602",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -118180,7 +118172,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:415e745c-53ef-4a0c-8a56-ee839e31d9c8",
+      "bom-ref": "urn:uuid:a7998707-a009-427a-b27f-5658ebac575d",
       "id": "CVE-2024-11168",
       "source": {
         "name": "nvd-cpe",
@@ -118259,7 +118251,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d618ffee-3174-454a-9e73-4e50786fdb3b",
+      "bom-ref": "urn:uuid:7c3cf2c8-e1cb-4c7e-84a3-342bb2f1d0f3",
       "id": "GHSA-78xj-cgh5-2h22",
       "source": {
         "name": "github-language-javascript",
@@ -118324,7 +118316,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6e06ef4c-e74e-4248-99f6-d4bf55bd9b1a",
+      "bom-ref": "urn:uuid:49e75fa4-363b-4ae3-a9c8-e8603f8fff14",
       "id": "GHSA-3pgj-pg6c-r5p7",
       "source": {
         "name": "github-language-python",
@@ -118409,7 +118401,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:82ec46d1-db2a-4d5e-a912-50cb79b693eb",
+      "bom-ref": "urn:uuid:86ce8689-5de0-41aa-bcb4-a7c38159a8e5",
       "id": "CVE-2024-4741",
       "source": {
         "name": "nvd-cpe",
@@ -118482,7 +118474,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5af42cb9-6f67-4bc6-9308-e7f6365c8c9b",
+      "bom-ref": "urn:uuid:963a0a56-93a4-4034-b4a3-d3e3a69879f1",
       "id": "GHSA-q2x7-8rv6-6q7h",
       "source": {
         "name": "github-language-python",
@@ -118549,7 +118541,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:37ab2b74-fd04-4265-898e-02039cc0cd73",
+      "bom-ref": "urn:uuid:6e7f597c-15a4-48d5-a904-a9fff658e71f",
       "id": "CVE-2024-9143",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -118590,7 +118582,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1dadc4bb-4596-4c27-8805-b0ac52297f88",
+      "bom-ref": "urn:uuid:5ca6a639-00a5-4908-9e4e-db0f0c56fb2a",
       "id": "CVE-2024-9143",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -118631,7 +118623,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9e14a194-abd0-4d04-850c-0475fe53fa24",
+      "bom-ref": "urn:uuid:ecce2301-1b41-4a80-a381-3be0356a7350",
       "id": "CVE-2023-5678",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -118672,7 +118664,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c178fa6f-ab7e-4638-bed2-a4ca059e3990",
+      "bom-ref": "urn:uuid:c2531fa5-090b-4d0a-85ed-bdc2c7745694",
       "id": "CVE-2023-5678",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -118713,7 +118705,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f6002891-b2fa-411a-8ffc-c02bec01228b",
+      "bom-ref": "urn:uuid:fe8ccf3a-8aca-4475-ba1e-d8190d6cf8f0",
       "id": "CVE-2024-8088",
       "source": {
         "name": "nvd-cpe",
@@ -118825,7 +118817,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d75b7498-32a2-404f-83b1-93838c6344c8",
+      "bom-ref": "urn:uuid:113af910-28f2-4624-998c-4b1a43015ab5",
       "id": "GHSA-29gw-9793-fvw7",
       "source": {
         "name": "github-language-python",
@@ -118901,7 +118893,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d6af424d-35b0-4be2-bffd-cbdd5696cdf1",
+      "bom-ref": "urn:uuid:2731c775-49bd-432b-9ba2-7eccede138cd",
       "id": "CVE-2024-2236",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -118942,7 +118934,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e4adaf2a-ee09-46e7-a9d3-aa799e31d168",
+      "bom-ref": "urn:uuid:ece05265-4b71-4f34-ad31-78d8e17a1f69",
       "id": "CVE-2023-3817",
       "source": {
         "name": "nvd-cpe",
@@ -119039,7 +119031,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b08d4554-ee82-454a-91e7-2b512b177686",
+      "bom-ref": "urn:uuid:2ddb8a09-c8ae-4067-87eb-724b5d743aac",
       "id": "CVE-2025-1795",
       "source": {
         "name": "nvd-cpe",
@@ -119115,7 +119107,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5be1f6bf-a6f5-4423-ae1d-99893a5589a7",
+      "bom-ref": "urn:uuid:238254d0-903d-4321-b58e-e5c1620017ec",
       "id": "GHSA-q58r-hwc8-rm9j",
       "source": {
         "name": "github-language-javascript",
@@ -119170,7 +119162,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:707e663d-eeea-444f-9dd7-033b431507ce",
+      "bom-ref": "urn:uuid:112bb2c9-9528-43be-b4ac-b4ba2c4c7b0d",
       "id": "CVE-2021-43618",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -119201,7 +119193,7 @@
       ],
       "affects": [
         {
-          "ref": "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=a82ac38e35d8cf70&upstream=gmp"
+          "ref": "pkg:deb/ubuntu/libgmp10@2%3A6.2.0%2Bdfsg-4?arch=amd64&distro=ubuntu-20.04&package-id=ba37de0f8809c9a7&upstream=gmp"
         }
       ],
       "analysis": {
@@ -119211,7 +119203,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2485199f-54fd-496d-bd5d-49f3ac58db34",
+      "bom-ref": "urn:uuid:f3eb3fe7-072e-4f66-92ca-9ae05ed1d2e3",
       "id": "CVE-2025-69420",
       "source": {
         "name": "nvd-cpe",
@@ -119275,7 +119267,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f668a599-fd01-49aa-9124-944d513ecb4a",
+      "bom-ref": "urn:uuid:fa950d41-540f-4f57-ab79-da1db84b0975",
       "id": "GHSA-rc47-6667-2j5j",
       "source": {
         "name": "github-language-javascript",
@@ -119339,7 +119331,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5e4007eb-0a61-43ed-a2f1-cda6811447ae",
+      "bom-ref": "urn:uuid:a58bad3e-5e0e-427a-8d5f-e2c73bd4222a",
       "id": "CVE-2023-7008",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -119380,7 +119372,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:abcae0e2-ee2e-4a7c-bc2e-4c7ab371b13d",
+      "bom-ref": "urn:uuid:22267c79-033c-4dc7-ae98-6d1d1c5790a1",
       "id": "CVE-2023-7008",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -119421,7 +119413,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d591fc29-db94-4824-abc4-790567abaab9",
+      "bom-ref": "urn:uuid:95b67cd6-1cb3-4140-8dd0-97a76aea5e5b",
       "id": "CVE-2022-4304",
       "source": {
         "name": "nvd-cpe",
@@ -119482,7 +119474,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:42c42ea0-85dc-448f-b50c-e1f683b1bbb2",
+      "bom-ref": "urn:uuid:fab64d04-99fd-41d6-8686-04dde39b5f3a",
       "id": "CVE-2023-0465",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -119523,7 +119515,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4fa417dc-0df5-4866-b20f-888071206149",
+      "bom-ref": "urn:uuid:ad1d3c35-70f4-49c2-814d-9f90d62ff618",
       "id": "CVE-2023-0465",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -119564,7 +119556,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ee5da7f5-963c-4a4b-99e3-c4fa952a8b7f",
+      "bom-ref": "urn:uuid:1761b34e-d5a1-46e8-81c3-38a02c13e3ca",
       "id": "CVE-2021-46848",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -119605,7 +119597,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a6191bc4-ef23-4a1f-a9d3-1941205366d5",
+      "bom-ref": "urn:uuid:d1a0aa60-8018-4f70-a85e-c1b8ae672b6a",
       "id": "CVE-2025-6069",
       "source": {
         "name": "nvd-cpe",
@@ -119681,7 +119673,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:76e25e97-35e2-425a-9a44-f40f588182f4",
+      "bom-ref": "urn:uuid:0d9a1975-3707-4b9b-95a2-86b6418707a4",
       "id": "CVE-2024-10524",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -119722,7 +119714,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c6febceb-e93b-41c5-b0e7-a8464dd97c80",
+      "bom-ref": "urn:uuid:e20bacf4-ade6-4f69-8842-08eb72269476",
       "id": "CVE-2022-4304",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -119763,7 +119755,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b74b55b1-fd90-400b-8e36-cc46576fa03d",
+      "bom-ref": "urn:uuid:0e2b2049-f59e-48cc-815a-4a8710d8294f",
       "id": "CVE-2022-4304",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -119804,7 +119796,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:fb5c169e-ec30-4428-b777-a4c326c9f5a7",
+      "bom-ref": "urn:uuid:7a5a3596-cf1f-4439-b21b-24c20c94cda4",
       "id": "CVE-2024-6923",
       "source": {
         "name": "nvd-cpe",
@@ -119895,7 +119887,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:071c4ad3-79ea-4f49-bfde-a7df7f28f2ec",
+      "bom-ref": "urn:uuid:ed4d1600-c4ac-40f7-ab68-e21847b01825",
       "id": "GHSA-9v9h-cgj8-h64p",
       "source": {
         "name": "github-language-python",
@@ -119986,7 +119978,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c5604aab-0657-4a2d-b1cc-28ed33200a8c",
+      "bom-ref": "urn:uuid:4b319394-28c5-41d9-ac55-e8e23ccf4aef",
       "id": "CVE-2024-0727",
       "source": {
         "name": "nvd-cpe",
@@ -120068,7 +120060,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:939b8d68-b0cb-4763-b21e-9dc4940c6ef3",
+      "bom-ref": "urn:uuid:caaf1e5b-4afb-4e30-a2e5-a00003b77331",
       "id": "GHSA-qwmp-2cf2-g9g6",
       "source": {
         "name": "github-language-python",
@@ -120132,7 +120124,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9ff20c2e-6aac-44b0-857d-dc931a75c9d1",
+      "bom-ref": "urn:uuid:6a420edc-0c90-4989-a2b2-45fbb3fe5c9f",
       "id": "CVE-2025-8194",
       "source": {
         "name": "nvd-cpe",
@@ -120235,7 +120227,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1fc28917-7c4a-480e-a98a-42a9bc50d1fc",
+      "bom-ref": "urn:uuid:6c33a209-1fe3-46f7-a14f-cf539b23a742",
       "id": "GHSA-34jh-p97f-mpxf",
       "source": {
         "name": "github-language-python",
@@ -120302,7 +120294,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3f4c8041-c5ef-4769-a5d9-cb4f5a983834",
+      "bom-ref": "urn:uuid:c2a289a7-67f9-4036-8802-ddc193f2a98f",
       "id": "CVE-2024-12718",
       "source": {
         "name": "nvd-cpe",
@@ -120387,7 +120379,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c1fc9587-5c07-44b3-8d27-cb9cf6acbe2c",
+      "bom-ref": "urn:uuid:7cc1fc04-11ed-44fc-af38-503aa7670fcc",
       "id": "CVE-2025-4516",
       "source": {
         "name": "nvd-cpe",
@@ -120469,7 +120461,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d9adfd95-a758-41ce-9680-e2d56b6b6c97",
+      "bom-ref": "urn:uuid:0fb0fd90-69dd-437d-a39f-ddb662942640",
       "id": "GHSA-cpwx-vrp4-4pq7",
       "source": {
         "name": "github-language-python",
@@ -120530,7 +120522,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f21edb27-e7a1-44b1-9bcd-efc645a9cd62",
+      "bom-ref": "urn:uuid:985494c2-9e78-4676-af62-19f5d2083bdd",
       "id": "CVE-2022-4450",
       "source": {
         "name": "nvd-cpe",
@@ -120597,7 +120589,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:45f71012-5cae-4292-865f-00e73bbec891",
+      "bom-ref": "urn:uuid:af8fbd6a-f7af-4b11-b0b7-6d3870fe93d5",
       "id": "GHSA-h56g-gq9v-vc8r",
       "source": {
         "name": "github-language-python",
@@ -120661,7 +120653,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6c9540f3-0a1b-42d9-893c-e8014ec4d149",
+      "bom-ref": "urn:uuid:d9ab7f49-749b-4e9d-bfac-c845f3e6ff80",
       "id": "CVE-2025-13836",
       "source": {
         "name": "nvd-cpe",
@@ -120740,7 +120732,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8d253ba1-73db-4b85-9cdb-ed934973a198",
+      "bom-ref": "urn:uuid:31b92509-ac3f-49ed-b4d5-69d416168e32",
       "id": "GHSA-44cc-43rp-5947",
       "source": {
         "name": "github-language-python",
@@ -120804,7 +120796,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c458172b-b5ad-4cd8-9e11-d4a485d1fdda",
+      "bom-ref": "urn:uuid:605fb203-b238-421e-a9b5-af2404c35a1d",
       "id": "CVE-2025-4435",
       "source": {
         "name": "nvd-cpe",
@@ -120883,7 +120875,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ebb3d91b-2fe7-4bbc-953e-0400def4375c",
+      "bom-ref": "urn:uuid:f5da6c7e-96ae-4810-aa52-707256ca0557",
       "id": "CVE-2024-33600",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -120924,7 +120916,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:21de02d2-0630-4899-a2bf-b377804aea10",
+      "bom-ref": "urn:uuid:c004c531-4c79-4bfb-aa54-655f5835b02d",
       "id": "CVE-2024-33600",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -120965,7 +120957,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f6d7e447-8c17-49c0-bc13-e6dedfdf1200",
+      "bom-ref": "urn:uuid:52d0fea4-20c5-43b5-928c-cb74cd3b5492",
       "id": "CVE-2024-33600",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -121006,7 +120998,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9c9b5622-879f-4968-a9bb-362829d2fd31",
+      "bom-ref": "urn:uuid:d96203dc-dd5c-4249-aee5-e487c0752ced",
       "id": "GHSA-9x4q-3gxw-849f",
       "source": {
         "name": "github-language-python",
@@ -121073,7 +121065,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3e3818df-0391-4f9c-bc86-b55ac5115d26",
+      "bom-ref": "urn:uuid:191580a9-8cbf-4dfa-aa52-687b1d888d7c",
       "id": "CVE-2024-38428",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -121114,7 +121106,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9662bd4e-1672-41a5-b839-f95fa8180c88",
+      "bom-ref": "urn:uuid:e80141c1-4c7d-43bf-b87d-c11119b82cab",
       "id": "CVE-2023-3817",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -121155,7 +121147,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:06dd66d0-7a59-40fc-ac16-4dbab3adfb6d",
+      "bom-ref": "urn:uuid:ce30c111-1183-49ac-92aa-942eb1197ca3",
       "id": "CVE-2023-3817",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -121196,7 +121188,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c097c5ab-6caa-47c2-ad8e-d03255cc7439",
+      "bom-ref": "urn:uuid:e029013b-a800-4da2-ad56-24c2695fcb3a",
       "id": "CVE-2023-4813",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -121237,7 +121229,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:43be27c9-4201-4c6c-8332-d4da7991b590",
+      "bom-ref": "urn:uuid:8d8c4104-62aa-4f64-9eac-ecb3444102f8",
       "id": "CVE-2023-4813",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -121278,7 +121270,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:132032be-c0fc-4e46-9757-0877672f15d3",
+      "bom-ref": "urn:uuid:857aabd5-f151-4e7b-adfe-45535b2c4dc6",
       "id": "CVE-2023-4813",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -121319,7 +121311,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ac8770a5-06be-4ab9-9b4a-a6d372a62043",
+      "bom-ref": "urn:uuid:da5a0d7f-e922-435e-a28e-0e98bb0fd570",
       "id": "CVE-2025-4517",
       "source": {
         "name": "nvd-cpe",
@@ -121401,7 +121393,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ca15b920-793c-48b0-837a-84cf7de47f77",
+      "bom-ref": "urn:uuid:ecf3c8f3-a225-4ff9-9104-433ab9e2233f",
       "id": "CVE-2023-27043",
       "source": {
         "name": "nvd-cpe",
@@ -121585,7 +121577,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c0015672-2227-4698-b471-b64df9058ff2",
+      "bom-ref": "urn:uuid:71df736b-9723-4410-8567-5cf6650db386",
       "id": "GHSA-8w49-h785-mj3c",
       "source": {
         "name": "github-language-python",
@@ -121633,7 +121625,7 @@
       ],
       "affects": [
         {
-          "ref": "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038"
+          "ref": "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d"
         }
       ],
       "analysis": {
@@ -121643,7 +121635,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a63f9d1a-3a51-49ef-aa13-c7ba41ae6a5d",
+      "bom-ref": "urn:uuid:b3acedc6-d7e5-4e66-9cef-7061c5c7a8b0",
       "id": "CVE-2022-45061",
       "source": {
         "name": "nvd-cpe",
@@ -121806,7 +121798,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7bee9f22-c509-4c19-bdd1-15d19bccda60",
+      "bom-ref": "urn:uuid:e16b724b-fcab-4ca4-9bf3-ce0b9609f059",
       "id": "GHSA-7r3h-4ph8-w38g",
       "source": {
         "name": "github-language-python",
@@ -121861,7 +121853,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:229019d8-5a91-4d26-b729-5d634a3594f3",
+      "bom-ref": "urn:uuid:c0545dfa-af80-49c3-bf5a-6e6ac4d46529",
       "id": "CVE-2023-36632",
       "source": {
         "name": "nvd-cpe",
@@ -121919,7 +121911,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a17e66e1-204c-464e-b6a5-db2a9f0505aa",
+      "bom-ref": "urn:uuid:70382dfc-1363-4d8e-922e-14ab8a6713d8",
       "id": "GHSA-xqr8-7jwr-rhp7",
       "source": {
         "name": "github-language-python",
@@ -121986,7 +121978,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:60529b77-afb4-4612-b7f8-95840f397023",
+      "bom-ref": "urn:uuid:3fdfc7e6-697e-42a9-8a9d-3ece965c096b",
       "id": "CVE-2024-0450",
       "source": {
         "name": "nvd-cpe",
@@ -122086,7 +122078,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6159510d-9afe-4816-858d-30a20be63aad",
+      "bom-ref": "urn:uuid:bf67c0a5-2c9a-4997-a678-b47909653baf",
       "id": "CVE-2024-4741",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122127,7 +122119,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d04f53de-bb0d-47d2-b7b5-67f23f43b03d",
+      "bom-ref": "urn:uuid:64eb04b2-b7bd-490d-9c68-75a3eeb57d04",
       "id": "CVE-2024-4741",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122168,7 +122160,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:acca6dbc-11ba-4717-9169-9ac773e2b897",
+      "bom-ref": "urn:uuid:5dc1e060-d120-41e9-8144-82a0ea20511e",
       "id": "GHSA-h5c8-rqwp-cp95",
       "source": {
         "name": "github-language-python",
@@ -122241,7 +122233,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2a849347-b3ea-40f2-986d-754e0bc959c1",
+      "bom-ref": "urn:uuid:a541e014-f72d-46c3-a79c-b0bb463253d9",
       "id": "CVE-2021-31879",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122282,7 +122274,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f7979113-1283-4885-a844-f5b66e8009d4",
+      "bom-ref": "urn:uuid:107f1412-54ae-43c7-98a2-f95d875a4c82",
       "id": "GHSA-vxmc-5x29-h64v",
       "source": {
         "name": "github-language-javascript",
@@ -122337,7 +122329,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2f0c266e-ed80-427e-b088-ca35d4ceb05e",
+      "bom-ref": "urn:uuid:f79b96af-42ad-4af9-83f0-30baade95286",
       "id": "CVE-2024-22365",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122378,7 +122370,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:904dcabf-1d9b-4a9f-af2d-c7fb62de7fd9",
+      "bom-ref": "urn:uuid:c8297f43-6d0a-47c9-b80a-23a9b89ee3fc",
       "id": "CVE-2024-22365",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122419,7 +122411,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ec47122e-bb03-4521-94a9-b6e06cfacea8",
+      "bom-ref": "urn:uuid:c6dc9828-5dba-49b5-90c4-682dd1af18c5",
       "id": "CVE-2024-22365",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122460,7 +122452,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d4e69d5f-a739-45e8-ad94-4bfd3f9f8751",
+      "bom-ref": "urn:uuid:17826bfe-059a-40c5-9bf5-cfe2932a5991",
       "id": "CVE-2024-22365",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122501,7 +122493,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c55f13bf-90e9-4c6d-b590-2813b5ef40f3",
+      "bom-ref": "urn:uuid:defbb0d3-57eb-40f2-9a54-6cb735688a61",
       "id": "CVE-2026-0672",
       "source": {
         "name": "nvd-cpe",
@@ -122574,7 +122566,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e10dfe65-9853-49bf-b22e-dba9a80e0091",
+      "bom-ref": "urn:uuid:795c14bc-84ea-4922-a8db-0667f8d99950",
       "id": "CVE-2022-4450",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122615,7 +122607,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b3729510-9475-4f39-9553-bc393089a36d",
+      "bom-ref": "urn:uuid:9198044c-967b-4c83-badc-fe2f005abd51",
       "id": "CVE-2022-4450",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122656,7 +122648,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ee2b11d4-608c-4e22-a1a9-78fee37a0d9f",
+      "bom-ref": "urn:uuid:036a4a71-4915-4a29-ae3c-628937383dc9",
       "id": "CVE-2024-0727",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122697,7 +122689,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3cb68195-995f-4d8d-9d6b-15a6f0252942",
+      "bom-ref": "urn:uuid:a905060e-90cc-41d5-a905-1080ea5b9ccc",
       "id": "CVE-2024-0727",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122738,7 +122730,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:fe34cef4-fce5-4eca-9d4b-9f15d8e534bd",
+      "bom-ref": "urn:uuid:393b1d38-9a08-4814-8a49-fcb67c9410d0",
       "id": "CVE-2024-50602",
       "source": {
         "name": "nvd-cpe",
@@ -122811,7 +122803,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ee1d8fc3-1bf3-4be6-9367-a10cac4d7b8d",
+      "bom-ref": "urn:uuid:8fa0e7f1-8dcd-4881-97a2-8c6bfba4e403",
       "id": "CVE-2026-0865",
       "source": {
         "name": "nvd-cpe",
@@ -122902,7 +122894,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f03b9dd7-bfa6-462a-b57e-cb65b7c97167",
+      "bom-ref": "urn:uuid:ca7942df-3238-44da-880c-a2de4b925ce3",
       "id": "CVE-2023-4039",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122943,7 +122935,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c44ffb5b-7d2d-4c9f-aa4c-c1b3fec2fa2d",
+      "bom-ref": "urn:uuid:e6af3ca9-793b-40d6-89cd-ceafbf257c5d",
       "id": "CVE-2023-4039",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -122984,7 +122976,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:348a82b3-ff27-404b-ad43-1e81a8f1aeb6",
+      "bom-ref": "urn:uuid:7d4cd922-4dcc-44b3-9a16-0003e5c5b9d2",
       "id": "CVE-2023-4039",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -123025,7 +123017,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:31bbd876-f343-4541-9891-5bf6156cbc02",
+      "bom-ref": "urn:uuid:de936a20-ac52-4729-b740-f8ead5ec5246",
       "id": "CVE-2023-4039",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -123066,7 +123058,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ed5bd1b9-7e9f-4844-a994-9175b24411c6",
+      "bom-ref": "urn:uuid:3ecb1da9-fb81-4ae3-a671-077dcc91efc0",
       "id": "CVE-2023-6597",
       "source": {
         "name": "nvd-cpe",
@@ -123154,7 +123146,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7aedd820-e938-4d77-85a5-ceb728e10da3",
+      "bom-ref": "urn:uuid:e23f69c9-95d1-48bd-885b-a46f81ec8b48",
       "id": "GHSA-qjxf-f2mg-c6mc",
       "source": {
         "name": "github-language-python",
@@ -123202,7 +123194,7 @@
       ],
       "affects": [
         {
-          "ref": "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038"
+          "ref": "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d"
         }
       ],
       "analysis": {
@@ -123212,7 +123204,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:492bc3e3-eec9-4d16-b440-c3b83d531fc4",
+      "bom-ref": "urn:uuid:a6428bb8-dc9b-4d43-8ff0-637b028a7d1e",
       "id": "GHSA-jchw-25xp-jwwc",
       "source": {
         "name": "github-language-javascript",
@@ -123279,7 +123271,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2d8a5906-a6f3-490e-859f-8fd2005784fd",
+      "bom-ref": "urn:uuid:2d2f7a2a-1946-4fc0-b52a-a1079b9fe05f",
       "id": "CVE-2026-3644",
       "source": {
         "name": "nvd-cpe",
@@ -123343,7 +123335,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:650f88b5-6715-47fb-8153-1bbf83cad6fe",
+      "bom-ref": "urn:uuid:0bc1917c-ab73-4ba5-8799-0e01e7172548",
       "id": "CVE-2023-28486",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -123384,7 +123376,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:01f74d96-b9aa-4582-ac9e-82ec8031fb8d",
+      "bom-ref": "urn:uuid:97f3cada-b43c-49aa-b70c-04a03c532611",
       "id": "CVE-2023-28487",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -123425,7 +123417,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:25275020-3688-4757-a60d-9f411dc28600",
+      "bom-ref": "urn:uuid:9ee966e8-5c2a-4c68-a0ef-6da3acf8cf7c",
       "id": "CVE-2023-47038",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -123466,7 +123458,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8f109984-e9ba-449d-b528-cb7ed4c15d8d",
+      "bom-ref": "urn:uuid:c335664b-e21e-49b4-b85c-cb33ef690612",
       "id": "CVE-2025-8291",
       "source": {
         "name": "nvd-cpe",
@@ -123548,7 +123540,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7befa81e-047b-4131-ba91-374f15d451af",
+      "bom-ref": "urn:uuid:187be132-a760-4605-a803-0ed2dd57ce77",
       "id": "CVE-2024-33601",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -123589,7 +123581,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:26de15ec-3426-4187-b147-a1f1ebd34036",
+      "bom-ref": "urn:uuid:c6fca9cb-c77b-43ca-87bd-7dc0fea87a6d",
       "id": "CVE-2024-33601",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -123630,7 +123622,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6f90449e-ff38-4631-8537-0c3305c81a5e",
+      "bom-ref": "urn:uuid:6347c5df-c8c7-4cd0-a9f4-08785f4fb89e",
       "id": "CVE-2024-33601",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -123671,7 +123663,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e7d9cbd9-9675-4ea6-84b5-cc89529304bb",
+      "bom-ref": "urn:uuid:f351cbf7-16cf-42c8-bcc1-3b0ca6fab444",
       "id": "CVE-2025-4138",
       "source": {
         "name": "nvd-cpe",
@@ -123753,7 +123745,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:cd809b8b-d6bd-4114-8fd5-60a5ae4f01ed",
+      "bom-ref": "urn:uuid:5e9270fe-234f-4369-b439-176c20a66083",
       "id": "CVE-2025-69421",
       "source": {
         "name": "nvd-cpe",
@@ -123823,7 +123815,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f277a8c3-f119-4c3a-ab39-9238a6cbc618",
+      "bom-ref": "urn:uuid:0cffa09e-4095-49b7-aeb1-8100110b58db",
       "id": "CVE-2025-69419",
       "source": {
         "name": "nvd-cpe",
@@ -123887,7 +123879,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4e3992f9-68d9-4673-a53c-91968e0333bb",
+      "bom-ref": "urn:uuid:e9c985d8-1987-45dd-be69-e866e6f0888c",
       "id": "CVE-2024-9287",
       "source": {
         "name": "nvd-cpe",
@@ -123975,7 +123967,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d0a72328-e50e-475a-b995-4853d7826494",
+      "bom-ref": "urn:uuid:d1a4c276-5e64-45f6-a8a2-b64297ef193b",
       "id": "GHSA-3ppc-4f35-3m26",
       "source": {
         "name": "github-language-javascript",
@@ -124030,7 +124022,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bf1017d4-d31a-4edb-9da0-699b71896291",
+      "bom-ref": "urn:uuid:7121580a-4329-4581-b792-fd3d66c1bbc1",
       "id": "GHSA-3ppc-4f35-3m26",
       "source": {
         "name": "github-language-javascript",
@@ -124085,7 +124077,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d6706c10-2ddf-4d0d-9651-6f3c36c84e15",
+      "bom-ref": "urn:uuid:3ceaf559-ef90-4d23-9074-26e42a285dba",
       "id": "CVE-2025-15366",
       "source": {
         "name": "nvd-cpe",
@@ -124143,7 +124135,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:85f810b9-044f-4167-9470-55ce5c8ca4d4",
+      "bom-ref": "urn:uuid:95e3e634-2ac6-432f-a3d0-6538c72bc067",
       "id": "CVE-2025-15367",
       "source": {
         "name": "nvd-cpe",
@@ -124201,7 +124193,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5b138d9d-8676-4783-b037-0cb514655be7",
+      "bom-ref": "urn:uuid:4cb61e49-5396-46f1-a4e8-c6d6d8f7242d",
       "id": "GHSA-mq26-g339-26xf",
       "source": {
         "name": "github-language-python",
@@ -124286,7 +124278,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c9dbea02-0d2a-42f8-83f7-29650478e897",
+      "bom-ref": "urn:uuid:c4b8679c-0502-4954-ada0-48df176dbcbc",
       "id": "GHSA-7r86-cg39-jmmj",
       "source": {
         "name": "github-language-javascript",
@@ -124341,7 +124333,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:53876a8b-deb3-4923-b6ad-37f47b25afdf",
+      "bom-ref": "urn:uuid:1b20c051-3472-4864-9ec2-39ac0c1bac1f",
       "id": "GHSA-7r86-cg39-jmmj",
       "source": {
         "name": "github-language-javascript",
@@ -124396,7 +124388,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3760aa71-c969-4874-8ca0-1fa7a824ea1c",
+      "bom-ref": "urn:uuid:4bfc832f-1318-49a2-81fe-6ba20cfb7ae7",
       "id": "CVE-2026-22796",
       "source": {
         "name": "nvd-cpe",
@@ -124460,7 +124452,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e7e54551-6a7a-4806-bb0f-0eb79ca5caab",
+      "bom-ref": "urn:uuid:2c5fbb3a-9039-46d1-a484-dba462adbe70",
       "id": "GHSA-23c5-xmqv-rm74",
       "source": {
         "name": "github-language-javascript",
@@ -124515,7 +124507,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a0acc4b8-c78c-4d3d-b533-9ba69cee3f65",
+      "bom-ref": "urn:uuid:fbe038bf-4ed9-46c6-b9f0-bba19806b187",
       "id": "GHSA-23c5-xmqv-rm74",
       "source": {
         "name": "github-language-javascript",
@@ -124570,7 +124562,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bbd98e24-edfd-42e4-a551-5273ac8197bc",
+      "bom-ref": "urn:uuid:d6f3c0fb-8365-4cbb-bc32-169b40e3e942",
       "id": "GHSA-mrwq-x4v8-fh7p",
       "source": {
         "name": "github-language-python",
@@ -124652,7 +124644,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c893ebdd-546c-4724-b897-eb2d4d8a86fa",
+      "bom-ref": "urn:uuid:803a54ad-7780-4bb0-a42f-dec9e31d7ab0",
       "id": "CVE-2023-0466",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -124693,7 +124685,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e33261db-290b-43f3-a162-8206f4a99890",
+      "bom-ref": "urn:uuid:17501cb4-77e3-4931-bd0f-159c4e3062b1",
       "id": "CVE-2023-0466",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -124734,7 +124726,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2fe395a1-9012-4943-9166-981dd953b4b4",
+      "bom-ref": "urn:uuid:a50a1212-e2dc-4e8c-ae25-a12c56659b04",
       "id": "CVE-2025-0395",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -124775,7 +124767,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:96d0ff0e-9641-4d36-91aa-172abf4f06fa",
+      "bom-ref": "urn:uuid:f1588cbc-7765-4f60-8848-8fa5ab913ca7",
       "id": "CVE-2025-0395",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -124816,7 +124808,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4fd78b58-b44a-42fd-9629-35649d2f3e46",
+      "bom-ref": "urn:uuid:7c89916c-797d-4367-9cf7-576e709be563",
       "id": "CVE-2025-0395",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -124857,7 +124849,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f98a92aa-fa3e-443d-8e78-d9c18f65c722",
+      "bom-ref": "urn:uuid:cb358c8d-010f-4671-9dc0-276a4b317b11",
       "id": "CVE-2023-29491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -124898,7 +124890,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:29297b47-8e55-4a18-81cd-66625669f35d",
+      "bom-ref": "urn:uuid:31319d31-c7e5-4f45-9da9-afa7adbf5b64",
       "id": "CVE-2023-29491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -124939,7 +124931,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a5b38e4e-8365-44cc-992c-426351cd5db1",
+      "bom-ref": "urn:uuid:fd8e3d2e-fd2c-4fe4-97d1-f1146dbec91c",
       "id": "CVE-2023-29491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -124980,7 +124972,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:47203dca-459f-462f-b950-fbc29d063410",
+      "bom-ref": "urn:uuid:ecd15904-570a-47bd-abc0-0e615ad1ef3e",
       "id": "CVE-2023-29491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -125021,7 +125013,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b301aef3-cfea-472b-bcb9-202269466e8a",
+      "bom-ref": "urn:uuid:9a9a21ae-c38f-471b-b290-c3f854c5edef",
       "id": "CVE-2023-29491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -125062,7 +125054,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6b0803dd-3126-4ec1-8aa3-31d485efc8a9",
+      "bom-ref": "urn:uuid:2de01529-542d-4213-a361-010917b3ab19",
       "id": "CVE-2022-48303",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -125103,7 +125095,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a463d4b1-8d79-42e5-a04d-72d40bfd0092",
+      "bom-ref": "urn:uuid:b474e6df-7ebe-49be-a595-ffbd8fc0f442",
       "id": "GHSA-9hjg-9r4m-mvj7",
       "source": {
         "name": "github-language-python",
@@ -125182,7 +125174,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c61f8473-4668-4f52-8d27-3224ba40b666",
+      "bom-ref": "urn:uuid:942f06ad-cdd3-4dac-930b-f58ceeff0a89",
       "id": "CVE-2024-13176",
       "source": {
         "name": "nvd-cpe",
@@ -125267,7 +125259,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ea7017c4-807b-43cd-b000-cb2712bd940e",
+      "bom-ref": "urn:uuid:c76a07be-1fdc-4284-9348-b1c8986ca787",
       "id": "GHSA-43fp-rhv2-5gv8",
       "source": {
         "name": "github-language-python",
@@ -125337,7 +125329,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e6482244-8e70-44d8-a1a1-90df55487d29",
+      "bom-ref": "urn:uuid:d3c886b1-6a35-4cc1-bc18-41ee90a6f29a",
       "id": "GHSA-g7vv-2v7x-gj9p",
       "source": {
         "name": "github-language-python",
@@ -125401,7 +125393,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bd8f66d4-da60-49d8-b549-d5375407ca01",
+      "bom-ref": "urn:uuid:cb00424d-2e23-4f55-a753-95014d9138a8",
       "id": "CVE-2022-42919",
       "source": {
         "name": "nvd-cpe",
@@ -125498,7 +125490,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:94a6a04a-9f2d-4e95-9d38-f29501af32d5",
+      "bom-ref": "urn:uuid:32b0a179-d317-4cf4-b56d-087992e0f9dd",
       "id": "CVE-2023-38745",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -125539,7 +125531,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4119cf8c-89b1-496a-b6b0-f230c0d10162",
+      "bom-ref": "urn:uuid:7c7af4de-c2a0-4ad2-b71a-1597330dd367",
       "id": "CVE-2023-38745",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -125580,7 +125572,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:83a69531-45be-415a-984a-93fd9b3815e8",
+      "bom-ref": "urn:uuid:6e01c784-eebd-4ff0-8969-a1a61035a503",
       "id": "CVE-2025-12084",
       "source": {
         "name": "nvd-cpe",
@@ -125674,7 +125666,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:97a6f6c4-2d2b-4123-b98b-18639504678c",
+      "bom-ref": "urn:uuid:e31e57bd-92f1-47ac-944e-b6d757f25580",
       "id": "CVE-2022-23491",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -125715,7 +125707,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c0f8e56d-6a9d-41de-b949-cc157f0825f8",
+      "bom-ref": "urn:uuid:016c92bb-7f41-4236-ae23-46d2b62219ad",
       "id": "GHSA-g4mx-q9vg-27p4",
       "source": {
         "name": "github-language-python",
@@ -125806,7 +125798,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3d7c131e-7550-4c26-86eb-58cebaee2980",
+      "bom-ref": "urn:uuid:087e6aab-14eb-4b41-bb41-a0518aa42178",
       "id": "CVE-2026-1299",
       "source": {
         "name": "nvd-cpe",
@@ -125882,7 +125874,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:feb1be06-02b5-4cac-b062-190479c39c25",
+      "bom-ref": "urn:uuid:26052b49-fdc1-498f-a420-cfd69175a328",
       "id": "GHSA-gm62-xv2j-4w53",
       "source": {
         "name": "github-language-python",
@@ -125937,7 +125929,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c74937ca-ee34-49cd-bbe8-1bc988afd19d",
+      "bom-ref": "urn:uuid:2fe84bf5-e646-4e33-9ba3-b06bfb1724f2",
       "id": "GHSA-9wx4-h78v-vm56",
       "source": {
         "name": "github-language-python",
@@ -126001,7 +125993,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:600c3e6f-c7fc-4ea1-ba27-d80229a6a495",
+      "bom-ref": "urn:uuid:d43f6568-686b-4f47-869f-c9011a7954f1",
       "id": "CVE-2025-9230",
       "source": {
         "name": "nvd-cpe",
@@ -126077,7 +126069,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0e0bcafc-6d46-42ba-bdd3-caca992139bc",
+      "bom-ref": "urn:uuid:d65b2e16-3c86-4673-a7e4-f2d5b2269e1e",
       "id": "CVE-2016-2781",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126118,7 +126110,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7e90e4bd-6dbb-41ca-b548-acc444947aed",
+      "bom-ref": "urn:uuid:3939fe52-1d92-4eb4-b8e9-4cdd641a41db",
       "id": "GHSA-2xpw-w6gg-jr37",
       "source": {
         "name": "github-language-python",
@@ -126173,7 +126165,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d7e59eab-65ad-4e8b-9bb5-0a2ce5df77a2",
+      "bom-ref": "urn:uuid:9d3704ae-fed8-43e7-8815-3e898b7d4da0",
       "id": "CVE-2024-13176",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126214,7 +126206,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c66be9ed-3a69-41c9-a514-fae91c64e1a8",
+      "bom-ref": "urn:uuid:5bf86fe0-4d75-4367-8645-d04507e52e4c",
       "id": "CVE-2024-13176",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126255,7 +126247,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a4182fc9-44c8-42b1-a5fb-76b41b5d3420",
+      "bom-ref": "urn:uuid:7849be74-feee-4d69-96a6-ec72b20da142",
       "id": "CVE-2025-4802",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126296,7 +126288,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c14468cc-1b44-4565-b53f-7a8e554b310a",
+      "bom-ref": "urn:uuid:68cc5eca-008d-44b9-9641-7415ae1d20e6",
       "id": "CVE-2025-4802",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126337,7 +126329,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:cd4be279-d19c-47a8-a6a0-85d4198c74db",
+      "bom-ref": "urn:uuid:d9546a01-d7e4-41d4-b1dd-a834296a6584",
       "id": "CVE-2025-4802",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126378,7 +126370,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f85d932c-0bbf-4aca-9d2d-23da1dfe7713",
+      "bom-ref": "urn:uuid:9ea38753-9865-4aee-b7f8-8f36c915f1b0",
       "id": "GHSA-38jv-5279-wg99",
       "source": {
         "name": "github-language-python",
@@ -126442,7 +126434,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:56a05db7-42f5-4f83-a08b-4d885f9733ba",
+      "bom-ref": "urn:uuid:8c2cd12b-eb12-4eac-818e-8733ed90645e",
       "id": "CVE-2024-10041",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126483,7 +126475,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6d93f662-c739-4902-8678-1190a8f938ff",
+      "bom-ref": "urn:uuid:c627d338-6127-4fbc-9bce-e45dae8ed7f8",
       "id": "CVE-2024-10041",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126524,7 +126516,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:925a926c-5ff3-4f06-958c-133d72e2c937",
+      "bom-ref": "urn:uuid:fcd9ccf0-c5e7-4bf7-a44b-bd9d9eaabaa5",
       "id": "CVE-2024-10041",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126565,7 +126557,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4145271e-d6d2-4623-8b59-9e25082ee0b3",
+      "bom-ref": "urn:uuid:f1822ce1-88f7-4dc8-b900-ddcb91a45422",
       "id": "CVE-2024-10041",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126606,7 +126598,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8bd56a15-ad19-4bcc-b2cd-33d062c040fa",
+      "bom-ref": "urn:uuid:4cedaf2a-3c32-42c5-b2f7-7cdb8607e0b2",
       "id": "CVE-2025-15282",
       "source": {
         "name": "nvd-cpe",
@@ -126679,7 +126671,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:4eab6e8a-088c-44a1-91d8-525181904f53",
+      "bom-ref": "urn:uuid:7cb5cdb4-bdab-4df1-95e9-19d65b7a5529",
       "id": "CVE-2025-11468",
       "source": {
         "name": "nvd-cpe",
@@ -126752,7 +126744,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:affcc932-de08-4a2d-8110-518368572cfe",
+      "bom-ref": "urn:uuid:b5801c0a-8df0-4731-8f5e-6cadd85426e6",
       "id": "CVE-2023-35936",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126793,7 +126785,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:490724cb-e9de-476e-9d8e-1c69afd74508",
+      "bom-ref": "urn:uuid:5a9e1ee9-a082-4f77-a201-51d1eb7ab26a",
       "id": "CVE-2023-35936",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126834,7 +126826,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:93df6113-2bd4-4219-9d86-818ea1b67be5",
+      "bom-ref": "urn:uuid:a24a0548-5586-463a-8fa7-88b9e0014420",
       "id": "CVE-2023-39804",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126875,7 +126867,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1797da0d-4d9c-4411-976f-fc8ad58d3261",
+      "bom-ref": "urn:uuid:1b081ecb-b00d-4993-9996-aa6eb1220d8c",
       "id": "CVE-2025-4598",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126916,7 +126908,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b06cddf6-0ca3-4758-8f18-bf0c5e7242da",
+      "bom-ref": "urn:uuid:68007ed7-5a8d-4c5f-8cbe-e6e6935789ec",
       "id": "CVE-2025-4598",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126957,7 +126949,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bfbc9701-99e5-42e6-a80d-97424b7f43c5",
+      "bom-ref": "urn:uuid:8f501ca7-8be7-49ec-87ae-594efaea4be2",
       "id": "CVE-2021-39537",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -126998,7 +126990,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:cc6e6801-9f12-4a17-ae61-1421fd31115b",
+      "bom-ref": "urn:uuid:21dbf864-9172-4087-abf4-118ea32b9e2c",
       "id": "CVE-2021-39537",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127039,7 +127031,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a4c6b6d9-6081-4d86-848c-9c088f123efa",
+      "bom-ref": "urn:uuid:69a7f2fb-6aab-45d1-a3c3-03c7f1b3b5bb",
       "id": "CVE-2021-39537",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127080,7 +127072,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d263116d-5d89-4fec-a45b-78ef5f03d6d8",
+      "bom-ref": "urn:uuid:84d271d4-9afe-42b4-86ce-096e946f2726",
       "id": "CVE-2021-39537",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127121,7 +127113,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:401544c2-d50b-4bfa-b2eb-f105f8219f76",
+      "bom-ref": "urn:uuid:a4e5d8c6-51c2-4813-9f4c-4f19fcf4dc0e",
       "id": "CVE-2021-39537",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127162,7 +127154,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:841c1b9b-6471-4f49-8831-a8c7795267e5",
+      "bom-ref": "urn:uuid:74f51501-7cf5-4e36-8eaf-204478ec52a0",
       "id": "CVE-2013-4235",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127203,7 +127195,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ee175738-f68e-4994-b618-4f3d17bc81e6",
+      "bom-ref": "urn:uuid:85ff6678-d0ef-49d1-9e70-5c5eb198a2fc",
       "id": "CVE-2013-4235",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127244,7 +127236,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:36e80ce8-8b26-42e7-857a-d4e66c0e53c6",
+      "bom-ref": "urn:uuid:4c05e6dd-8fe6-4b34-b18e-0fdf2f145a2c",
       "id": "GHSA-33p9-3p43-82vq",
       "source": {
         "name": "github-language-python",
@@ -127299,7 +127291,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1413c6d5-8c0a-40a9-803f-f00d8a21bf93",
+      "bom-ref": "urn:uuid:20c9935c-0974-4366-9bf2-00f2ce4dd3f6",
       "id": "CVE-2022-4415",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127340,7 +127332,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6e76a1e5-4ee9-4104-8c63-6013edd355be",
+      "bom-ref": "urn:uuid:175a1e9d-43bd-4212-8013-2b109e68c7c4",
       "id": "CVE-2022-4415",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127381,7 +127373,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:08c5aef2-b036-4e16-9323-83fb1da5760f",
+      "bom-ref": "urn:uuid:11ec0c80-48a3-4efc-97e8-ef5757c232c4",
       "id": "CVE-2016-20013",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127422,7 +127414,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8aa19d51-bcb3-4f5c-893e-de9c7caaa02c",
+      "bom-ref": "urn:uuid:75f743bc-2142-4720-a7c3-dc92b17a7147",
       "id": "CVE-2016-20013",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127463,7 +127455,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d9675238-592a-41b7-b6ee-8f9e4c393853",
+      "bom-ref": "urn:uuid:203e11ed-9022-4466-971d-074ed954e2dd",
       "id": "CVE-2016-20013",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127504,7 +127496,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c2c22956-650c-4e8b-9dd8-6a605d168622",
+      "bom-ref": "urn:uuid:baa62edf-3bf2-4259-b589-2e92d8bb1b3d",
       "id": "CVE-2023-50495",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127545,7 +127537,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:287f0501-cabf-4727-b5c5-4e9b9edde554",
+      "bom-ref": "urn:uuid:03a3f44d-583b-41ee-a972-aac1cd3334ce",
       "id": "CVE-2023-50495",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127586,7 +127578,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:142b8b0f-4588-4461-a358-b4ed0d539e2d",
+      "bom-ref": "urn:uuid:2ac47ceb-ba1c-433e-b57c-9284325b2a80",
       "id": "CVE-2023-50495",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127627,7 +127619,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5f03683e-d8c7-46d3-a948-931eadbf4872",
+      "bom-ref": "urn:uuid:e6207516-86d6-4b67-91d5-53b25ec9dfc4",
       "id": "CVE-2023-50495",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127668,7 +127660,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e288066f-b3df-4cde-b7ca-28e6d0006c2d",
+      "bom-ref": "urn:uuid:a32f1d97-6e5a-4df9-a248-4bef15a7897c",
       "id": "CVE-2023-50495",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127709,7 +127701,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8edc0a49-eb70-4a29-8c1c-30e90a696339",
+      "bom-ref": "urn:uuid:5f53852b-2c31-402f-960a-0c13c0a94f87",
       "id": "CVE-2025-6075",
       "source": {
         "name": "nvd-cpe",
@@ -127788,7 +127780,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:043c39e2-9db7-4636-9632-94d1ca5d3f7c",
+      "bom-ref": "urn:uuid:b74576fd-484c-4594-a471-01dd830d926b",
       "id": "GHSA-34x7-hfp2-rc4v",
       "source": {
         "name": "github-language-javascript",
@@ -127843,7 +127835,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8ad86756-f705-4dec-8340-67bc57875a12",
+      "bom-ref": "urn:uuid:c7dccc8e-8462-46fd-912a-159539f54fbb",
       "id": "CVE-2022-41409",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -127884,7 +127876,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:a382b628-a008-4013-9563-d985cefc0b83",
+      "bom-ref": "urn:uuid:a275d14b-49d6-45c7-bb04-6149a218dbc8",
       "id": "GHSA-pq67-6m6q-mj2v",
       "source": {
         "name": "github-language-python",
@@ -127942,7 +127934,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e22332b4-7e30-451b-9fe9-44bfa631f04d",
+      "bom-ref": "urn:uuid:0b74d69c-83ad-48f2-a0d3-d31a4c7b44d2",
       "id": "GHSA-qffp-2rhf-9h96",
       "source": {
         "name": "github-language-javascript",
@@ -127997,7 +127989,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:d6f1e436-bbcb-4e1a-a855-d47a37d7a9b8",
+      "bom-ref": "urn:uuid:566eca21-06fa-4def-8d4c-286d34908ede",
       "id": "CVE-2025-30258",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -128038,7 +128030,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:eae4d85f-e469-42c6-8337-f213b01e007a",
+      "bom-ref": "urn:uuid:b066dcb1-1516-4e91-bd0d-a4afbdd9a533",
       "id": "CVE-2021-23240",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -128079,7 +128071,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2bacea6d-52ec-4986-acef-007403125e80",
+      "bom-ref": "urn:uuid:a4b0fd38-0d73-47ad-8989-d8e158c7072d",
       "id": "CVE-2025-13837",
       "source": {
         "name": "nvd-cpe",
@@ -128158,7 +128150,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1f4ef0ab-0db2-4c00-b58b-e891e170ff4a",
+      "bom-ref": "urn:uuid:b414985c-3600-475c-b8f5-759ebc93959e",
       "id": "CVE-2020-16156",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -128199,7 +128191,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:97fc914b-c59e-43c1-9fe6-05731270f0df",
+      "bom-ref": "urn:uuid:369bdf7e-146c-4986-95e3-a73ffd28f2dc",
       "id": "CVE-2022-3821",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -128240,7 +128232,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2fc26558-9407-4929-a7de-a62953e61351",
+      "bom-ref": "urn:uuid:07faaf0c-0372-41c9-88c7-09d29443b6a2",
       "id": "CVE-2022-3821",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -128281,7 +128273,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e3d7b428-ffe3-4084-bdee-34e21f539f01",
+      "bom-ref": "urn:uuid:98cd7271-104f-4d57-9c86-5f9740dc1da7",
       "id": "CVE-2025-13462",
       "source": {
         "name": "nvd-cpe",
@@ -128339,7 +128331,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1f3077aa-6ea4-4463-8118-ba50a9d3d398",
+      "bom-ref": "urn:uuid:43cf43a1-2f49-491a-8fa7-6ab9fdfa0da9",
       "id": "GHSA-752w-5fwx-jx9f",
       "source": {
         "name": "github-language-python",
@@ -128391,7 +128383,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:45676a28-81fa-4bcd-a5ac-3448e2f568f9",
+      "bom-ref": "urn:uuid:1f1ddbc5-ac76-4648-a34e-422acffc0cd9",
       "id": "CVE-2023-29383",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -128432,7 +128424,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:28326151-40f5-4539-8856-aa867959535d",
+      "bom-ref": "urn:uuid:2f40a7ae-5fff-472d-8ffd-7365fb16664d",
       "id": "CVE-2023-29383",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -128473,7 +128465,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bf772c82-b2ad-4445-b36c-296da8111a29",
+      "bom-ref": "urn:uuid:4c7ea51d-815e-4902-870e-a43e065c24fe",
       "id": "CVE-2025-12781",
       "source": {
         "name": "nvd-cpe",
@@ -128549,7 +128541,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:91ee4b65-d2c2-45e9-ab46-8d4779c43311",
+      "bom-ref": "urn:uuid:bd67f4eb-80ec-4944-a587-78ff78729e6d",
       "id": "GHSA-xm59-rqc7-hhvf",
       "source": {
         "name": "github-language-python",
@@ -128616,7 +128608,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3691a035-6c4b-466f-8f1e-d4db6aa1edb9",
+      "bom-ref": "urn:uuid:f5a2e788-9eb7-4e37-9be9-7a0575c48083",
       "id": "CVE-2026-4224",
       "source": {
         "name": "nvd-cpe",
@@ -128683,7 +128675,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:81e134b7-089b-4732-820a-9b5d1c3e5f64",
+      "bom-ref": "urn:uuid:b67d957c-e952-474c-9267-1435f1160c7b",
       "id": "GHSA-4xh5-x5gv-qwph",
       "source": {
         "name": "github-language-python",
@@ -128747,7 +128739,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0adef8b8-026c-49e8-aeba-02047e0e5934",
+      "bom-ref": "urn:uuid:0a45197e-4945-4730-9d88-07cdfc4b68b3",
       "id": "GHSA-jfmj-5v4g-7637",
       "source": {
         "name": "github-language-python",
@@ -128808,7 +128800,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6f0b3dda-6d28-4d2e-9f07-8c117e26ac89",
+      "bom-ref": "urn:uuid:f20f8890-c669-4a89-8a10-306ec051e683",
       "id": "CVE-2026-22795",
       "source": {
         "name": "nvd-cpe",
@@ -128872,7 +128864,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6b1411c2-a6d3-445e-9755-4039a195e007",
+      "bom-ref": "urn:uuid:e3ae3752-d94f-44e8-b36c-21a538188aa8",
       "id": "GHSA-83g3-92jg-28cx",
       "source": {
         "name": "github-language-javascript",
@@ -128930,7 +128922,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:56d6cd8b-38df-4195-be0d-2b998d46aab0",
+      "bom-ref": "urn:uuid:c1c6fc68-9765-4b87-9287-82afb8c58baf",
       "id": "CVE-2025-5278",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -128971,7 +128963,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:aa6cca39-fa9f-456a-901f-7280304d5163",
+      "bom-ref": "urn:uuid:a4494b61-915f-48db-acc0-f3d3db4a3563",
       "id": "CVE-2026-2297",
       "source": {
         "name": "nvd-cpe",
@@ -129035,7 +129027,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:2f3c2f51-81f9-43fb-9bc2-5a3b01cb3be4",
+      "bom-ref": "urn:uuid:f7348f9a-1a74-4906-b5bc-8d2db27607f7",
       "id": "GHSA-vvfj-2jqx-52jm",
       "source": {
         "name": "github-language-python",
@@ -129090,7 +129082,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1c1497fe-3ce4-4ec6-a24b-30ec1864ed57",
+      "bom-ref": "urn:uuid:6def9c8e-cfe6-4f4f-87bd-c4339b48bc86",
       "id": "GHSA-v6h2-p8h4-qcjw",
       "source": {
         "name": "github-language-javascript",
@@ -129172,7 +129164,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9f59d66c-b372-4d13-a042-1f46436abc49",
+      "bom-ref": "urn:uuid:a6c16f74-8dc7-4388-a52d-045de2586440",
       "id": "GHSA-v6h2-p8h4-qcjw",
       "source": {
         "name": "github-language-javascript",
@@ -129254,7 +129246,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0f62a3b4-2d89-4024-8820-2e60503082c4",
+      "bom-ref": "urn:uuid:5568b3ee-e867-4729-ad07-7679a279c686",
       "id": "CVE-2025-68160",
       "source": {
         "name": "nvd-cpe",
@@ -129318,7 +129310,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:afe13547-9319-4739-bd8c-820ef28b0fdb",
+      "bom-ref": "urn:uuid:35ae7f45-2f1f-4e35-870d-da61c1f76abb",
       "id": "CVE-2025-40909",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -129359,7 +129351,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:fb512fc1-39a1-4f1c-80a7-17dd96a488ea",
+      "bom-ref": "urn:uuid:481b53cd-3d64-403b-8667-edd23dfe2b23",
       "id": "GHSA-r6q2-hw4h-h46w",
       "source": {
         "name": "github-language-javascript",
@@ -129414,7 +129406,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:44435773-129f-4a36-9ded-f62164a82d0f",
+      "bom-ref": "urn:uuid:892eed54-1089-4dc0-824d-79276430aaeb",
       "id": "GHSA-6vgw-5pg2-w6jp",
       "source": {
         "name": "github-language-python",
@@ -129472,7 +129464,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:3562a0b8-d0c0-42fd-86ac-839494e075db",
+      "bom-ref": "urn:uuid:014eb60a-21e6-42cb-903c-7a637a8e639f",
       "id": "GHSA-9ppj-qmqm-q256",
       "source": {
         "name": "github-language-javascript",
@@ -129527,7 +129519,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:763e2c04-ee01-4e49-85ac-8f5db20b6f8e",
+      "bom-ref": "urn:uuid:c1cfafd1-43a9-4df5-8d94-dfc447820202",
       "id": "GHSA-8qq5-rm4j-mr97",
       "source": {
         "name": "github-language-javascript",
@@ -129582,7 +129574,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:196415a6-9dff-4ffa-8d6f-ed6454840830",
+      "bom-ref": "urn:uuid:12d532b3-1bfb-4972-a2ea-970d223c861e",
       "id": "GHSA-r6ph-v2qm-q3c2",
       "source": {
         "name": "github-language-python",
@@ -129643,7 +129635,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:1dd69304-4fcb-490a-9da3-44964c9d64f1",
+      "bom-ref": "urn:uuid:b3648230-6ce5-4dc9-93e7-0484cdd5d0f6",
       "id": "GHSA-73rr-hh4g-fpgx",
       "source": {
         "name": "github-language-javascript",
@@ -129704,7 +129696,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7d029ca4-c5c8-444f-a1c0-ea7ecfaca324",
+      "bom-ref": "urn:uuid:a763e971-acaa-4f8e-be9c-c8cdee112b4b",
       "id": "CVE-2017-11164",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -129745,7 +129737,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:34b86f6b-694d-4ebe-8620-6dca7f5c708f",
+      "bom-ref": "urn:uuid:302cfa95-05c0-4e67-bd80-a23f42f13d35",
       "id": "CVE-2022-28321",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -129780,13 +129772,13 @@
         }
       ],
       "analysis": {
-        "state": "in_triage",
+        "state": "resolved",
         "detail": "",
         "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:b33783d9-71a4-4ad6-9f35-7ec8bf87e142",
+      "bom-ref": "urn:uuid:ab7d3ac3-e481-4536-a42a-484f408577aa",
       "id": "CVE-2022-28321",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -129821,13 +129813,13 @@
         }
       ],
       "analysis": {
-        "state": "in_triage",
+        "state": "resolved",
         "detail": "",
         "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:48d92a23-d9cb-43e2-9684-9b79878c0521",
+      "bom-ref": "urn:uuid:d19dc5c0-6383-4488-b042-4b0f03b1b994",
       "id": "CVE-2022-28321",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -129862,13 +129854,13 @@
         }
       ],
       "analysis": {
-        "state": "in_triage",
+        "state": "resolved",
         "detail": "",
         "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:f3eab7f6-308f-4056-963f-e0fa5dd80fdc",
+      "bom-ref": "urn:uuid:4bed572e-8c21-4be4-913e-ddc43f3f2d26",
       "id": "CVE-2022-28321",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -129903,13 +129895,13 @@
         }
       ],
       "analysis": {
-        "state": "in_triage",
+        "state": "resolved",
         "detail": "",
         "response": []
       }
     },
     {
-      "bom-ref": "urn:uuid:3da57390-bdb2-42b0-9f13-8db32e443b66",
+      "bom-ref": "urn:uuid:71a5317c-c6ae-4959-af5d-fd35fd2c874f",
       "id": "CVE-2023-4641",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -129950,7 +129942,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0b175e26-1722-4048-a813-83513f1b41bc",
+      "bom-ref": "urn:uuid:05806cca-55f7-4835-9f37-254eaa94f7a1",
       "id": "CVE-2023-4641",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -129991,7 +129983,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:7f8c9c58-36e3-4c6d-9746-ab242addcb55",
+      "bom-ref": "urn:uuid:68510f35-d3d7-4e2f-bfee-41eb0e648731",
       "id": "CVE-2022-3219",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -130032,7 +130024,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ef35beca-5cab-4ff8-8b23-adfc4c7be4f9",
+      "bom-ref": "urn:uuid:2389862e-c851-4ea1-a73a-ab75c972c702",
       "id": "CVE-2023-4016",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -130073,7 +130065,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:6d73f7cf-d48a-4167-809d-0fb27809582e",
+      "bom-ref": "urn:uuid:bb016046-d3ba-4c3b-883e-1ed7ac884129",
       "id": "CVE-2023-4016",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -130114,7 +130106,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:0abac349-b7e0-4fa4-ad06-d164f48828f3",
+      "bom-ref": "urn:uuid:c6205c8f-f64e-43c7-8fc1-bb6381845119",
       "id": "GHSA-vpq2-c234-7xj6",
       "source": {
         "name": "github-language-javascript",
@@ -130178,7 +130170,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:01414996-38e3-4322-8177-26448268c5cf",
+      "bom-ref": "urn:uuid:f5cd809a-5104-4cf1-865c-a696ebcd7f7f",
       "id": "CVE-2025-69418",
       "source": {
         "name": "nvd-cpe",
@@ -130242,7 +130234,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:69d60401-e21d-4e3f-b89e-541b662b6e9f",
+      "bom-ref": "urn:uuid:e09208ce-9d18-42cd-8242-43372db6c4e3",
       "id": "CVE-2022-29458",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -130283,7 +130275,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:243b9fac-9e4e-4eb7-816d-e758f48fdfc2",
+      "bom-ref": "urn:uuid:3a46d4db-7c0f-4532-acbe-244a0faa0fe2",
       "id": "CVE-2022-29458",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -130324,7 +130316,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:79790dfe-6dcb-493f-a78d-f7060480f03b",
+      "bom-ref": "urn:uuid:bbe7fd23-1bd5-4d7c-88b7-cff66d983403",
       "id": "CVE-2022-29458",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -130365,7 +130357,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f4cefee1-1c73-44a7-b4f7-c606ea00aa2f",
+      "bom-ref": "urn:uuid:818a7412-a688-41cb-8865-a57d9c354c39",
       "id": "CVE-2022-29458",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -130406,7 +130398,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:ab92b448-c04f-434d-9348-2178e0b703bf",
+      "bom-ref": "urn:uuid:eed034c0-7c46-4120-bf3e-ed093d65aa9f",
       "id": "CVE-2022-29458",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -130447,7 +130439,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b8d95c2f-5031-49b9-bb5f-750f78b88f80",
+      "bom-ref": "urn:uuid:9b6f8cdb-337b-4ec6-b28c-957b93abc512",
       "id": "GHSA-5pwr-322w-8jr4",
       "source": {
         "name": "github-language-python",
@@ -130494,7 +130486,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:e372b55a-fab4-4698-80ec-1252256a25ac",
+      "bom-ref": "urn:uuid:97f80f11-4bb5-4524-9fe5-b3c32a6bfc68",
       "id": "GHSA-39hc-v87j-747x",
       "source": {
         "name": "github-language-python",
@@ -130539,7 +130531,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b2ebbd09-707c-458d-855e-95f2ca2c3678",
+      "bom-ref": "urn:uuid:3d13f593-2c08-412f-a2d4-498c70d141cc",
       "id": "GHSA-h4gh-qq45-vh27",
       "source": {
         "name": "github-language-python",
@@ -130581,7 +130573,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:8b1fd372-6297-41dd-ad63-56cefdff9806",
+      "bom-ref": "urn:uuid:7375fe2c-b401-429e-9c98-7d41710d01a2",
       "id": "GHSA-753j-mpmx-qq6g",
       "source": {
         "name": "github-language-python",
@@ -130615,7 +130607,7 @@
       ],
       "affects": [
         {
-          "ref": "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038"
+          "ref": "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d"
         }
       ],
       "analysis": {
@@ -130625,7 +130617,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:bca90a1b-b347-4ac5-9d1e-0a270b29a175",
+      "bom-ref": "urn:uuid:da3dacce-05b2-4cd9-bd12-615e99ff44d4",
       "id": "GHSA-78cv-mqj4-43f7",
       "source": {
         "name": "github-language-python",
@@ -130662,7 +130654,7 @@
       ],
       "affects": [
         {
-          "ref": "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038"
+          "ref": "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d"
         }
       ],
       "analysis": {
@@ -130672,7 +130664,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:346a6a5d-7529-40ad-97fa-7e8829a7c23b",
+      "bom-ref": "urn:uuid:b0a3055b-2987-472b-982e-42f48152b8cf",
       "id": "GHSA-qppv-j76h-2rpx",
       "source": {
         "name": "github-language-python",
@@ -130704,7 +130696,7 @@
       ],
       "affects": [
         {
-          "ref": "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038"
+          "ref": "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d"
         }
       ],
       "analysis": {
@@ -130714,7 +130706,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:32292831-0e19-4bc6-80cc-14ecb30eeed7",
+      "bom-ref": "urn:uuid:5a4f2cdf-6186-4455-8992-492b3b9b7a8a",
       "id": "GHSA-w235-7p84-xx57",
       "source": {
         "name": "github-language-python",
@@ -130748,7 +130740,7 @@
       ],
       "affects": [
         {
-          "ref": "pkg:pypi/tornado@6.2?package-id=2a3b1b2e13b8d038"
+          "ref": "pkg:pypi/tornado@6.2?package-id=afbb8617c6d8c90d"
         }
       ],
       "analysis": {
@@ -130758,7 +130750,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:26bd922f-4329-4c23-97cd-007caea04a5a",
+      "bom-ref": "urn:uuid:2b24a094-fe35-4915-87a5-58a5d02490c9",
       "id": "GHSA-5cpq-8wj7-hf2v",
       "source": {
         "name": "github-language-python",
@@ -130803,7 +130795,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:f04f4f85-6958-486a-8dfe-d95b97e3b546",
+      "bom-ref": "urn:uuid:a55bcd88-5626-4b2a-bb5a-512b18fa97ef",
       "id": "GHSA-jm77-qphf-c4w8",
       "source": {
         "name": "github-language-python",
@@ -130857,7 +130849,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:c8519187-8512-4596-9bb3-f3fbf41625e3",
+      "bom-ref": "urn:uuid:c2d782f1-baf6-499d-a81e-a144c7688a28",
       "id": "GHSA-v8gr-m533-ghj9",
       "source": {
         "name": "github-language-python",
@@ -130899,7 +130891,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:9fc8b45b-168c-4619-89f6-06a231043cf9",
+      "bom-ref": "urn:uuid:0efded03-e2f0-4056-886b-75efb91f39e4",
       "id": "CVE-2023-45918",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -130932,7 +130924,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:635c9c9d-9c3e-4b7f-a5a5-58af4e1b6ce8",
+      "bom-ref": "urn:uuid:9f65ffaa-7603-4f39-9920-c269620e11ed",
       "id": "CVE-2023-45918",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -130965,7 +130957,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:dece3301-2558-40ee-834b-01e501a2565b",
+      "bom-ref": "urn:uuid:a4a89a88-e072-4368-8f1b-5e22b54bfb83",
       "id": "CVE-2023-45918",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -130998,7 +130990,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:5cacb047-8384-48d0-b160-a21f970d3c1f",
+      "bom-ref": "urn:uuid:6999ac81-2f79-4b6f-bf24-fdc5dfc40d25",
       "id": "CVE-2023-45918",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -131031,7 +131023,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:b3026e4d-826a-4205-a142-3e4fa2c97459",
+      "bom-ref": "urn:uuid:ff960e59-c391-4e15-b68e-6317aae2a9bb",
       "id": "CVE-2023-45918",
       "source": {
         "name": "ubuntu-distro-ubuntu-20.04",
@@ -131064,7 +131056,7 @@
       }
     },
     {
-      "bom-ref": "urn:uuid:53536efe-47cc-4e50-b343-4152f0936e1c",
+      "bom-ref": "urn:uuid:bf893748-c3dc-46d2-ba54-0b92b34a4e6f",
       "id": "GHSA-vp96-hxj8-p424",
       "source": {
         "name": "github-language-python",

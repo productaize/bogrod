@@ -1,4 +1,3 @@
-from pathlib import Path
 from unittest import skip
 
 import bogrod
@@ -6,6 +5,7 @@ import contextlib
 import random
 import unittest
 from bogrod import Bogrod
+from bogrod.settings import bom_spec_versions
 from bogrod.tests import BASE_PATH
 from io import StringIO
 
@@ -45,10 +45,9 @@ class BogrodTests(unittest.TestCase):
         self.assertTrue(buffer.getvalue().__contains__('CVE-2021-27478'))
 
     def test_cli(self):
-        base_path = Path(bogrod.__file__).parent.parent
         with self.assertRaises(SystemExit):
             bogrod.main(argv='--version'.split(' '))
-        bogrod.main(argv=f'{base_path}/releasenotes/sbom/jupyter-base-notebook.cdx.json'.split(' '))
+        bogrod.main(argv=f'{BASE_PATH}/releasenotes/sbom/jupyter-base-notebook.cdx.json'.split(' '))
 
     def test_filter_issues(self):
         bogrod = Bogrod.from_sbom(BASE_PATH / 'releasenotes/sbom/jupyter-base-notebook.cdx.json')
@@ -98,6 +97,14 @@ class BogrodTests(unittest.TestCase):
         metadata = bogrod.data.get('metadata')
         self.assertEqual(metadata['component']['name'], 'python-310')
         self.assertEqual(metadata['component']['type'], 'application')
+
+    def test_sbom_schemas(self):
+        # when run by tox this tests that the resources/bom-* files have been included
+        bogrod = Bogrod.from_sbom(BASE_PATH / 'releasenotes/sbom/jupyter-base-notebook.cdx.json')
+        for version in bom_spec_versions.split(','):
+            bogrod.data['specVersion'] = version
+            schema = bogrod._get_sbom_schema()
+            self.assertIn('$schema', schema)
 
 
 if __name__ == '__main__':

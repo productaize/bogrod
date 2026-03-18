@@ -18,7 +18,6 @@ CVE-2015-20107:
   detail: ''
   history:
   - added: jupyter/base-notebook
-  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
@@ -56,14 +55,6 @@ CVE-2020-10735:
   response: []
   state: in_triage
 CVE-2020-16156:
-  detail: ''
-  history:
-  - added: jupyter/base-notebook
-  related:
-  - component: jupyter/base-notebook
-  response: []
-  state: in_triage
-CVE-2020-22916:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -115,12 +106,36 @@ CVE-2022-23491:
   detail: ''
   history:
   - added: jupyter/base-notebook
-  justification: ''
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2022-25881:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2022-25883:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
   related:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
 CVE-2022-28321:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  justification: ''
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: resolved
+CVE-2022-29244:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -144,6 +159,14 @@ CVE-2022-3219:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2022-36087:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2022-37434:
   detail: ''
   history:
@@ -156,12 +179,43 @@ CVE-2022-37454:
   detail: ''
   history:
   - added: jupyter/base-notebook
-  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
-  state: not_affected
+  state: in_triage
 CVE-2022-3821:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2022-39286:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2022-40896:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2022-40897:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2022-40898:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -181,7 +235,6 @@ CVE-2022-42919:
   detail: ''
   history:
   - added: jupyter/base-notebook
-  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
@@ -282,7 +335,31 @@ CVE-2023-22809:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2023-23931:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2023-24329:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-24816:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-26159:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -307,6 +384,14 @@ CVE-2023-26604:
   response: []
   state: in_triage
 CVE-2023-27043:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-28370:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -354,6 +439,14 @@ CVE-2023-31484:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2023-32681:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2023-3446:
   detail: ''
   history:
@@ -371,6 +464,14 @@ CVE-2023-35936:
   response: []
   state: in_triage
 CVE-2023-36632:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-37920:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -402,7 +503,23 @@ CVE-2023-39804:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2023-39968:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2023-4016:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-40170:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -419,6 +536,30 @@ CVE-2023-40217:
   response: []
   state: in_triage
 CVE-2023-4039:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-42282:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-43804:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-45803:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -474,6 +615,22 @@ CVE-2023-4813:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2023-49080:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-49083:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2023-50495:
   detail: ''
   history:
@@ -482,7 +639,23 @@ CVE-2023-50495:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2023-50782:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2023-5678:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2023-5752:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -562,14 +735,6 @@ CVE-2024-10524:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
-CVE-2024-10963:
-  detail: ''
-  history:
-  - added: jupyter/base-notebook
-  related:
-  - component: jupyter/base-notebook
-  response: []
-  state: in_triage
 CVE-2024-11168:
   detail: ''
   history:
@@ -610,6 +775,14 @@ CVE-2024-13176:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2024-22195:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2024-2236:
   detail: ''
   history:
@@ -626,7 +799,23 @@ CVE-2024-22365:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2024-22421:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2024-2511:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-26130:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -642,7 +831,39 @@ CVE-2024-28085:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2024-28233:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2024-28834:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-28849:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-28863:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-29415:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -690,6 +911,54 @@ CVE-2024-33602:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2024-34062:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-34064:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-35178:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-35195:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-3651:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-37891:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2024-38428:
   detail: ''
   history:
@@ -698,7 +967,47 @@ CVE-2024-38428:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2024-38999:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-39689:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2024-4032:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-41942:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-43805:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-47081:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -722,7 +1031,39 @@ CVE-2024-50602:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2024-52804:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2024-5535:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-5569:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-56201:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-56326:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -739,6 +1080,22 @@ CVE-2024-56433:
   response: []
   state: in_triage
 CVE-2024-6232:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-6345:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2024-6485:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -874,7 +1231,31 @@ CVE-2025-15367:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2025-1647:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2025-1795:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2025-27516:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2025-30167:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -946,6 +1327,22 @@ CVE-2025-4598:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2025-47273:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2025-47287:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2025-4802:
   detail: ''
   history:
@@ -954,7 +1351,39 @@ CVE-2025-4802:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2025-50181:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2025-5278:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2025-53000:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2025-5889:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2025-59842:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -971,6 +1400,22 @@ CVE-2025-6069:
   response: []
   state: in_triage
 CVE-2025-6075:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2025-66418:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2025-66471:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -1034,6 +1479,14 @@ CVE-2025-8291:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2025-8869:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2025-9230:
   detail: ''
   history:
@@ -1066,6 +1519,22 @@ CVE-2026-1299:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
+CVE-2026-1703:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-21441:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
 CVE-2026-22795:
   detail: ''
   history:
@@ -1083,6 +1552,134 @@ CVE-2026-22796:
   response: []
   state: in_triage
 CVE-2026-2297:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-23745:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-23950:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-24001:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-24842:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-26007:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-26960:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-26996:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-27448:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-27459:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-27903:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-27904:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-29786:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-31802:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-31958:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-32597:
+  detail: ''
+  history:
+  - added: jupyter/base-notebook
+  related:
+  - component: jupyter/base-notebook
+  response: []
+  state: in_triage
+CVE-2026-3449:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -1206,7 +1803,6 @@ GHSA-3ww4-gg4f-jr7f:
   detail: ''
   history:
   - added: jupyter/base-notebook
-  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1215,7 +1811,6 @@ GHSA-43fp-rhv2-5gv8:
   detail: ''
   history:
   - added: jupyter/base-notebook
-  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1373,14 +1968,6 @@ GHSA-8w49-h785-mj3c:
   response: []
   state: in_triage
 GHSA-9hjg-9r4m-mvj7:
-  detail: ''
-  history:
-  - added: jupyter/base-notebook
-  related:
-  - component: jupyter/base-notebook
-  response: []
-  state: in_triage
-GHSA-9mvj-f7w8-pvh2:
   detail: ''
   history:
   - added: jupyter/base-notebook
@@ -1824,57 +2411,20 @@ GHSA-xqr8-7jwr-rhp7:
   detail: ''
   history:
   - added: jupyter/base-notebook
-  justification: ''
   related:
   - component: jupyter/base-notebook
   response: []
   state: in_triage
 templates:
-  ca-certificates-20211016~20.04.1:
+  n/a:
     detail: ''
     justification: ''
     match: artifact
     response: []
-    state: in_triage
-  certifi-2022.9.24:
-    detail: ''
-    justification: ''
-    match: artifact
-    response: []
-    state: in_triage
-  cryptography-38.0.1:
-    detail: ''
-    justification: ''
-    match: artifact
-    response: []
-    state: in_triage
-  pkg:deb/ubuntu/ca-certificates@20211016~20.04.1?arch=all&distro=ubuntu-20.04&package-id=d9d067c1625548ce:
+    state: resolved
+  pkg:deb/ubuntu/libpam-modules-bin@1.3.1-5ubuntu4.3?arch=amd64&distro=ubuntu-20.04:
     detail: ''
     justification: ''
     match: component
     response: []
-    state: in_triage
-  pkg:generic/python@3.10.6?package-id=aadd06b57d8f4fc4:
-    detail: ''
-    justification: ''
-    match: component
-    response: []
-    state: not_affected
-  pkg:pypi/certifi@2022.9.24?package-id=fd5fdc0222e471a8:
-    detail: ''
-    justification: ''
-    match: component
-    response: []
-    state: in_triage
-  pkg:pypi/cryptography@38.0.1?package-id=6913ae4b60fe5b2f:
-    detail: ''
-    justification: ''
-    match: component
-    response: []
-    state: in_triage
-  python-3.10.6:
-    detail: ''
-    justification: ''
-    match: artifact
-    response: []
-    state: not_affected
+    state: resolved
