@@ -1,21 +1,20 @@
+from pathlib import Path
+
 import json
+import jsonschema
 import logging
 import os
 import re
 import subprocess
 import sys
+import yaml
+from bogrod.util import dict_merge, tabulate_data, tryOr, SafeNoAliasDumper
 from copy import deepcopy
-from pathlib import Path
+from jsonschema import ValidationError
+from tabulate import tabulate
 from tempfile import NamedTemporaryFile
 from textwrap import dedent, wrap
 from uuid import uuid4
-
-import jsonschema
-import yaml
-from jsonschema import ValidationError
-from tabulate import tabulate
-
-from bogrod.util import dict_merge, tabulate_data, tryOr, SafeNoAliasDumper
 
 logger = logging.getLogger(__name__)
 
@@ -241,7 +240,7 @@ class Bogrod:
             if 'report' not in vex_issues:
                 status = vex_issues.get('status')
                 sbomId = vex_issues.get('id')
-                logging.warning(
+                logger.warning(
                     f"WARNING: vex issues report does not contain 'report' key. Id: {sbomId} Status: {status}")
             else:
                 report_vulns = vex_issues['report'].get('vulnerabilities', {})
@@ -509,6 +508,7 @@ class Bogrod:
         data = self.data
         specVersion = data['specVersion']
         schema_path = Path(__file__).parent / f'resources/bom-{specVersion}.schema.json'
+        logger.debug(f'Reading schema {schema_path}')
         with open(schema_path) as fin:
             schema = json.load(fin)
         return schema
@@ -520,17 +520,17 @@ class Bogrod:
         return schema
 
     def validate(self, data=None):
-        logging.debug("Validating sbom...")
+        logger.debug("Validating sbom...")
         schema = self._get_sbom_schema()
         data = data or self.data
         try:
             jsonschema.validate(data, schema)
         except ValidationError as ex:
-            logging.error(f"ValidationError: {ex.message} {ex.absolute_path}")
+            logger.error(f"ValidationError: {ex.message} {ex.absolute_path}")
 
     @classmethod
     def from_sbom(cls, sbom_path, notes_path=None):
-        logging.debug(f"Reading sbom: {sbom_path}")
+        logger.debug(f"Reading sbom: {sbom_path}")
         with open(sbom_path, 'r') as fin:
             data = json.load(fin)
         bogrod = Bogrod(data, sbom_path=sbom_path)
