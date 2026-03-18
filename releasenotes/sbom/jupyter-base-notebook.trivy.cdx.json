@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:9dc35414-6a34-4545-9127-ef0a1ae156f7",
+  "serialNumber": "urn:uuid:2b7cf346-dd28-4b1f-ac93-8c2892ddf4b1",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-03-18T20:31:04+00:00",
+    "timestamp": "2026-03-18T22:33:31+00:00",
     "tools": {
       "components": [
         {
@@ -221,595 +221,7 @@
   },
   "components": [
     {
-      "bom-ref": "00e7da61-b456-4174-86ca-48e2ffa25f9e",
-      "type": "operating-system",
-      "name": "ubuntu",
-      "version": "20.04",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:Class",
-          "value": "os-pkgs"
-        },
-        {
-          "name": "aquasecurity:trivy:Type",
-          "value": "ubuntu"
-        }
-      ]
-    },
-    {
-      "bom-ref": "12c6b26f-4088-490a-8966-25eca79fa478",
-      "type": "library",
-      "group": "@jupyterlab",
-      "name": "application-top",
-      "version": "3.4.8",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "18f1c90717f76bb24e57307f109ab65fcc721d2c"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-3-Clause"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40jupyterlab/application-top@3.4.8",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/share/jupyter/lab/static/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "@jupyterlab/application-top@3.4.8"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "2b33a42a-373b-47af-89b5-7f4896aa00cb",
-      "type": "library",
-      "name": "string_decoder",
-      "version": "1.3.0",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "3e519b003fbce961f41cc48fa4237c6debda1266"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/string_decoder@1.3.0",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/node_modules/npm/node_modules/string_decoder/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "string_decoder@1.3.0"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "317abc66-67cd-402a-bcee-a7e3c07f8415",
-      "type": "library",
-      "name": "readable-stream",
-      "version": "3.6.0",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "4f3593bcaecc3f79d125dc955a4e1efff3bc1214"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/readable-stream@3.6.0",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/node_modules/npm/node_modules/readable-stream/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "readable-stream@3.6.0"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "4927d203-1c2a-4ec4-b4d6-ac1d06f8940d",
-      "type": "library",
-      "name": "jupyterlab_pygments",
-      "version": "0.2.2",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "e31153e6d35504db2f38fa62f550b5483891e097"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-3-Clause"
-          }
-        }
-      ],
-      "purl": "pkg:npm/jupyterlab_pygments@0.2.2",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/python3.10/site-packages/jupyterlab_pygments/labextension/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "jupyterlab_pygments@0.2.2"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "5aacfa6d-19bf-4c7a-8628-0d56330c9060",
-      "type": "library",
-      "name": "inherits",
-      "version": "2.0.4",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "62b11dd736a0047fbd8d2dc0406d2118a549a359"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "purl": "pkg:npm/inherits@2.0.4",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/node_modules/configurable-http-proxy/node_modules/inherits/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "inherits@2.0.4"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "66a05c7c-e357-4480-8d43-9ea57b102d05",
-      "type": "library",
-      "name": "ms",
-      "version": "2.1.3",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "c290eb97736177176d071da4ac855ab995685c97"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/ms@2.1.3",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/node_modules/npm/node_modules/ms/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "ms@2.1.3"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "774bb73e-8f3e-43cc-9b2f-acda72837625",
-      "type": "library",
-      "name": "readable-stream",
-      "version": "3.6.0",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "4f3593bcaecc3f79d125dc955a4e1efff3bc1214"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/readable-stream@3.6.0",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/node_modules/configurable-http-proxy/node_modules/readable-stream/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "readable-stream@3.6.0"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "7a8e541f-5cd7-462b-86e0-eaa3868025bb",
-      "type": "library",
-      "group": "@jupyterlab",
-      "name": "application-top",
-      "version": "3.4.8",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "18f1c90717f76bb24e57307f109ab65fcc721d2c"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-3-Clause"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40jupyterlab/application-top@3.4.8",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/python3.10/site-packages/jupyterlab/static/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "@jupyterlab/application-top@3.4.8"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "886b0734-56fa-4411-833d-87987dc12ba8",
-      "type": "library",
-      "name": "safe-buffer",
-      "version": "5.2.1",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "6ce1dddfb8739c577ae2ad84f1aba01427791f57"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/safe-buffer@5.2.1",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/node_modules/npm/node_modules/safe-buffer/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "safe-buffer@5.2.1"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "a2831389-63b3-4aa6-9985-8a1f3a51ec17",
-      "type": "library",
-      "name": "util-deprecate",
-      "version": "1.0.2",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "2e69081e7bab6e09d3dcfd680716fdeea577431d"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/util-deprecate@1.0.2",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/node_modules/npm/node_modules/util-deprecate/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "util-deprecate@1.0.2"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "a6f2f6e7-b03b-444d-adbe-7512e0f866f5",
-      "type": "library",
-      "name": "util-deprecate",
-      "version": "1.0.2",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "2e69081e7bab6e09d3dcfd680716fdeea577431d"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/util-deprecate@1.0.2",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/node_modules/configurable-http-proxy/node_modules/util-deprecate/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "util-deprecate@1.0.2"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "aff5588d-b9ad-4c5d-b7f7-59e4909d8013",
-      "type": "library",
-      "name": "ms",
-      "version": "2.1.3",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "c290eb97736177176d071da4ac855ab995685c97"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/ms@2.1.3",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/node_modules/configurable-http-proxy/node_modules/ms/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "ms@2.1.3"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "b6235591-c143-4b10-8640-07d6e612e85b",
-      "type": "library",
-      "name": "inherits",
-      "version": "2.0.4",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "62b11dd736a0047fbd8d2dc0406d2118a549a359"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "purl": "pkg:npm/inherits@2.0.4",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/node_modules/npm/node_modules/inherits/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "inherits@2.0.4"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "c4cd6ed8-238d-4473-afd4-7a915d70484a",
-      "type": "library",
-      "name": "string_decoder",
-      "version": "1.3.0",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "3e519b003fbce961f41cc48fa4237c6debda1266"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/string_decoder@1.3.0",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/lib/node_modules/configurable-http-proxy/node_modules/string_decoder/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "string_decoder@1.3.0"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "f236e10a-4405-435c-82ef-daccc51cab43",
-      "type": "library",
-      "name": "jupyterlab_pygments",
-      "version": "0.2.2",
-      "hashes": [
-        {
-          "alg": "SHA-1",
-          "content": "e31153e6d35504db2f38fa62f550b5483891e097"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-3-Clause"
-          }
-        }
-      ],
-      "purl": "pkg:npm/jupyterlab_pygments@0.2.2",
-      "properties": [
-        {
-          "name": "aquasecurity:trivy:FilePath",
-          "value": "opt/conda/share/jupyter/labextensions/jupyterlab_pygments/package.json"
-        },
-        {
-          "name": "aquasecurity:trivy:LayerDiffID",
-          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgID",
-          "value": "jupyterlab_pygments@0.2.2"
-        },
-        {
-          "name": "aquasecurity:trivy:PkgType",
-          "value": "node-pkg"
-        }
-      ]
-    },
-    {
-      "bom-ref": "f48e5543-010b-4ec1-aaf1-95b1abaa5093",
+      "bom-ref": "003b77e5-29c6-450e-aced-84c4812476b9",
       "type": "library",
       "group": "@jupyterlab",
       "name": "application-top",
@@ -848,7 +260,557 @@
       ]
     },
     {
-      "bom-ref": "ff5d1255-35aa-4baf-af59-7748cf0ec9b9",
+      "bom-ref": "0701b854-b4a6-49b7-9028-265ef23fcb94",
+      "type": "library",
+      "group": "@jupyterlab",
+      "name": "application-top",
+      "version": "3.4.8",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "18f1c90717f76bb24e57307f109ab65fcc721d2c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40jupyterlab/application-top@3.4.8",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/share/jupyter/lab/static/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "@jupyterlab/application-top@3.4.8"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "16bc31a7-0895-4c9c-884b-bf94814f198d",
+      "type": "library",
+      "name": "inherits",
+      "version": "2.0.4",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "62b11dd736a0047fbd8d2dc0406d2118a549a359"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/inherits@2.0.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/node_modules/configurable-http-proxy/node_modules/inherits/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "inherits@2.0.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "2b017a70-d991-47b7-b85c-7f903f632773",
+      "type": "library",
+      "name": "string_decoder",
+      "version": "1.3.0",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "3e519b003fbce961f41cc48fa4237c6debda1266"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/string_decoder@1.3.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/node_modules/configurable-http-proxy/node_modules/string_decoder/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "string_decoder@1.3.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "413b5517-ad15-4fd9-9c73-d2de99804acf",
+      "type": "library",
+      "name": "inherits",
+      "version": "2.0.4",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "62b11dd736a0047fbd8d2dc0406d2118a549a359"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/inherits@2.0.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/node_modules/npm/node_modules/inherits/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "inherits@2.0.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "43f7b551-740f-48f9-a3c3-bec381a41694",
+      "type": "library",
+      "name": "string_decoder",
+      "version": "1.3.0",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "3e519b003fbce961f41cc48fa4237c6debda1266"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/string_decoder@1.3.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/node_modules/npm/node_modules/string_decoder/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "string_decoder@1.3.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "5294b26c-4722-49a9-b5e5-aeeb22ff1c34",
+      "type": "library",
+      "name": "ms",
+      "version": "2.1.3",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "c290eb97736177176d071da4ac855ab995685c97"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/node_modules/npm/node_modules/ms/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "ms@2.1.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "6781409f-c726-45a9-8edd-e55a0cbed159",
+      "type": "library",
+      "name": "readable-stream",
+      "version": "3.6.0",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "4f3593bcaecc3f79d125dc955a4e1efff3bc1214"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/readable-stream@3.6.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/node_modules/npm/node_modules/readable-stream/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "readable-stream@3.6.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "787b32b1-5cfc-4e36-9217-0e815afe3208",
+      "type": "library",
+      "name": "ms",
+      "version": "2.1.3",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "c290eb97736177176d071da4ac855ab995685c97"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ms@2.1.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/node_modules/configurable-http-proxy/node_modules/ms/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "ms@2.1.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "7d65fc35-67ba-42f4-b928-6b2ab608b9b9",
+      "type": "library",
+      "name": "jupyterlab_pygments",
+      "version": "0.2.2",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "e31153e6d35504db2f38fa62f550b5483891e097"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/jupyterlab_pygments@0.2.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/python3.10/site-packages/jupyterlab_pygments/labextension/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "jupyterlab_pygments@0.2.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "86bf31d0-3fdf-4b62-9770-94332eb8376e",
+      "type": "library",
+      "name": "safe-buffer",
+      "version": "5.2.1",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "6ce1dddfb8739c577ae2ad84f1aba01427791f57"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/safe-buffer@5.2.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/node_modules/npm/node_modules/safe-buffer/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "safe-buffer@5.2.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "94f95f72-ed4a-4ccc-830f-bec5d29c986b",
+      "type": "library",
+      "group": "@jupyterlab",
+      "name": "application-top",
+      "version": "3.4.8",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "18f1c90717f76bb24e57307f109ab65fcc721d2c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40jupyterlab/application-top@3.4.8",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/python3.10/site-packages/jupyterlab/static/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "@jupyterlab/application-top@3.4.8"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "ab1950f8-ca0b-4109-b578-6868dcc37c14",
+      "type": "library",
+      "name": "util-deprecate",
+      "version": "1.0.2",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "2e69081e7bab6e09d3dcfd680716fdeea577431d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/util-deprecate@1.0.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/node_modules/npm/node_modules/util-deprecate/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "util-deprecate@1.0.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "bde23419-af08-4d34-ba9c-51d95d0aa50e",
+      "type": "library",
+      "name": "jupyterlab_pygments",
+      "version": "0.2.2",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "e31153e6d35504db2f38fa62f550b5483891e097"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/jupyterlab_pygments@0.2.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/share/jupyter/labextensions/jupyterlab_pygments/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "jupyterlab_pygments@0.2.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "c6367bc5-9ede-4d7b-82dc-7aee4ed38ef6",
+      "type": "library",
+      "name": "readable-stream",
+      "version": "3.6.0",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "4f3593bcaecc3f79d125dc955a4e1efff3bc1214"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/readable-stream@3.6.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/node_modules/configurable-http-proxy/node_modules/readable-stream/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "readable-stream@3.6.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "ca456935-eaf4-4c46-8334-533ca7493324",
+      "type": "operating-system",
+      "name": "ubuntu",
+      "version": "20.04",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "os-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "ubuntu"
+        }
+      ]
+    },
+    {
+      "bom-ref": "e3c51fdd-7c70-4540-818e-75021a63416f",
       "type": "library",
       "name": "safe-buffer",
       "version": "5.2.1",
@@ -878,6 +840,44 @@
         {
           "name": "aquasecurity:trivy:PkgID",
           "value": "safe-buffer@5.2.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    },
+    {
+      "bom-ref": "f441255f-59d2-476c-a8dc-e799944a1ff7",
+      "type": "library",
+      "name": "util-deprecate",
+      "version": "1.0.2",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "2e69081e7bab6e09d3dcfd680716fdeea577431d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/util-deprecate@1.0.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "opt/conda/lib/node_modules/configurable-http-proxy/node_modules/util-deprecate/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2193a3f988ee85a851321cf3fe217c35687eaea2c732b4a30602777474484a5d"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "util-deprecate@1.0.2"
         },
         {
           "name": "aquasecurity:trivy:PkgType",
@@ -20094,7 +20094,67 @@
   ],
   "dependencies": [
     {
-      "ref": "00e7da61-b456-4174-86ca-48e2ffa25f9e",
+      "ref": "003b77e5-29c6-450e-aced-84c4812476b9",
+      "dependsOn": []
+    },
+    {
+      "ref": "0701b854-b4a6-49b7-9028-265ef23fcb94",
+      "dependsOn": []
+    },
+    {
+      "ref": "16bc31a7-0895-4c9c-884b-bf94814f198d",
+      "dependsOn": []
+    },
+    {
+      "ref": "2b017a70-d991-47b7-b85c-7f903f632773",
+      "dependsOn": []
+    },
+    {
+      "ref": "413b5517-ad15-4fd9-9c73-d2de99804acf",
+      "dependsOn": []
+    },
+    {
+      "ref": "43f7b551-740f-48f9-a3c3-bec381a41694",
+      "dependsOn": []
+    },
+    {
+      "ref": "5294b26c-4722-49a9-b5e5-aeeb22ff1c34",
+      "dependsOn": []
+    },
+    {
+      "ref": "6781409f-c726-45a9-8edd-e55a0cbed159",
+      "dependsOn": []
+    },
+    {
+      "ref": "787b32b1-5cfc-4e36-9217-0e815afe3208",
+      "dependsOn": []
+    },
+    {
+      "ref": "7d65fc35-67ba-42f4-b928-6b2ab608b9b9",
+      "dependsOn": []
+    },
+    {
+      "ref": "86bf31d0-3fdf-4b62-9770-94332eb8376e",
+      "dependsOn": []
+    },
+    {
+      "ref": "94f95f72-ed4a-4ccc-830f-bec5d29c986b",
+      "dependsOn": []
+    },
+    {
+      "ref": "ab1950f8-ca0b-4109-b578-6868dcc37c14",
+      "dependsOn": []
+    },
+    {
+      "ref": "bde23419-af08-4d34-ba9c-51d95d0aa50e",
+      "dependsOn": []
+    },
+    {
+      "ref": "c6367bc5-9ede-4d7b-82dc-7aee4ed38ef6",
+      "dependsOn": []
+    },
+    {
+      "ref": "ca456935-eaf4-4c46-8334-533ca7493324",
       "dependsOn": [
         "pkg:deb/ubuntu/apt@2.0.9?arch=amd64&distro=ubuntu-20.04",
         "pkg:deb/ubuntu/base-passwd@3.5.47?arch=amd64&distro=ubuntu-20.04",
@@ -20135,71 +20195,11 @@
       ]
     },
     {
-      "ref": "12c6b26f-4088-490a-8966-25eca79fa478",
+      "ref": "e3c51fdd-7c70-4540-818e-75021a63416f",
       "dependsOn": []
     },
     {
-      "ref": "2b33a42a-373b-47af-89b5-7f4896aa00cb",
-      "dependsOn": []
-    },
-    {
-      "ref": "317abc66-67cd-402a-bcee-a7e3c07f8415",
-      "dependsOn": []
-    },
-    {
-      "ref": "4927d203-1c2a-4ec4-b4d6-ac1d06f8940d",
-      "dependsOn": []
-    },
-    {
-      "ref": "5aacfa6d-19bf-4c7a-8628-0d56330c9060",
-      "dependsOn": []
-    },
-    {
-      "ref": "66a05c7c-e357-4480-8d43-9ea57b102d05",
-      "dependsOn": []
-    },
-    {
-      "ref": "774bb73e-8f3e-43cc-9b2f-acda72837625",
-      "dependsOn": []
-    },
-    {
-      "ref": "7a8e541f-5cd7-462b-86e0-eaa3868025bb",
-      "dependsOn": []
-    },
-    {
-      "ref": "886b0734-56fa-4411-833d-87987dc12ba8",
-      "dependsOn": []
-    },
-    {
-      "ref": "a2831389-63b3-4aa6-9985-8a1f3a51ec17",
-      "dependsOn": []
-    },
-    {
-      "ref": "a6f2f6e7-b03b-444d-adbe-7512e0f866f5",
-      "dependsOn": []
-    },
-    {
-      "ref": "aff5588d-b9ad-4c5d-b7f7-59e4909d8013",
-      "dependsOn": []
-    },
-    {
-      "ref": "b6235591-c143-4b10-8640-07d6e612e85b",
-      "dependsOn": []
-    },
-    {
-      "ref": "c4cd6ed8-238d-4473-afd4-7a915d70484a",
-      "dependsOn": []
-    },
-    {
-      "ref": "f236e10a-4405-435c-82ef-daccc51cab43",
-      "dependsOn": []
-    },
-    {
-      "ref": "f48e5543-010b-4ec1-aaf1-95b1abaa5093",
-      "dependsOn": []
-    },
-    {
-      "ref": "ff5d1255-35aa-4baf-af59-7748cf0ec9b9",
+      "ref": "f441255f-59d2-476c-a8dc-e799944a1ff7",
       "dependsOn": []
     },
     {
@@ -21878,24 +21878,24 @@
     {
       "ref": "pkg:oci/base-notebook@sha256%3Af73595b4d5b2461d04195f55d6c49d5c18e88b5f7ebe7106b5897e2429b1eddb?arch=amd64&repository_url=index.docker.io%2Fjupyter%2Fbase-notebook",
       "dependsOn": [
-        "00e7da61-b456-4174-86ca-48e2ffa25f9e",
-        "12c6b26f-4088-490a-8966-25eca79fa478",
-        "2b33a42a-373b-47af-89b5-7f4896aa00cb",
-        "317abc66-67cd-402a-bcee-a7e3c07f8415",
-        "4927d203-1c2a-4ec4-b4d6-ac1d06f8940d",
-        "5aacfa6d-19bf-4c7a-8628-0d56330c9060",
-        "66a05c7c-e357-4480-8d43-9ea57b102d05",
-        "774bb73e-8f3e-43cc-9b2f-acda72837625",
-        "7a8e541f-5cd7-462b-86e0-eaa3868025bb",
-        "886b0734-56fa-4411-833d-87987dc12ba8",
-        "a2831389-63b3-4aa6-9985-8a1f3a51ec17",
-        "a6f2f6e7-b03b-444d-adbe-7512e0f866f5",
-        "aff5588d-b9ad-4c5d-b7f7-59e4909d8013",
-        "b6235591-c143-4b10-8640-07d6e612e85b",
-        "c4cd6ed8-238d-4473-afd4-7a915d70484a",
-        "f236e10a-4405-435c-82ef-daccc51cab43",
-        "f48e5543-010b-4ec1-aaf1-95b1abaa5093",
-        "ff5d1255-35aa-4baf-af59-7748cf0ec9b9",
+        "003b77e5-29c6-450e-aced-84c4812476b9",
+        "0701b854-b4a6-49b7-9028-265ef23fcb94",
+        "16bc31a7-0895-4c9c-884b-bf94814f198d",
+        "2b017a70-d991-47b7-b85c-7f903f632773",
+        "413b5517-ad15-4fd9-9c73-d2de99804acf",
+        "43f7b551-740f-48f9-a3c3-bec381a41694",
+        "5294b26c-4722-49a9-b5e5-aeeb22ff1c34",
+        "6781409f-c726-45a9-8edd-e55a0cbed159",
+        "787b32b1-5cfc-4e36-9217-0e815afe3208",
+        "7d65fc35-67ba-42f4-b928-6b2ab608b9b9",
+        "86bf31d0-3fdf-4b62-9770-94332eb8376e",
+        "94f95f72-ed4a-4ccc-830f-bec5d29c986b",
+        "ab1950f8-ca0b-4109-b578-6868dcc37c14",
+        "bde23419-af08-4d34-ba9c-51d95d0aa50e",
+        "c6367bc5-9ede-4d7b-82dc-7aee4ed38ef6",
+        "ca456935-eaf4-4c46-8334-533ca7493324",
+        "e3c51fdd-7c70-4540-818e-75021a63416f",
+        "f441255f-59d2-476c-a8dc-e799944a1ff7",
         "pkg:npm/%40colors/colors@1.5.0",
         "pkg:npm/%40dabh/diagnostics@2.0.3",
         "pkg:npm/%40gar/promisify@1.1.3",
@@ -23207,8 +23207,8 @@
     {
       "id": "CVE-2022-23491",
       "source": {
-        "name": "ubuntu",
-        "url": "https://git.launchpad.net/ubuntu-cve-tracker"
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
       },
       "ratings": [
         {
@@ -26448,8 +26448,8 @@
     {
       "id": "CVE-2023-0286",
       "source": {
-        "name": "ubuntu",
-        "url": "https://git.launchpad.net/ubuntu-cve-tracker"
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
       },
       "ratings": [
         {
@@ -32621,8 +32621,8 @@
     {
       "id": "CVE-2024-0727",
       "source": {
-        "name": "ubuntu",
-        "url": "https://git.launchpad.net/ubuntu-cve-tracker"
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
       },
       "ratings": [
         {

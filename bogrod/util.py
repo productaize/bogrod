@@ -105,8 +105,8 @@ class SafeNoAliasDumper(yaml.SafeDumper):
 
 def get_vulnerability_url(vuln_data):
     vuln_id = vuln_data.get('id', 'unknown')
-    url = vuln_data.get('url')
-    if not str(url).startswith('https://'):
+    url = str(vuln_data.get('url') or 'unknown')
+    if not url.startswith('https://') or vuln_id not in url:
         match s := vuln_id.upper():
             case _ if s.startswith('GHSA'):
                 url = f'https://github.com/advisories/{vuln_id}'
