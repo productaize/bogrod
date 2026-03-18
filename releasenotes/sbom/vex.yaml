@@ -2,6 +2,7 @@ CVE-2007-4559:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -10,6 +11,7 @@ CVE-2013-4235:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -18,6 +20,7 @@ CVE-2015-20107:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -26,6 +29,7 @@ CVE-2016-20013:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -34,6 +38,7 @@ CVE-2016-2781:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -42,6 +47,7 @@ CVE-2017-11164:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -50,6 +56,7 @@ CVE-2020-10735:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -58,14 +65,17 @@ CVE-2020-16156:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2021-23240:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -74,6 +84,7 @@ CVE-2021-31879:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -82,22 +93,27 @@ CVE-2021-39537:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2021-43618:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2021-46848:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -106,55 +122,68 @@ CVE-2022-23491:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-25881:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-25883:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-28321:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   justification: ''
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: resolved
 CVE-2022-29244:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-29458:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-3219:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -163,22 +192,27 @@ CVE-2022-36087:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-37434:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-37454:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -187,46 +221,57 @@ CVE-2022-3821:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-39286:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-40896:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-40897:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-40898:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-41409:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -235,6 +280,7 @@ CVE-2022-42919:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -243,30 +289,37 @@ CVE-2022-4304:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-4415:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-4450:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2022-45061:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -275,78 +328,97 @@ CVE-2022-48303:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-0215:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-0286:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-0361:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-0464:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-0465:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-0466:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-22809:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-23931:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-24329:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -355,30 +427,37 @@ CVE-2023-24816:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-26159:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-2650:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-26604:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -387,6 +466,7 @@ CVE-2023-27043:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -395,30 +475,37 @@ CVE-2023-28370:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-28486:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-28487:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-29383:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -427,38 +514,47 @@ CVE-2023-29491:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-31484:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-32681:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-3446:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-35936:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -467,6 +563,7 @@ CVE-2023-36632:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -475,22 +572,27 @@ CVE-2023-37920:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-3817:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-38745:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -499,38 +601,47 @@ CVE-2023-39804:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-39968:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-4016:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-40170:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-40217:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -539,6 +650,7 @@ CVE-2023-4039:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -547,30 +659,37 @@ CVE-2023-42282:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-43804:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-45803:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-45918:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -579,30 +698,37 @@ CVE-2023-4641:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-47038:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-4806:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-4807:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -611,30 +737,37 @@ CVE-2023-4813:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-49080:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-49083:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-50495:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -643,38 +776,47 @@ CVE-2023-50782:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-5678:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-5752:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-5981:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2023-6597:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -683,6 +825,7 @@ CVE-2023-7008:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -691,6 +834,7 @@ CVE-2024-0397:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -699,6 +843,7 @@ CVE-2024-0450:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -707,22 +852,27 @@ CVE-2024-0553:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-0727:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-10041:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -731,6 +881,7 @@ CVE-2024-10524:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -739,6 +890,7 @@ CVE-2024-11168:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -747,22 +899,27 @@ CVE-2024-12133:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-12243:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-12718:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -771,22 +928,27 @@ CVE-2024-13176:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-22195:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-2236:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -795,198 +957,247 @@ CVE-2024-22365:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-22421:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-2511:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-26130:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-28085:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-28233:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-28834:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-28849:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-28863:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-29415:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-2961:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-33599:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-33600:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-33601:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-33602:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-34062:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-34064:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-35178:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-35195:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-3651:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-37891:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-38428:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-38999:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-39689:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-4032:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -995,38 +1206,47 @@ CVE-2024-41942:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-43805:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-47081:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-4741:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-50602:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1035,46 +1255,57 @@ CVE-2024-52804:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-5535:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-5569:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-56201:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-56326:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-56433:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1083,6 +1314,7 @@ CVE-2024-6232:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1091,22 +1323,27 @@ CVE-2024-6345:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-6485:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-6923:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1115,6 +1352,7 @@ CVE-2024-7592:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1123,6 +1361,7 @@ CVE-2024-8088:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1131,14 +1370,17 @@ CVE-2024-9143:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2024-9287:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1147,14 +1389,17 @@ CVE-2025-0395:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-0938:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1163,6 +1408,7 @@ CVE-2025-11468:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1171,6 +1417,7 @@ CVE-2025-12084:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1179,6 +1426,7 @@ CVE-2025-12781:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1187,6 +1435,7 @@ CVE-2025-13462:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1195,6 +1444,7 @@ CVE-2025-13836:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1203,6 +1453,7 @@ CVE-2025-13837:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1211,6 +1462,7 @@ CVE-2025-15282:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1219,6 +1471,7 @@ CVE-2025-15366:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1227,6 +1480,7 @@ CVE-2025-15367:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1235,14 +1489,17 @@ CVE-2025-1647:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-1795:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1251,30 +1508,37 @@ CVE-2025-27516:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-30167:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-30258:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-40909:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1283,6 +1547,7 @@ CVE-2025-4138:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1291,6 +1556,7 @@ CVE-2025-4330:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1299,6 +1565,7 @@ CVE-2025-4435:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1307,6 +1574,7 @@ CVE-2025-4516:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1315,6 +1583,7 @@ CVE-2025-4517:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1323,6 +1592,7 @@ CVE-2025-4598:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1331,38 +1601,47 @@ CVE-2025-47273:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-47287:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-4802:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-50181:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-5278:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1371,30 +1650,37 @@ CVE-2025-53000:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-5889:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-59842:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-6069:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1403,6 +1689,7 @@ CVE-2025-6075:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1411,22 +1698,27 @@ CVE-2025-66418:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-66471:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-68160:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1435,6 +1727,7 @@ CVE-2025-69418:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1443,6 +1736,7 @@ CVE-2025-69419:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1451,6 +1745,7 @@ CVE-2025-69420:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1459,6 +1754,7 @@ CVE-2025-69421:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1467,6 +1763,7 @@ CVE-2025-8194:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1475,6 +1772,7 @@ CVE-2025-8291:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1483,14 +1781,17 @@ CVE-2025-8869:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2025-9230:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1499,6 +1800,7 @@ CVE-2026-0672:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1507,6 +1809,7 @@ CVE-2026-0865:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1515,6 +1818,7 @@ CVE-2026-1299:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1523,22 +1827,27 @@ CVE-2026-1703:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-21441:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-22795:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1547,6 +1856,7 @@ CVE-2026-22796:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1555,6 +1865,7 @@ CVE-2026-2297:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1563,134 +1874,167 @@ CVE-2026-23745:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-23950:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-24001:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-24842:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-26007:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-26960:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-26996:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-27448:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-27459:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-27903:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-27904:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-29786:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-31802:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-31958:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-32597:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-3449:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 CVE-2026-3644:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1699,6 +2043,7 @@ CVE-2026-4224:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1707,6 +2052,7 @@ GHSA-23c5-xmqv-rm74:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1715,6 +2061,7 @@ GHSA-248v-346w-9cwc:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1723,6 +2070,7 @@ GHSA-29gw-9793-fvw7:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1731,6 +2079,7 @@ GHSA-2p57-rm9w-gvfp:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1739,6 +2088,7 @@ GHSA-2xpw-w6gg-jr37:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1747,6 +2097,7 @@ GHSA-33p9-3p43-82vq:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1755,6 +2106,7 @@ GHSA-34jh-p97f-mpxf:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1763,6 +2115,7 @@ GHSA-34x7-hfp2-rc4v:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1771,6 +2124,7 @@ GHSA-38jv-5279-wg99:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1779,14 +2133,17 @@ GHSA-39hc-v87j-747x:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 GHSA-3pgj-pg6c-r5p7:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1795,6 +2152,7 @@ GHSA-3ppc-4f35-3m26:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1803,6 +2161,7 @@ GHSA-3ww4-gg4f-jr7f:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1811,6 +2170,7 @@ GHSA-43fp-rhv2-5gv8:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1819,6 +2179,7 @@ GHSA-44cc-43rp-5947:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1827,6 +2188,7 @@ GHSA-4xh5-x5gv-qwph:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1835,14 +2197,17 @@ GHSA-5cpq-8wj7-hf2v:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 GHSA-5pwr-322w-8jr4:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1851,6 +2216,7 @@ GHSA-5rjg-fvgr-3xxf:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1859,6 +2225,7 @@ GHSA-64x5-55rw-9974:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1867,6 +2234,7 @@ GHSA-6vgw-5pg2-w6jp:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1875,6 +2243,7 @@ GHSA-6vqw-3v5j-54x4:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1883,6 +2252,7 @@ GHSA-73rr-hh4g-fpgx:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1891,6 +2261,7 @@ GHSA-752w-5fwx-jx9f:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1899,22 +2270,27 @@ GHSA-753j-mpmx-qq6g:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 GHSA-78cv-mqj4-43f7:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 GHSA-78xj-cgh5-2h22:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1923,6 +2299,7 @@ GHSA-7cx3-6m66-7c5m:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1931,6 +2308,7 @@ GHSA-7r3h-4ph8-w38g:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1939,6 +2317,7 @@ GHSA-7r86-cg39-jmmj:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1947,6 +2326,7 @@ GHSA-83g3-92jg-28cx:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1955,6 +2335,7 @@ GHSA-8qq5-rm4j-mr97:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1963,6 +2344,7 @@ GHSA-8w49-h785-mj3c:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1971,6 +2353,7 @@ GHSA-9hjg-9r4m-mvj7:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1979,6 +2362,7 @@ GHSA-9ppj-qmqm-q256:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1987,6 +2371,7 @@ GHSA-9q39-rmj3-p4r2:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -1995,6 +2380,7 @@ GHSA-9v9h-cgj8-h64p:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2003,6 +2389,7 @@ GHSA-9wx4-h78v-vm56:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2011,6 +2398,7 @@ GHSA-9x4q-3gxw-849f:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2019,6 +2407,7 @@ GHSA-c2qf-rxjj-qqgw:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2027,6 +2416,7 @@ GHSA-cpwx-vrp4-4pq7:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2035,6 +2425,7 @@ GHSA-cx63-2mw6-8hw5:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2043,6 +2434,7 @@ GHSA-cxjh-pqwp-8mfp:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2051,6 +2443,7 @@ GHSA-f5x3-32g6-xq36:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2059,6 +2452,7 @@ GHSA-g4mx-q9vg-27p4:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2067,6 +2461,7 @@ GHSA-g7vv-2v7x-gj9p:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2075,6 +2470,7 @@ GHSA-gm62-xv2j-4w53:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2083,6 +2479,7 @@ GHSA-gmj6-6f8f-6699:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2091,14 +2488,17 @@ GHSA-h4gh-qq45-vh27:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 GHSA-h56g-gq9v-vc8r:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2107,6 +2507,7 @@ GHSA-h5c8-rqwp-cp95:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2115,6 +2516,7 @@ GHSA-h75v-3vvj-5mfj:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2123,6 +2525,7 @@ GHSA-hj3f-6gcp-jg8j:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2131,6 +2534,7 @@ GHSA-hj9c-8jmm-8c52:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2139,6 +2543,7 @@ GHSA-hrw6-wg82-cm62:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2147,6 +2552,7 @@ GHSA-j8r2-6x86-q33q:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2155,6 +2561,7 @@ GHSA-jchw-25xp-jwwc:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2163,6 +2570,7 @@ GHSA-jfhm-5ghh-2f97:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2171,6 +2579,7 @@ GHSA-jfmj-5v4g-7637:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2179,6 +2588,7 @@ GHSA-jjg7-2v4v-x38h:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2187,14 +2597,17 @@ GHSA-jm77-qphf-c4w8:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 GHSA-m678-f26j-3hrp:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2203,6 +2616,7 @@ GHSA-mq26-g339-26xf:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2211,6 +2625,7 @@ GHSA-mrwq-x4v8-fh7p:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2219,6 +2634,7 @@ GHSA-pq67-6m6q-mj2v:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2227,6 +2643,7 @@ GHSA-q2x7-8rv6-6q7h:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2235,6 +2652,7 @@ GHSA-q58r-hwc8-rm9j:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2243,6 +2661,7 @@ GHSA-qffp-2rhf-9h96:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2251,6 +2670,7 @@ GHSA-qjxf-f2mg-c6mc:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2259,14 +2679,17 @@ GHSA-qppv-j76h-2rpx:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 GHSA-qwmp-2cf2-g9g6:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2275,6 +2698,7 @@ GHSA-r6ph-v2qm-q3c2:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2283,6 +2707,7 @@ GHSA-r6q2-hw4h-h46w:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2291,6 +2716,7 @@ GHSA-r726-vmfq-j9j3:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2299,6 +2725,7 @@ GHSA-r9hx-vwmv-q579:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2307,6 +2734,7 @@ GHSA-rc47-6667-2j5j:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2315,6 +2743,7 @@ GHSA-v6h2-p8h4-qcjw:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2323,6 +2752,7 @@ GHSA-v845-jxx5-vc9f:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2331,14 +2761,17 @@ GHSA-v8gr-m533-ghj9:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 GHSA-vp96-hxj8-p424:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2347,6 +2780,7 @@ GHSA-vpq2-c234-7xj6:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2355,6 +2789,7 @@ GHSA-vvfj-2jqx-52jm:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2363,6 +2798,7 @@ GHSA-vxmc-5x29-h64v:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2371,14 +2807,17 @@ GHSA-w235-7p84-xx57:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
+  - component: jupyter/base-notebook:ubuntu-20.04
   response: []
   state: in_triage
 GHSA-w7pp-m8wf-vj6r:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2387,6 +2826,7 @@ GHSA-x3m3-4wpv-5vgc:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2395,6 +2835,7 @@ GHSA-x4qr-2fvf-3mr5:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2403,6 +2844,7 @@ GHSA-xm59-rqc7-hhvf:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []
@@ -2411,6 +2853,7 @@ GHSA-xqr8-7jwr-rhp7:
   detail: ''
   history:
   - added: jupyter/base-notebook
+  - added: jupyter/base-notebook:ubuntu-20.04
   related:
   - component: jupyter/base-notebook
   response: []

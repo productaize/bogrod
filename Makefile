@@ -9,7 +9,7 @@ sbom:
 	grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --output json=releasenotes/sbom/jupyter-base-notebook.grype.json
 	# cyclonedx format
 	grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json --output cyclonedx-json=releasenotes/sbom/jupyter-base-notebook.cdx.json	# add pip audit cyclonedx
-	pip-audit -f cyclonedx-json -o releasenotes/sbom/python-310.pipaudit.cdx.json
+	-pip-audit -f cyclonedx-json -o releasenotes/sbom/python-310.pipaudit.cdx.json
 	# trivy
 	trivy image jupyter/base-notebook:ubuntu-20.04 --format cyclonedx --scanners vuln -o releasenotes/sbom/jupyter-base-notebook.trivy.cdx.json
 	# check
