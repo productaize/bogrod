@@ -537,7 +537,7 @@ class Bogrod:
     @classmethod
     def from_sbom(cls, sbom_path, notes_path=None):
         logger.debug(f"Reading sbom: {sbom_path}")
-        with open(sbom_path, 'r') as fin:
+        with open(sbom_path, 'r', encoding='utf8') as fin:
             data = json.load(fin)
         bogrod = Bogrod(data, sbom_path=sbom_path)
         if notes_path is None:

@@ -1,8 +1,8 @@
-import json
 from collections import Counter
 
 import requests
 from bogrod.contrib.aggregator import SBOMAggregator
+from urllib.parse import urljoin
 
 
 class EssentxElementaris(SBOMAggregator):
@@ -46,17 +46,26 @@ class EssentxElementaris(SBOMAggregator):
         return r
 
     def upload_sbom(self, projectpath, sbompath, tentative=False):
-        with open(sbompath, 'r') as fin:
-            data = json.load(fin)
+        from bogrod import Bogrod
+        bogrod = Bogrod.from_sbom(sbompath)
+        self.filter_before_upload(bogrod.data)
+        bogrod.validate()
         if tentative:
-            url = f'{self.url}/sbom/temporary-report'
+            url = urljoin(self.url, '/sbom/temporary-report')
+            params = None
         else:
-            url = f'{self.url}/sbom?projectPath={projectpath}'
+            sbomid = bogrod.data.get('serialNumber')
+            url = urljoin(self.url, '/sbom')
+            params = {
+                'projectPath': projectpath,
+                'sbomID': sbomid,
+            }
         resp = requests.post(url,
-                             json=data,
+                             params=params,
+                             json=bogrod.data,
                              auth=self.auth)
+        self.raise_for_status(resp, extra={'projectpath': projectpath, 'sbompath': sbompath})
         data = resp.json()
-        self.raise_for_status(resp, data, extra={'projectpath': projectpath, 'sbompath': sbompath})
         return data.get('sbomID')
 
     def get_report(self, sbomID):
@@ -82,10 +91,22 @@ class EssentxElementaris(SBOMAggregator):
         print('issues: ', counter)
 
     def raise_for_status(self, resp, data=None, extra=None):
-        data = data or resp.json()
         extra = extra or ''
+        try:
+            data = data or resp.json()
+        except Exception as e:
+            data = {
+                'message': f'got exception {e}',
+            }
         if 'error' in data or 'code' in data or resp.status_code > 400:
             message = data['message']
-            text = f'{resp.status_code=} {message=} {extra=}'
+            text = f'{resp.status_code=} {message=} {extra=} {data=}'
             raise Exception(text)
         return data
+
+    def filter_before_upload(self, data):
+        # can only deal with valid ratings
+        # -- other methods, e.g. EPSS cause E0005 Invalid vunlerability severity
+        vulns = data.get('vulnerabilities', [])
+        for vuln in vulns:
+            vuln['ratings'] = [r for r in vuln['ratings'] if 'severity' in r]
