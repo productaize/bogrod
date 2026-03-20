@@ -1,0 +1,14 @@
+<svg width="100%" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg"><defs><mask id="imagine-text-gaps-mkjp6l" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="680" height="180" fill="white"/><rect x="190.19744873046875" y="34.620948791503906" width="299.6051330566406" height="101.42276000976562" fill="black" rx="2"/><rect x="265.2162780761719" y="137.3896026611328" width="149.56744384765625" height="18.468727111816406" fill="black" rx="2"/></mask></defs>
+
+
+  <text x="340" y="108" text-anchor="middle" font-size="86" font-weight="200" letter-spacing="-3" style="fill:rgb(26, 26, 26);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;SF Mono&quot;, &quot;Fira Code&quot;, &quot;Courier New&quot;, monospace;font-size:86px;font-weight:200;text-anchor:middle;dominant-baseline:auto">bogrod</text>
+
+  <line x1="200" y1="126" x2="480" y2="126" stroke-width="1" mask="url(#imagine-text-gaps-mkjp6l)" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <circle cx="254" cy="126" r="3" style="fill:rgb(62, 207, 142);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="340" cy="126" r="3" style="fill:rgb(74, 158, 255);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="426" cy="126" r="3" style="fill:rgb(245, 166, 35);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <text x="340" y="150" text-anchor="middle" font-size="13" letter-spacing="4" style="fill:rgb(187, 187, 187);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;SF Mono&quot;, &quot;Fira Code&quot;, &quot;Courier New&quot;, monospace;font-size:16px;font-weight:400;text-anchor:middle;dominant-baseline:auto">SBOM AS CODE</text>
+
+</svg>
