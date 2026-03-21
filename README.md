@@ -1,7 +1,6 @@
-<picture align="center">
-  <source srcset="https://raw.githubusercontent.com/productaize/bogrod/refs/heads/master/resources/logotitle.png">
-  <img alt="bogrod" src="https://raw.githubusercontent.com/productaize/bogrod/refs/heads/master/resources/logotitle.png">
-</picture>
+<p align="center">
+  <img alt="bogrod - SBOM as code" src="https://raw.githubusercontent.com/productaize/bogrod/master/resources/logotitle.png" style="visibility: visible; max-width: 100%;">
+</p>
 
 # bogrod — SBOM as Code
 
