@@ -128,7 +128,7 @@ grype sbom:releasenotes/sbom/jupyter-base-notebook.syft.json \
   --output cyclonedx-json=releasenotes/sbom/jupyter-base-notebook.cdx.json
 ```
 
-**3. Analyze and summarize the SBOM **
+**3. Analyze and summarize the SBOM**
 
 ```bash
 bogrod -S releasenotes/sbom/jupyter-base-notebook.cdx.json
@@ -453,4 +453,4 @@ I found some character from Gringotts Wizarding Bank would be a great fit.
 A trusted keeper of inventories and valuables. A fitting name for a tool that keeps careful track of what's inside your
 software.
 
-Credits: [Wikipedia](https://en.wikibooks.org/wiki/Muggles%27_Guide_to_Harry_Potter/Characters/Bogrod) · Image by
+Credits: [Wikipedia](https://en.wikibooks.org/wiki/Muggles%27_Guide_to_Harry_Potter/Characters/Bogrod)
