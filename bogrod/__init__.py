@@ -78,7 +78,10 @@ def main(argv=None):
     args = check_args(argv)
 
     if args.verbose:
+        import http.client as http_client, logging
         logger.setLevel('DEBUG')
+        logging.getLogger().setLevel('DEBUG')
+        http_client.HTTPConnection.debuglevel = 1
     else:
         logger.setLevel('INFO')
 
