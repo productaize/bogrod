@@ -112,6 +112,8 @@ def get_vulnerability_url(vuln_data):
                 url = f'https://github.com/advisories/{vuln_id}'
             case _ if s.startswith('CVE'):
                 url = f'https://www.cve.org/CVERecord?id={vuln_id}'
+            case _ if s.startswith('SNYK'):
+                url = f'https://security.snyk.io/vuln/{vuln_id}'
             case _:
                 url = f'https://osv.dev/vulnerability/{vuln_id}'
     return url
