@@ -1,3 +1,8 @@
+0.4.5
+- d09fe64 fix: elementaris url incorrect
+- 10d770a chore: better logging, remove EPSS scores before elementaris upload
+- b9d9cae chore: update README master logo
+
 0.4.4
 - feat: vulnerability viewer verifies that url is to actual vulnerability
 - chore: support cyclonedx 1.6, 1.7, trivy
