@@ -1,8 +1,9 @@
 from collections import Counter
+from urllib.parse import urljoin
 
 import requests
+
 from bogrod.contrib.aggregator import SBOMAggregator
-from urllib.parse import urljoin
 
 
 class EssentxElementaris(SBOMAggregator):
@@ -51,11 +52,11 @@ class EssentxElementaris(SBOMAggregator):
         self.filter_before_upload(bogrod.data)
         bogrod.validate()
         if tentative:
-            url = urljoin(self.url, '/sbom/temporary-report')
+            url = urljoin(f'{self.url}/', 'sbom/temporary-report')
             params = None
         else:
             sbomid = bogrod.data.get('serialNumber')
-            url = urljoin(self.url, '/sbom')
+            url = urljoin(f'{self.url}/', 'sbom')
             params = {
                 'projectPath': projectpath,
                 'sbomID': sbomid,
@@ -69,7 +70,7 @@ class EssentxElementaris(SBOMAggregator):
         return data.get('sbomID')
 
     def get_report(self, sbomID):
-        resp = requests.get(f'{self.url}/sbom/reports/{sbomID}',
+        resp = requests.get(urljoin(f'{self.url}/', f'sbom/reports/{sbomID}'),
                             auth=self.auth)
         data = resp.json()
         self.raise_for_status(resp, data, extra={'sbomID': sbomID})

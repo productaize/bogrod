@@ -1,13 +1,17 @@
-from unittest import skip
-
-import bogrod
 import contextlib
 import random
 import unittest
+from io import StringIO
+from unittest import skip
+from unittest.mock import patch
+
+from requests import Response
+
+import bogrod
 from bogrod import Bogrod
+from bogrod.contrib import EssentxElementaris
 from bogrod.settings import bom_spec_versions
 from bogrod.tests import BASE_PATH
-from io import StringIO
 
 
 class BogrodTests(unittest.TestCase):
@@ -105,6 +109,35 @@ class BogrodTests(unittest.TestCase):
             bogrod.data['specVersion'] = version
             schema = bogrod._get_sbom_schema()
             self.assertIn('$schema', schema)
+
+    def test_elementaris_upload_report_url(self):
+        """ test urls are appended properly """
+        # -- this tests  a common issue with urljoin(base, url) when base does not end with /, or url starts with /
+        #    fix: base shall have a trailing slash, url shall have no leading slash
+        import json
+        aggregator = EssentxElementaris(url='https://sbom.example.com/api/v1')
+        mock_response = Response()
+        mock_response._content = json.dumps(dict(message='ok')).encode('utf8')
+        mock_response.status_code = 200
+        projectpath = 'foo/bar'
+        sbompath = BASE_PATH / 'releasenotes/sbom/jupyter-base-notebook.cdx.json'
+        # -- get sbom tentative report
+        with patch('requests.post') as mock_post:
+            mock_post.return_value = mock_response
+            aggregator.upload_sbom(projectpath, sbompath, tentative=True)
+            mock_post.assert_called_once()
+            self.assertEqual(mock_post.call_args[0][0], 'https://sbom.example.com/api/v1/sbom/temporary-report')
+        # -- submit sbom
+        with patch('requests.post') as mock_post:
+            mock_post.return_value = mock_response
+            aggregator.upload_sbom(projectpath, sbompath, tentative=False)
+            mock_post.assert_called_once()
+            self.assertEqual(mock_post.call_args[0][0], 'https://sbom.example.com/api/v1/sbom')
+        # -- get final report
+        with patch('requests.get') as mock_get:
+            mock_get.return_value = mock_response
+            aggregator.get_report('someid')
+            self.assertEqual(mock_get.call_args[0][0], 'https://sbom.example.com/api/v1/sbom/reports/someid')
 
 
 if __name__ == '__main__':
