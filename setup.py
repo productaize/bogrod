@@ -12,6 +12,7 @@ dev_deps = [
     'pytest-textual-snapshot',
     'textual-dev',
     'twine',
+    'bump2version',
 ]
 
 setup(
