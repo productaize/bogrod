@@ -71,7 +71,7 @@ install-sbom-tools:
 	pip install -e .
 
 changes:
-	bash -c "grep -q `head -n1 bogrod/VERSION` CHANGES || (echo 'ERROR must update CHANGES first, run git-rln origin/master HEAD'; exit 1)"
+	bash -c "grep -q `head -n1 bogrod/VERSION | sed -E 's/-(rc|dev)[^[:space:]]*//g'` CHANGES || (echo 'ERROR must update CHANGES first, run git-rln origin/master HEAD'; exit 1)"
 	echo "CHANGES is ok"
 
 test:
