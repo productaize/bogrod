@@ -30,7 +30,7 @@ report:
 	reno report . --title FOO | pandoc -f rst > release-notes.html
 
 bump-build:
-	@bash -c "grep -qE '(-rc|-dev)' bogrod/VERSION && bump2version build || (echo 'WARNING this is a final release, build not incremented'; exit 1)"
+	@bash -c "grep -qE '(-rc|-dev)' bogrod/VERSION && bump2version build || (echo 'WARNING this is a final release, build not incremented')"
 	@cat bogrod/VERSION
 
 bump-release:
