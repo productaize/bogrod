@@ -46,14 +46,14 @@ dist: bump-build
 	python -m build
 	twine check dist/*.whl
 
-release: changes test dist
+release: bump-release changes test dist
 	bash -c "grep -qvE '(-rc|-dev)' bogrod/VERSION || (echo 'must be a final release. run make bump-release first'; exit 1)"
 	bash -c 'git checkout -b release-`head -n1 bogrod/VERSION`'
 	bash -c "git add .; git commit -m 'build release'; git push"
 	twine upload --skip-existing --repository pypi-productaize dist/*gz dist/*whl
 	bash -c "git tag `head -n1 bogrod/VERSION`; git push origin --tags"
 
-release-test: bump-build changes dist
+release-test: bump-release changes dist
 	# upload and install
 	bash -c "grep -qE '(-rc)' bogrod/VERSION || (echo 'must be a release candidate (-rc). run make bump-release first'; exit 1)"
 	bash -c 'git checkout -b build-`head -n1 bogrod/VERSION`'
