@@ -11,6 +11,7 @@ dev_deps = [
     'build',
     'pytest-textual-snapshot',
     'textual-dev',
+    'twine',
 ]
 
 setup(

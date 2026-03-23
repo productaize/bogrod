@@ -30,7 +30,7 @@ report:
 	reno report . --title FOO | pandoc -f rst > release-notes.html
 
 bump-build:
-	@bash -c "grep -qE '(-rc|-dev)' bogrod/VERSION && bump2version build || echo WARNING this is a final release, build not incremented"
+	@bash -c "grep -qE '(-rc|-dev)' bogrod/VERSION && bump2version build || (echo 'WARNING this is a final release, build not incremented'; exit 1)"
 	@cat bogrod/VERSION
 
 bump-release:
@@ -53,7 +53,7 @@ release: changes test dist
 	twine upload --skip-existing --repository pypi-productaize dist/*gz dist/*whl
 	bash -c "git tag `head -n1 bogrod/VERSION`; git push origin --tags"
 
-release-test: changes dist
+release-test: bump-build changes dist
 	# upload and install
 	bash -c "grep -qE '(-rc)' bogrod/VERSION || (echo 'must be a release candidate (-rc). run make bump-release first'; exit 1)"
 	bash -c 'git checkout -b build-`head -n1 bogrod/VERSION`'
