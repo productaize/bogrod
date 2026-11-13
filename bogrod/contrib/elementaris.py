@@ -7,7 +7,7 @@ from bogrod.contrib.aggregator import SBOMAggregator
 
 
 class EssentxElementaris(SBOMAggregator):
-    """ An aggregator for the Essentx Elementaris SBOM service
+    """An aggregator for the Essentx Elementaris SBOM service
 
     Usage:
         in the .bogrod config file:
@@ -48,30 +48,27 @@ class EssentxElementaris(SBOMAggregator):
 
     def upload_sbom(self, projectpath, sbompath, tentative=False):
         from bogrod import Bogrod
+
         bogrod = Bogrod.from_sbom(sbompath)
         self.filter_before_upload(bogrod.data)
         bogrod.validate()
+        sbomid = bogrod.data.get('serialNumber')
         if tentative:
             url = urljoin(f'{self.url}/', 'sbom/temporary-report')
             params = None
         else:
-            sbomid = bogrod.data.get('serialNumber')
             url = urljoin(f'{self.url}/', 'sbom')
             params = {
                 'projectPath': projectpath,
                 'sbomID': sbomid,
             }
-        resp = requests.post(url,
-                             params=params,
-                             json=bogrod.data,
-                             auth=self.auth)
+        resp = requests.post(url, params=params, json=bogrod.data, auth=self.auth)
         self.raise_for_status(resp, extra={'projectpath': projectpath, 'sbompath': sbompath})
         data = resp.json()
-        return data.get('sbomID')
+        return data.get('sbomID') or sbomid
 
     def get_report(self, sbomID):
-        resp = requests.get(urljoin(f'{self.url}/', f'sbom/reports/{sbomID}'),
-                            auth=self.auth)
+        resp = requests.get(urljoin(f'{self.url}/', f'sbom/reports/{sbomID}'), auth=self.auth)
         data = resp.json()
         self.raise_for_status(resp, data, extra={'sbomID': sbomID})
         return data
@@ -81,7 +78,7 @@ class EssentxElementaris(SBOMAggregator):
         sbomId = data.get('id')
         status = data.get('status')
         if 'report' not in data:
-            print(f'ERROR: SBOM ID: {sbomId} Status: {status}')
+            print(f'ERROR: SBOM ID: {sbomId} Status: {status} from {data}')
             return
         trustLevel = data['report']['trustLevelScore']
         vulns = data['report']['vulnerabilities']
@@ -99,8 +96,13 @@ class EssentxElementaris(SBOMAggregator):
             data = {
                 'message': f'got exception {e}',
             }
-        if 'error' in data or 'code' in data or resp.status_code > 400:
-            message = data['message']
+        # check forErrorReply
+        # -- https://github.com/essentxag/elementaris/blob/main/Models/ErrorReply.md
+        # -- however sometimes we get {'code': 200, 'message': 'PendingScanResult'} => assume success
+        isErrorReply = ('error' in data or 'code' in data) and data.get('code', 200) != 200
+        isHttpError = resp.status_code >= 400
+        if isErrorReply or isHttpError:
+            message = data.get('message')
             text = f'{resp.status_code=} {message=} {extra=} {data=}'
             raise Exception(text)
         return data

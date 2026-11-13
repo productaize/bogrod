@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from setuptools import setup, find_packages, find_namespace_packages
+from setuptools import find_namespace_packages, find_packages, setup
 
 README = open(Path(__file__).parent / 'README.md').read()
 version = open(Path(__file__).parent / 'bogrod' / 'VERSION').read()
@@ -13,6 +13,13 @@ dev_deps = [
     'textual-dev',
     'twine',
     'bump2version',
+]
+
+ai_deps = [
+    'openai',
+    'httpx',
+    'json-repair',
+    'tqdm',
 ]
 
 setup(
@@ -37,13 +44,9 @@ setup(
         'yaspin',
         'keyring',
     ],
-    entry_points={
-        'console_scripts': [
-            'bogrod=bogrod:main_cli',
-            'bd=bogrod:main_cli'
-        ]
-    },
+    entry_points={'console_scripts': ['bogrod=bogrod:main_cli', 'bd=bogrod:main_cli']},
     extras_require={
-        'dev': dev_deps,
-    }
+        'dev': dev_deps + ai_deps,
+        'ai': ai_deps,
+    },
 )

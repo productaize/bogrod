@@ -47,6 +47,25 @@ SearchModal > Grid {
     height: 7;
 }
 
+YesNoModal {
+    layout: grid;
+    background: $background 60%;
+    align: center middle;
+    grid-size: 5;
+}
+
+YesNoModal > Horizontal {
+    column-span: 8;
+}
+
+
+#modal-root {
+  border: solid $primary;
+  background: $panel;
+  overflow: hidden;
+  max-height: 7; /* ~2 lines + padding (Textual uses integer rows) */
+}
+
 #vulnerability-view {
     row-span: 4;
 }

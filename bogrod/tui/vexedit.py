@@ -1,15 +1,17 @@
 import webbrowser
-import yaml
-from bogrod.tui.widgets.modals import InputModal, HelpableMixin
-from bogrod.tui.widgets.radioslist import RadioSelectionList
-from bogrod.util import tryOr, get_vulnerability_url
 from io import StringIO
+
+import yaml
 from textual.app import ComposeResult
 from textual.binding import Binding
 from textual.containers import Horizontal
 from textual.screen import Screen
 from textual.widget import Widget
-from textual.widgets import Header, TextArea, SelectionList, OptionList, Footer
+from textual.widgets import Footer, Header, OptionList, SelectionList, TextArea
+
+from bogrod.tui.widgets.modals import HelpableMixin, InputModal
+from bogrod.tui.widgets.radioslist import RadioSelectionList
+from bogrod.util import get_vulnerability_url, tryOr
 
 
 class VulnearabilityEditor(HelpableMixin, Screen):
@@ -24,8 +26,9 @@ class VulnearabilityEditor(HelpableMixin, Screen):
         Binding(key="?", action='help', description="help", priority=True, show=True),
     ]
 
-    def __init__(self, *args, vex_data=None, vuln_data=None, vuln_details=None, vex_schema=None,
-                 templates=None, **kwargs):
+    def __init__(
+        self, *args, vex_data=None, vuln_data=None, vuln_details=None, vex_schema=None, templates=None, **kwargs
+    ):
         super().__init__(*args, **kwargs)
         self.vex_schema = vex_schema
         self.vuln_details = vuln_details
@@ -59,21 +62,29 @@ class VulnearabilityEditor(HelpableMixin, Screen):
     def make_vex_responses(self):
         states = [(v, i, False) for i, v in enumerate(self.vex_schema['state'])]
         responses = [(v, i, False) for i, v in enumerate(self.vex_schema['response'])]
-        justifications = [(v, i, False) for i, v in enumerate(self.vex_schema['justification'], )]
+        justifications = [
+            (v, i, False)
+            for i, v in enumerate(
+                self.vex_schema['justification'],
+            )
+        ]
 
         states = RadioSelectionList(
             *states,
-            id='select-state', classes="box",
+            id='select-state',
+            classes="box",
         )
         states.border_title = 'state'
         responses = SelectionList[int](
             *responses,
-            id='select-response', classes="box",
+            id='select-response',
+            classes="box",
         )
         responses.border_title = 'response'
         justifications = RadioSelectionList(
             *justifications,
-            id='select-justification', classes="box",
+            id='select-justification',
+            classes="box",
         )
         justifications.border_title = 'justification'
         detail = TextArea(self.vex_data['detail'], id='text-detail', classes="box")
@@ -91,7 +102,7 @@ class VulnearabilityEditor(HelpableMixin, Screen):
                 self.query_one('#select-template'),
                 self.query_one('#view-vexdata'),
             ]
-        except Exception as e:
+        except Exception:
             pass
         return []
 
@@ -120,9 +131,11 @@ class VulnearabilityEditor(HelpableMixin, Screen):
         select_multiple_options('#select-response', 'response')
         self.query_one('#text-detail').text = self.vex_data['detail']
 
-        templates = [k for k, v in self.vex_templates.items()
-                     if (v.get('match') in ('all', self.vuln_details)
-                         or k in self.vuln_details)]
+        templates = [
+            k
+            for k, v in self.vex_templates.items()
+            if (v.get('match') in ('all', self.vuln_details) or k in self.vuln_details)
+        ]
         self.log('****templates', templates)
         self.query_one('#select-template').clear_options()
         self.query_one('#select-template').add_options(templates)
@@ -159,6 +172,8 @@ class VulnearabilityEditor(HelpableMixin, Screen):
             option_list = self.focused
             template = option_list.get_option_at_index(option_list.highlighted).prompt
             self.vex_data = dict(self.vex_templates[template])
+            # set default detail to the name of the template (ease of use)
+            self.vex_data['detail'] = self.vex_data.get('detail', '').strip() or template
             self.on_mount()
             self.action_select_template()
 
