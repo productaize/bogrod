@@ -1,16 +1,17 @@
-from collections import Counter
-
 import webbrowser
+from collections import Counter
+from textwrap import dedent, wrap
+
 import yaml
-from bogrod.tui import VulnearabilityEditor
-from bogrod.tui.widgets.modals import SearchModal, HelpableMixin
-from bogrod.tui.widgets.multitable import MultiSelectDataTable
-from bogrod.util import tryOr, get_vulnerability_url
 from textual.app import ComposeResult
 from textual.binding import Binding
 from textual.screen import Screen
-from textual.widgets import Header, Footer, OptionList, Markdown
-from textwrap import wrap, dedent
+from textual.widgets import Footer, Header, Markdown, OptionList
+
+from bogrod.tui import VulnearabilityEditor
+from bogrod.tui.widgets.modals import HelpableMixin, SearchModal, YesNoModal
+from bogrod.tui.widgets.multitable import MultiSelectDataTable
+from bogrod.util import get_vulnerability_url, tryOr
 
 
 class VulnerabilityList(HelpableMixin, Screen):
@@ -20,6 +21,7 @@ class VulnerabilityList(HelpableMixin, Screen):
         Binding(key="?", action='help', description="help", priority=True, show=True),
         Binding(key="l,L", action='focus_table', description="go to list of vulnerabilities", show=True),
         Binding(key='f,F', action='focus_filter', description='go to filters', show=True),
+        Binding(key='d,D', action='delete_vulnerability', description='delete vulnerability', show=True),
         Binding(key='v,V', action='browse_url', description='browse CVE-related web page', show=True),
         Binding(key='/', action='search', description='search by different criteria', show=True),
     ]
@@ -28,7 +30,7 @@ class VulnerabilityList(HelpableMixin, Screen):
         super().__init__(*args, **kwargs)
         self.bogrod = bogrod
         self.sub_title = self.bogrod.sbom_path
-        self.report_columns = 'id,source,severity,state,vector,affects,url,issues'.split(',')
+        self.report_columns = ['id', 'source', 'severity', 'state', 'vector', 'affects', 'url', 'issues']
         self.all_data = self.bogrod.vulnerabilities(as_dict=True, severities='*')
         self.data = None
         self.filters = {
@@ -60,39 +62,33 @@ class VulnerabilityList(HelpableMixin, Screen):
     def make_filters(self):
         # severity
         severities = "*", "critical", "high", "medium", "low"
-        severity = OptionList(*severities,
-                              name='severity', classes="box", id='filter-severity')
+        severity = OptionList(*severities, name='severity', classes="box", id='filter-severity')
         severity.border_title = 'severity'
         severity.highlighted = severities.index(self.filters.get('severity') or '*')
         # vectors
-        vector_options = ['*'] + list(sorted(self.bogrod._vectors()))
-        vectors = OptionList(*vector_options,
-                             name='vectors', classes="box", id='filter-vectors')
+        vector_options = ['*'] + sorted(self.bogrod._vectors())
+        vectors = OptionList(*vector_options, name='vectors', classes="box", id='filter-vectors')
         vectors.border_title = 'vector'
         # state
-        state_options = ['*'] + list(sorted(self.bogrod._states()))
-        states = OptionList(*state_options,
-                            name='states', classes="box", id='filter-states')
+        state_options = ['*'] + sorted(self.bogrod._states())
+        states = OptionList(*state_options, name='states', classes="box", id='filter-states')
         states.border_title = 'state'
         # components/artifacts
-        components = ['*'] + list(sorted(self.bogrod._components()))
-        components = OptionList(*components,
-                                name='components', classes="box", id='filter-components')
+        components = ['*'] + sorted(self.bogrod._components())
+        components = OptionList(*components, name='components', classes="box", id='filter-components')
         components.border_title = 'component'
         # has issues
         issues = ['*', 'issues', 'no issues']
-        issues = OptionList(*issues,
-                            name='issues', classes="box", id='filter-issues')
+        issues = OptionList(*issues, name='issues', classes="box", id='filter-issues')
         issues.border_title = 'issues'
         # scores
         scores = ['*'] + list(f'>{s}' for s in range(11))
-        scores = OptionList(*scores,
-                            name='scores', classes="box", id='filter-scores')
+        scores = OptionList(*scores, name='scores', classes="box", id='filter-scores')
         scores.border_title = 'scores'
         return severity, vectors, states, components, issues, scores
 
     def reset_filters(self):
-        """ reset all filters, no filters applied """
+        """reset all filters, no filters applied"""
         # reset filters
         for k in self.filters:
             self.filters[k] = None
@@ -109,6 +105,7 @@ class VulnerabilityList(HelpableMixin, Screen):
         table: MultiSelectDataTable
         initial = not hasattr(self, 'vuln_table')
         table = self.vuln_table = self.query_one('#vulnerability-view')
+        self.vuln_table.clear_selected_rows()
         table.cursor_type = 'row'
         self.filter_data()
         data = self.data
@@ -156,9 +153,11 @@ class VulnerabilityList(HelpableMixin, Screen):
         )
         # -- add each data row
         for i in range(4):
-            markdown += f"| {st[i]} | {sv[i]:>4} | {xt[i]} | {xv[i]:>4} | {ct[i]} | {cv[i]:>4} | {vt[i]} | {vv[i]:>4} |\n"
+            markdown += (
+                f"| {st[i]} | {sv[i]:>4} | {xt[i]} | {xv[i]:>4} | {ct[i]} | {cv[i]:>4} | {vt[i]} | {vv[i]:>4} |\n"
+            )
         # -- add the total row
-        markdown += f"| ----- |  |  |  |  |  |  |  |\n"
+        markdown += "| ----- |  |  |  |  |  |  |  |\n"
         markdown += f"| Total | {len(self.data)} |  |  |  |  |  |  |\n"
         self.log(f'summary updated {markdown}')
         summary.update(dedent(markdown))
@@ -176,7 +175,7 @@ class VulnerabilityList(HelpableMixin, Screen):
                 self.query_one('#filter-scores'),
                 self.query_one('#vulnerability-view'),
             ]
-        except Exception as e:
+        except Exception:
             pass
         return []
 
@@ -198,8 +197,9 @@ class VulnerabilityList(HelpableMixin, Screen):
             'components': setfilter('component'),
             'scores': setfilter('score'),
             'names': setfilter('source'),
-            'issues': (False if kwargs.get('issues') == 'no issues'
-                       else True if kwargs.get('issues') == 'issues' else None),
+            'issues': (
+                False if kwargs.get('issues') == 'no issues' else True if kwargs.get('issues') == 'issues' else None
+            ),
         }
         self.log(f'filter_data {self.filters=} => {report_filters=}')
         self.data = self.bogrod._generate_report_data(**report_filters)
@@ -220,21 +220,33 @@ class VulnerabilityList(HelpableMixin, Screen):
             severity=self.bogrod._vuln_severity(vuln),
             score=self.bogrod._vuln_score(vuln),
             vector=self.bogrod._vuln_vector(vuln),
-            description='\n# '.join(
-                wrap(vuln.get('description', 'unknown'), subsequent_indent=' ' * 5)),
+            description='\n# '.join(wrap(vuln.get('description', 'unknown'), subsequent_indent=' ' * 5)),
             component=tryOr(lambda: vuln['affects'][0]['ref'], 'n/a'),
-            artifact=tryOr(lambda: (matches[vuln_id]['artifact'].get('name', '?') + '-' +
-                                    matches[vuln_id]['artifact'].get('version', '?')), 'n/a'),
+            artifact=tryOr(
+                lambda: (
+                    matches[vuln_id]['artifact'].get('name', '?')
+                    + '-'
+                    + matches[vuln_id]['artifact'].get('version', '?')
+                ),
+                'n/a',
+            ),
             url=tryOr(lambda: vuln['source']['url'], 'unknown'),
-            fix=tryOr(lambda: ';'.join(matches[vuln_id]['vulnerability']['fix']['versions']) +
-                              '(' + matches[vuln_id]['vulnerability']['fix']['state'] + ')',
-                      '?'),
-            location='\n#      '.join([v.get('path')
-                                       for v in
-                                       tryOr(lambda: matches[vuln_id]['artifact']['locations'],
-                                             [{'path': '<no grype json file>'}])]),
+            fix=tryOr(
+                lambda: (
+                    ';'.join(matches[vuln_id]['vulnerability']['fix']['versions'])
+                    + '('
+                    + matches[vuln_id]['vulnerability']['fix']['state']
+                    + ')'
+                ),
+                '?',
+            ),
+            location='\n#      '.join([
+                v.get('path')
+                for v in tryOr(lambda: matches[vuln_id]['artifact']['locations'], [{'path': '<no grype json file>'}])
+            ]),
         )
-        vuln_details = dedent("""
+        vuln_details = (
+            dedent("""
                 # id: {id} 
                 # severity: {severity} 
                 # score: {score}
@@ -247,13 +259,18 @@ class VulnerabilityList(HelpableMixin, Screen):
                 #      {description}
                 # locations: 
                 #      {location}
-                """).strip().format(**details_data)
-        editor = VulnearabilityEditor(vex_data=vex_data,
-                                      vuln_data=details_data,
-                                      vuln_details=vuln_details,
-                                      vex_schema=vex_schema,
-                                      templates=self.bogrod.templates(),
-                                      classes="editor")
+                """)
+            .strip()
+            .format(**details_data)
+        )
+        editor = VulnearabilityEditor(
+            vex_data=vex_data,
+            vuln_data=details_data,
+            vuln_details=vuln_details,
+            vex_schema=vex_schema,
+            templates=self.bogrod.templates(),
+            classes="editor",
+        )
 
         def on_dismiss(data):
             # update current vulnerability
@@ -275,7 +292,7 @@ class VulnerabilityList(HelpableMixin, Screen):
         matches = self.bogrod.grype_matches()
         all_vuln = self.bogrod.vulnerabilities(as_dict=True, severities='*')
         vex_schema = yaml.dump({
-            k.lower(): '|'.join(v if v else '[]' for v in v.get('enum', ['<text>']))
+            k.lower(): '|'.join(v or '[]' for v in v.get('enum', ['<text>']))
             for k, v in self.bogrod._get_vex_schema()['definitions'].items()
             if k.lower() in ['state', 'justification', 'response', 'detail']
         }).splitlines()
@@ -290,6 +307,9 @@ class VulnerabilityList(HelpableMixin, Screen):
 
     def action_edit_vulnerability(self) -> None:
         self.edit_vulnerability(self.data[self.vuln_table.cursor_row]['id'])
+
+    def action_delete_vulnerability(self) -> None:
+        self.delete_vulnerability(self.data[self.vuln_table.cursor_row]['id'])
 
     def action_focus_table(self) -> None:
         self.query_one('#vulnerability-view').focus()
@@ -352,6 +372,17 @@ class VulnerabilityList(HelpableMixin, Screen):
             # prevent update on initial compose and layout refresh
             self.make_vuln_view()
             self.update_vuln_summary()
+
+    def delete_vulnerability(self, vuln_id):
+        def on_dismiss(delete):
+            self.log(f'*** delete vulnerabilitiy modal {delete=}')
+            if delete == 'yes':
+                # refresh
+                self.bogrod.delete_vulnerability(vuln_id)
+                self.vuln_table.clear_selected_rows()
+                self.on_mount()
+
+        self.app.push_screen(YesNoModal(prompt=f'Delete {vuln_id}? This cannot be undone'), on_dismiss)
 
     @property
     def related_screens(self):
