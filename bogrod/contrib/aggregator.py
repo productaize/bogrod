@@ -21,6 +21,14 @@ class SBOMAggregator:
         raise NotImplementedError
 
     def get_report(self, sbomID):
+        """
+
+        Args:
+            sbomID (str): the sbom ID
+
+        Returns:
+            dict: the report data
+        """
         raise NotImplementedError
 
     def submit(self, projectpath, sbompath, tentative=False, timeout=None, interval=None):
@@ -33,15 +41,18 @@ class SBOMAggregator:
             timeout (int): the maximum time to wait for the report to complete
             interval (int): the time to wait between checking the report status
         """
+        sbomID = self.upload_sbom(projectpath, sbompath, tentative=tentative)
+        return self.check_report(sbomID, timeout=timeout, interval=interval)
+
+    def check_report(self, sbomID, timeout=None, interval=None):
+        report = None
         timeout = self.report_timeout
         interval = self.report_interval
-        sbomID = self.upload_sbom(projectpath, sbompath, tentative=tentative)
-        report = None
         with yaspin(Spinners.dots, color='green') as yp:
             yp.text = 'uploading'
             for i in range(timeout):
                 report = self.get_report(sbomID)
-                status = report.get('status', 'waiting')
+                status = report.get('status') or report.get('message') or '(no message received)'
                 eta = report.get('eta', '(no eta)')
                 if 'pending' not in status.lower():
                     break
