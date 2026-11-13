@@ -10,4 +10,3 @@ class BogrodVEXFile:
             print("Reading vex: ", path)
             self.vex = yaml.safe_load(fin)
         return BogrodVEXFile(self.vex)
-

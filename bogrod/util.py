@@ -82,6 +82,7 @@ def wait(s, delay=1, sustain_ctrl_c=3):
             print(f'waiting for {delay} seconds')
     """
     import time
+
     if not hasattr(wait, '_control_c_count'):
         wait._control_c_count = 0
 

@@ -73,24 +73,9 @@ class CycloneDXSBOM:
         theirs_vuln = other.vulnerabilities(as_dict=True)
         ours = set(ours_vuln)
         theirs = set(theirs_vuln)
-        diff.update({
-            vid: {
-                'delta': 'unchanged',
-                'vuln': ours_vuln[vid]
-            }
-         for vid in ours.intersection(theirs)})
-        diff.update({
-            vid: {
-                'delta': 'new',
-                'vuln': ours_vuln[vid]
-            }
-        for vid in ours.difference(theirs)})
-        diff.update({
-            vid: {
-                'delta': 'resolved',
-                'vuln': theirs_vuln[vid]
-            }
-        for vid in theirs.difference(ours)})
+        diff.update({vid: {'delta': 'unchanged', 'vuln': ours_vuln[vid]} for vid in ours.intersection(theirs)})
+        diff.update({vid: {'delta': 'new', 'vuln': ours_vuln[vid]} for vid in ours.difference(theirs)})
+        diff.update({vid: {'delta': 'resolved', 'vuln': theirs_vuln[vid]} for vid in theirs.difference(ours)})
         return diff
 
     @classmethod

@@ -25,6 +25,7 @@ class BogrodTests(unittest.TestCase):
 
     def test_contrib_base(self):
         from bogrod.contrib import aggregators
+
         self.assertIn('dummy', aggregators)
 
     @skip('functionality currently not working properly')
@@ -66,12 +67,7 @@ class BogrodTests(unittest.TestCase):
             vuln_id = vuln['id']
             vex = bogrod.vex.setdefault(vuln_id, {})
             vex_report = vex.setdefault('report', {})
-            vex_report['issues'] = [
-                {
-                    'id': 'CVE-2022-29999',
-                    'description': 'this is a test issue'
-                }
-            ]
+            vex_report['issues'] = [{'id': 'CVE-2022-29999', 'description': 'this is a test issue'}]
         data = bogrod._generate_report_data(issues=True)
         # -- expect at least 5 issues
         # -- we can have more than 5 issues because bogrod.data maintains a list of all issues (in SBOM),
@@ -111,10 +107,11 @@ class BogrodTests(unittest.TestCase):
             self.assertIn('$schema', schema)
 
     def test_elementaris_upload_report_url(self):
-        """ test urls are appended properly """
+        """test urls are appended properly"""
         # -- this tests  a common issue with urljoin(base, url) when base does not end with /, or url starts with /
         #    fix: base shall have a trailing slash, url shall have no leading slash
         import json
+
         aggregator = EssentxElementaris(url='https://sbom.example.com/api/v1')
         mock_response = Response()
         mock_response._content = json.dumps(dict(message='ok')).encode('utf8')

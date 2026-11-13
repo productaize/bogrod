@@ -7,7 +7,7 @@ from bogrod.contrib.aggregator import SBOMAggregator
 
 
 class EssentxElementaris(SBOMAggregator):
-    """ An aggregator for the Essentx Elementaris SBOM service
+    """An aggregator for the Essentx Elementaris SBOM service
 
     Usage:
         in the .bogrod config file:
@@ -48,6 +48,7 @@ class EssentxElementaris(SBOMAggregator):
 
     def upload_sbom(self, projectpath, sbompath, tentative=False):
         from bogrod import Bogrod
+
         bogrod = Bogrod.from_sbom(sbompath)
         self.filter_before_upload(bogrod.data)
         bogrod.validate()
@@ -61,17 +62,13 @@ class EssentxElementaris(SBOMAggregator):
                 'projectPath': projectpath,
                 'sbomID': sbomid,
             }
-        resp = requests.post(url,
-                             params=params,
-                             json=bogrod.data,
-                             auth=self.auth)
+        resp = requests.post(url, params=params, json=bogrod.data, auth=self.auth)
         self.raise_for_status(resp, extra={'projectpath': projectpath, 'sbompath': sbompath})
         data = resp.json()
         return data.get('sbomID')
 
     def get_report(self, sbomID):
-        resp = requests.get(urljoin(f'{self.url}/', f'sbom/reports/{sbomID}'),
-                            auth=self.auth)
+        resp = requests.get(urljoin(f'{self.url}/', f'sbom/reports/{sbomID}'), auth=self.auth)
         data = resp.json()
         self.raise_for_status(resp, data, extra={'sbomID': sbomID})
         return data

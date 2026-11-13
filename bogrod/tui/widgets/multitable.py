@@ -6,7 +6,7 @@ from textual.widgets import DataTable
 
 
 class MultiSelectDataTable(DataTable):
-    """ A DataTable that allows selecting multiple rows
+    """A DataTable that allows selecting multiple rows
 
     This class extends DataTable to allow selecting multiple rows.
     All selected rows are highlighted with a customized style background,
@@ -21,6 +21,7 @@ class MultiSelectDataTable(DataTable):
         - To get the list of selected rows, access the selected_rows attribute, the set
           of row indexes.
     """
+
     BINDINGS = [
         Binding("space", "select_cursor", "Select", show=False),
         Binding("ctrl+@", "select_rows", "Toggle selection (ctrl+space)", show=False),  # control+space
@@ -32,7 +33,9 @@ class MultiSelectDataTable(DataTable):
         Binding("pagedown", "page_down", "Page Down", show=False),
     ]
 
-    DEFAULT_CSS = DataTable.DEFAULT_CSS + """
+    DEFAULT_CSS = (
+        DataTable.DEFAULT_CSS
+        + """
     MultiSelectDataTable > .datatable--cursor {
         background: $primary-lighten-3;
     }
@@ -41,6 +44,7 @@ class MultiSelectDataTable(DataTable):
         background: $primary-background-lighten-3;
     }
     """
+    )
 
     COMPONENT_CLASSES: ClassVar[set[str]] = DataTable.COMPONENT_CLASSES | {
         # additional style for MultiSelectDataTable
@@ -90,7 +94,7 @@ class MultiSelectDataTable(DataTable):
         return style
 
     def select_rows(self, rows):
-        """ Select the given list of rows
+        """Select the given list of rows
 
         Args:
             rows: a list of row indexes to select
@@ -100,7 +104,7 @@ class MultiSelectDataTable(DataTable):
         self.refresh()
 
     def clear_selected_rows(self):
-        """ Clear all selected rows """
+        """Clear all selected rows"""
         self.selected_rows.clear()
         self._clear_caches()
         self.refresh()

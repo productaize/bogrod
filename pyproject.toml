@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bogrod"
+dynamic = ["version", "license", "readme", "description", "authors", "dependencies", "optional-dependencies", "scripts"]
+
+[tool.setuptools.dynamic]
+version = { attr = "bogrod._version.version" }
+
+[tool.pytest]
+filterwarnings = ["default"]
+
+[tool.ruff]
+line-length = 120
+# hug ({
+preview = true
+
+[tool.ruff.format]
+# disable quote reformatting
+quote-style = "preserve"
+# don't split multi-args to multiple lines (unless there is a trailing comma)
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint]
+ignore = [
+    "Q000", "Q001", # disable quote reformatting
+]
+
