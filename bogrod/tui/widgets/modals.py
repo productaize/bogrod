@@ -1,10 +1,9 @@
-from textwrap import dedent
-
 from textual.app import ComposeResult
 from textual.binding import Binding
-from textual.containers import Container, Grid
+from textual.containers import Container, Grid, Horizontal
 from textual.screen import ModalScreen
-from textual.widgets import Input, Label, Footer, MarkdownViewer
+from textual.widgets import Input, Label, Footer, MarkdownViewer, Static, Button
+from textwrap import dedent
 
 
 class InputModal(ModalScreen):
@@ -89,7 +88,7 @@ class HelpModal(ModalScreen):
             yield MarkdownViewer(dedent(text), id='help-text', show_table_of_contents=False)
             yield Footer()
 
-    def on_moun(self):
+    def xx_on_mount(self):
         self.get_widget_by_id('help-text').scroll_to('top').focus()
 
     def on_key(self, event):
@@ -114,3 +113,28 @@ class HelpableMixin:
 
         related = self.related_screens if hasattr(self, 'related_screens') else self
         self.app.push_screen(HelpModal(related), on_dismiss)
+
+
+class YesNoModal(ModalScreen):
+    def __init__(self, prompt: str = "Confirm?", border_title: str | None = None):
+        super().__init__()
+        self.border_title = border_title
+        self.prompt = prompt
+
+    def compose(self) -> ComposeResult:
+        # Use the base container if you want an input; here we replace with prompt + buttons
+        with Container(id='modal-root'):
+            yield Static(self.prompt, id="prompt")
+            with Horizontal(id='yesno-modal'):
+                yield Button("(y) yes", id="yes", variant="success", name='yes')
+                yield Button("(n) no", id="no", variant="error", name='no')
+
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        self.log(f'button pressed {event}')
+        self.dismiss('yes' if event.button.id == "yes" else 'no')
+
+    def on_key(self, event):
+        self.dismiss('yes' if event.key == "y" else 'no')
+
+    def data(self):
+        pass

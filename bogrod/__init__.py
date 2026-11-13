@@ -1,16 +1,19 @@
-from pathlib import Path
-
 import argparse
-import keyring
 import logging
-import yaml
-from bogrod import contrib, settings
-from bogrod.controller import Bogrod
-from bogrod.sbom import CycloneDXSBOM
 from configparser import ConfigParser
 from contextlib import redirect_stderr
 from io import StringIO
+from pathlib import Path
+
+import keyring
+import yaml
 from yaspin import yaspin
+
+from bogrod import contrib, settings
+from bogrod.analysis.exportcsv import DataExporter
+from bogrod.contrib.aggregator import SBOMAggregator as SBOMAggregator
+from bogrod.controller import Bogrod
+from bogrod.sbom import CycloneDXSBOM as CycloneDXSBOM
 
 logger = logging.getLogger(__name__)
 
@@ -32,44 +35,44 @@ def check_args(argv):
         print(version)
         exit(0)
     # no --version argument, continue
-    parser.add_argument('sbom',
-                        help='/path/to/cyclonedx-sbom.json')
-    parser.add_argument('-n', '--notes',
-                        help='/path/to/notes.yaml')
-    parser.add_argument('-o', '--output', default='table',
-                        help='output format [table,json,yaml,raw]')
-    parser.add_argument('-S', '--summary', action='store_true',
-                        help='summarize report')
-    parser.add_argument('-s', '--severities', default='critical,high',
-                        help='list of serverities in critical,high,medium,low')
-    parser.add_argument('-x', '--update-vex', action='store_true',
-                        help='update vex information from sbom vulnerabilities')
-    parser.add_argument('--vex-file',
-                        help='/path/to/vex.yaml')
-    parser.add_argument('-p', '--sbom-properties',
-                        help='Merge sbom with information in /path/to/properties.yaml')
-    parser.add_argument('-m', '--merge-vex', action='store_true', default=True,
-                        help='Merge vex data back to sbom')
-    parser.add_argument('-w', '--write-notes',
-                        action='store_true',
-                        help='update notes according to sbom (add new, mark fixed)')
-    parser.add_argument('-W', '--work',
-                        action='store_true',
-                        help='work each vulnerability')
-    parser.add_argument('-g', '--grype',
-                        help='use grype SBOM to match vulnerabilities at /path/to/grype.json')
-    parser.add_argument('--diff',
-                        help='/path/to/cyclonedx-sbom.json')
-    parser.add_argument('--vex-issues',
-                        help='/path/to/vex-issues.yaml')
-    parser.add_argument('--upload',
-                        help='specify target aggregator to upload sbom and get issues report')
-    parser.add_argument('--upload-tentative', action='store_true',
-                        help='if specified upload sbom as tentative')
-    parser.add_argument('-F', '--fail-on-issues', action='store_true', dest='fail_on_issues',
-                        help='if there are pending issues or unresolved vulnerabilities, exit with error')
-    parser.add_argument('-V', '--verbose', action='store_true', default=False,
-                        help='increase output verbosity')
+    parser.add_argument('sbom', help='/path/to/cyclonedx-sbom.json')
+    parser.add_argument('-n', '--notes', help='/path/to/notes.yaml')
+    parser.add_argument('-o', '--output', default='table', help='output format [table,json,yaml,raw]')
+    parser.add_argument('-S', '--summary', action='store_true', help='summarize report')
+    parser.add_argument(
+        '-s', '--severities', default='critical,high', help='list of serverities in critical,high,medium,low'
+    )
+    parser.add_argument(
+        '-x', '--update-vex', action='store_true', help='update vex information from sbom vulnerabilities'
+    )
+    parser.add_argument('--vex-file', help='/path/to/vex.yaml')
+    parser.add_argument('-p', '--sbom-properties', help='Merge sbom with information in /path/to/properties.yaml')
+    parser.add_argument('-m', '--merge-vex', action='store_true', default=True, help='Merge vex data back to sbom')
+    parser.add_argument(
+        '-w', '--write-notes', action='store_true', help='update notes according to sbom (add new, mark fixed)'
+    )
+    parser.add_argument('-W', '--work', action='store_true', help='work each vulnerability')
+    parser.add_argument('-g', '--grype', help='use grype SBOM to match vulnerabilities at /path/to/grype.json')
+    parser.add_argument('--diff', help='/path/to/cyclonedx-sbom.json')
+    parser.add_argument('--vex-issues', help='/path/to/vex-issues.yaml')
+    parser.add_argument('--upload', help='specify target aggregator to upload sbom and get issues report')
+    parser.add_argument('--upload-tentative', action='store_true', help='if specified upload sbom as tentative')
+    parser.add_argument("--export", default=False, help="/path/to/report.csv")
+    parser.add_argument("--check-report", action='store', default=None, help="SBOM ID")
+    parser.add_argument("--vex-sources", help='/path/to/openvex.json')
+    parser.add_argument(
+        "--no-fix-metadata",
+        action="store_true",
+        help='fix metadata by inserting a top-level component without repository name (done by default)',
+    )
+    parser.add_argument(
+        '-F',
+        '--fail-on-issues',
+        action='store_true',
+        dest='fail_on_issues',
+        help='if there are pending issues or unresolved vulnerabilities, exit with error',
+    )
+    parser.add_argument('-V', '--verbose', action='store_true', default=False, help='increase output verbosity')
     args = parser.parse_args(argv)
     return args
 
@@ -78,7 +81,9 @@ def main(argv=None):
     args = check_args(argv)
 
     if args.verbose:
-        import http.client as http_client, logging
+        import http.client as http_client
+        import logging
+
         logger.setLevel('DEBUG')
         logging.getLogger().setLevel('DEBUG')
         http_client.HTTPConnection.debuglevel = 1
@@ -87,6 +92,7 @@ def main(argv=None):
 
     def write_vex_merge(vex_file):
         bogrod.write_vex(vex_file)
+        bogrod.fix_metadata(toplevel=not args.no_fix_metadata)
         if args.merge_vex:
             prop_data = None
             if args.sbom_properties:
@@ -112,6 +118,7 @@ def main(argv=None):
             args.notes = config[section].get('notes', args.notes)
             args.vex_file = config[section].get('vex_file', args.vex_file)
             args.vex_issues = config[section].get('vex_issues', args.vex_issues)
+            args.vex_sources = config[section].get('vex_sources', args.vex_sources)
             if not Path(args.sbom).exists():
                 args.sbom = config[section].get('sbom', args.sbom)
             args.upload = config[section].get('upload', args.upload)
@@ -126,7 +133,8 @@ def main(argv=None):
             update_args(args.sbom)
         elif not Path(args.sbom).exists():
             logger.error(
-                f"{args.sbom} does not exist and not found in .bogrod file. Available: {','.join(config.sections())}")
+                f"{args.sbom} does not exist and not found in .bogrod file. Available: {','.join(config.sections())}"
+            )
             exit(1)
 
     def loadfiles():
@@ -174,6 +182,12 @@ def main(argv=None):
             if notes_file.exists():
                 logger.debug(f"Found release notes: {notes_file}")
                 args.notes = notes_file
+        # vex sources
+        if not args.vex_sources:
+            vex_source = Path(args.sbom).parent / (Path(args.sbom).stem.replace('.cdx', '') + '.openvex.json')
+            if vex_source.exists():
+                logger.debug(f"Found open vex source: {vex_source}")
+                args.vex_sources = args.vex_sources
 
     def process():
         if args.severities:
@@ -198,6 +212,8 @@ def main(argv=None):
             bogrod.read_vex(args.vex_file)
         if args.vex_issues:
             bogrod.read_vex_issues(args.vex_issues)
+        if args.vex_sources:
+            bogrod.read_vex_sources(args.vex_sources)
         if args.update_vex:
             vex_file = args.vex_file or args.sbom
             bogrod.update_vex()
@@ -207,6 +223,12 @@ def main(argv=None):
             AggregatorClass = contrib.aggregators[args.upload]
             params = {}
             params_key = args.upload + '.'
+            # read aggregators kwargs from ini file
+            # -- format: <aggregator>.<kwarg>=<value>
+            # -- all kwargs are collected as the params dict and passed as AggregatorClass(**params)
+            # -- values of format 'keyring:service:name' translate to keyring.get_password(service, name)
+            # -- set the keyring password using python -m keyring set service name
+            # -- e.g. foobar.token=keyring:foobar:apikey => keyring.get_password('foobar', 'apikey')
             for k, v in args.aggregators.items():
                 pk = k.replace(params_key, '')
                 if not k.startswith(params_key):
@@ -216,16 +238,33 @@ def main(argv=None):
                 else:
                     params[pk] = v
             logger.debug(f'Uploading vex to {args.upload}')
-            aggregator = AggregatorClass(**params)
-            sbomID, report = aggregator.submit(args.projectpath, args.sbom, tentative=args.upload_tentative)
-            with open(args.vex_issues, 'w') as fout:
-                yaml.safe_dump(report, fout)
+            aggregator = AggregatorClass(**params)  # type: SBOMAggregator
+            if args.check_report:
+                sbomID = bogrod.data.get('serialNumber') if args.check_report == '/' else args.check_report
+                sbomID, report = aggregator.check_report(sbomID, timeout=2, interval=30)
+                if not report:
+                    print("No report received. Try again later or check your email")
+                    exit(1)
+            else:
+                sbomID, report = aggregator.submit(
+                    args.projectpath, args.sbom, tentative=args.upload_tentative, timeout=10, interval=30
+                )
+                with open(args.vex_issues, 'w') as fout:
+                    yaml.safe_dump(report, fout)
             aggregator.summary(sbomID, report)
+            exit(0)
+        if args.export:
+            yp.hide()
+            exporter = DataExporter(bogrod._generate_report_data(columns='*', severities='*'))
+            yp.text = 'saving report.csv...'
+            yp.show()
+            exporter.to_csv('report.csv')
             exit(0)
         if args.work:
             yp.hide()
             vex_file = args.vex_file or args.sbom
             from bogrod.tui.app import BogrodApp
+
             bogrod.app = BogrodApp(bogrod=bogrod)
             bogrod.app.run()
             yp.text = 'saving...'
