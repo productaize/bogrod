@@ -1,3 +1,5 @@
 -e .
 twine
 bump2version
+openai==3.26.0
+json_repair==0.64.0
