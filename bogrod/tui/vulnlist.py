@@ -60,39 +60,33 @@ class VulnerabilityList(HelpableMixin, Screen):
     def make_filters(self):
         # severity
         severities = "*", "critical", "high", "medium", "low"
-        severity = OptionList(*severities,
-                              name='severity', classes="box", id='filter-severity')
+        severity = OptionList(*severities, name='severity', classes="box", id='filter-severity')
         severity.border_title = 'severity'
         severity.highlighted = severities.index(self.filters.get('severity') or '*')
         # vectors
         vector_options = ['*'] + list(sorted(self.bogrod._vectors()))
-        vectors = OptionList(*vector_options,
-                             name='vectors', classes="box", id='filter-vectors')
+        vectors = OptionList(*vector_options, name='vectors', classes="box", id='filter-vectors')
         vectors.border_title = 'vector'
         # state
         state_options = ['*'] + list(sorted(self.bogrod._states()))
-        states = OptionList(*state_options,
-                            name='states', classes="box", id='filter-states')
+        states = OptionList(*state_options, name='states', classes="box", id='filter-states')
         states.border_title = 'state'
         # components/artifacts
         components = ['*'] + list(sorted(self.bogrod._components()))
-        components = OptionList(*components,
-                                name='components', classes="box", id='filter-components')
+        components = OptionList(*components, name='components', classes="box", id='filter-components')
         components.border_title = 'component'
         # has issues
         issues = ['*', 'issues', 'no issues']
-        issues = OptionList(*issues,
-                            name='issues', classes="box", id='filter-issues')
+        issues = OptionList(*issues, name='issues', classes="box", id='filter-issues')
         issues.border_title = 'issues'
         # scores
         scores = ['*'] + list(f'>{s}' for s in range(11))
-        scores = OptionList(*scores,
-                            name='scores', classes="box", id='filter-scores')
+        scores = OptionList(*scores, name='scores', classes="box", id='filter-scores')
         scores.border_title = 'scores'
         return severity, vectors, states, components, issues, scores
 
     def reset_filters(self):
-        """ reset all filters, no filters applied """
+        """reset all filters, no filters applied"""
         # reset filters
         for k in self.filters:
             self.filters[k] = None
@@ -156,7 +150,9 @@ class VulnerabilityList(HelpableMixin, Screen):
         )
         # -- add each data row
         for i in range(4):
-            markdown += f"| {st[i]} | {sv[i]:>4} | {xt[i]} | {xv[i]:>4} | {ct[i]} | {cv[i]:>4} | {vt[i]} | {vv[i]:>4} |\n"
+            markdown += (
+                f"| {st[i]} | {sv[i]:>4} | {xt[i]} | {xv[i]:>4} | {ct[i]} | {cv[i]:>4} | {vt[i]} | {vv[i]:>4} |\n"
+            )
         # -- add the total row
         markdown += f"| ----- |  |  |  |  |  |  |  |\n"
         markdown += f"| Total | {len(self.data)} |  |  |  |  |  |  |\n"
@@ -198,8 +194,9 @@ class VulnerabilityList(HelpableMixin, Screen):
             'components': setfilter('component'),
             'scores': setfilter('score'),
             'names': setfilter('source'),
-            'issues': (False if kwargs.get('issues') == 'no issues'
-                       else True if kwargs.get('issues') == 'issues' else None),
+            'issues': (
+                False if kwargs.get('issues') == 'no issues' else True if kwargs.get('issues') == 'issues' else None
+            ),
         }
         self.log(f'filter_data {self.filters=} => {report_filters=}')
         self.data = self.bogrod._generate_report_data(**report_filters)
@@ -220,21 +217,33 @@ class VulnerabilityList(HelpableMixin, Screen):
             severity=self.bogrod._vuln_severity(vuln),
             score=self.bogrod._vuln_score(vuln),
             vector=self.bogrod._vuln_vector(vuln),
-            description='\n# '.join(
-                wrap(vuln.get('description', 'unknown'), subsequent_indent=' ' * 5)),
+            description='\n# '.join(wrap(vuln.get('description', 'unknown'), subsequent_indent=' ' * 5)),
             component=tryOr(lambda: vuln['affects'][0]['ref'], 'n/a'),
-            artifact=tryOr(lambda: (matches[vuln_id]['artifact'].get('name', '?') + '-' +
-                                    matches[vuln_id]['artifact'].get('version', '?')), 'n/a'),
+            artifact=tryOr(
+                lambda: (
+                    matches[vuln_id]['artifact'].get('name', '?')
+                    + '-'
+                    + matches[vuln_id]['artifact'].get('version', '?')
+                ),
+                'n/a',
+            ),
             url=tryOr(lambda: vuln['source']['url'], 'unknown'),
-            fix=tryOr(lambda: ';'.join(matches[vuln_id]['vulnerability']['fix']['versions']) +
-                              '(' + matches[vuln_id]['vulnerability']['fix']['state'] + ')',
-                      '?'),
-            location='\n#      '.join([v.get('path')
-                                       for v in
-                                       tryOr(lambda: matches[vuln_id]['artifact']['locations'],
-                                             [{'path': '<no grype json file>'}])]),
+            fix=tryOr(
+                lambda: (
+                    ';'.join(matches[vuln_id]['vulnerability']['fix']['versions'])
+                    + '('
+                    + matches[vuln_id]['vulnerability']['fix']['state']
+                    + ')'
+                ),
+                '?',
+            ),
+            location='\n#      '.join([
+                v.get('path')
+                for v in tryOr(lambda: matches[vuln_id]['artifact']['locations'], [{'path': '<no grype json file>'}])
+            ]),
         )
-        vuln_details = dedent("""
+        vuln_details = (
+            dedent("""
                 # id: {id} 
                 # severity: {severity} 
                 # score: {score}
@@ -247,13 +256,18 @@ class VulnerabilityList(HelpableMixin, Screen):
                 #      {description}
                 # locations: 
                 #      {location}
-                """).strip().format(**details_data)
-        editor = VulnearabilityEditor(vex_data=vex_data,
-                                      vuln_data=details_data,
-                                      vuln_details=vuln_details,
-                                      vex_schema=vex_schema,
-                                      templates=self.bogrod.templates(),
-                                      classes="editor")
+                """)
+            .strip()
+            .format(**details_data)
+        )
+        editor = VulnearabilityEditor(
+            vex_data=vex_data,
+            vuln_data=details_data,
+            vuln_details=vuln_details,
+            vex_schema=vex_schema,
+            templates=self.bogrod.templates(),
+            classes="editor",
+        )
 
         def on_dismiss(data):
             # update current vulnerability

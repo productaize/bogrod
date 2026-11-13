@@ -4,7 +4,7 @@ from bogrod.contrib.aggregator import SBOMAggregator
 
 
 class DummyAggregator(SBOMAggregator):
-    """ A dummy aggregator that simulates the upload and report process
+    """A dummy aggregator that simulates the upload and report process
 
     This aggregator is useful for testing the SBOM upload and report process.
     It does not actually upload the SBOM data, but simulates the process.
@@ -38,9 +38,7 @@ class DummyAggregator(SBOMAggregator):
             report['status'] = 'pending' if eta else 'complete'
             report['report'] = {}
         else:
-            report = {
-                'status': 'does-not-exist'
-            }
+            report = {'status': 'does-not-exist'}
         return report
 
     def get_report(self, sbomID):

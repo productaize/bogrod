@@ -12,6 +12,7 @@ class BogrodTuiTests(IsolatedAsyncioTestCase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         from bogrod.tui.app import BogrodApp
+
         bogrod = Bogrod.from_sbom(BASE_PATH / 'releasenotes/sbom/jupyter-base-notebook.cdx.json')
         bogrod.read_vex(BASE_PATH / 'releasenotes/sbom/vex.yaml')
         bogrod.read_grype(BASE_PATH / 'releasenotes/sbom/jupyter-base-notebook.grype.json')

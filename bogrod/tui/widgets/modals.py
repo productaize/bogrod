@@ -76,10 +76,7 @@ class HelpModal(ModalScreen):
     def compose(self) -> ComposeResult:
         with Grid(classes="box") as grid:
             grid.border_title = 'help'
-            text = (
-                '| Key | Action |\n'
-                '|-----|-----|\n'
-            )
+            text = '| Key | Action |\n|-----|-----|\n'
             details_text = ''
             for screen in self.related_screens:
                 for binding in getattr(screen, 'help_bindings', screen.BINDINGS):

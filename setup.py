@@ -37,13 +37,8 @@ setup(
         'yaspin',
         'keyring',
     ],
-    entry_points={
-        'console_scripts': [
-            'bogrod=bogrod:main_cli',
-            'bd=bogrod:main_cli'
-        ]
-    },
+    entry_points={'console_scripts': ['bogrod=bogrod:main_cli', 'bd=bogrod:main_cli']},
     extras_require={
         'dev': dev_deps,
-    }
+    },
 )

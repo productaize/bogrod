@@ -32,44 +32,36 @@ def check_args(argv):
         print(version)
         exit(0)
     # no --version argument, continue
-    parser.add_argument('sbom',
-                        help='/path/to/cyclonedx-sbom.json')
-    parser.add_argument('-n', '--notes',
-                        help='/path/to/notes.yaml')
-    parser.add_argument('-o', '--output', default='table',
-                        help='output format [table,json,yaml,raw]')
-    parser.add_argument('-S', '--summary', action='store_true',
-                        help='summarize report')
-    parser.add_argument('-s', '--severities', default='critical,high',
-                        help='list of serverities in critical,high,medium,low')
-    parser.add_argument('-x', '--update-vex', action='store_true',
-                        help='update vex information from sbom vulnerabilities')
-    parser.add_argument('--vex-file',
-                        help='/path/to/vex.yaml')
-    parser.add_argument('-p', '--sbom-properties',
-                        help='Merge sbom with information in /path/to/properties.yaml')
-    parser.add_argument('-m', '--merge-vex', action='store_true', default=True,
-                        help='Merge vex data back to sbom')
-    parser.add_argument('-w', '--write-notes',
-                        action='store_true',
-                        help='update notes according to sbom (add new, mark fixed)')
-    parser.add_argument('-W', '--work',
-                        action='store_true',
-                        help='work each vulnerability')
-    parser.add_argument('-g', '--grype',
-                        help='use grype SBOM to match vulnerabilities at /path/to/grype.json')
-    parser.add_argument('--diff',
-                        help='/path/to/cyclonedx-sbom.json')
-    parser.add_argument('--vex-issues',
-                        help='/path/to/vex-issues.yaml')
-    parser.add_argument('--upload',
-                        help='specify target aggregator to upload sbom and get issues report')
-    parser.add_argument('--upload-tentative', action='store_true',
-                        help='if specified upload sbom as tentative')
-    parser.add_argument('-F', '--fail-on-issues', action='store_true', dest='fail_on_issues',
-                        help='if there are pending issues or unresolved vulnerabilities, exit with error')
-    parser.add_argument('-V', '--verbose', action='store_true', default=False,
-                        help='increase output verbosity')
+    parser.add_argument('sbom', help='/path/to/cyclonedx-sbom.json')
+    parser.add_argument('-n', '--notes', help='/path/to/notes.yaml')
+    parser.add_argument('-o', '--output', default='table', help='output format [table,json,yaml,raw]')
+    parser.add_argument('-S', '--summary', action='store_true', help='summarize report')
+    parser.add_argument(
+        '-s', '--severities', default='critical,high', help='list of serverities in critical,high,medium,low'
+    )
+    parser.add_argument(
+        '-x', '--update-vex', action='store_true', help='update vex information from sbom vulnerabilities'
+    )
+    parser.add_argument('--vex-file', help='/path/to/vex.yaml')
+    parser.add_argument('-p', '--sbom-properties', help='Merge sbom with information in /path/to/properties.yaml')
+    parser.add_argument('-m', '--merge-vex', action='store_true', default=True, help='Merge vex data back to sbom')
+    parser.add_argument(
+        '-w', '--write-notes', action='store_true', help='update notes according to sbom (add new, mark fixed)'
+    )
+    parser.add_argument('-W', '--work', action='store_true', help='work each vulnerability')
+    parser.add_argument('-g', '--grype', help='use grype SBOM to match vulnerabilities at /path/to/grype.json')
+    parser.add_argument('--diff', help='/path/to/cyclonedx-sbom.json')
+    parser.add_argument('--vex-issues', help='/path/to/vex-issues.yaml')
+    parser.add_argument('--upload', help='specify target aggregator to upload sbom and get issues report')
+    parser.add_argument('--upload-tentative', action='store_true', help='if specified upload sbom as tentative')
+    parser.add_argument(
+        '-F',
+        '--fail-on-issues',
+        action='store_true',
+        dest='fail_on_issues',
+        help='if there are pending issues or unresolved vulnerabilities, exit with error',
+    )
+    parser.add_argument('-V', '--verbose', action='store_true', default=False, help='increase output verbosity')
     args = parser.parse_args(argv)
     return args
 
@@ -79,6 +71,7 @@ def main(argv=None):
 
     if args.verbose:
         import http.client as http_client, logging
+
         logger.setLevel('DEBUG')
         logging.getLogger().setLevel('DEBUG')
         http_client.HTTPConnection.debuglevel = 1
@@ -126,7 +119,8 @@ def main(argv=None):
             update_args(args.sbom)
         elif not Path(args.sbom).exists():
             logger.error(
-                f"{args.sbom} does not exist and not found in .bogrod file. Available: {','.join(config.sections())}")
+                f"{args.sbom} does not exist and not found in .bogrod file. Available: {','.join(config.sections())}"
+            )
             exit(1)
 
     def loadfiles():
@@ -226,6 +220,7 @@ def main(argv=None):
             yp.hide()
             vex_file = args.vex_file or args.sbom
             from bogrod.tui.app import BogrodApp
+
             bogrod.app = BogrodApp(bogrod=bogrod)
             bogrod.app.run()
             yp.text = 'saving...'
